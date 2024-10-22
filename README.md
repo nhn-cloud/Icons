@@ -1,1 +1,1 @@
-# NHN-Cloud-Icons
+# Icons
