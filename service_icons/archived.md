@@ -46,6 +46,41 @@
         <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.svg"></td>
         <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.svg"></td>
     </tr>
+    <tr>
+        <th>Instance Template</th>
+        <td><img src="/files/services/compute/color/ic-compute-instance_template.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance_template.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-instance_template.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance_template.svg"></td>
+    </tr>
+    <tr>
+        <th>Image</th>
+        <td><img src="/files/services/compute/color/ic-compute-image.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-image.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image.svg"></td>
+    </tr>
+    <tr>
+        <th>Image Builder</th>
+        <td><img src="/files/services/compute/color/ic-compute-image_builder.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image_builder.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-image_builder.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image_builder.svg"></td>
+    </tr>
+    <tr>
+        <th>Auto Scale</th>
+        <td><img src="/files/services/compute/color/ic-compute-auto_scale.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-auto_scale.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-auto_scale.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-auto_scale.svg"></td>
+    </tr>
+    <tr>
+        <th>Virtual Desktop</th>
+        <td><img src="/files/services/compute/color/ic-compute-virtual_desktop.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-virtual_desktop.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-virtual_desktop.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-virtual_desktop.svg"></td>
+    </tr>
 </table>
 
 
