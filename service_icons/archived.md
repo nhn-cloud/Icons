@@ -1,4 +1,4 @@
-## Service Icons
+## Icons Landscape
 
 ### Compute
 
