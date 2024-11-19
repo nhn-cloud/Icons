@@ -32,6 +32,20 @@
         <td><img src="/files/services/compute/color/ic-compute-ephemeral_storage_instance.svg"></td>
         <td><img src="/files/services/compute/black/ic-compute-ephemeral_storage_instance.svg"></td>
     </tr>
+    <tr>
+        <th>GPU Instance</th>
+        <td><img src="/files/services/compute/color/ic-compute-gpu_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-gpu_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-gpu_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-gpu_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>Bare Metal Instance</th>
+        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.svg"></td>
+    </tr>
 </table>
 
 
