@@ -1,6 +1,6 @@
-## Compute
+## Service Icons
 
-### Instance
+### Compute
 
 <table>
     <tr>
@@ -20,18 +20,17 @@
     </tr>
     <tr>
         <th>Instance</th>
-        <td><img src="/files/services/compute/ic-compute-instance.png"></td>
-        <td><img src="/files/services/compute/ic-compute-instance-black.png"></td>
-        <td><img src="/files/services/compute/ic-compute-instance.svg"></td>
+        <td><img src="/files/services/compute/color/ic-compute-instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance.svg"></td>
     </tr>   
     <tr>
         <th>Ephemeral Storage Instance</th>
-        <td><img src="/archived/brigade/horizontal/black/brigade-horizontal-black.png" width="200"></td>
-        <td><img src="/archived/brigade/stacked/black/brigade-stacked-black.png" width="95"></td>
-        <td><img src="/archived/brigade/icon/black/brigade-icon-black.png" width="75"></td>
-        <td><img src="/archived/brigade/horizontal/black/brigade-horizontal-black.svg" width="200"></td>
-        <td><img src="/archived/brigade/stacked/black/brigade-stacked-black.svg" width="95"></td>
-        <td><img src="/archived/brigade/icon/black/brigade-icon-black.svg" width="75"></td>
+        <td><img src="/files/services/compute/color/ic-compute-ephemeral_storage_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-ephemeral_storage_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-ephemeral_storage_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-ephemeral_storage_instance.svg"></td>
     </tr>
 </table>
 
