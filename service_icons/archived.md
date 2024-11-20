@@ -1167,11 +1167,172 @@
         <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
         <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
     </tr>
+</table>
+
+
+### Bill
+
+<table>
     <tr>
-        <th>Native Deck</th>
-        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.png"></td>
-        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.png"></td>
-        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.svg"></td>
-        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.svg"></td>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>eTax</th>
+        <td><img src="/files/services/bill/color/ic-bill-etax.png"></td>
+        <td><img src="/files/services/bill/black/ic-bill-etax.png"></td>
+        <td><img src="/files/services/bill/color/ic-bill-etax.svg"></td>
+        <td><img src="/files/services/bill/black/ic-bill-etax.svg"></td>
+    </tr>
+</table>
+
+
+### Dooray!
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Project</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-project.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-project.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-project.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-project.svg"></td>
+    </tr>
+    <tr>
+        <th>Messenger</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-messenger.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-messenger.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-messenger.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-messenger.svg"></td>
+    </tr>
+    <tr>
+        <th>Mail</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-mail.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-mail.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-mail.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-mail.svg"></td>
+    </tr>
+    <tr>
+        <th>Calender</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-calender.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-calender.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-calender.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-calender.svg"></td>
+    </tr>
+    <tr>
+        <th>Drive</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-Drive.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Drive.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-Drive.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Drive.svg"></td>
+    </tr>
+    <tr>
+        <th>Contacts</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-Contacts.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Contacts.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-Contacts.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Contacts.svg"></td>
+    </tr>
+    <tr>
+        <th>Wiki</th>
+        <td><img src="/files/services/dooray/color/ic-dooray-Wiki.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Wiki.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-Wiki.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-Wiki.svg"></td>
+    </tr>
+</table>
+
+
+### Management
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Support Plan</th>
+        <td><img src="/files/services/management/color/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/color/ic-management-support_plan.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.svg"></td>
+    </tr>
+    <tr>
+        <th>Certificate Manager</th>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
+    </tr>
+</table>
+
+
+### Management
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Support Plan</th>
+        <td><img src="/files/services/management/color/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/color/ic-management-support_plan.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.svg"></td>
+    </tr>
+    <tr>
+        <th>Certificate Manager</th>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
     </tr>
 </table>
