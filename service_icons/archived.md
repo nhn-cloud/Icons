@@ -84,10 +84,77 @@
 </table>
 
 
-### Ephemeral Storage Instance
+### Container
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>NHN Kubernetes Service(NKS)</th>
+        <td><img src="/files/services/container/color/ic-container-ncr.png"></td>
+        <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
+        <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
+        <td><img src="/files/services/container/black/ic-container-ncr.svg"></td>
+    </tr>   
+    <tr>
+        <th>Ephemeral Storage Instance</th>
+        <td><img src="/files/services/compute/color/ic-compute-ephemeral_storage_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-ephemeral_storage_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-ephemeral_storage_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-ephemeral_storage_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>GPU Instance</th>
+        <td><img src="/files/services/compute/color/ic-compute-gpu_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-gpu_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-gpu_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-gpu_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>Bare Metal Instance</th>
+        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>Instance Template</th>
+        <td><img src="/files/services/compute/color/ic-compute-instance_template.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance_template.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-instance_template.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-instance_template.svg"></td>
+    </tr>
+    <tr>
+        <th>Image</th>
+        <td><img src="/files/services/compute/color/ic-compute-image.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-image.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image.svg"></td>
+    </tr>
+    <tr>
+        <th>Image Builder</th>
+        <td><img src="/files/services/compute/color/ic-compute-image_builder.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image_builder.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-image_builder.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-image_builder.svg"></td>
+    </tr>
+</table>
 
 
-### GPU Instance
+### 
 
 ### Bare Metal Instance
 
