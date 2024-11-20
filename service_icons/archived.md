@@ -1063,10 +1063,115 @@
         <th>black</th>
     </tr>
     <tr>
-        <th>Gamebase</th>
-        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
-        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
-        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
-        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+        <th>Log & Crash search</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-log_n_crash_search.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-log_n_crash_search.svg"></td>
+    </tr>
+    <tr>
+        <th>DataFlow</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-dataflow.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-dataflow.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-dataflow.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-dataflow.svg"></td>
+    </tr>
+    <tr>
+        <th>DataQuery</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-dataquery.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-dataquery.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-dataquery.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-dataquery.svg"></td>
+    </tr>
+        <tr>
+        <th>Kafka Instance</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-kafka_instance.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-kafka_instance.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-kafka_instance.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-kafka_instance.svg"></td>
+    </tr>
+</table>
+
+
+### Dev Tools
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Pipeline</th>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-pipeline.png"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-pipeline.png"></td>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-pipeline.svg"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-pipeline.svg"></td>
+    </tr>
+    <tr>
+        <th>Deploy</th>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-deploy.png"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-deploy.png"></td>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-deploy.svg"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-deploy.svg"></td>
+    </tr>
+    <tr>
+        <th>Native Deck</th>
+        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.svg"></td>
+        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.svg"></td>
+    </tr>
+</table>
+
+
+### Management
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Support Plan</th>
+        <td><img src="/files/services/management/color/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.png"></td>
+        <td><img src="/files/services/management/color/ic-management-support_plan.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-support_plan.svg"></td>
+    </tr>
+    <tr>
+        <th>Certificate Manager</th>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
+        <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
+    </tr>
+    <tr>
+        <th>Native Deck</th>
+        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.png"></td>
+        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.svg"></td>
+        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.svg"></td>
     </tr>
 </table>
