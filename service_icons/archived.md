@@ -167,10 +167,10 @@
     </tr>
     <tr>
         <th>Network ACL</th>
-        <td><img src="/files/services/network/color/ic-network-network-acl.png"></td>
-        <td><img src="/files/services/network/black/ic-network-network-acl.png"></td>
-        <td><img src="/files/services/network/color/ic-network-network-acl.svg"></td>
-        <td><img src="/files/services/network/black/ic-network-network-acl.svg"></td>
+        <td><img src="/files/services/network/color/ic-network-network_acl.png"></td>
+        <td><img src="/files/services/network/black/ic-network-network_acl.png"></td>
+        <td><img src="/files/services/network/color/ic-network-network_acl.svg"></td>
+        <td><img src="/files/services/network/black/ic-network-network_acl.svg"></td>
     </tr>
     <tr>
         <th>Security Groups</th>
@@ -245,9 +245,9 @@
     <tr>
         <th>Traffic Mirroring</th>
         <td><img src="/files/services/network/color/ic-network-traffic_mirroring.png"></td>
-        <td><img src="/files/services/network/black/ic-network-traffic-mirroring.png"></td>
-        <td><img src="/files/services/network/color/ic-network-traffic-mirroring.svg"></td>
-        <td><img src="/files/services/network/black/ic-network-traffic-mirroring.svg"></td>
+        <td><img src="/files/services/network/black/ic-network-traffic_mirroring.png"></td>
+        <td><img src="/files/services/network/color/ic-network-traffic_mirroring.svg"></td>
+        <td><img src="/files/services/network/black/ic-network-traffic_mirroring.svg"></td>
     </tr>
     <tr>
         <th>Private DNS</th>
@@ -272,7 +272,68 @@
     </tr>
 </table>
 
-### Bare Metal Instance
+### Storage
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Block Storage</th>
+        <td><img src="/files/services/storage/color/ic-storage-block_storage.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-block_storage.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-block_storage.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-block_storage.svg"></td>
+    </tr>
+    <tr>
+        <th>NAS</th>
+        <td><img src="/files/services/storage/color/ic-storage-nas.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-nas.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas.svg"></td>
+    </tr>   
+    <tr>
+        <th>NAS(offline)</th>
+        <td><img src="/files/services/storage/color/ic-storage-nas_offline.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas_offline.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-nas_offline.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas_offline.svg"></td>
+    </tr>
+    <tr>
+        <th>Object Storage</th>
+        <td><img src="/files/services/storage/color/ic-storage-object_storage.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-object_storage.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-object_storage.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-object_storage.svg"></td>
+    </tr>
+    <tr>
+        <th>Backup</th>
+        <td><img src="/files/services/storage/color/ic-storage-backup.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-backup.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-backup.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-backup.svg"></td>
+    </tr>
+    <tr>
+        <th>Data Transporter</th>
+        <td><img src="/files/services/storage/color/ic-storage-data-transporter.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-data-transporter.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-data-transporter.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-data-transporter.svg"></td>
+    </tr>
+</table>
+
 
 ### Instance Template
 
