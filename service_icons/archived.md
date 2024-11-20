@@ -439,10 +439,140 @@
     </tr>
 </table>
 
-### Image
+### Monitoring
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>System Monitoring</th>
+        <td><img src="/files/services/monitoring/color/ic-compute-monitoring.png"></td>
+        <td><img src="/files/services/monitoring/black/ic-compute-monitoring.png"></td>
+        <td><img src="/files/services/monitoring/color/ic-compute-monitoring.svg"></td>
+        <td><img src="/files/services/monitoring/black/ic-compute-monitoring.svg"></td>
+    </tr>
+    <tr>
+        <th>Service Monitoring</th>
+        <td><img src="/files/services/monitoring/color/ic-monitoring-service_monitoring.png"></td>
+        <td><img src="/files/services/monitoring/black/ic-monitoring-service_monitoring.png"></td>
+        <td><img src="/files/services/monitoring/color/ic-monitoring-service_monitoring.svg"></td>
+        <td><img src="/files/services/monitoring/black/ic-monitoring-service_monitoring.svg"></td>
+    </tr>   
+    <tr>
+        <th>Cloud Monitoring</th>
+        <td><img src="/files/services/monitoring/color/ic-monitoring-cloud_monitoring.png"></td>
+        <td><img src="/files/services/monitoring/black/ic-monitoring-cloud_monitoring.png"></td>
+        <td><img src="/files/services/monitoring/color/ic-monitoring-cloud_monitoring.svg"></td>
+        <td><img src="/files/services/monitoring/black/ic-monitoring-cloud_monitoring.svg"></td>
+    </tr>
+</table>
 
-### Image Builder
+### Hybrid & Private Cloud
 
-### Auto Scale
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>NHN Private Cloud</th>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_hybrid_cloud.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_hybrid_cloud.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_hybrid_cloud.svg"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_hybrid_cloud.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN Hybrid Cloud</th>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_private_cloud.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_private_cloud.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_private_cloud.svg"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_private_cloud.svg"></td>
+    </tr>   
+</table>
+
+### Game
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.svg"></td>
+    </tr>   
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/services/game/color/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/color/ic-game-game_starter.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.svg"></td>
+    </tr>
+    <tr>
+        <th>LeaderBoard</th>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.svg"></td>
+    </tr>
+</table>
 
 ### Virtual Desktop
