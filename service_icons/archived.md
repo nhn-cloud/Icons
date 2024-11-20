@@ -575,4 +575,540 @@
     </tr>
 </table>
 
-### Virtual Desktop
+### Security
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>NHN AppGuard</th>
+        <td><img src="/files/services/security/color/ic-secutiry-nhn_appguard.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-nhn_appguard.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-nhn_appguard.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-nhn_appguard.svg"></td>
+    </tr>
+    <tr>
+        <th>App Security Check</th>
+        <td><img src="/files/services/security/color/ic-secutiry-app_security_check.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-app_security_check.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-app_security_check.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-app_security_check.svg"></td>
+    </tr>   
+    <tr>
+        <th>Server Security Check</th>
+        <td><img src="/files/services/security/color/ic-secutiry-server_security_check.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-server_security_check.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-server_security_check.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-server_security_check.svg"></td>
+    </tr>
+    <tr>
+        <th>Webshell Threat Detector</th>
+        <td><img src="/files/services/security/color/ic-secutiry-webshell_threat_detector.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-webshell_threat_detector.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-webshell_threat_detector.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-webshell_threat_detector.svg"></td>
+    </tr>
+    <tr>
+        <th>Security Monitoring</th>
+        <td><img src="/files/services/security/color/ic-secutiry-security_monitoring.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-security_monitoring.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-security_monitoring.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-security_monitoring.svg"></td>
+    </tr>
+    <tr>
+        <th>Basic Security</th>
+        <td><img src="/files/services/security/color/ic-secutiry-basic_security.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-basic_security.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-basic_security.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-basic_security.svg"></td>
+    </tr>
+    <tr>
+        <th>CAPTCH</th>
+        <td><img src="/files/services/security/color/ic-secutiry-captcha.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-captcha.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-captcha.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-captcha.svg"></td>
+    </tr>
+    <tr>
+        <th>WEB Firewall</th>
+        <td><img src="/files/services/security/color/ic-secutiry-web_firewall.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-web_firewall.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-web_firewall.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-web_firewall.svg"></td>
+    </tr>
+    <tr>
+        <th>Vaccine</th>
+        <td><img src="/files/services/security/color/ic-secutiry-vaccine.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-vaccine.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-vaccine.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-vaccine.svg"></td>
+    </tr>
+    <tr>
+        <th>Secure Key Manager</th>
+        <td><img src="/files/services/security/color/ic-secutiry-secure_key_manager.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-secure_key_manager.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-secure_key_manager.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-secure_key_manager.svg"></td>
+    </tr>
+    <tr>
+        <th>Security Compliance</th>
+        <td><img src="/files/services/security/color/ic-secutiry-compliance.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-compliance.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-compliance.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-compliance.svg"></td>
+    </tr>
+    <tr>
+        <th>DDoS Guard</th>
+        <td><img src="/files/services/security/color/ic-secutiry-ddos_guard.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-ddos_guard.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-ddos_guard.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-ddos_guard.svg"></td>
+    </tr>
+    <tr>
+        <th>SIEM</th>
+        <td><img src="/files/services/security/color/ic-secutiry-siem.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-siem.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-siem.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-siem.svg"></td>
+    </tr>
+    <tr>
+        <th>Security Advisor</th>
+        <td><img src="/files/services/security/color/ic-secutiry-security_advisor.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-security_advisor.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-security_advisor.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-security_advisor.svg"></td>
+    </tr>
+    <tr>
+        <th>Network Firewall</th>
+        <td><img src="/files/services/security/color/ic-secutiry-network_firewall.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-network_firewall.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-network_firewall.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-network_firewall.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN Bastion</th>
+        <td><img src="/files/services/security/color/ic-secutiry-nhn_bastion.png"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.png"></td>
+        <td><img src="/files/services/security/color/ic-secutiry-nhn_bastion.svg"></td>
+        <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.svg"></td>
+    </tr>
+</table>
+
+
+### Content Delivery
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>CDN</th>
+        <td><img src="/files/services/content_delivery/color/ic-content_delivery-cdn.png"></td>
+        <td><img src="/files/services/content_delivery/black/ic-content_delivery-cdn.png"></td>
+        <td><img src="/files/services/content_delivery/color/ic-content_delivery-cdn.svg"></td>
+        <td><img src="/files/services/content_delivery/black/ic-content_delivery-cdn.svg"></td>
+    </tr>
+    <tr>
+        <th>Image Manager</th>
+        <td><img src="/files/services/content_delivery/color/ic-content_delivery-image.png"></td>
+        <td><img src="/files/services/content_delivery/black/ic-content_delivery-image.png"></td>
+        <td><img src="/files/services/content_delivery/color/ic-content_delivery-image.svg"></td>
+        <td><img src="/files/services/content_delivery/black/ic-content_delivery-image.svg"></td>
+    </tr>   
+</table>
+### Game
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.svg"></td>
+    </tr>   
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/services/game/color/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/color/ic-game-game_starter.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.svg"></td>
+    </tr>
+    <tr>
+        <th>LeaderBoard</th>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.svg"></td>
+    </tr>
+</table>
+
+### Notification
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Push</th>
+        <td><img src="/files/services/notification/color/ic-notification-push.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-push.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-push.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-push.svg"></td>
+    </tr>
+    <tr>
+        <th>SMS</th>
+        <td><img src="/files/services/notification/color/ic-notification-sms.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-sms.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-sms.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-sms.svg"></td>
+    </tr>   
+    <tr>
+        <th>RCS Bizmessage</th>
+        <td><img src="/files/services/notification/color/ic-notification-rcs_bizmessage.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-rcs_bizmessage.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-rcs_bizmessage.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-rcs_bizmessage.svg"></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><img src="/files/services/notification/color/ic-notification-email.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-email.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-email.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-email.svg"></td>
+    </tr>
+    <tr>
+        <th>KakaoTalk Bizmessage</th>
+        <td><img src="/files/services/game/color/ic-notification-kakaotalk_bizmessage.png"></td>
+        <td><img src="/files/services/game/black/ic-notification-kakaotalk_bizmessage.png"></td>
+        <td><img src="/files/services/game/color/ic-notification-kakaotalk_bizmessage.svg"></td>
+        <td><img src="/files/services/game/black/ic-notification-kakaotalk_bizmessage.svg"></td>
+    </tr>
+</table>
+
+### AI Service
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Face Recognition</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-face_recognition.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-face_recognition.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-face_recognition.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-face_recognition.svg"></td>
+    </tr>
+    <tr>
+        <th>Face Liveness</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-face_liveness.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-face_liveness.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-face_liveness.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-face_liveness.svg"></td>
+    </tr>   
+    <tr>
+        <th>AI Fashion</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.svg"></td>
+        <td><img src="/files/services_ai_servicee/black/ic-ai_service-fashion.svg"></td>
+    </tr>
+    <tr>
+        <th>OCR</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-ocr.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-ocr.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-ocr.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-ocr.svg"></td>
+    </tr>
+    <tr>
+        <th>Text to Speech</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-text_to_speech.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-text_to_speech.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-text_to_speech.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-text_to_speech.svg"></td>
+    </tr>
+    <tr>
+        <th>Speech to Text</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-speech_to_text.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-speech_to_text.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-speech_to_text.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-speech_to_text.svg"></td>
+    </tr>
+    <tr>
+        <th>Pose Estimation</th>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-pose_estimation.png"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-pose_estimation.png"></td>
+        <td><img src="/files/services/ai_service/color/ic-ai_service-pose_estimation.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-pose_estimation.svg"></td>
+    </tr>
+</table>
+
+### Machine Learning
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.svg"></td>
+    </tr>   
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/services/game/color/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/color/ic-game-game_starter.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.svg"></td>
+    </tr>
+    <tr>
+        <th>LeaderBoard</th>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.svg"></td>
+    </tr>
+</table>
+
+### Application Service
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.svg"></td>
+    </tr>   
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/services/game/color/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/color/ic-game-game_starter.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.svg"></td>
+    </tr>
+    <tr>
+        <th>LeaderBoard</th>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.svg"></td>
+    </tr>
+</table>
+
+### Search
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/services/game/color/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gamebase.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gamebase.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.png"></td>
+        <td><img src="/files/services/game/color/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-gameanvil.svg"></td>
+    </tr>   
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/services/game/color/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.png"></td>
+        <td><img src="/files/services/game/color/ic-game-game_starter.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-game_starter.svg"></td>
+    </tr>
+    <tr>
+        <th>LeaderBoard</th>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.png"></td>
+        <td><img src="/files/services/game/color/ic-game-leaderboard.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-leaderboard.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.png"></td>
+        <td><img src="/files/services/game/color/ic-game-smart_downloader.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-smart_downloader.svg"></td>
+    </tr>
+</table>
