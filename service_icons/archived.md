@@ -335,7 +335,109 @@
 </table>
 
 
-### Instance Template
+### Database
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>RDS for MySQL</th>
+        <td><img src="/files/services/database/color/ic-database-rds_for_mysql.png"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_mysql.png"></td>
+        <td><img src="/files/services/database/color/ic-database-rds_for_mysql.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_mysql.svg"></td>
+    </tr>
+    <tr>
+        <th>RDS for PostgreSQL</th>
+        <td><img src="/files/services/database/color/ic-database-rds_for_postgresql.png"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_postgresql.png"></td>
+        <td><img src="/files/services/database/color/ic-database-rds_for_postgresql.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_postgresql.svg"></td>
+    </tr>   
+    <tr>
+        <th>RDS for MariaDB</th>
+        <td><img src="/files/services/database/color/ic-database-rds_for_mariadb.png"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_mariadb.png"></td>
+        <td><img src="/files/services/database/color/ic-database-rds_for_mariadb.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_mariadb.svg"></td>
+    </tr>
+    <tr>
+        <th>RDS for MS-SQL</th>
+        <td><img src="/files/services/database/color/ic-database-rds_for_ms-sql.png"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_ms-sql.png"></td>
+        <td><img src="/files/services/database/color/ic-database-rds_for_ms-sql.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-rds_for_ms-sql.svg"></td>
+    </tr>
+    <tr>
+        <th>EasyCache</th>
+        <td><img src="/files/services/database/color/ic-database-easycache.png"></td>
+        <td><img src="/files/services/database/black/ic-database-easycache.png"></td>
+        <td><img src="/files/services/database/color/ic-database-easycache.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-easycache.svg"></td>
+    </tr>
+    <tr>
+        <th>MS-SQL Instance</th>
+        <td><img src="/files/services/database/color/ic-database-ms-sql_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-ms-sql_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-ms-sql_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-ms-sql_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>My-SQL Instance</th>
+        <td><img src="/files/services/database/color/ic-database-mysql_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-mysql_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-mysql_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-mysql_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>PostgreSQL Instance</th>
+        <td><img src="/files/services/database/color/ic-database-postgresql_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-postgresql_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-postgresql_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-postgresql_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>CUBRIDS Instance</th>
+        <td><img src="/files/services/database/color/ic-database-cubrid_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-cubrid_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-cubrid_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-cubrid_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>MariaDB Instance</th>
+        <td><img src="/files/services/database/color/ic-database-mariadb_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-mariadb_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-mariadb_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-mariadb_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>Tibero Instance</th>
+        <td><img src="/files/services/database/color/ic-database-tibero_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-tibero_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-tibero_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-tibero_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>Redis Instance</th>
+        <td><img src="/files/services/database/color/ic-database-redis_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-redis_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-redis_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-redis_instance.svg"></td>
+    </tr>
+</table>
 
 ### Image
 
