@@ -125,7 +125,7 @@
     </tr>
 </table>
 
-# Resources
+### Container Resources
 
 <table>
   <tr>
@@ -158,17 +158,17 @@
   <tr>
       <td rowspan="2">NCR</td>
     <td>Registry</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Registry.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Registry.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Registry.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Registry.svg"></td>    
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.svg"></td>    
   </tr>
     <tr>
     <td>Image</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Image.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Image.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Image.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Image.svg"></td>    
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.svg"></td>    
   </tr>
 </table>
 
