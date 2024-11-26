@@ -88,7 +88,7 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
+    	<th colspan="6"></th>
     </tr>
     <tr>
         <th></th>
@@ -104,6 +104,7 @@
     </tr>
     <tr>
         <td rowspan="2">NHN Kubernetes Service(NKS)</td>
+        <th></th>
         <td><img src="/files/services/container/color/ic-container-nks.png"></td>
         <td><img src="/files/services/container/black/ic-container-nks.png"></td>
         <td><img src="/files/services/container/color/ic-container-nks.svg"></td>
