@@ -103,11 +103,16 @@
         <th>black</th>
     </tr>
     <tr>
-        <th>NHN Kubernetes Service(NKS)</th>
+        <td rowspan="2">NHN Kubernetes Service(NKS)</td>
         <td><img src="/files/services/container/color/ic-container-nks.png"></td>
         <td><img src="/files/services/container/black/ic-container-nks.png"></td>
         <td><img src="/files/services/container/color/ic-container-nks.svg"></td>
         <td><img src="/files/services/container/black/ic-container-nks.svg"></td>
+        <td>Container</td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>  
     </tr>
     <tr>
         <th>NHN Container Registry(NCR)</th>
@@ -124,8 +129,6 @@
         <td><img src="/files/services/container/black/ic-container-ncs.svg"></td>
     </tr>
 </table>
-
-### Container Resources
 
 <table>
   <tr>
@@ -152,8 +155,6 @@
     <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.png"></td>
     <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.svg"></td>
     <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>    
-    <td>imge</td>
-    <td>img</td>
   </tr>
   <tr>
       <td rowspan="2">NCR</td>
