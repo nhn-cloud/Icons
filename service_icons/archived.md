@@ -120,6 +120,7 @@
     </tr>
     <tr>
         <td rowspan="3">NHN Container Registry(NCR)</td>
+        <th></th>
         <td><img src="/files/services/container/color/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
@@ -139,11 +140,18 @@
     <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.svg"></td>  
     </tr>
     <tr>
-        <th>NHN Container Service(NCS)</th>
+        <td rowspan="2">NHN Container Service(NCS)</td>
+        <th></th>
         <td><img src="/files/services/container/color/ic-container-ncs.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncs.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncs.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncs.svg"></td>
+    <tr>
+        <td>Workload</td>
+        <td><img src="/files/resources/container/color/IaaS-Container-NCS-Workload.png"></td>
+        <td><img src="/files/resources/container/black/IaaS-Container-NCS-Workload.png"></td>
+        <td><img src="/files/resources/container/color/IaaS-Container-NCS-Workload.svg"></td>
+        <td><img src="/files/resources/container/black/IaaS-Container-NCS-Workload.svg"></td>  
     </tr>
 </table>
 
