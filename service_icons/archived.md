@@ -119,12 +119,25 @@
         <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>  
     </tr>
     <tr>
-        <th>NHN Container Registry(NCR)</th>
+        <td rowspan="3">NHN Container Registry(NCR)</td>
         <td><img src="/files/services/container/color/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.svg"></td>
-    </tr>   
+     <tr>
+        <td>Registry</td>
+        <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.png"></td>
+        <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.png"></td>
+        <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.svg"></td>
+        <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.svg"></td>   
+    </tr>
+       <tr>
+        <td>Image</td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.svg"></td>  
+    </tr>
     <tr>
         <th>NHN Container Service(NCS)</th>
         <td><img src="/files/services/container/color/ic-container-ncs.png"></td>
