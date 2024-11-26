@@ -92,10 +92,12 @@
     </tr>
     <tr>
         <th></th>
+        <th></th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
+        <th></th>
         <th></th>
         <th>color</th>
         <th>black</th>
