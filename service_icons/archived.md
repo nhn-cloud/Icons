@@ -125,6 +125,52 @@
     </tr>
 </table>
 
+# Resources
+
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td>NKS</td>
+    <td>Container</td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>    
+    <td>imge</td>
+    <td>img</td>
+  </tr>
+  <tr>
+      <td rowspan="2">NCR</td>
+    <td>Registry</td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Registry.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Registry.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Registry.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Registry.svg"></td>    
+  </tr>
+    <tr>
+    <td>Image</td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Image.png"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Image.png"></td>
+    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Image.svg"></td>
+    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Image.svg"></td>    
+  </tr>
+</table>
 
 ### Network
 
