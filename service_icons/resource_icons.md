@@ -89,7 +89,6 @@
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Peering_connection.svg"></td>    
     </tr>
     <tr>
-        <td rowspan="3">VPC</td>
     <td>Transithub</td>
      <td>Attachment</td>
     <td><img src="/files/resources/network/color/IaaS-Network-Network-Attachment.png"></td>
@@ -119,7 +118,9 @@
     <td><img src="/files/resources/network/color/IaaS-Network-DNS_Plus-DNS.png"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-DNS_Plus-DNS.png"></td>
     <td><img src="/files/resources/network/color/IaaS-Network-DNS_Plus-DNS.svg"></td>
-    <td><img src="/files/resources/network/black/IaaS-Network-DNS_Plus-DNS.svg"></td>    
+    <td><img src="/files/resources/network/black/IaaS-Network-DNS_Plus-DNS.svg"></td>   
+    </tr>
+    <tr> 
       <td>GSLB</td>
       <td><img src="/files/resources/network/color/IaaS-Network-DNS_Plus-GSLB.png"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-DNS_Plus-GSLB.png"></td>
