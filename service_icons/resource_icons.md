@@ -128,3 +128,112 @@
     <td><img src="/files/resources/network/black/IaaS-Network-DNS_Plus-GSLB.svg"></td>    
   </tr>
 </table>
+
+
+## Storage
+
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td>Block Storage</td>
+    <td>Volume</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Block_Storage-Volume.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Volume.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Block_Storage-Volume.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Volume.svg"></td>    
+  </tr>
+  <tr>
+    <td>NAS</td>
+    <td>File System</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-NAS-File_System.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-NAS-File_System.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-NAS-File_System.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-NAS-File_System.svg"></td>    
+  </tr>
+    <tr>
+    <td rowspan="4">Backup</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.svg"></td>    
+  </tr>
+  <tr>
+      <td>Backup Store</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Store.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Store.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Store.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Store.svg"></td>    
+  </tr>
+  <tr>
+        <td>Backup Replication</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Replication.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Replication.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Replication.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Replication.svg"></td>    
+    </tr>
+  <tr>
+      <td>Backup Recovery</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Recovery.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Recovery.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Recovery.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Recovery.svg"></td>    
+  </tr>
+  <tr>
+        <td>Backup Policy</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.svg"></td>    
+  </tr>
+  <tr>
+    <td rowspan="3">Obejct Storage</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.svg"></td>    
+  </tr>
+  <tr>
+      <td>Backup Store</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Store.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Store.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Store.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Store.svg"></td>    
+  </tr>
+  <tr>
+        <td>Backup Replication</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Replication.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Replication.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Replication.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Replication.svg"></td>    
+    </tr>
+  <tr>
+      <td>Backup Recovery</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Recovery.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Recovery.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Recovery.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Recovery.svg"></td>    
+  </tr>
+  <tr>
+        <td>Backup Policy</td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.svg"></td>    
+  </tr>
+</table>
