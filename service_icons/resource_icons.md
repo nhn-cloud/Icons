@@ -47,10 +47,25 @@
 
 ## Network
 
+
 <table>
   <tr>
     <th colspan="6"></th>
 </tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
   <tr>
     <td rowspan="3">VPC</td>
     <td>Router</td>
@@ -59,19 +74,21 @@
     <td><img src="/files/resources/network/color/IaaS-Network-VPC-Router.svg"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Router.svg"></td>    
   </tr>
-    <tr>
+  <tr>
     <td>Routing Table</td>
     <td><img src="/files/resources/network/color/IaaS-Network-VPC-Routing_table.png"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Routing_table.png"></td>
     <td><img src="/files/resources/network/color/IaaS-Network-VPC-Routing_table.svg"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Routing_table.svg"></td>    
-      </tr>
-      <tr>
+  </tr>
+   <tr>
     <td>Peering connection</td>
     <td><img src="/files/resources/network/color/IaaS-Network-VPC-Peering_connection.png"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Peering_connection.png"></td>
     <td><img src="/files/resources/network/color/IaaS-Network-VPC-Peering_connection.svg"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPC-Peering_connection.svg"></td>    
+    </tr>
+    <tr>
         <td rowspan="3">VPC</td>
     <td>Transithub</td>
      <td>Attachment</td>
@@ -87,6 +104,7 @@
     <td><img src="/files/resources/network/black/IaaS-Network-Colocation_Gateway-NHN_Cloud_Zone.png"></td>
     <td><img src="/files/resources/network/color/IaaS-Network-Colocation_Gateway-NHN_Cloud_Zone.svg"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-Colocation_Gateway-NHN_Cloud_Zone.svg"></td>    
+    </tr>
       <tr>
     <td>VPN Gateway(Site-to-Site VPN)</td>
     <td>VPN connection</td>
@@ -94,6 +112,7 @@
     <td><img src="/files/resources/network/black/IaaS-Network-VPN_Gateway-VPN_connection.png"></td>
     <td><img src="/files/resources/network/color/IaaS-Network-VPN_Gateway-VPN_connection.svg"></td>
     <td><img src="/files/resources/network/black/IaaS-Network-VPN_Gateway-VPN_connection.svg"></td>   
+    </tr>
     <tr> 
         <td rowspan="2">DNS Plus</td>
     <td>DNS</td>
