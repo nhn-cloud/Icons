@@ -92,35 +92,32 @@
     </tr>
     <tr>
         <th></th>
-        <th></th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
         <th></th>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
         <th>black</th>
     </tr>
     <tr>
-        <td rowspan="2">NHN Kubernetes Service(NKS)</td>
+        <th>NHN Kubernetes Service(NKS)</th>
         <td><img src="/files/services/container/color/ic-container-nks.png"></td>
         <td><img src="/files/services/container/black/ic-container-nks.png"></td>
         <td><img src="/files/services/container/color/ic-container-nks.svg"></td>
         <td><img src="/files/services/container/black/ic-container-nks.svg"></td>
     </tr>
     <tr>
-        <td rowspan="3">NHN Container Registry(NCR)</td>
+        <th>NHN Container Registry(NCR)</th>
         <td><img src="/files/services/container/color/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.svg"></td>
     </tr>
     <tr>
-        <td rowspan="2">NHN Container Service(NCS)</td>
-        <th></th>
+        <th>NHN Container Service(NCS)</th>
         <td><img src="/files/services/container/color/ic-container-ncs.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncs.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncs.svg"></td>

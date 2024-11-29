@@ -30,6 +30,7 @@
   </tr>
   <tr>
       <td rowspan="2">NCR</td>
+    <td>Registry</td>
     <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.png"></td>
     <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.png"></td>
     <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.svg"></td>
