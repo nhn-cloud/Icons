@@ -88,7 +88,7 @@
 
 <table>
     <tr>
-    	<th colspan="6"></th>
+    	<th colspan="5"></th>
     </tr>
     <tr>
         <th></th>
@@ -106,38 +106,17 @@
     </tr>
     <tr>
         <td rowspan="2">NHN Kubernetes Service(NKS)</td>
-        <th></th>
         <td><img src="/files/services/container/color/ic-container-nks.png"></td>
         <td><img src="/files/services/container/black/ic-container-nks.png"></td>
         <td><img src="/files/services/container/color/ic-container-nks.svg"></td>
         <td><img src="/files/services/container/black/ic-container-nks.svg"></td>
-    <tr>
-        <td>Container</td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.png"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.png"></td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.svg"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>  
     </tr>
     <tr>
         <td rowspan="3">NHN Container Registry(NCR)</td>
-        <th></th>
         <td><img src="/files/services/container/color/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.svg"></td>
-     <tr>
-        <td>Registry</td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.png"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.png"></td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.svg"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.svg"></td>   
-    </tr>
-       <tr>
-        <td>Image</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.svg"></td>  
     </tr>
     <tr>
         <td rowspan="2">NHN Container Service(NCS)</td>
@@ -146,56 +125,7 @@
         <td><img src="/files/services/container/black/ic-container-ncs.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncs.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncs.svg"></td>
-    <tr>
-        <td>Workload</td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NCS-Workload.png"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NCS-Workload.png"></td>
-        <td><img src="/files/resources/container/color/IaaS-Container-NCS-Workload.svg"></td>
-        <td><img src="/files/resources/container/black/IaaS-Container-NCS-Workload.svg"></td>  
     </tr>
-</table>
-
-<table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
-<tr>
-    <th></th>
-    <th></th>
-    <th colspan="2">PNG</th>
-    <th colspan="2">SVG</th>
-  </tr>
-      <tr>
-        <th></th>
-        <th>Resource</th>
-        <th>color</th>
-        <th>black</th>
-        <th>color</th>
-        <th>black</th>
-    </tr>
-  <tr>
-    <td>NKS</td>
-    <td>Container</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NKS-Container.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NKS-Container.svg"></td>    
-  </tr>
-  <tr>
-      <td rowspan="2">NCR</td>
-    <td>Registry</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Registry.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Registry.svg"></td>    
-  </tr>
-    <tr>
-    <td>Image</td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.png"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.png"></td>
-    <td><img src="/files/resources/container/color/IaaS-Container-NCR-Image.svg"></td>
-    <td><img src="/files/resources/container/black/IaaS-Container-NCR-Image.svg"></td>    
-  </tr>
 </table>
 
 ### Network
