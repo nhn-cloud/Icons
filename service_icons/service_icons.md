@@ -1,4 +1,4 @@
-## Icons Landscape
+## Service Icons
 
 ### Compute
 
@@ -115,7 +115,7 @@
         <td><img src="/files/services/container/black/ic-container-ncr.png"></td>
         <td><img src="/files/services/container/color/ic-container-ncr.svg"></td>
         <td><img src="/files/services/container/black/ic-container-ncr.svg"></td>
-    </tr>   
+    </tr>
     <tr>
         <th>NHN Container Service(NCS)</th>
         <td><img src="/files/services/container/color/ic-container-ncs.png"></td>
@@ -124,7 +124,6 @@
         <td><img src="/files/services/container/black/ic-container-ncs.svg"></td>
     </tr>
 </table>
-
 
 ### Network
 
@@ -761,6 +760,13 @@
         <th>black</th>
     </tr>
     <tr>
+        <th>Notification Hub</th>
+        <td><img src="/files/services/notification/color/ic-notification-notification_hub.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-notification_hub.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-notification_hub.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-notification_hub.svg"></td>
+    </tr>
+    <tr>
         <th>Push</th>
         <td><img src="/files/services/notification/color/ic-notification-push.png"></td>
         <td><img src="/files/services/notification/black/ic-notification-push.png"></td>
@@ -834,7 +840,7 @@
         <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.png"></td>
         <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.png"></td>
         <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.svg"></td>
-        <td><img src="/files/services_ai_service/black/ic-ai_service-fashion.svg"></td>
+        <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.svg"></td>
     </tr>
     <tr>
         <th>OCR</th>
@@ -962,10 +968,10 @@
     </tr>
     <tr>
         <th>Cloud Scheduler</th>
-        <td><img src="/files/services/application_service/color/ic-game-gameanvil.png"></td>
-        <td><img src="/files/services/application_service/black/ic-game-gameanvil.png"></td>
-        <td><img src="/files/services/application_service/color/ic-game-gameanvil.svg"></td>
-        <td><img src="/files/services/application_service/black/ic-game-gameanvil.svg"></td>
+        <td><img src="/files/services/application_service/color/ic-application_service-cloud_scheduler.png"></td>
+        <td><img src="/files/services/application_service/black/ic-application_service-cloud_scheduler.png"></td>
+        <td><img src="/files/services/application_service/color/ic-application_service-cloud_scheduler.svg"></td>
+        <td><img src="/files/services/application_service/black/ic-application_service-cloud_scheduler.svg"></td>
     </tr>
 </table>
 
@@ -1030,17 +1036,17 @@
     </tr>
     <tr>
         <th>Corporation Search</th>
-        <td><img src="/files/services/search/color/ic-search-corporatio_search.png"></td>
-        <td><img src="/files/services/search/black/ic-search-corporatio_search.png"></td>
-        <td><img src="/files/services/search/color/ic-search-corporatio_search.svg"></td>
-        <td><img src="/files/services/search/black/ic-search-corporatio_search.svg"></td>
+        <td><img src="/files/services/search/color/ic-search-corporation_search.png"></td>
+        <td><img src="/files/services/search/black/ic-search-corporation_search.png"></td>
+        <td><img src="/files/services/search/color/ic-search-corporation_search.svg"></td>
+        <td><img src="/files/services/search/black/ic-search-corporation_search.svg"></td>
     </tr>
     <tr>
         <th>Word Suggestion</th>
-        <td><img src="/files/services/search/color/ic-search-word_suggestion.png"></td>
-        <td><img src="/files/services/search/black/ic-search-word_suggestion.png"></td>
+        <td><img src="/files/services/search/color/ic-search_word_suggestion.png"></td>
+        <td><img src="/files/services/search/black/ic-search_word_suggestion.png"></td>
         <td><img src="/files/services/search/color/ic-search-word_suggestion.svg"></td>
-        <td><img src="/files/services/search/black/ic-search-word_suggestion.svg"></td>
+        <td><img src="/files/services/search/black/ic-search_word_suggestion.svg"></td>
     </tr>
 </table>
 
@@ -1127,10 +1133,10 @@
     </tr>
     <tr>
         <th>Native Deck</th>
-        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.png"></td>
-        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.png"></td>
-        <td><img src="/files/services/dev_tools/color/ic-data_n_analytics-log_n_crash_search.svg"></td>
-        <td><img src="/files/services/dev_tools/black/ic-data_n_analytics-log_n_crash_search.svg"></td>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-nhn_native_deck.png"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-nhn_native_deck.png"></td>
+        <td><img src="/files/services/dev_tools/color/ic-dev_tools-nhn_native_deck.svg"></td>
+        <td><img src="/files/services/dev_tools/black/ic-dev_tools-nhn_native_deck.svg"></td>
     </tr>
 </table>
 
@@ -1239,10 +1245,10 @@
     </tr>
     <tr>
         <th>Calender</th>
-        <td><img src="/files/services/dooray/color/ic-dooray-calender.png"></td>
-        <td><img src="/files/services/dooray/black/ic-dooray-calender.png"></td>
-        <td><img src="/files/services/dooray/color/ic-dooray-calender.svg"></td>
-        <td><img src="/files/services/dooray/black/ic-dooray-calender.svg"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-calendar.png"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-calendar.png"></td>
+        <td><img src="/files/services/dooray/color/ic-dooray-calendar.svg"></td>
+        <td><img src="/files/services/dooray/black/ic-dooray-calendar.svg"></td>
     </tr>
     <tr>
         <th>Drive</th>
@@ -1268,7 +1274,7 @@
 </table>
 
 
-### Management
+### Dooray! | ERP
 
 <table>
     <tr>
@@ -1287,23 +1293,23 @@
         <th>black</th>
     </tr>
     <tr>
-        <th>Support Plan</th>
-        <td><img src="/files/services/management/color/ic-management-support_plan.png"></td>
-        <td><img src="/files/services/management/black/ic-management-support_plan.png"></td>
-        <td><img src="/files/services/management/color/ic-management-support_plan.svg"></td>
-        <td><img src="/files/services/management/black/ic-management-support_plan.svg"></td>
+        <th>Human Resources</th>
+        <td><img src="/files/services/dooray_erp/color/ic-dooray_erp-human_resources.png"></td>
+        <td><img src="/files/services/dooray_erp/black/ic-dooray_erp-human_resources.png"></td>
+        <td><img src="/files/services/dooray_erp/color/ic-dooray_erp-human_resources.svg"></td>
+        <td><img src="/files/services/dooray_erp/black/ic-dooray_erp-human_resources.svg"></td>
     </tr>
     <tr>
         <th>Certificate Manager</th>
-        <td><img src="/files/services/management/color/ic-management-certificate_manager.png"></td>
-        <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
-        <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
-        <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
+        <td><img src="/files/services/dooray_erp/color/ic-dooray_erp-finance.png"></td>
+        <td><img src="/files/services/dooray_erp/black/ic-dooray_erp-finance.png"></td>
+        <td><img src="/files/services/dooray_erp/color/ic-dooray_erp-finance.svg"></td>
+        <td><img src="/files/services/dooray_erp/black/ic-dooray_erp-finance.svg"></td>
     </tr>
 </table>
 
 
-### Management
+### Dooray! | Groupware
 
 <table>
     <tr>
@@ -1322,17 +1328,115 @@
         <th>black</th>
     </tr>
     <tr>
-        <th>Support Plan</th>
-        <td><img src="/files/services/management/color/ic-management-support_plan.png"></td>
-        <td><img src="/files/services/management/black/ic-management-support_plan.png"></td>
-        <td><img src="/files/services/management/color/ic-management-support_plan.svg"></td>
-        <td><img src="/files/services/management/black/ic-management-support_plan.svg"></td>
+        <th>Communication Board</th>
+        <td><img src="/files/services/dooray_groupware/color/ic-dooray_groupware-communication_board.png"></td>
+        <td><img src="/files/services/dooray_groupware/black/ic-dooray_groupware-communication_board.png"></td>
+        <td><img src="/files/services/dooray_groupware/color/ic-dooray_groupware-communication_board.svg"></td>
+        <td><img src="/files/services/dooray_groupware/black/ic-dooray_groupware-communication_board.svg"></td>
     </tr>
     <tr>
-        <th>Certificate Manager</th>
-        <td><img src="/files/services/management/color/ic-management-certificate_manager.png"></td>
-        <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
-        <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
-        <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
+        <th>Workflow</th>
+        <td><img src="/files/services/dooray_groupware/color/ic-dooray_groupware-workflow.png"></td>
+        <td><img src="/files/services/dooray_groupware/black/ic-dooray_groupware-workflow.png"></td>
+        <td><img src="/files/services/dooray_groupware/color/ic-dooray_groupware-workflow.svg"></td>
+        <td><img src="/files/services/dooray_groupware/black/ic-dooray_groupware-workflow.svg"></td>
     </tr>
 </table>
+
+
+### Contact Center
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>Contiple</th>
+        <td><img src="/files/services/contact_center/color/ic-contact_center-online_contact.png"></td>
+        <td><img src="/files/services/contact_center/black/ic-contact_center-online_contact.png"></td>
+        <td><img src="/files/services/contact_center/color/ic-contact_center-online_contact.svg"></td>
+        <td><img src="/files/services/contact_center/black/ic-contact_center-online_contact.svg"></td>
+    </tr>
+    <tr>
+        <th>Mobile Contact</th>
+        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.png"></td>
+        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.png"></td>
+        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.svg"></td>
+        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.svg"></td>
+    </tr>
+</table>
+
+
+### IDC
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>IDC</th>
+        <td><img src="/files/services/idc/color/ic-idc-ncc.png"></td>
+        <td><img src="/files/services/idc/black/ic-idc-ncc.png"></td>
+        <td><img src="/files/services/idc/color/ic-idc-ncc.svg"></td>
+        <td><img src="/files/services/idc/black/ic-idc-ncc.svg"></td>
+    </tr>
+</table>
+
+### Governance & Audit
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>CloudTrail</th>
+        <td><img src="/files/services/governance_audit/color/ic-cloudtrail.png"></td>
+        <td><img src="/files/services/governance_audit/black/ic-cloudtrail.png"></td>
+        <td><img src="/files/services/governance_audit/color/ic-cloudtrail.svg"></td>
+        <td><img src="/files/services/governance_audit/black/ic-cloudtrail.svg"></td>
+    </tr>
+    <tr>
+        <th>Resource Watcher</th>
+        <td><img src="/files/services/governance_audit/color/ic-governance_n_audit-resource_watcher.png"></td>
+        <td><img src="/files/services/governance_audit/black/ic-governance_n_audit-resource_watcher.png"></td>
+        <td><img src="/files/services/governance_audit/color/ic-governance_n_audit-resource_watcher.svg"></td>
+        <td><img src="/files/services/governance_audit/black/ic-governance_n_audit-resource_watcher.svg"></td>
+    </tr>
+</table>
+
