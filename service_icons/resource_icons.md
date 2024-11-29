@@ -172,7 +172,7 @@
     <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.png"></td>
     <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.png"></td>
     <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy.svg"></td>
-    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.png.svg"></td>    
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy.svg"></td>    
   </tr>
   <tr>
       <td>Backup Store</td>
@@ -201,7 +201,7 @@
     <td><img src="/files/resources/storage/color/IaaS-Storage-Object_Storage-Object_Storage_Container.png"></td>
     <td><img src="/files/resources/storage/black/IaaS-Storage-Object_Storage-Object_Storage_Container.png"></td>
     <td><img src="/files/resources/storage/color/IaaS-Storage-Object_Storage-Object_Storage_Container.svg"></td>
-    <td><img src="/files/resources/storage/black/IaaS-Storage-Object_Storage-Object_Storage_Container.png.svg"></td>    
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Object_Storage-Object_Storage_Container.svg"></td>    
   </tr>
   <tr>
       <td>Container Replication</td>
@@ -225,4 +225,41 @@
     <td><img src="/files/resources/storage/color/IaaS-Storage-Data_Transporter-Data_Transporter_import-export.svg"></td>
     <td><img src="/files/resources/storage/black/IaaS-Storage-Data_Transporter-Data_Transporter_import-export.svg"></td>    
   </tr>
+
+## Database
+
   
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td>RDS<br>RDS for PostgreSQL<br>RDS for MariaDB<br>RDS for MS-SQL</td>
+    <td>RDS Instance</td>
+    <td><img src="/files/resources/database/color/IaaS-Database-RDS_for_MySQL_RDS_Instance.png"></td>
+    <td><img src="/files/resources/database/black/IaaS-Database-RDS_for_MySQL_RDS_Instance.png"></td>
+    <td><img src="/files/resources/database/color/IaaS-Database-RDS_for_MySQL_RDS_Instance.svg"></td>
+    <td><img src="/files/resources/database/black/IaaS-Database-RDS_for_MySQL_RDS_Instance.svg"></td>    
+  </tr>
+  <tr>
+    <td>NAS</td>
+    <td>File System</td>
+    <td><img src="/files/resources/database/color/IaaS-Database-EasyCache-Cache_node.png"></td>
+    <td><img src="/files/resources/database/black/IaaS-Database-EasyCache-Cache_node.png"></td>
+    <td><img src="/files/resources/database/color/IaaS-Database-EasyCache-Cache_node.svg"></td>
+    <td><img src="/files/resources/database/black/IaaS-Database-EasyCache-Cache_node.svg"></td>    
+  </tr>
