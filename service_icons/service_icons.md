@@ -760,6 +760,13 @@
         <th>black</th>
     </tr>
     <tr>
+        <th>Notification Hub</th>
+        <td><img src="/files/services/notification/color/ic-notification-notification_hub.png"></td>
+        <td><img src="/files/services/notification/black/ic-notification-notification_hub.png"></td>
+        <td><img src="/files/services/notification/color/ic-notification-notification_hub.svg"></td>
+        <td><img src="/files/services/notification/black/ic-notification-notification_hub.svg"></td>
+    </tr>
+    <tr>
         <th>Push</th>
         <td><img src="/files/services/notification/color/ic-notification-push.png"></td>
         <td><img src="/files/services/notification/black/ic-notification-push.png"></td>
@@ -1036,10 +1043,10 @@
     </tr>
     <tr>
         <th>Word Suggestion</th>
-        <td><img src="/files/services/search/color/ic-search-word_suggestion.png"></td>
-        <td><img src="/files/services/search/black/ic-search-word_suggestion.png"></td>
+        <td><img src="/files/services/search/color/ic-search_word_suggestion.png"></td>
+        <td><img src="/files/services/search/black/ic-search_word_suggestion.png"></td>
         <td><img src="/files/services/search/color/ic-search-word_suggestion.svg"></td>
-        <td><img src="/files/services/search/black/ic-search-word_suggestion.svg"></td>
+        <td><img src="/files/services/search/black/ic-search_word_suggestion.svg"></td>
     </tr>
 </table>
 
@@ -1396,6 +1403,40 @@
         <td><img src="/files/services/idc/black/ic-idc-ncc.png"></td>
         <td><img src="/files/services/idc/color/ic-idc-ncc.svg"></td>
         <td><img src="/files/services/idc/black/ic-idc-ncc.svg"></td>
+    </tr>
+</table>
+
+### Governance & Audit
+
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>CloudTrail</th>
+        <td><img src="/files/services/governance_audit/color/ic-cloudtrail.png"></td>
+        <td><img src="/files/services/governance_audit/black/ic-cloudtrail.png"></td>
+        <td><img src="/files/services/governance_audit/color/ic-cloudtrail.svg"></td>
+        <td><img src="/files/services/governance_audit/black/ic-cloudtrail.svg"></td>
+    </tr>
+    <tr>
+        <th>Resource Watcher</th>
+        <td><img src="/files/services/governance_audit/color/ic-governance_n_audit-resource_watcher.png"></td>
+        <td><img src="/files/services/governance_audit/black/ic-governance_n_audit-resource_watcher.png"></td>
+        <td><img src="/files/services/governance_audit/color/ic-governance_n_audit-resource_watcher.svg"></td>
+        <td><img src="/files/services/governance_audit/black/ic-governance_n_audit-resource_watcher.svg"></td>
     </tr>
 </table>
 
