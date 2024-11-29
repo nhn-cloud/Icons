@@ -248,7 +248,7 @@
         <th>black</th>
     </tr>
   <tr>
-    <td>RDS<br>RDS for PostgreSQL<br>RDS for MariaDB<br>RDS for MS-SQL</td>
+    <td>RDS for MySQL<br>RDS for PostgreSQL<br>RDS for MariaDB<br>RDS for MS-SQL</td>
     <td>RDS Instance</td>
     <td><img src="/files/resources/database/color/IaaS-Database-RDS_for_MySQL_RDS_Instance.png"></td>
     <td><img src="/files/resources/database/black/IaaS-Database-RDS_for_MySQL_RDS_Instance.png"></td>
@@ -262,4 +262,98 @@
     <td><img src="/files/resources/database/black/IaaS-Database-EasyCache-Cache_node.png"></td>
     <td><img src="/files/resources/database/color/IaaS-Database-EasyCache-Cache_node.svg"></td>
     <td><img src="/files/resources/database/black/IaaS-Database-EasyCache-Cache_node.svg"></td>    
+  </tr>
+
+## Monitoring
+
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td rowspan="2">Cloud Monitoring</td>
+    <td>Dashboard</td>
+    <td><img src="/files/resources/monitoring/color/IaaS-Monitoring-Cloud_Monitoring-Dashboard.png"></td>
+    <td><img src="/files/resources/monitoring/black/IaaS-Monitoring-Cloud_Monitoring-Dashboard.png"></td>
+    <td><img src="/files/resources/monitoring/color/IaaS-Monitoring-Cloud_Monitoring-Dashboard.svg"></td>
+    <td><img src="/files/resources/monitoring/black/IaaS-Monitoring-Cloud_Monitoring-Dashboard.svg"></td>    
+  </tr>
+  <tr>
+      <td>Notification</td>
+    <td><img src="/files/resources/monitoring/color/IaaS-Monitoring-Cloud_Monitoring-알림.png"></td>
+    <td><img src="/files/resources/monitoring/black/IaaS-Monitoring-Cloud_Monitoring-알림.png"></td>
+    <td><img src="/files/resources/monitoring/color/IaaS-Monitoring-Cloud_Monitoring-알림.svg"></td>
+    <td><img src="/files/resources/monitoring/black/IaaS-Monitoring-Cloud_Monitoring-알림.svg"></td>    
+    </tr>
+
+## Content Delivery
+
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td>CDN</td>
+    <td>Edge Server</td>
+    <td><img src="/files/resources/content_delivery/color/PaaS-Content_Delivery-CDN-Edge_Server.png"></td>
+    <td><img src="/files/resources/content_delivery/black/PaaS-Content_Delivery-CDN-Edge_Server.png"></td>
+    <td><img src="/files/resources/content_delivery/color/PaaS-Content_Delivery-CDN-Edge_Server.svg"></td>
+    <td><img src="/files/resources/content_delivery/black/PaaS-Content_Delivery-CDN-Edge_Server.svg"></td>    
+  </tr>
+
+## Security
+
+<table>
+  <tr>
+    <th colspan="6"></th>
+</tr>
+<tr>
+    <th></th>
+    <th></th>
+    <th colspan="2">PNG</th>
+    <th colspan="2">SVG</th>
+  </tr>
+      <tr>
+        <th></th>
+        <th>Resource</th>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+  <tr>
+    <td>NHN AppGuard</td>
+    <td>Firewall</td>
+    <td><img src="/files/resources/security/color/Security_Sub_Firewall.png"></td>
+    <td><img src="/files/resources/security/black/Security_Sub_Firewall.png"></td>
+    <td><img src="/files/resources/security/color/Security_Sub_Firewall.svg"></td>
+    <td><img src="/files/resources/security/black/Security_Sub_Firewall.svg"></td>    
   </tr>
