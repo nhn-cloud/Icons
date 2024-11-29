@@ -168,6 +168,7 @@
   </tr>
     <tr>
     <td rowspan="4">Backup</td>
+    <td>Backup Policy</td>
     <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
     <td><img src="/files/resources/storage/black/IaaS-Storage-Backup-Backup_Policy"></td>
     <td><img src="/files/resources/storage/color/IaaS-Storage-Backup-Backup_Policy"></td>
