@@ -1,10 +1,10 @@
 <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path fill-rule="evenodd" clip-rule="evenodd" d="M33.0081 54.5015L40.0841 53.6517L41.1487 46.4897C41.6985 46.204 42.2319 45.8909 42.749 45.5503L49.376 48.1924L53.2216 43.5476L49.5087 37.3979C49.7491 36.8241 49.9635 36.235 50.1462 35.628L56.9129 33.3237L56.9294 27.2739L50.1745 25.0056C49.9931 24.4035 49.7871 23.8125 49.5466 23.2369L53.2899 17.0696L49.4688 12.4437L42.8527 15.1125C42.3322 14.7687 41.7898 14.4549 41.2292 14.167L40.2048 7.03464L33.0081 6.19482V18.0482C39.6318 18.0526 45 23.4235 45 30.0482C45 36.673 39.6318 42.0439 33.0081 42.0482V54.5015Z" fill="#555555"/>
-<circle cx="33" cy="30.0483" r="6" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<path d="M30 24.0483L27 15L21 13.5" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<path d="M30 36L27 45.0483L21 46.5" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<circle cx="16.5" cy="12" r="4.5" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<circle cx="16.5" cy="48" r="4.5" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<circle cx="10.5" cy="30" r="4.5" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
-<path d="M27 30H15" stroke="#555555" stroke-width="3" stroke-linecap="square"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M33.0088 54.5016L40.0848 53.6518L41.1495 46.4898C41.6992 46.2042 42.2326 45.891 42.7497 45.5504L49.3767 48.1925L53.2223 43.5477L49.5095 37.398C49.7499 36.8242 49.9642 36.2351 50.1469 35.6281L56.9136 33.3238L56.9302 27.274L50.1752 25.0057C49.9939 24.4036 49.7879 23.8126 49.5473 23.237L53.2906 17.0697L49.4696 12.4438L42.8535 15.1126C42.333 14.7688 41.7905 14.455 41.2299 14.1671L40.2055 7.03475L33.0088 6.19493V18.0483C39.6322 18.0531 45 23.4239 45 30.0483C45 36.6728 39.6322 42.0436 33.0088 42.0483V54.5016Z" fill="#222222"/>
+<circle cx="33" cy="30.0483" r="6" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<path d="M30 24.0483L27 15L21 13.5" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<path d="M30 36L27 45.0483L21 46.5" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<circle cx="16.5" cy="12" r="4.5" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<circle cx="16.5" cy="48" r="4.5" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<circle cx="10.5" cy="30" r="4.5" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
+<path d="M27 30H15" stroke="#222222" stroke-width="3" stroke-linecap="square"/>
 </svg>
