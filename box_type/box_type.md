@@ -91,7 +91,7 @@
         <td><img src="/files/box_type/color/IaaS-Compute-Instance.png"></td>
         <td><img src="/files/box_type/black/IaaS-Compute-Instance.png"></td>
         <td><img src="/files/box_type/color/IaaS-Compute-Instance.svg"></td>
-         <td><img src="/files/box_type/black/IaaS-Compute-Instance.svg"></td>
+        <td><img src="/files/box_type/black/IaaS-Compute-Instance.svg"></td>
     </tr>
     
 </table>
