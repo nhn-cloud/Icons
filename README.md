@@ -4,7 +4,7 @@ NHN Cloud 아키텍처 다이어그램을 그리는데 필요한 NHN Cloud 서�
 아이콘은 2가지 형식(PNG와 SVG)와 2가지 버전(컬러와 블랙)으로 제공됩니다.
 </p>
 
-> [!Tip]\
+> [!Note]\
 > SVG는 파일 크기가 더 작고 모든 최신 웹 브라우저에서 지원되며 인쇄 및 고해상도 화면에 적합한 형식입니다.
 
 ## 아이콘 유형
@@ -15,7 +15,6 @@ NHN Cloud 아키텍처 다이어그램을 그리는데 필요한 NHN Cloud 서�
 * [리소스 아이콘](service_icons/resource_icons.md)
 * [일반 아이콘](general_icons/general_icons.md)
 * [박스 형태 아이콘](box_type/box_type.md)
-> [!Important]\
 > 박스 형태 아이콘은 아키텍처 다이어그램을 그릴 때 필요한 그룹을 그릴 때 사용합니다.
 
 ## 아키텍처 다이어그램
