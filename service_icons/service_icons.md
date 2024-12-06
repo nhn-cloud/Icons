@@ -1,6 +1,6 @@
 ## Service Icons
 
-### Compute <img src="/files/services/compute/color/ic-compute-instance.png" width="75">
+### Compute <img height="32" width="32" src="/files/services/compute/color/ic-compute-instance.png" />
 
 <table>
     <tr>
