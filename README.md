@@ -15,7 +15,8 @@ NHN Cloud 아키텍처 다이어그램을 그리는데 필요한 NHN Cloud 서�
 * [리소스 아이콘](service_icons/resource_icons.md)
 * [일반 아이콘](general_icons/general_icons.md)
 * [박스 형태 아이콘](box_type/box_type.md)
-    * 박스 형태 아이콘은 아키텍처 다이어그램을 그릴 때 필요한 그룹을 그릴 때 사용합니다.
+> [!Important]\
+> 박스 형태 아이콘은 아키텍처 다이어그램을 그릴 때 필요한 그룹을 그릴 때 사용합니다.
 
 ## 아키텍처 다이어그램
 
