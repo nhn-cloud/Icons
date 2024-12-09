@@ -157,6 +157,10 @@
     <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Volume.png"></td>
     <td><img src="/files/resources/storage/color/IaaS-Storage-Block_Storage-Volume.svg"></td>
     <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Volume.svg"></td>    
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Block_Storage-Snapshot.png"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Snapshot.png"></td>
+    <td><img src="/files/resources/storage/color/IaaS-Storage-Block_Storage-Snapshot.svg"></td>
+    <td><img src="/files/resources/storage/black/IaaS-Storage-Block_Storage-Snapshot.svg"></td>    
   </tr>
   <tr>
     <td>NAS</td>
