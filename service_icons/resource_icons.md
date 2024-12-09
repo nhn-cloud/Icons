@@ -272,6 +272,7 @@
     <td><img src="/files/resources/database/color/IaaS-Database-EasyCache-Cache_node.svg"></td>
     <td><img src="/files/resources/database/black/IaaS-Database-EasyCache-Cache_node.svg"></td>    
   </tr>
+</table>
 
 ## Monitoring
 
@@ -308,6 +309,7 @@
     <td><img src="/files/resources/monitoring/color/IaaS-Monitoring-Cloud_Monitoring-알림.svg"></td>
     <td><img src="/files/resources/monitoring/black/IaaS-Monitoring-Cloud_Monitoring-알림.svg"></td>    
     </tr>
+</table>
 
 ## Content Delivery
 
@@ -337,6 +339,7 @@
     <td><img src="/files/resources/content_delivery/color/PaaS-Content_Delivery-CDN-Edge_Server.svg"></td>
     <td><img src="/files/resources/content_delivery/black/PaaS-Content_Delivery-CDN-Edge_Server.svg"></td>    
   </tr>
+</table>
 
 ## Security
 
@@ -366,3 +369,4 @@
     <td><img src="/files/resources/security/color/Security_Sub_Firewall.svg"></td>
     <td><img src="/files/resources/security/black/Security_Sub_Firewall.svg"></td>    
   </tr>
+  </table>
