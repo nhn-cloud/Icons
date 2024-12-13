@@ -20,6 +20,6 @@ NHN Cloud 아키텍처 다이어그램을 그리는데 필요한 NHN Cloud 서�
 ## 아키텍처 다이어그램
 
 제공되는 아이콘을 활용하여 아키텍처 다이어그램을 그릴 수 있습니다. 다이어그램을 그리는 데 필요한 그룹, 선과 같은 요소는 아래의 PPT 파일을 참고하시기 바랍니다.
-* [NHN Cloud Architecture Icons](files/pptx/NHN Cloud_Architecture Icons_20241213.pptx).
+* [NHN Cloud Architecture Icons](files/pptx).
 
   
