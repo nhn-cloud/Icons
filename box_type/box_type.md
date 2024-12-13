@@ -470,7 +470,87 @@
         <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.png"></td>
         <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
+        <th>NHN Bastion</th>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
+    </tr>
+    <tr>
+        <th>CDN</th>
+        <td><img src="/files/box_type/color/ic-content_delivery-cdn-box.png"></td>
+        <td><img src="/files/box_type/color/ic-content_delivery-cdn-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Image Manager</th>
+        <td><img src="/files/box_type/color/ic-content_delivery-image-box.png"></td>
+        <td><img src="/files/box_type/color/ic-content_delivery-image-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Notificafion Hub</th>
+        <td><img src="/files/box_type/color/ic-notification-notification_hub-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-notification_hub-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Push</th>
+        <td><img src="/files/box_type/color/ic-notification-push-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-push-box.svg"></td>
+    </tr>
+    <tr>
+        <th>SMS</th>
+        <td><img src="/files/box_type/color/ic-notification-sms-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-sms-box.svg"></td>
+    </tr>
+    <tr>
+        <th>RCS Bizmessage</th>
+        <td><img src="/files/box_type/color/ic-notification-rcs_bizmessage-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-rcs_bizmessage-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td><img src="/files/box_type/color/ic-notification-email-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-email-box.svg"></td>
+    </tr>
+    <tr>
+        <th>KakaoTalk Bizmessage</th>
+        <td><img src="/files/box_type/color/ic-notification-kakaotalk_bizmessage-box.png"></td>
+        <td><img src="/files/box_type/color/ic-notification-kakaotalk_bizmessage-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Face Recognition</th>
+        <td><img src="/files/box_type/color/ic-ai_service-face_recognition-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-face_recognition-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Face Liveness</th>
+        <td><img src="/files/box_type/color/ic-ai_service-face_liveness-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-face_liveness-box.svg"></td>
+    </tr>
+    <tr>
+        <th>AI Fashion</th>
+        <td><img src="/files/box_type/color/ic-ai_service-fashion-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-fashion-box.svg"></td>
+    </tr>
+    <tr>
+        <th>OCR</th>
+        <td><img src="/files/box_type/color/ic-ai_service-ocr-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-ocr-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Text to Speech</th>
+        <td><img src="/files/box_type/color/ic-ai_service-text_to_speech-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-text_to_speech-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Speech to Text</th>
+        <td><img src="/files/box_type/color/ic-ai_service-speech_to_text-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-speech_to_text-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Pose Estimation</th>
+        <td><img src="/files/box_type/color/ic-ai_service-pose_estimation-box.png"></td>
+        <td><img src="/files/box_type/color/ic-ai_service-pose_estimation-box.svg"></td>
+    </tr>
+    <tr>
         <th>NHN Bastion</th>
         <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
         <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
