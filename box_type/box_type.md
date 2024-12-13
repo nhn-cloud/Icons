@@ -172,19 +172,60 @@
     </tr>
             <tr>
         <th>Flow Log</th>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-network-flow_log-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-flow_log-box.svg"></td>
     </tr>
             <tr>
-        <th>Virtual Desktop</th>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+        <th>Network ACL</th>
+        <td><img src="/files/box_type/color/ic-network-network_acl-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-network_acl-box.svg"></td>
     </tr>
             <tr>
-        <th>Virtual Desktop</th>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+        <th>Security Groups</th>
+        <td><img src="/files/box_type/color/ic-network-security-groups-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-security-groups-box.svg"></td>
     </tr>
+                <tr>
+        <th>Load Balancer</th>
+        <td><img src="/files/box_type/color/ic-network-load_balancer-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-load_balancer-box.svg"></td>
+    </tr>
+            <tr>
+        <th>NAT Instance</th>
+        <td><img src="/files/box_type/color/ic-network-nat_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-nat_instance-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Transit Hub</th>
+        <td><img src="/files/box_type/color/ic-network-transit_hub-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-transit_hub-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Internet Gateway</th>
+        <td><img src="/files/box_type/color/ic-network-internet_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-internet_gateway-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Peering Gateway</th>
+        <td><img src="/files/box_type/color/ic-network-peering_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-peering_gateway-box.svg"></td>
+    </tr>
+                <tr>
+        <th>Colocation Gateway</th>
+        <td><img src="/files/box_type/color/ic-network-colocation_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-colocation_gateway-box.svg"></td>
+    </tr>
+                <tr>
+        <th>NAT Gateway</th>
+        <td><img src="/files/box_type/color/ic-network-nat_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-nat_gateway-box.svg"></td>
+    </tr>
+                <tr>
+        <th>VPN Gateway (Site-to-Site VPN)</th>
+        <td><img src="/files/box_type/color/ic-network-vpn_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-vpn_gateway-box.svg"></td>
+    </tr>
+
 
     
 </table>
