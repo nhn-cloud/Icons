@@ -115,5 +115,76 @@
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.svg"></td>
     </tr>
+        <tr>
+        <th>GPU Instance</th>
+        <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Bare Metal Instance</th>
+        <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Instance Template</th>
+        <td><img src="/files/box_type/color/ic-compute-instance_template-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-instance_template-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Image</th>
+        <td><img src="/files/box_type/color/ic-compute-image-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-image-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Image Builder</th>
+        <td><img src="/files/box_type/color/ic-compute-image_builder-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-image_builder-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Auto Scale</th>
+        <td><img src="/files/box_type/color/ic-compute-auto_scale-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-auto_scale-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Virtual Desktop</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+            <tr>
+        <th>NHN Kubernetes Service (NKS)</th>
+        <td><img src="/files/box_type/color/ic-container-nks-box.png"></td>
+        <td><img src="/files/box_type/color/ic-container-nks-box.svg"></td>
+    </tr>
+            <tr>
+        <th>NHN Container Service (NCS)</th>
+        <td><img src="/files/box_type/color/ic-container-ncs-box.png"></td>
+        <td><img src="/files/box_type/color/ic-container-ncs-box.svg"></td>
+    </tr>
+            <tr>
+        <th>VPC</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Network Interface</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Flow Log</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Virtual Desktop</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Virtual Desktop</th>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+    </tr>
+
     
 </table>
