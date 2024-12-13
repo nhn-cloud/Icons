@@ -93,6 +93,23 @@
         <td><img src="/files/box_type/color/IaaS-Compute-Instance.svg"></td>
         <td><img src="/files/box_type/black/IaaS-Compute-Instance.svg"></td>
     </tr>
+    </table>
+
+# Box Type Icons - Services
+<table>
+    <tr>
+    	<th colspan="5"></th>
+    </tr>
+    <tr>
+        <th></th>
+        <th colspan="1">PNG</th>
+        <th colspan="1">SVG</th>
+    </tr>
+    <tr>
+        <th></th>
+        <th>color</th>
+        <th>color</th>
+    </tr>
         <tr>
         <th>Ephemeral Storage Instance</th>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.png"></td>
