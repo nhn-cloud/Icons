@@ -225,7 +225,46 @@
         <td><img src="/files/box_type/color/ic-network-vpn_gateway-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-vpn_gateway-box.svg"></td>
     </tr>
-
+                <tr>
+        <th>Service Gateway</th>
+        <td><img src="/files/box_type/color/ic-network-service_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-service_gateway-box.svg"></td>
+    </tr>
+                    <tr>
+        <th>Traffic Mirroing</th>
+        <td><img src="/files/box_type/color/ic-network-traffic_mirroring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-traffic_mirroring-box.svg"></td>
+    </tr>
+                    <tr>
+        <th>Private DNS</th>
+        <td><img src="/files/box_type/color/ic-network-private_dns-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-private_dns-box.svg"></td>
+    </tr>
+                    <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                    <tr>
+        <th>Direct Connect</th>
+        <td><img src="/files/box_type/color/ic-network-direct_connect-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-direct_connect-box.svg"></td>
+    </tr>
+                        <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                        <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                        <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
 
     
 </table>
