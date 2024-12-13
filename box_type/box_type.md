@@ -113,9 +113,7 @@
         <tr>
         <th>Ephemeral Storage Instance</th>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.png"></td>
-        <td>-</td>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.svg"></td>
-        <td>-</td>
     </tr>
     
 </table>
