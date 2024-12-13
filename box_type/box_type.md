@@ -340,12 +340,140 @@
         <td><img src="/files/box_type/color/ic-database-redis_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-database-redis_instance-box.svg"></td>
     </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    <tr>
+        <th>System Monitoring</th>
+        <td><img src="/files/box_type/color/ic-compute-monitoring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-compute-monitoring-box.svg"></td>
     </tr>
-
-
+    <tr>
+        <th>Service Monitoring</th>
+        <td><img src="/files/box_type/color/ic-monitoring-service_monitoring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-monitoring-service_monitoring-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Cloud Monitoring</th>
+        <td><img src="/files/box_type/color/ic-monitoring-cloud_monitoring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-monitoring-cloud_monitoring-box.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN Private Cloud</th>
+        <td><img src="/files/box_type/color/ic-hybrid_n_private_cloud-nhn_private_cloud-box.png"></td>
+        <td><img src="/files/box_type/color/ic-hybrid_n_private_cloud-nhn_private_cloud-box.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN Hybrid Cloud</th>
+        <td><img src="/files/box_type/color/ic-hybrid_n_private_cloud-nhn_hybrid_cloud-box.png"></td>
+        <td><img src="/files/box_type/color/ic-hybrid_n_private_cloud-nhn_hybrid_cloud-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Gamebase</th>
+        <td><img src="/files/box_type/color/ic-game-gamebase-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-gamebase-box.svg"></td>
+    </tr>
+    <tr>
+        <th>GameAnvil</th>
+        <td><img src="/files/box_type/color/ic-game-gameanvil-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-gameanvil-box.svg"></td>
+    </tr>
+    <tr>
+        <th>GameStarter</th>
+        <td><img src="/files/box_type/color/ic-game-game_starter-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-game_starter-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Leaderboard</th>
+        <td><img src="/files/box_type/color/ic-game-leaderboard-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-leaderboard-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Launching</th>
+        <td><img src="/files/box_type/color/ic-game-lauching-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-lauching-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Smart Downloader</th>
+        <td><img src="/files/box_type/color/ic-game-smart_downloader-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-smart_downloader-box.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN AppGuard</th>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_appguard-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_appguard-box.svg"></td>
+    </tr>
+    <tr>
+        <th>App Security Check</th>
+        <td><img src="/files/box_type/color/ic-secutiry-app_security_check-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-app_security_check-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Server Security Check</th>
+        <td><img src="/files/box_type/color/ic-secutiry-server_security_check-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-server_security_check-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Webshell Threat Detector</th>
+        <td><img src="/files/box_type/color/ic-secutiry-webshell_threat_detector-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-webshell_threat_detector-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Security Monitoring</th>
+        <td><img src="/files/box_type/color/ic-secutiry-security_monitoring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-security_monitoring-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Basic Security</th>
+        <td><img src="/files/box_type/color/ic-secutiry-basic_security-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-basic_security-box.svg"></td>
+    </tr>
+        <tr>
+        <th>CAPTCHA</th>
+        <td><img src="/files/box_type/color/ic-secutiry-captcha-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-captcha-box.svg"></td>
+    </tr>
+        <tr>
+        <th>WEB Firewall</th>
+        <td><img src="/files/box_type/color/ic-secutiry-web_firewall-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-web_firewall-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Vaccine</th>
+        <td><img src="/files/box_type/color/ic-secutiry-vaccine-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-vaccine-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Secure Key Manager</th>
+        <td><img src="/files/box_type/color/ic-secutiry-secure_key_manager-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-secure_key_manager-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Security Compliance</th>
+        <td><img src="/files/box_type/color/ic-secutiry-compliance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-compliance-box.svg"></td>
+    </tr>
+        <tr>
+        <th>DDos Guard</th>
+        <td><img src="/files/box_type/color/ic-secutiry-ddos_guard-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-ddos_guard-box.svg"></td>
+    </tr>
+        <tr>
+        <th>SIEM</th>
+        <td><img src="/files/box_type/color/ic-secutiry-siem-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-siem-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Security Advisor</th>
+        <td><img src="/files/box_type/color/ic-secutiry-security_advisor-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-security_advisor-box.svg"></td>
+    </tr>
+        <tr>
+        <th>Network Firewall</th>
+        <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.svg"></td>
+    </tr>
+        <tr>
+        <th>NHN Bastion</th>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
+        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
+    </tr>
     
 </table>
