@@ -281,71 +281,71 @@
         <td><img src="/files/box_type/color/ic-storage-data-transporter-box.svg"></td>
     </tr>
             <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+        <th>RDS for MySQL</th>
+        <td><img src="/files/box_type/color/ic-database-rds_for_mysql-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-rds_for_mysql-box.svg"></td>
     </tr>
             <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+        <th>RDS for PostgreSQL</th>
+        <td><img src="/files/box_type/color/ic-database-rds_for_postgresql-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-rds_for_postgresql-box.svg"></td>
+    </tr>
+                <tr>
+        <th>RDS for MariaDB</th>
+        <td><img src="/files/box_type/color/ic-database-rds_for_mariadb-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-rds_for_mariadb-box.svg"></td>
+    </tr>
+                <tr>
+        <th>RDS for MS-SQL</th>
+        <td><img src="/files/box_type/color/ic-database-rds_for_ms-sql-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-rds_for_ms-sql-box.svg"></td>
+    </tr>
+                <tr>
+        <th>EasyCache</th>
+        <td><img src="/files/box_type/color/ic-database-easycache-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-easycache-box.svg"></td>
+    </tr>
+                <tr>
+        <th>MS-SQL Instance</th>
+        <td><img src="/files/box_type/color/ic-database-ms-sql_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-ms-sql_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>MySQL Instance</th>
+        <td><img src="/files/box_type/color/ic-database-mysql_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-mysql_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>PostgreSQL Instance</th>
+        <td><img src="/files/box_type/color/ic-database-postgresql_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-postgresql_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>CUBRID Insatnce</th>
+        <td><img src="/files/box_type/color/ic-database-cubrid_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-cubrid_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>MariaDB Instance</th>
+        <td><img src="/files/box_type/color/ic-database-mariadb_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-mariadb_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>Tibero Instance</th>
+        <td><img src="/files/box_type/color/ic-database-tibero_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-tibero_instance-box.svg"></td>
+    </tr>
+                <tr>
+        <th>Redis Instance</th>
+        <td><img src="/files/box_type/color/ic-database-redis_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-database-redis_instance-box.svg"></td>
     </tr>
                 <tr>
         <th>DNS Plus</th>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
     </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-                <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
-    </tr>
-    
+
 
     
 </table>
