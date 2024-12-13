@@ -251,20 +251,101 @@
         <td><img src="/files/box_type/color/ic-network-direct_connect-box.svg"></td>
     </tr>
                         <tr>
-        <th>DNS Plus</th>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
-        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+        <th>Block Storage</th>
+        <td><img src="/files/box_type/color/ic-storage-block_storage-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-block_storage-box.svg"></td>
     </tr>
                         <tr>
+        <th>NAS</th>
+        <td><img src="/files/box_type/color/ic-storage-nas-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-nas-box.svg"></td>
+    </tr>
+        <tr>
+        <th>NAS (Offline)</th>
+        <td><img src="/files/box_type/color/ic-storage-nas_offline-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-nas_offline-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Object Storage</th>
+        <td><img src="/files/box_type/color/ic-storage-object_storage-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-object_storage-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Backup</th>
+        <td><img src="/files/box_type/color/ic-storage-backup-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-backup-box.svg"></td>
+    </tr>
+            <tr>
+        <th>Data Transporter</th>
+        <td><img src="/files/box_type/color/ic-storage-data-transporter-box.png"></td>
+        <td><img src="/files/box_type/color/ic-storage-data-transporter-box.svg"></td>
+    </tr>
+            <tr>
         <th>DNS Plus</th>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
     </tr>
-                        <tr>
+            <tr>
         <th>DNS Plus</th>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
     </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+                <tr>
+        <th>DNS Plus</th>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-dns_plus-box.svg"></td>
+    </tr>
+    
 
     
 </table>
