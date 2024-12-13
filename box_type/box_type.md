@@ -551,6 +551,51 @@
         <td><img src="/files/box_type/color/ic-ai_service-pose_estimation-box.svg"></td>
     </tr>
     <tr>
+        <th>Deep Learning Instance</th>
+        <td><img src="/files/box_type/color/ic-machine_learning-deep_learning_instance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-machine_learning-deep_learning_instance-box.svg"></td>
+    </tr>
+    <tr>
+        <th>AI EasyMaker</th>
+        <td><img src="/files/box_type/color/ic-machine_learning-ai_easymaker-box.png"></td>
+        <td><img src="/files/box_type/color/ic-machine_learning-ai_easymaker-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Maps</th>
+        <td><img src="/files/box_type/color/ic-application_service-maps-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-maps-box.svg"></td>
+    </tr>
+    <tr>
+        <th>ROLE</th>
+        <td><img src="/files/box_type/color/ic-application_service-role-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-role-box.svg"></td>
+    </tr>
+    <tr>
+        <th>API Gateway</th>
+        <td><img src="/files/box_type/color/ic-application_service-api_gateway-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-api_gateway-box.svg"></td>
+    </tr>
+    <tr>
+        <th>RTCS</th>
+        <td><img src="/files/box_type/color/ic-application_service-rtcs-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-rtcs-box.svg"></td>
+    </tr>
+    <tr>
+        <th>ShortURL</th>
+        <td><img src="/files/box_type/color/ic-application_service-shorturl-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-shorturl-box.svg"></td>
+    </tr>
+    <tr>
+        <th>File-Crafter</th>
+        <td><img src="/files/box_type/color/ic-application_service-file_crafter-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-file_crafter-box.svg"></td>
+    </tr>
+    <tr>
+        <th>Cloud Scheduler</th>
+        <td><img src="/files/box_type/color/ic-application_service-cloud_scheduler-box.png"></td>
+        <td><img src="/files/box_type/color/ic-application_service-cloud_scheduler-box.svg"></td>
+    </tr>
+    <tr>
         <th>NHN Bastion</th>
         <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
         <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
