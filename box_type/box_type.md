@@ -2,15 +2,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -79,7 +75,7 @@
         <td><img src="/files/box_type/color/General_Resources_Server_content.svg"></td>
          <td><img src="/files/box_type/black/General_Resources_Server_content.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Auto Scaling Group</th>
         <td><img src="/files/box_type/color/General_Resources_Groups_Auto_Scaling_Group.png"></td>
         <td><img src="/files/box_type/black/General_Resources_Groups_Auto_Scaling_Group.png"></td>
@@ -98,89 +94,85 @@
 # Box Type Icons - Services
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="1">PNG</th>
         <th colspan="1">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>color</th>
     </tr>
-        <tr>
+    <tr>
         <th>Ephemeral Storage Instance</th>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-ephemeral_storage_instance-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>GPU Instance</th>
         <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Bare Metal Instance</th>
         <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Instance Template</th>
         <td><img src="/files/box_type/color/ic-compute-instance_template-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-instance_template-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Image</th>
         <td><img src="/files/box_type/color/ic-compute-image-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-image-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Image Builder</th>
         <td><img src="/files/box_type/color/ic-compute-image_builder-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-image_builder-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Auto Scale</th>
         <td><img src="/files/box_type/color/ic-compute-auto_scale-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-auto_scale-box.svg"></td>
     </tr>
-        <tr>
+    <tr>
         <th>Virtual Desktop</th>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>NHN Kubernetes Service (NKS)</th>
         <td><img src="/files/box_type/color/ic-container-nks-box.png"></td>
         <td><img src="/files/box_type/color/ic-container-nks-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>NHN Container Service (NCS)</th>
         <td><img src="/files/box_type/color/ic-container-ncs-box.png"></td>
         <td><img src="/files/box_type/color/ic-container-ncs-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>VPC</th>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>Network Interface</th>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>Flow Log</th>
         <td><img src="/files/box_type/color/ic-network-flow_log-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-flow_log-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>Network ACL</th>
         <td><img src="/files/box_type/color/ic-network-network_acl-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-network_acl-box.svg"></td>
     </tr>
-            <tr>
+    <tr>
         <th>Security Groups</th>
         <td><img src="/files/box_type/color/ic-network-security-groups-box.png"></td>
         <td><img src="/files/box_type/color/ic-network-security-groups-box.svg"></td>
