@@ -13,7 +13,7 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
+        <th>Service</th>
         <th>Resource</th>
         <th>color</th>
         <th>black</th>
@@ -59,7 +59,7 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
+        <th>Service</th>
         <th>Resource</th>
         <th>color</th>
         <th>black</th>
