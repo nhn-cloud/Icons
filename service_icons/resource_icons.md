@@ -3,18 +3,13 @@
 ## Container
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -49,18 +44,13 @@
 
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -133,18 +123,13 @@
 ## Storage
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -239,18 +224,13 @@
 
   
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -277,18 +257,13 @@
 ## Monitoring
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -314,18 +289,13 @@
 ## Content Delivery
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -344,18 +314,13 @@
 ## Security
 
 <table>
-  <tr>
-    <th colspan="6"></th>
-</tr>
 <tr>
-    <th></th>
-    <th></th>
+    <th rowspan="2">Service</th>
+    <th rowspan="2">Resource</th>
     <th colspan="2">PNG</th>
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-        <th></th>
-        <th>Resource</th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
