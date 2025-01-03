@@ -4,15 +4,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -88,15 +84,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -129,15 +121,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -275,15 +263,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -338,15 +322,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -441,15 +421,11 @@
 ### Monitoring
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -482,15 +458,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -516,15 +488,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -578,15 +546,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -711,15 +675,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -745,15 +705,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -807,15 +763,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -876,15 +828,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -910,15 +858,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -979,15 +923,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1054,15 +994,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1103,15 +1039,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1145,15 +1077,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1180,15 +1108,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1208,15 +1132,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1278,15 +1198,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1313,15 +1229,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1348,15 +1260,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1383,15 +1291,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -1410,15 +1314,11 @@
 
 <table>
     <tr>
-    	<th colspan="5"></th>
-    </tr>
-    <tr>
-        <th></th>
+        <th rowspan="2">Service</th>
         <th colspan="2">PNG</th>
         <th colspan="2">SVG</th>
     </tr>
     <tr>
-        <th></th>
         <th>color</th>
         <th>black</th>
         <th>color</th>
