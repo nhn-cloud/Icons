@@ -36,13 +36,6 @@
         <td><img src="/files/services/compute/black/ic-compute-gpu_instance.svg"></td>
     </tr>
     <tr>
-        <th>Bare Metal Instance</th>
-        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.png"></td>
-        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.png"></td>
-        <td><img src="/files/services/compute/color/ic-compute-bare_metal_instance.svg"></td>
-        <td><img src="/files/services/compute/black/ic-compute-bare_metal_instance.svg"></td>
-    </tr>
-    <tr>
         <th>Instance Template</th>
         <td><img src="/files/services/compute/color/ic-compute-instance_template.png"></td>
         <td><img src="/files/services/compute/black/ic-compute-instance_template.png"></td>
