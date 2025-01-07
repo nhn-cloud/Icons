@@ -112,12 +112,7 @@
         <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-gpu_instance-box.svg"></td>
     </tr>
-    <tr>
-        <th>Bare Metal Instance</th>
-        <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-bare_metal_instance-box.svg"></td>
-    </tr>
-    <tr>
+        <tr>
         <th>Instance Template</th>
         <td><img src="/files/box_type/color/ic-compute-instance_template-box.png"></td>
         <td><img src="/files/box_type/color/ic-compute-instance_template-box.svg"></td>
