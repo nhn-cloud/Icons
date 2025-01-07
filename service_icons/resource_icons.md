@@ -10,11 +10,8 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-<<<<<<< HEAD
         <th>Service</th>
         <th>Resource</th>
-=======
->>>>>>> 63316f63d7e1e667b548f0a227ddfe9b191c185e
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -56,11 +53,8 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-<<<<<<< HEAD
         <th>Service</th>
         <th>Resource</th>
-=======
->>>>>>> 63316f63d7e1e667b548f0a227ddfe9b191c185e
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -278,11 +272,8 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-<<<<<<< HEAD
         <th>Service</th>
         <th>Resource</th>
-=======
->>>>>>> 63316f63d7e1e667b548f0a227ddfe9b191c185e
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -315,11 +306,8 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-<<<<<<< HEAD
         <th>Service</th>
         <th>Resource</th>
-=======
->>>>>>> 63316f63d7e1e667b548f0a227ddfe9b191c185e
         <th>color</th>
         <th>black</th>
         <th>color</th>
@@ -345,11 +333,8 @@
     <th colspan="2">SVG</th>
   </tr>
       <tr>
-<<<<<<< HEAD
         <th>Service</th>
         <th>Resource</th>
-=======
->>>>>>> 63316f63d7e1e667b548f0a227ddfe9b191c185e
         <th>color</th>
         <th>black</th>
         <th>color</th>
