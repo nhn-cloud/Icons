@@ -774,13 +774,6 @@
         <td><img src="/files/services/ai_service/black/ic-ai_service-face_recognition.svg"></td>
     </tr>
     <tr>
-        <th>Face Liveness</th>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-face_liveness.png"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-face_liveness.png"></td>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-face_liveness.svg"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-face_liveness.svg"></td>
-    </tr>   
-    <tr>
         <th>AI Fashion</th>
         <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.png"></td>
         <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.png"></td>
@@ -807,13 +800,6 @@
         <td><img src="/files/services/ai_service/black/ic-ai_service-speech_to_text.png"></td>
         <td><img src="/files/services/ai_service/color/ic-ai_service-speech_to_text.svg"></td>
         <td><img src="/files/services/ai_service/black/ic-ai_service-speech_to_text.svg"></td>
-    </tr>
-    <tr>
-        <th>Pose Estimation</th>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-pose_estimation.png"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-pose_estimation.png"></td>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-pose_estimation.svg"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-pose_estimation.svg"></td>
     </tr>
 </table>
 
@@ -973,13 +959,6 @@
         <td><img src="/files/services/search/black/ic-search-corporation_search.png"></td>
         <td><img src="/files/services/search/color/ic-search-corporation_search.svg"></td>
         <td><img src="/files/services/search/black/ic-search-corporation_search.svg"></td>
-    </tr>
-    <tr>
-        <th>Word Suggestion</th>
-        <td><img src="/files/services/search/color/ic-search_word_suggestion.png"></td>
-        <td><img src="/files/services/search/black/ic-search_word_suggestion.png"></td>
-        <td><img src="/files/services/search/color/ic-search-word_suggestion.svg"></td>
-        <td><img src="/files/services/search/black/ic-search_word_suggestion.svg"></td>
     </tr>
 </table>
 
