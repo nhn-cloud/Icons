@@ -308,6 +308,13 @@
         <td><img src="/files/services/storage/color/ic-storage-data-transporter.svg"></td>
         <td><img src="/files/services/storage/black/ic-storage-data-transporter.svg"></td>
     </tr>
+    <tr>
+        <th>Storage Gateway</th>
+        <td><img src="/files/services/storage/color/ic-storage-storage_gateway.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-storage_gateway.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-storage_gateway.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-storage_gateway.svg"></td>
+    </tr>
 </table>
 
 
