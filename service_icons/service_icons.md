@@ -70,6 +70,13 @@
         <td><img src="/files/services/compute/color/ic-compute-virtual_desktop.svg"></td>
         <td><img src="/files/services/compute/black/ic-compute-virtual_desktop.svg"></td>
     </tr>
+    <tr>
+        <th>Cloud Functions</th>
+        <td><img src="/files/services/compute/color/ic-compute-cloud_functions.png"></td>
+        <td><img src="/files/services/compute/black/ic-compute-cloud_functions.png"></td>
+        <td><img src="/files/services/compute/color/ic-compute-cloud_functions.svg"></td>
+        <td><img src="/files/services/compute/black/ic-compute-cloud_functions.svg"></td>
+    </tr>
 </table>
 
 
@@ -481,7 +488,21 @@
         <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_private_cloud.png"></td>
         <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_private_cloud.svg"></td>
         <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_private_cloud.svg"></td>
-    </tr>   
+    </tr>
+    <tr>
+        <th>NHN Cloud Private Station</th>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-cloud_station.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-cloud_station.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-cloud_station.svg"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-cloud_station.svg"></td>
+    </tr>
+    <tr>
+        <th>NHN Cloud Private Deck</th>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_cloud_private_deck.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_cloud_private_deck.png"></td>
+        <td><img src="/files/services/hybrid_private_cloud/color/ic-hybrid_n_private_cloud-nhn_cloud_private_deck.svg"></td>
+        <td><img src="/files/services/hybrid_private_cloud/black/ic-hybrid_n_private_cloud-nhn_cloud_private_deck.svg"></td>
+    </tr>    
 </table>
 
 ### Game
@@ -667,6 +688,13 @@
         <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.png"></td>
         <td><img src="/files/services/security/color/ic-secutiry-nhn_bastion.svg"></td>
         <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.svg"></td>
+    </tr>
+    <tr>
+        <th>Cloud Access</th>
+        <td><img src="/files/services/security/color/ic-security-cloud_access.png"></td>
+        <td><img src="/files/services/security/black/ic-security-cloud_access.png"></td>
+        <td><img src="/files/services/security/color/ic-security-cloud_access.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-cloud_access.svg"></td>
     </tr>
 </table>
 
