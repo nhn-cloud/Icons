@@ -257,13 +257,6 @@
         <td><img src="/files/services/network/color/ic-network-direct_connect.svg"></td>
         <td><img src="/files/services/network/black/ic-network-direct_connect.svg"></td>
     </tr>
-    <tr>
-        <th>Load Balancer(DSR)</th>
-        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.png"></td>
-        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.png"></td>
-        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.svg"></td>
-        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.svg"></td>
-    </tr>
 </table>
 
 ### Storage
@@ -1028,13 +1021,6 @@
         <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-kafka_instance.svg"></td>
         <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-kafka_instance.svg"></td>
     </tr>
-    <tr>
-        <th>EasyQueue</th>
-        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-easyqueue.png"></td>
-        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-easyqueue.png"></td>
-        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-easyqueue.svg"></td>
-        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-easyqueue.svg"></td>
-    </tr>
 </table>
 
 
@@ -1103,13 +1089,6 @@
         <td><img src="/files/services/management/black/ic-management-certificate_manager.png"></td>
         <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
         <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
-    </tr>
-    <tr>
-        <th>Private CA</th>
-        <td><img src="/files/services/management/color/ic-management-private_ca.png"></td>
-        <td><img src="/files/services/management/black/ic-management-private_ca.png"></td>
-        <td><img src="/files/services/management/color/ic-management-private_ca.svg"></td>
-        <td><img src="/files/services/management/black/ic-management-private_ca.svg"></td>
     </tr>
 </table>
 
