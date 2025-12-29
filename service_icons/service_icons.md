@@ -1090,6 +1090,13 @@
         <td><img src="/files/services/management/color/ic-management-certificate_manager.svg"></td>
         <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
     </tr>
+    <tr>
+        <th>Storage Gateway</th>
+        <td><img src="/files/services/storage/color/ic-management-private_ca.png"></td>
+        <td><img src="/files/services/storage/black/ic-management-private_ca.png"></td>
+        <td><img src="/files/services/storage/color/ic-management-private_ca.svg"></td>
+        <td><img src="/files/services/storage/black/ic-management-private_ca.svg"></td>
+    </tr>
 </table>
 
 
