@@ -1091,11 +1091,11 @@
         <td><img src="/files/services/management/black/ic-management-certificate_manager.svg"></td>
     </tr>
     <tr>
-        <th>Storage Gateway</th>
-        <td><img src="/files/services/storage/color/ic-management-private_ca.png"></td>
-        <td><img src="/files/services/storage/black/ic-management-private_ca.png"></td>
-        <td><img src="/files/services/storage/color/ic-management-private_ca.svg"></td>
-        <td><img src="/files/services/storage/black/ic-management-private_ca.svg"></td>
+        <th>Private CA</th>
+        <td><img src="/files/services/management/color/ic-management-private_ca.png"></td>
+        <td><img src="/files/services/management/black/ic-management-private_ca.png"></td>
+        <td><img src="/files/services/management/color/ic-management-private_ca.svg"></td>
+        <td><img src="/files/services/management/black/ic-management-private_ca.svg"></td>
     </tr>
 </table>
 
@@ -1272,13 +1272,6 @@
         <td><img src="/files/services/contact_center/black/ic-contact_center-online_contact.png"></td>
         <td><img src="/files/services/contact_center/color/ic-contact_center-online_contact.svg"></td>
         <td><img src="/files/services/contact_center/black/ic-contact_center-online_contact.svg"></td>
-    </tr>
-    <tr>
-        <th>Mobile Contact</th>
-        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.png"></td>
-        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.png"></td>
-        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.svg"></td>
-        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.svg"></td>
     </tr>
 </table>
 
