@@ -1273,13 +1273,6 @@
         <td><img src="/files/services/contact_center/color/ic-contact_center-online_contact.svg"></td>
         <td><img src="/files/services/contact_center/black/ic-contact_center-online_contact.svg"></td>
     </tr>
-    <tr>
-        <th>Mobile Contact</th>
-        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.png"></td>
-        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.png"></td>
-        <td><img src="/files/services/contact_center/color/ic-contact_center-mobile_contact.svg"></td>
-        <td><img src="/files/services/contact_center/black/ic-contact_center-mobile_contact.svg"></td>
-    </tr>
 </table>
 
 
