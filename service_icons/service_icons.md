@@ -257,6 +257,13 @@
         <td><img src="/files/services/network/color/ic-network-direct_connect.svg"></td>
         <td><img src="/files/services/network/black/ic-network-direct_connect.svg"></td>
     </tr>
+    <tr>
+        <th>Direct Connect</th>
+        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.png"></td>
+        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.png"></td>
+        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.svg"></td>
+        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.svg"></td>
+    </tr>
 </table>
 
 ### Storage
@@ -321,6 +328,13 @@
         <td><img src="/files/services/storage/black/ic-storage-storage_gateway.png"></td>
         <td><img src="/files/services/storage/color/ic-storage-storage_gateway.svg"></td>
         <td><img src="/files/services/storage/black/ic-storage-storage_gateway.svg"></td>
+    </tr>
+    <tr>
+        <th>NAS for BigData</th>
+        <td><img src="/files/services/storage/color/ic-storage-nas_for_bigdata.png"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas_for_bigdata.png"></td>
+        <td><img src="/files/services/storage/color/ic-storage-nas_for_bigdata.svg"></td>
+        <td><img src="/files/services/storage/black/ic-storage-nas_for_bigdata.svg"></td>
     </tr>
 </table>
 
@@ -423,6 +437,13 @@
         <td><img src="/files/services/database/color/ic-database-redis_instance.svg"></td>
         <td><img src="/files/services/database/black/ic-database-redis_instance.svg"></td>
     </tr>
+    <tr>
+        <th>Valkey Instance</th>
+        <td><img src="/files/services/database/color/ic-database-valkey_instance.png"></td>
+        <td><img src="/files/services/database/black/ic-database-valkey_instance.png"></td>
+        <td><img src="/files/services/database/color/ic-database-valkey_instance.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-valkey_instance.svg"></td>
+    </tr>    
 </table>
 
 ### Monitoring
@@ -805,13 +826,6 @@
         <td><img src="/files/services/ai_service/black/ic-ai_service-face_recognition.svg"></td>
     </tr>
     <tr>
-        <th>AI Fashion</th>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.png"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.png"></td>
-        <td><img src="/files/services/ai_service/color/ic-ai_service-fashion.svg"></td>
-        <td><img src="/files/services/ai_service/black/ic-ai_service-fashion.svg"></td>
-    </tr>
-    <tr>
         <th>OCR</th>
         <td><img src="/files/services/ai_service/color/ic-ai_service-ocr.png"></td>
         <td><img src="/files/services/ai_service/black/ic-ai_service-ocr.png"></td>
@@ -1023,6 +1037,20 @@
         <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-kafka_instance.png"></td>
         <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-kafka_instance.svg"></td>
         <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-kafka_instance.svg"></td>
+    </tr>
+    <tr>
+        <th>EasyQueue</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-easyqueue.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-easyqueue.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-easyqueue.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-easyqueue.svg"></td>
+    </tr>
+    <tr>
+        <th>Data Lake Storage</th>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-data_lake_storage.png"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-data_lake_storage.png"></td>
+        <td><img src="/files/services/data_analytics/color/ic-data_n_analytics-data_lake_storage.svg"></td>
+        <td><img src="/files/services/data_analytics/black/ic-data_n_analytics-data_lake_storage.svg"></td>
     </tr>
 </table>
 
