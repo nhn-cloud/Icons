@@ -29,13 +29,22 @@ draw.io 웹/데스크톱 모두 동일합니다.
 
 ### 방법 2. GitHub URL로 불러오기
 
-파일을 GitHub에 푸시한 뒤, `clibs` 파라미터에 **raw URL** 을 `U` 접두사와 함께 붙여 접속하면 시작과 동시에 로드됩니다.
+아래 주소로 접속하면 draw.io가 열리면서 라이브러리가 자동으로 추가됩니다. 북마크해 두고 쓰면 편합니다.
+
+**서비스 아이콘만**
 
 ```
-https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2F<org>%2F<repo>%2Fmain%2Fdrawio%2FNHNCloud-Services-color.xml
+https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-cloud%2FIcons%2Fmain%2Fdrawio%2FNHNCloud-Services-color.xml
 ```
 
-여러 개를 로드하려면 URL을 `;` 로 구분합니다(각각 `U` 접두사 + URL 인코딩).
+**4종 전체 (서비스 + 리소스 + 일반 + 박스)**
+
+```
+https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-cloud%2FIcons%2Fmain%2Fdrawio%2FNHNCloud-Services-color.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-cloud%2FIcons%2Fmain%2Fdrawio%2FNHNCloud-Resources-color.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-cloud%2FIcons%2Fmain%2Fdrawio%2FNHNCloud-General-color.xml;Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-cloud%2FIcons%2Fmain%2Fdrawio%2FNHNCloud-BoxType-color.xml
+```
+
+`clibs` 파라미터는 `U` + URL 인코딩한 raw 주소 형식이며, 여러 개는 `;` 로 구분합니다.
+블랙 버전은 경로의 `drawio%2F` 를 `drawio%2Fblack%2F` 로, 파일명을 `-black.xml` 로 바꾸면 됩니다.
 
 ## 사용법
 
