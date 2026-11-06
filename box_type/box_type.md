@@ -14,80 +14,80 @@
     </tr>
     <tr>
         <th>NHN Cloud</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHN_Cloud.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHN_Cloud.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHN_Cloud.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHN_Cloud.png"></td>
+        <td><img src="/files/box_type/color/ic-nhn_cloud-box.png"></td>
+        <td><img src="/files/box_type/color/ic-nhn_cloud-box.png"></td>
+        <td><img src="/files/box_type/color/ic-nhn_cloud-box.png"></td>
+        <td><img src="/files/box_type/color/ic-nhn_cloud-box.png"></td>
     </tr>   
     <tr>
         <th>Organization</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Organization.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_Organization.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Organization.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_Organization.svg"></td>
+        <td><img src="/files/box_type/color/ic-organization-box.png"></td>
+        <td><img src="/files/box_type/black/ic-organization-box.png"></td>
+        <td><img src="/files/box_type/color/ic-organization-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-organization-box.svg"></td>
     </tr>
     <tr>
         <th>Project</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Project.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_Project.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Project.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_Project.svg"></td>
+        <td><img src="/files/box_type/color/ic-project-box.png"></td>
+        <td><img src="/files/box_type/black/ic-project-box.png"></td>
+        <td><img src="/files/box_type/color/ic-project-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-project-box.svg"></td>
     </tr>
     <tr>
         <th>On-Premise/IDC/Co-lo Zone</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_On_Premise.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_On_Premise.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_On_Premise.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_On_Premise.svg"></td>
+        <td><img src="/files/box_type/color/ic-on_premise-box.png"></td>
+        <td><img src="/files/box_type/black/ic-on_premise-box.png"></td>
+        <td><img src="/files/box_type/color/ic-on_premise-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-on_premise-box.svg"></td>
     </tr>
     <tr>
         <th>Region</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Region.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_Region.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Region.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_Region.svg"></td>
+        <td><img src="/files/box_type/color/ic-region-box.png"></td>
+        <td><img src="/files/box_type/black/ic-region-box.png"></td>
+        <td><img src="/files/box_type/color/ic-region-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-region-box.svg"></td>
     </tr>
     <tr>
         <th>VPC</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_VPC.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_VPC.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_VPC.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_VPC.svg"></td>
+        <td><img src="/files/box_type/color/ic-vpc-box.png"></td>
+        <td><img src="/files/box_type/black/ic-vpc-box.png"></td>
+        <td><img src="/files/box_type/color/ic-vpc-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-vpc-box.svg"></td>
     </tr>
     <tr>
         <th>Subnet</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Private subnet.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_Private subnet.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Private subnet.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_Private subnet.svg"></td>
+        <td><img src="/files/box_type/color/ic-private_subnet-box.png"></td>
+        <td><img src="/files/box_type/black/ic-private_subnet-box.png"></td>
+        <td><img src="/files/box_type/color/ic-private_subnet-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-private_subnet-box.svg"></td>
     </tr>
     <tr>
         <th>NHN Cloud Member</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHNCloud_Member.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_NHNCloud_Member.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_NHNCloud_Member.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_NHNCloud_Member.svg"></td>
+        <td><img src="/files/box_type/color/ic-nhncloud_member-box.png"></td>
+        <td><img src="/files/box_type/black/ic-nhncloud_member-box.png"></td>
+        <td><img src="/files/box_type/color/ic-nhncloud_member-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-nhncloud_member-box.svg"></td>
     </tr>
     <tr>
         <th>Server content</th>
-        <td><img src="/files/box_type/color/General_Resources_Server_content.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Server_content.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Server_content.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Server_content.svg"></td>
+        <td><img src="/files/box_type/color/ic-content-box.png"></td>
+        <td><img src="/files/box_type/black/ic-content-box.png"></td>
+        <td><img src="/files/box_type/color/ic-content-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-content-box.svg"></td>
     </tr>
     <tr>
         <th>Auto Scaling Group</th>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Auto_Scaling_Group.png"></td>
-        <td><img src="/files/box_type/black/General_Resources_Groups_Auto_Scaling_Group.png"></td>
-        <td><img src="/files/box_type/color/General_Resources_Groups_Auto_Scaling_Group.svg"></td>
-         <td><img src="/files/box_type/black/General_Resources_Groups_Auto_Scaling_Group.svg"></td>
+        <td><img src="/files/box_type/color/ic-auto_scaling_group-box.png"></td>
+        <td><img src="/files/box_type/black/ic-auto_scaling_group-box.png"></td>
+        <td><img src="/files/box_type/color/ic-auto_scaling_group-box.svg"></td>
+         <td><img src="/files/box_type/black/ic-auto_scaling_group-box.svg"></td>
     </tr>   
     <tr>
         <th>Instance content</th>
         <td><img src="/files/box_type/color/IaaS-Compute-Instance.png"></td>
-        <td><img src="/files/box_type/black/IaaS-Compute-Instance.png"></td>
+        <td><img src="/files/box_type/black/ic-compute-instance-box.png"></td>
         <td><img src="/files/box_type/color/IaaS-Compute-Instance.svg"></td>
-        <td><img src="/files/box_type/black/IaaS-Compute-Instance.svg"></td>
+        <td><img src="/files/box_type/black/ic-compute-instance-box.svg"></td>
     </tr>
     </table>
 
@@ -384,83 +384,83 @@
     </tr>
     <tr>
         <th>NHN AppGuard</th>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_appguard-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_appguard-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_appguard-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_appguard-box.svg"></td>
     </tr>
     <tr>
         <th>App Security Check</th>
-        <td><img src="/files/box_type/color/ic-secutiry-app_security_check-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-app_security_check-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-app_security_check-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-app_security_check-box.svg"></td>
     </tr>
     <tr>
         <th>Server Security Check</th>
-        <td><img src="/files/box_type/color/ic-secutiry-server_security_check-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-server_security_check-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-server_security_check-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-server_security_check-box.svg"></td>
     </tr>
         <tr>
         <th>Webshell Threat Detector</th>
-        <td><img src="/files/box_type/color/ic-secutiry-webshell_threat_detector-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-webshell_threat_detector-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-webshell_threat_detector-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-webshell_threat_detector-box.svg"></td>
     </tr>
         <tr>
         <th>Security Monitoring</th>
-        <td><img src="/files/box_type/color/ic-secutiry-security_monitoring-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-security_monitoring-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-security_monitoring-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-security_monitoring-box.svg"></td>
     </tr>
         <tr>
         <th>Basic Security</th>
-        <td><img src="/files/box_type/color/ic-secutiry-basic_security-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-basic_security-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-basic_security-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-basic_security-box.svg"></td>
     </tr>
         <tr>
         <th>CAPTCHA</th>
-        <td><img src="/files/box_type/color/ic-secutiry-captcha-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-captcha-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-captcha-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-captcha-box.svg"></td>
     </tr>
         <tr>
         <th>WEB Firewall</th>
-        <td><img src="/files/box_type/color/ic-secutiry-web_firewall-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-web_firewall-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-web_firewall-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-web_firewall-box.svg"></td>
     </tr>
         <tr>
         <th>Vaccine</th>
-        <td><img src="/files/box_type/color/ic-secutiry-vaccine-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-vaccine-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-vaccine-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-vaccine-box.svg"></td>
     </tr>
         <tr>
         <th>Secure Key Manager</th>
-        <td><img src="/files/box_type/color/ic-secutiry-secure_key_manager-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-secure_key_manager-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-secure_key_manager-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-secure_key_manager-box.svg"></td>
     </tr>
         <tr>
         <th>Security Compliance</th>
-        <td><img src="/files/box_type/color/ic-secutiry-compliance-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-compliance-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-compliance-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-compliance-box.svg"></td>
     </tr>
         <tr>
         <th>DDos Guard</th>
-        <td><img src="/files/box_type/color/ic-secutiry-ddos_guard-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-ddos_guard-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-ddos_guard-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-ddos_guard-box.svg"></td>
     </tr>
         <tr>
         <th>SIEM</th>
-        <td><img src="/files/box_type/color/ic-secutiry-siem-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-siem-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-siem-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-siem-box.svg"></td>
     </tr>
         <tr>
         <th>Security Advisor</th>
-        <td><img src="/files/box_type/color/ic-secutiry-security_advisor-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-security_advisor-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-security_advisor-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-security_advisor-box.svg"></td>
     </tr>
         <tr>
         <th>Network Firewall</th>
-        <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-network_firewall-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-network_firewall-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-network_firewall-box.svg"></td>
     </tr>
     <tr>
         <th>NHN Bastion</th>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_bastion-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_bastion-box.svg"></td>
     </tr>
     <tr>
         <th>CDN</th>
@@ -584,8 +584,8 @@
     </tr>
     <tr>
         <th>NHN Bastion</th>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.png"></td>
-        <td><img src="/files/box_type/color/ic-secutiry-nhn_bastion-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_bastion-box.png"></td>
+        <td><img src="/files/box_type/color/ic-security-nhn_bastion-box.svg"></td>
     </tr>
     
 </table>

@@ -596,115 +596,115 @@
     </tr>
     <tr>
         <th>NHN AppGuard</th>
-        <td><img src="/files/services/security/color/ic-secutiry-nhn_appguard.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-nhn_appguard.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-nhn_appguard.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-nhn_appguard.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-nhn_appguard.png"></td>
+        <td><img src="/files/services/security/black/ic-security-nhn_appguard.png"></td>
+        <td><img src="/files/services/security/color/ic-security-nhn_appguard.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-nhn_appguard.svg"></td>
     </tr>
     <tr>
         <th>App Security Check</th>
-        <td><img src="/files/services/security/color/ic-secutiry-app_security_check.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-app_security_check.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-app_security_check.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-app_security_check.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-app_security_check.png"></td>
+        <td><img src="/files/services/security/black/ic-security-app_security_check.png"></td>
+        <td><img src="/files/services/security/color/ic-security-app_security_check.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-app_security_check.svg"></td>
     </tr>   
     <tr>
         <th>Server Security Check</th>
-        <td><img src="/files/services/security/color/ic-secutiry-server_security_check.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-server_security_check.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-server_security_check.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-server_security_check.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-server_security_check.png"></td>
+        <td><img src="/files/services/security/black/ic-security-server_security_check.png"></td>
+        <td><img src="/files/services/security/color/ic-security-server_security_check.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-server_security_check.svg"></td>
     </tr>
     <tr>
         <th>Webshell Threat Detector</th>
-        <td><img src="/files/services/security/color/ic-secutiry-webshell_threat_detector.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-webshell_threat_detector.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-webshell_threat_detector.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-webshell_threat_detector.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-webshell_threat_detector.png"></td>
+        <td><img src="/files/services/security/black/ic-security-webshell_threat_detector.png"></td>
+        <td><img src="/files/services/security/color/ic-security-webshell_threat_detector.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-webshell_threat_detector.svg"></td>
     </tr>
     <tr>
         <th>Security Monitoring</th>
-        <td><img src="/files/services/security/color/ic-secutiry-security_monitoring.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-security_monitoring.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-security_monitoring.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-security_monitoring.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-security_monitoring.png"></td>
+        <td><img src="/files/services/security/black/ic-security-security_monitoring.png"></td>
+        <td><img src="/files/services/security/color/ic-security-security_monitoring.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-security_monitoring.svg"></td>
     </tr>
     <tr>
         <th>Basic Security</th>
-        <td><img src="/files/services/security/color/ic-secutiry-basic_security.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-basic_security.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-basic_security.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-basic_security.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-basic_security.png"></td>
+        <td><img src="/files/services/security/black/ic-security-basic_security.png"></td>
+        <td><img src="/files/services/security/color/ic-security-basic_security.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-basic_security.svg"></td>
     </tr>
     <tr>
         <th>CAPTCH</th>
-        <td><img src="/files/services/security/color/ic-secutiry-captcha.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-captcha.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-captcha.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-captcha.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-captcha.png"></td>
+        <td><img src="/files/services/security/black/ic-security-captcha.png"></td>
+        <td><img src="/files/services/security/color/ic-security-captcha.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-captcha.svg"></td>
     </tr>
     <tr>
         <th>WEB Firewall</th>
-        <td><img src="/files/services/security/color/ic-secutiry-web_firewall.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-web_firewall.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-web_firewall.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-web_firewall.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-web_firewall.png"></td>
+        <td><img src="/files/services/security/black/ic-security-web_firewall.png"></td>
+        <td><img src="/files/services/security/color/ic-security-web_firewall.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-web_firewall.svg"></td>
     </tr>
     <tr>
         <th>Vaccine</th>
-        <td><img src="/files/services/security/color/ic-secutiry-vaccine.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-vaccine.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-vaccine.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-vaccine.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-vaccine.png"></td>
+        <td><img src="/files/services/security/black/ic-security-vaccine.png"></td>
+        <td><img src="/files/services/security/color/ic-security-vaccine.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-vaccine.svg"></td>
     </tr>
     <tr>
         <th>Secure Key Manager</th>
-        <td><img src="/files/services/security/color/ic-secutiry-secure_key_manager.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-secure_key_manager.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-secure_key_manager.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-secure_key_manager.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-secure_key_manager.png"></td>
+        <td><img src="/files/services/security/black/ic-security-secure_key_manager.png"></td>
+        <td><img src="/files/services/security/color/ic-security-secure_key_manager.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-secure_key_manager.svg"></td>
     </tr>
     <tr>
         <th>Security Compliance</th>
-        <td><img src="/files/services/security/color/ic-secutiry-compliance.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-compliance.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-compliance.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-compliance.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-compliance.png"></td>
+        <td><img src="/files/services/security/black/ic-security-compliance.png"></td>
+        <td><img src="/files/services/security/color/ic-security-compliance.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-compliance.svg"></td>
     </tr>
     <tr>
         <th>DDoS Guard</th>
-        <td><img src="/files/services/security/color/ic-secutiry-ddos_guard.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-ddos_guard.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-ddos_guard.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-ddos_guard.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-ddos_guard.png"></td>
+        <td><img src="/files/services/security/black/ic-security-ddos_guard.png"></td>
+        <td><img src="/files/services/security/color/ic-security-ddos_guard.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-ddos_guard.svg"></td>
     </tr>
     <tr>
         <th>SIEM</th>
-        <td><img src="/files/services/security/color/ic-secutiry-siem.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-siem.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-siem.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-siem.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-siem.png"></td>
+        <td><img src="/files/services/security/black/ic-security-siem.png"></td>
+        <td><img src="/files/services/security/color/ic-security-siem.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-siem.svg"></td>
     </tr>
     <tr>
         <th>Security Advisor</th>
-        <td><img src="/files/services/security/color/ic-secutiry-security_advisor.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-security_advisor.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-security_advisor.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-security_advisor.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-security_advisor.png"></td>
+        <td><img src="/files/services/security/black/ic-security-security_advisor.png"></td>
+        <td><img src="/files/services/security/color/ic-security-security_advisor.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-security_advisor.svg"></td>
     </tr>
     <tr>
         <th>Network Firewall</th>
-        <td><img src="/files/services/security/color/ic-secutiry-network_firewall.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-network_firewall.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-network_firewall.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-network_firewall.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-network_firewall.png"></td>
+        <td><img src="/files/services/security/black/ic-security-network_firewall.png"></td>
+        <td><img src="/files/services/security/color/ic-security-network_firewall.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-network_firewall.svg"></td>
     </tr>
     <tr>
         <th>NHN Bastion</th>
-        <td><img src="/files/services/security/color/ic-secutiry-nhn_bastion.png"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.png"></td>
-        <td><img src="/files/services/security/color/ic-secutiry-nhn_bastion.svg"></td>
-        <td><img src="/files/services/security/black/ic-secutiry-nhn_bastion.svg"></td>
+        <td><img src="/files/services/security/color/ic-security-nhn_bastion.png"></td>
+        <td><img src="/files/services/security/black/ic-security-nhn_bastion.png"></td>
+        <td><img src="/files/services/security/color/ic-security-nhn_bastion.svg"></td>
+        <td><img src="/files/services/security/black/ic-security-nhn_bastion.svg"></td>
     </tr>
     <tr>
         <th>Cloud Access</th>

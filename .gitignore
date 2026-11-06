@@ -1,0 +1,5 @@
+# Claude Code 로컬 설정 및 스킬
+.claude/
+
+# Playwright MCP 스냅샷
+.playwright-mcp/

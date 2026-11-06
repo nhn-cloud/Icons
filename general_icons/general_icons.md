@@ -18,73 +18,73 @@
     </tr>
     <tr>
         <th>Desktop</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-desktop.png"></td>
+        <td><img src="/files/general_icons/black/ic-desktop.png"></td>
+        <td><img src="/files/general_icons/color/ic-desktop.svg"></td>
+         <td><img src="/files/general_icons/black/ic-desktop.svg"></td>
     </tr>   
     <tr>
         <th>Desktop + Phone</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_Phone_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_Phone_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_Phone_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_Phone_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-desktop_phone.png"></td>
+        <td><img src="/files/general_icons/black/ic-desktop_phone.png"></td>
+        <td><img src="/files/general_icons/color/ic-desktop_phone.svg"></td>
+         <td><img src="/files/general_icons/black/ic-desktop_phone.svg"></td>
     </tr>
     <tr>
         <th>Laptop</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Desktop_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Desktop_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-desktop.png"></td>
+        <td><img src="/files/general_icons/black/ic-desktop.png"></td>
+        <td><img src="/files/general_icons/color/ic-desktop.svg"></td>
+         <td><img src="/files/general_icons/black/ic-desktop.svg"></td>
     </tr>
     <tr>
         <th>Phone</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Phone_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Phone_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Phone_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Phone_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-phone.png"></td>
+        <td><img src="/files/general_icons/black/ic-phone.png"></td>
+        <td><img src="/files/general_icons/color/ic-phone.svg"></td>
+         <td><img src="/files/general_icons/black/ic-phone.svg"></td>
     </tr>
     <tr>
         <th>Mobile Devices</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Mobile Devices_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Mobile Devices_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Mobile Devices_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Mobile Devices_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-mobile_devices.png"></td>
+        <td><img src="/files/general_icons/black/ic-mobile_devices.png"></td>
+        <td><img src="/files/general_icons/color/ic-mobile_devices.svg"></td>
+         <td><img src="/files/general_icons/black/ic-mobile_devices.svg"></td>
     </tr>
     <tr>
         <th>Gateway</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Gateway_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Gateway_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Gateway_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Gateway_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-gateway.png"></td>
+        <td><img src="/files/general_icons/black/ic-gateway.png"></td>
+        <td><img src="/files/general_icons/color/ic-gateway.svg"></td>
+         <td><img src="/files/general_icons/black/ic-gateway.svg"></td>
     </tr>
     <tr>
         <th>Subnet</th>
-        <td><img src="/files/general_icons/color/Subnet_dk.png"></td>
-        <td><img src="/files/general_icons/black/Subnet_dk.png"></td>
-        <td><img src="/files/general_icons/color/Subnet_dk.svg"></td>
-         <td><img src="/files/general_icons/black/Subnet_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-subnet.png"></td>
+        <td><img src="/files/general_icons/black/ic-subnet.png"></td>
+        <td><img src="/files/general_icons/color/ic-subnet.svg"></td>
+         <td><img src="/files/general_icons/black/ic-subnet.svg"></td>
     </tr>
     <tr>
         <th>Private Network</th>
-        <td><img src="/files/general_icons/color/Private_Network_dk.png"></td>
-        <td><img src="/files/general_icons/black/Private_Network_dk.png"></td>
-        <td><img src="/files/general_icons/color/Private_Network_dk.svg"></td>
-         <td><img src="/files/general_icons/black/Private_Network_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-private_network.png"></td>
+        <td><img src="/files/general_icons/black/ic-private_network.png"></td>
+        <td><img src="/files/general_icons/color/ic-private_network.svg"></td>
+         <td><img src="/files/general_icons/black/ic-private_network.svg"></td>
     </tr>
     <tr>
         <th>Peering</th>
-        <td><img src="/files/general_icons/color/Peering_dk.png"></td>
-        <td><img src="/files/general_icons/black/Peering_dk.png"></td>
-        <td><img src="/files/general_icons/color/Peering_dk.svg"></td>
-         <td><img src="/files/general_icons/black/Peering_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-peering.png"></td>
+        <td><img src="/files/general_icons/black/ic-peering.png"></td>
+        <td><img src="/files/general_icons/color/ic-peering.svg"></td>
+         <td><img src="/files/general_icons/black/ic-peering.svg"></td>
     </tr>
         <tr>
         <th>Interface</th>
-        <td><img src="/files/general_icons/color/Interface_dk.png"></td>
-        <td><img src="/files/general_icons/black/Interface_dk.png"></td>
-        <td><img src="/files/general_icons/color/Interface_dk.svg"></td>
-         <td><img src="/files/general_icons/black/Interface_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-interface.png"></td>
+        <td><img src="/files/general_icons/black/ic-interface.png"></td>
+        <td><img src="/files/general_icons/color/ic-interface.svg"></td>
+         <td><img src="/files/general_icons/black/ic-interface.svg"></td>
     </tr>   
     <tr>
         <th>Storage</th>
@@ -102,10 +102,10 @@
     </tr>
     <tr>
         <th>Security</th>
-        <td><img src="/files/general_icons/color/ic-secutiry.png"></td>
-        <td><img src="/files/general_icons/black/ic-secutiry.png"></td>
-        <td><img src="/files/general_icons/color/ic-secutiry.svg"></td>
-         <td><img src="/files/general_icons/black/ic-secutiry.svg"></td>
+        <td><img src="/files/general_icons/color/ic-security.png"></td>
+        <td><img src="/files/general_icons/black/ic-security.png"></td>
+        <td><img src="/files/general_icons/color/ic-security.svg"></td>
+         <td><img src="/files/general_icons/black/ic-security.svg"></td>
     </tr>
     <tr>
         <th>Content Delivery</th>
@@ -193,37 +193,37 @@
     </tr>
     <tr>
         <th>IP ACL</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_IP_ACL_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_IP_ACL_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_IP_ACL_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_IP_ACL_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-ip_acl.png"></td>
+        <td><img src="/files/general_icons/black/ic-ip_acl.png"></td>
+        <td><img src="/files/general_icons/color/ic-ip_acl.svg"></td>
+         <td><img src="/files/general_icons/black/ic-ip_acl.svg"></td>
     </tr>
         <tr>
         <th>Login Security Settings</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Login_Security_Settings_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Login_Security_Settings_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Login_Security_Settings_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Login_Security_Settings_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-login_security_settings.png"></td>
+        <td><img src="/files/general_icons/black/ic-login_security_settings.png"></td>
+        <td><img src="/files/general_icons/color/ic-login_security_settings.svg"></td>
+         <td><img src="/files/general_icons/black/ic-login_security_settings.svg"></td>
     </tr>
     <tr>
         <th>External User</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_External_User_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_External_User_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_External_User_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_External_User_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-external_user.png"></td>
+        <td><img src="/files/general_icons/black/ic-external_user.png"></td>
+        <td><img src="/files/general_icons/color/ic-external_user.svg"></td>
+         <td><img src="/files/general_icons/black/ic-external_user.svg"></td>
     </tr>
     <tr>
         <th>Internal User</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Internal_User_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Internal_User_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Internal_User_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Internal_User_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-internal_user.png"></td>
+        <td><img src="/files/general_icons/black/ic-internal_user.png"></td>
+        <td><img src="/files/general_icons/color/ic-internal_user.svg"></td>
+         <td><img src="/files/general_icons/black/ic-internal_user.svg"></td>
     </tr>
        <tr>
         <th>Administrator</th>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Manager_dk.png"></td>
-        <td><img src="/files/general_icons/black/General_Resources_Icon_Manager_dk.png"></td>
-        <td><img src="/files/general_icons/color/General_Resources_Icon_Manager_dk.svg"></td>
-         <td><img src="/files/general_icons/black/General_Resources_Icon_Manager_dk.svg"></td>
+        <td><img src="/files/general_icons/color/ic-manager.png"></td>
+        <td><img src="/files/general_icons/black/ic-manager.png"></td>
+        <td><img src="/files/general_icons/color/ic-manager.svg"></td>
+         <td><img src="/files/general_icons/black/ic-manager.svg"></td>
     </tr>
 </table>
