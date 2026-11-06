@@ -566,10 +566,10 @@
     </tr>
     <tr>
         <th>Launching</th>
-        <td><img src="/files/services/game/color/ic-game-lauching.png"></td>
-        <td><img src="/files/services/game/black/ic-game-lauching.png"></td>
-        <td><img src="/files/services/game/color/ic-game-lauching.svg"></td>
-        <td><img src="/files/services/game/black/ic-game-lauching.svg"></td>
+        <td><img src="/files/services/game/color/ic-game-launching.png"></td>
+        <td><img src="/files/services/game/black/ic-game-launching.png"></td>
+        <td><img src="/files/services/game/color/ic-game-launching.svg"></td>
+        <td><img src="/files/services/game/black/ic-game-launching.svg"></td>
     </tr>
     <tr>
         <th>Smart Downloader</th>

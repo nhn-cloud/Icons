@@ -10,7 +10,7 @@ SVG가 파일 안에 base64로 임베드되어 있어 네트워크 연결 없이
 | `NHNCloud-Services-color.xml` | 133 | 서비스 아이콘 (컬러) |
 | `NHNCloud-Resources-color.xml` | 34 | 리소스 아이콘 (컬러) |
 | `NHNCloud-General-color.xml` | 30 | 일반 아이콘 (컬러) |
-| `NHNCloud-BoxType-color.xml` | 149 | 박스(그룹) 아이콘 (컬러) |
+| `NHNCloud-BoxType-color.xml` | 147 | 박스(그룹) 아이콘 (컬러) |
 | `black/NHNCloud-*-black.xml` | 200 | 위와 동일한 구성의 블랙 버전 |
 
 `sample-3tier-architecture.drawio` — 아이콘 사용법을 보여 주는 3계층 웹 서비스 예시 구성도.
@@ -48,17 +48,22 @@ https://app.diagrams.net/?clibs=Uhttps%3A%2F%2Fraw.githubusercontent.com%2Fnhn-c
 
 ## 사용법
 
-* **검색** — 도형 패널 상단 검색창에 `Load Balancer`, `RDS`, `VPC` 처럼 입력하면 바로 찾을 수 있습니다. 아이콘 위에 마우스를 올리면 전체 이름이 표시됩니다.
+* **검색** — 도형 패널 상단 검색창에 `Load Balancer`, `RDS`, `VPC` 처럼 입력하면 바로 찾을 수 있습니다.
+  각 항목에는 표시 이름 외에 **검색용 태그**가 붙어 있어 카테고리(`network`, `storage`), 약어(`dsr`, `nks`, `ncr`),
+  파일명(`ic-network-vpc`) 중 아무것으로나 찾을 수 있습니다. 아이콘 위에 마우스를 올리면 이름이 표시됩니다.
 * **레이블** — 아이콘을 캔버스에 끌어다 놓으면 아이콘 아래에 이름이 함께 붙습니다. 더블클릭해서 수정하세요.
 * **박스(그룹) 아이콘** — `BoxType` 라이브러리 항목은 컨테이너로 만들어져 있습니다. VPC·서브넷처럼 다른 아이콘을 안에 끌어다 넣으면 함께 움직입니다. 썸네일은 모두 비슷해 보이므로 검색으로 찾는 것이 빠릅니다.
 * **색상 변경** — 아이콘은 이미지라 draw.io에서 색을 바꿀 수 없습니다. 블랙 버전이 필요하면 `black/` 라이브러리를 사용하세요.
 
 ## 라이브러리 재생성
 
-원본 아이콘이 갱신되면 리포지토리 루트에서 다음을 실행합니다.
+원본 아이콘이 갱신되면 리포지토리 루트에서 **순서대로** 실행합니다.
 
 ```bash
+python scripts/build_manifest.py        # files/ + 카탈로그 -> icons.json
 python drawio/make_drawio_libs.py . drawio
 ```
 
-아이콘 이름은 `service_icons/*.md`, `general_icons/*.md`, `box_type/*.md` 의 표에서 가져오고, 표에 없는 아이콘은 파일명에서 자동으로 만듭니다.
+이름과 검색 태그는 `icons.json` 한 곳에서만 옵니다. 생성기는 카탈로그 md 를 다시 읽지
+않으므로 출처가 둘로 갈릴 일이 없습니다. 카탈로그 표에 없는 아이콘은 파일명에서 이름을
+유추하고 `icons.json` 에 `needs_review: true` 로 표시됩니다.

@@ -2,6 +2,11 @@
 
 SVG 원본을 base64로 임베드하므로 네트워크 없이 동작하고, 내보내기(PNG/PDF)에서도
 아이콘이 그대로 렌더링된다.
+
+이름과 검색어는 icons.json(단일 명부)에서만 가져온다. 카탈로그 md 를 여기서 다시
+파싱하지 않는다 — 출처가 둘로 갈리면 조용히 어긋나기 때문.
+
+  python drawio/make_drawio_libs.py . drawio
 """
 import base64
 import html
@@ -16,92 +21,10 @@ from pathlib import Path
 ROOT = Path(sys.argv[1]).resolve()
 OUT = Path(sys.argv[2]).resolve()
 
-# ---------------------------------------------------------------- md catalog
-
-CATALOGS = [
-    ROOT / "service_icons" / "service_icons.md",
-    ROOT / "service_icons" / "resource_icons.md",
-    ROOT / "general_icons" / "general_icons.md",
-    ROOT / "box_type" / "box_type.md",
-]
-
-TR = re.compile(r"<tr\b.*?</tr>", re.S | re.I)
-CELL = re.compile(r"<t[hd]\b[^>]*>(.*?)</t[hd]>", re.S | re.I)
-IMG = re.compile(r'<img[^>]+src="([^"]+)"', re.I)
-TAG = re.compile(r"<[^>]+>")
-
-
-def stem_key(src: str) -> str:
-    """파일 경로에서 확장자/variant를 뺀 식별자."""
-    return Path(urllib.parse.unquote(src)).stem
-
-
-def load_names() -> dict:
-    """stem -> ['Compute', 'Instance'] 형태의 표시 이름 조각."""
-    names = {}
-    for md in CATALOGS:
-        if not md.exists():
-            continue
-        text = md.read_text(encoding="utf-8")
-        for row in TR.findall(text):
-            cells = CELL.findall(row)
-            parts, srcs = [], []
-            for c in cells:
-                found = IMG.findall(c)
-                if found:
-                    srcs.extend(found)
-                else:
-                    t = html.unescape(TAG.sub("", c)).strip()
-                    if t:
-                        parts.append(" ".join(t.split()))
-            if not srcs or not parts:
-                continue
-            for s in srcs:
-                names.setdefault(stem_key(s), parts)
-    return names
-
-
-NAMES = load_names()
-
-PREFIXES = {"ic", "iaas", "paas", "saas", "general", "resources", "groups", "icon"}
-NOISE = {"box", "dk", "content"}
-ACRONYMS = {
-    "ai", "api", "cdn", "dns", "rds", "nks", "nce", "vpc", "iam", "waf", "sms",
-    "cli", "sdk", "gpu", "cpu", "nat", "ip", "db", "obs", "nhn", "ssl", "tls",
-    "lb", "vm", "os", "id", "url", "http", "https", "mte", "crm", "erp", "mysql",
-    "mssql", "mariadb", "pg", "iot", "ocr", "stt", "tts", "nlp", "bgp", "efs",
-    "nas", "san", "gslb", "dr", "ha", "ad", "ldap", "sso", "mfa", "kms", "hsm",
-}
-
-
-def titlecase(text: str) -> str:
-    out = []
-    for w in text.split():
-        if w.isupper() and len(w) > 1:
-            out.append(w)
-        elif w.lower() in ACRONYMS:
-            out.append(w.upper())
-        else:
-            out.append(w[:1].upper() + w[1:])
-    return " ".join(out)
-
-
-def fallback_name(stem: str) -> list:
-    parts = [p for p in stem.split("-") if p]
-    if len(parts) > 1:
-        parts = [p for p in parts if p.lower() not in PREFIXES] or parts[1:]
-    out = []
-    for p in parts:
-        words = [w for w in p.replace("_", " ").split()
-                 if w.lower() not in NOISE and not w.isdigit()]
-        if words:
-            out.append(titlecase(" ".join(words)))
-    return out
-
-
-def display(stem: str) -> list:
-    return NAMES.get(stem) or fallback_name(stem) or [stem]
-
+MANIFEST = ROOT / "icons.json"
+if not MANIFEST.exists():
+    sys.exit("icons.json 이 없습니다. 먼저 python scripts/build_manifest.py 를 실행하세요.")
+ICONS = json.loads(MANIFEST.read_text(encoding="utf-8"))["icons"]
 
 # ---------------------------------------------------------------- svg -> style
 
@@ -198,51 +121,72 @@ def write_library(path: Path, entries: list):
 
 # ---------------------------------------------------------------- collect
 
-GROUPS = [
-    ("Services", ROOT / "files" / "services", 64, False),
-    ("Resources", ROOT / "files" / "resources", 56, False),
-    ("General", ROOT / "files" / "general_icons", 64, False),
-    ("BoxType", ROOT / "files" / "box_type", 64, True),
-]
+# icons.json 의 kind -> (라이브러리 이름, 아이콘 변 길이, 그룹 컨테이너 여부)
+KINDS = {
+    "service":  ("Services", 64, False),
+    "resource": ("Resources", 56, False),
+    "general":  ("General", 64, False),
+    "box":      ("BoxType", 64, True),
+}
 
 
-def variant_of(p: Path) -> str:
-    parts = [x.lower() for x in p.parts]
-    if "black" in parts:
-        return "black"
-    if "color" in parts:
-        return "color"
-    return "color"
+def tags_for(ic):
+    """사이드바 검색어. 공백 구분이므로 각 토큰에 공백이 없어야 한다."""
+    t = list(ic.get("tags") or [])
+    t.append(ic["stem"].replace("ic-", ""))          # 파일명 통째로도 검색되게
+    if ic.get("category"):
+        t.append(ic["category"])
+    seen, out = set(), []
+    for x in t:
+        for piece in str(x).split():
+            k = piece.lower()
+            if k and k not in seen:
+                seen.add(k)
+                out.append(piece)
+    return " ".join(out)
 
 
 def main():
     index = []
-    for name, base, size, is_group in GROUPS:
-        if not base.exists():
-            continue
+    skipped = []
+    for kind, (libname, size, is_group) in KINDS.items():
         buckets = {"color": [], "black": []}
-        for svg in sorted(base.rglob("*.svg"), key=lambda p: str(p).lower()):
-            stem = svg.stem
-            parts = display(stem)
-            label = parts[-1]
-            title = " / ".join(parts)
-            uri, w, h = svg_data_uri(svg)
-            entry = (group_entry(label, title, uri, w, h) if is_group
-                     else icon_entry(label, title, uri, w, h, size))
-            buckets[variant_of(svg)].append((title.lower(), entry))
+        for ic in ICONS:
+            if ic["kind"] != kind:
+                continue
+            tags = tags_for(ic)
+            for variant, fmts in ic["files"].items():
+                svg_rel = fmts.get("svg")
+                if not svg_rel:
+                    skipped.append((ic["id"], variant))
+                    continue
+                svg = ROOT / svg_rel
+                if not svg.exists():
+                    skipped.append((ic["id"], variant))
+                    continue
+                label = ic["name"]
+                uri, w, h = svg_data_uri(svg)
+                entry = (group_entry(label, label, uri, w, h) if is_group
+                         else icon_entry(label, label, uri, w, h, size))
+                entry["tags"] = tags
+                buckets.setdefault(variant, []).append((label.lower(), entry))
 
         for variant, items in buckets.items():
             if not items:
                 continue
             items.sort(key=lambda t: t[0])
             sub = "" if variant == "color" else "black/"
-            out = OUT / f"{sub}NHNCloud-{name}-{variant}.xml"
+            out = OUT / f"{sub}NHNCloud-{libname}-{variant}.xml"
             n, size_b = write_library(out, [e for _, e in items])
             index.append((out.relative_to(OUT).as_posix(), n, size_b))
 
+    index.sort()
     for rel, n, size_b in index:
         print(f"{rel:46s} {n:4d} icons  {size_b/1024:8.1f} KB")
-    print(f"\ntotal {sum(n for _, n, _ in index)} entries in {len(index)} libraries")
+    print()
+    print(f"total {sum(n for _, n, _ in index)} entries in {len(index)} libraries")
+    if skipped:
+        print(f"SVG 가 없어 제외: {len(skipped)}건")
 
 
 main()

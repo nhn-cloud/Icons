@@ -149,13 +149,13 @@
     </tr>
     <tr>
         <th>VPC</th>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-network-vpc-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-vpc-box.svg"></td>
     </tr>
     <tr>
         <th>Network Interface</th>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.png"></td>
-        <td><img src="/files/box_type/color/ic-compute-virtual_desktop-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-network-network_interface-box.png"></td>
+        <td><img src="/files/box_type/color/ic-network-network_interface-box.svg"></td>
     </tr>
     <tr>
         <th>Flow Log</th>
@@ -374,8 +374,8 @@
     </tr>
     <tr>
         <th>Launching</th>
-        <td><img src="/files/box_type/color/ic-game-lauching-box.png"></td>
-        <td><img src="/files/box_type/color/ic-game-lauching-box.svg"></td>
+        <td><img src="/files/box_type/color/ic-game-launching-box.png"></td>
+        <td><img src="/files/box_type/color/ic-game-launching-box.svg"></td>
     </tr>
     <tr>
         <th>Smart Downloader</th>
