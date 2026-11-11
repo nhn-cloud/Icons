@@ -29,6 +29,11 @@ SIZE_SERVICE = 64
 SIZE_RESOURCE = 48
 SIZE_FLAT = 64
 
+# 그룹 컨테이너 기본 크기와 모서리 아이콘 크기.
+# AWS 는 390x280 박스에 25px 아이콘(48px 서비스 아이콘 기준). 우리는 64px 이라 1.33배.
+GROUP_W, GROUP_H = 520, 370
+BADGE = 32
+
 # scheme.md '그룹 정의' 표의 선 색·선 종류. 키는 컨테이너 슬러그.
 GROUP_STYLE = {
     'grp-nhn-cloud':           ('#111111', False),
@@ -108,14 +113,21 @@ def icon_entry(title, uri, w, h, size):
 
 
 def container_entry(title, uri, stroke, dashed):
-    """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 좌상단 모서리 아이콘."""
-    gw, gh = 320, 200
+    """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 좌상단 모서리 아이콘.
+
+    AWS 그룹 도형(aws-sample-groups.svg)에서 실측한 비율을 따른다.
+    AWS 는 박스 390x280, 모서리 아이콘 25x25 를 (0,0) 에 밀착시키고
+    레이블을 x=32 부터 쓴다. 서비스 아이콘은 48px.
+    우리 서비스 아이콘이 64px 이라 1.33배를 적용했다.
+    """
+    gw, gh = GROUP_W, GROUP_H
     box = ('rounded=0;html=1;whiteSpace=wrap;container=1;collapsible=0;'
            'recursiveResize=0;pointerEvents=0;expand=0;'
            'fillColor=none;strokeColor=%s;%s'
-           'verticalAlign=top;align=left;spacingLeft=38;spacingTop=4;'
-           'fontSize=12;fontColor=#666666;'
-           % (stroke, 'dashed=1;dashPattern=8 4;' if dashed else 'dashed=0;'))
+           'verticalAlign=top;align=left;spacingLeft=%d;spacingTop=6;'
+           'fontSize=13;fontColor=#666666;'
+           % (stroke, 'dashed=1;dashPattern=8 4;' if dashed else 'dashed=0;',
+              BADGE + 8))
     cells = ('<mxCell id="2" value="%s" style="%s" vertex="1" parent="1">'
              '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
              % (esc(title), esc(box), gw, gh))
@@ -123,8 +135,8 @@ def container_entry(title, uri, stroke, dashed):
         badge = ('shape=image;html=1;imageAspect=0;aspect=fixed;movable=0;resizable=0;'
                  'rotatable=0;deletable=0;editable=0;connectable=0;image=%s;' % uri)
         cells += ('<mxCell id="3" value="" style="%s" vertex="1" parent="2">'
-                  '<mxGeometry x="6" y="6" width="24" height="24" as="geometry"/></mxCell>'
-                  % esc(badge))
+                  '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
+                  % (esc(badge), BADGE, BADGE))
     return {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
 
 
