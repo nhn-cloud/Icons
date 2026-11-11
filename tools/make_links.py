@@ -29,7 +29,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 REPO = 'nhn-cloud/Icons'
 OWNER, NAME = REPO.split('/')
-EDITOR = 'https://app.diagrams.net/?clibs=%s'
+# libs=none 으로 draw.io 내장 팔레트(일반/기타/고급/기본/화살표/순서도/ER/UML)를 끈다.
+# libs 를 생략하면 기본 세트가 켜지고, 빈 값(libs=)은 생략과 같게 취급된다.
+# 스크래치 패드는 사용자 기능이라 URL 로 끌 수 없다(비어 있어 방해되지 않음).
+EDITOR = 'https://app.diagrams.net/?libs=none&clibs=%s'
 
 argv = sys.argv
 BRANCH = argv[argv.index('--branch') + 1] if '--branch' in argv else 'main'

@@ -72,6 +72,10 @@ python tools/make_links.py                  # GitHub Pages 기준, 약 1,500자 
 python tools/make_links.py --host raw --branch <브랜치>   # raw, 약 2,150자
 ```
 
+링크에는 `libs=none` 이 붙습니다. 이게 없으면 draw.io 내장 팔레트(일반·기타·고급·기본·
+화살표·순서도·ER·UML) 8개가 함께 열려 NHN Cloud 아이콘을 찾기 어렵습니다.
+스크래치 패드는 사용자 기능이라 URL 로 끌 수 없지만 비어 있어 방해되지 않습니다.
+
 `clibs` 링크는 draw.io 가 XML 을 직접 읽어가는 방식이라 해당 브랜치가 origin 에 푸시되어 있어야 하고,
 호스트가 `Access-Control-Allow-Origin: *` 을 보내야 합니다. GitHub raw 와 GitHub Pages 모두 보냅니다.
 
