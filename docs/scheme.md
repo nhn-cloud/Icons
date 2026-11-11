@@ -127,7 +127,7 @@ NHN Cloud의 그룹은 AWS처럼 그룹마다 다른 색을 쓰지 않고, **회
 | RDS for PostgreSQL, RDS for MariaDB, RDS for MS-SQL | 박스로 그려진 사례는 RDS for MySQL뿐. 계열 일관성보다 관측 근거를 우선함 |
 | Auto Scale | 레퍼런스 아키텍처가 Auto Scale을 파란 점선 "Auto Scaling group"으로 그리는데, 이는 Groups 팔레트 9번 `General_Resources_Groups_Auto_Scaling_Group`과 동일. Instance·VPC·Security Groups와 같은 중복 배제 규칙 적용 |
 
-Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, VPC, Security Groups와 겹치므로 넣지 않습니다. 나머지 약 140개는 저장소 `box_type/`에 그대로 보관해 PPT 작업용으로 쓰고, draw.io에서 필요하면 Generic Group에 서비스 아이콘을 얹어 씁니다.
+Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, VPC, Security Groups와 겹치므로 넣지 않습니다. 선정되지 않은 서비스 박스 127개는 **저장소에서 삭제했습니다**(커밋 `d1915f1` 이전 이력에 남아 있음). draw.io에서 박스가 필요하면 Generic Group에 서비스 아이콘을 얹어 씁니다.
 
 **조사 방법**: 레퍼런스 아키텍처 목록(<https://www.nhncloud.com/kr/resource/reference-architecture>)은 페이지 스크립트로 그려져 일반 조회로는 "총 0개"만 나옵니다. 브라우저로 렌더링해 36건을 확보하고, 각 건의 본문은 콘텐츠 API(`/xcms-api/v1/contents/<id>`)로, 구성도는 `static.toastoven.net`의 원본 이미지(4124×2173 래스터)를 직접 보고 판별했습니다. 구성도가 전부 래스터라 자동 파싱은 불가능했고 눈으로 읽었습니다.
 
