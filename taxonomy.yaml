@@ -113,7 +113,10 @@ palettes:
     title: "NHN Cloud / Compute"
     kind: category
     category: compute
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-compute
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-compute-auto-scale
         name: "Auto Scale"
@@ -135,7 +138,10 @@ palettes:
     title: "NHN Cloud / Container"
     kind: category
     category: container
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-container
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-container-ncr
         name: "NCR"
@@ -160,7 +166,10 @@ palettes:
     title: "NHN Cloud / Network"
     kind: category
     category: network
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-network
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-network-colocation-gateway
         name: "Colocation Gateway"
@@ -170,6 +179,10 @@ palettes:
         name: "DNS Plus"
       - slug: ic-network-floating-ip
         name: "Floating IP"
+      - slug: ic-network-flow-log
+        name: "Flow Log"
+        format: png       # SVG 없음, 비트맵으로 관리
+        black: false      # 블랙 버전 없음
       - slug: ic-network-internet-gateway
         name: "Internet Gateway"
       - slug: ic-network-load-balancer-dsr
@@ -229,7 +242,8 @@ palettes:
     title: "NHN Cloud / Storage"
     kind: category
     category: storage
-    category_icon: ic-storage
+    category_icon:
+      slug: ic-storage
     services:
       - slug: ic-storage-backup
         name: "Backup"
@@ -285,7 +299,8 @@ palettes:
     title: "NHN Cloud / Database"
     kind: category
     category: database
-    category_icon: ic-database
+    category_icon:
+      slug: ic-database
     services:
       - slug: ic-database-cubrid-instance
         name: "CUBRID Instance"
@@ -322,7 +337,10 @@ palettes:
     title: "NHN Cloud / Monitoring"
     kind: category
     category: monitoring
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-monitoring
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-monitoring-cloud-monitoring
         name: "Cloud Monitoring"
@@ -339,7 +357,10 @@ palettes:
     title: "NHN Cloud / Hybrid Private Cloud"
     kind: category
     category: hybrid-private-cloud
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-hybrid-private-cloud
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-hybrid-private-cloud-nhn-cloud-private-deck
         name: "NHN Cloud Private Deck"
@@ -351,7 +372,10 @@ palettes:
     title: "NHN Cloud / Game"
     kind: category
     category: game
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-game
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-game-game-starter
         name: "Game Starter"
@@ -367,7 +391,8 @@ palettes:
     title: "NHN Cloud / Security"
     kind: category
     category: security
-    category_icon: ic-security
+    category_icon:
+      slug: ic-security
     services:
       - slug: ic-security-app-security-check
         name: "App Security Check"
@@ -409,7 +434,8 @@ palettes:
     title: "NHN Cloud / Content Delivery"
     kind: category
     category: content-delivery
-    category_icon: ic-content-delivery
+    category_icon:
+      slug: ic-content-delivery
     services:
       - slug: ic-content-delivery-cdn
         name: "CDN"
@@ -423,7 +449,8 @@ palettes:
     title: "NHN Cloud / Notification"
     kind: category
     category: notification
-    category_icon: ic-notification
+    category_icon:
+      slug: ic-notification
     services:
       - slug: ic-notification-email
         name: "Email"
@@ -441,7 +468,8 @@ palettes:
     title: "NHN Cloud / AI Service"
     kind: category
     category: ai-service
-    category_icon: ic-ai-service
+    category_icon:
+      slug: ic-ai-service
     services:
       - slug: ic-ai-service-face-recognition
         name: "Face Recognition"
@@ -455,7 +483,8 @@ palettes:
     title: "NHN Cloud / Machine Learning"
     kind: category
     category: machine-learning
-    category_icon: ic-machine-learning
+    category_icon:
+      slug: ic-machine-learning
     services:
       - slug: ic-machine-learning-ai-easymaker
         name: "AI EasyMaker"
@@ -486,7 +515,8 @@ palettes:
     title: "NHN Cloud / Application Service"
     kind: category
     category: application-service
-    category_icon: ic-application-service
+    category_icon:
+      slug: ic-application-service
     services:
       - slug: ic-application-service-api-gateway
         name: "API Gateway"
@@ -502,7 +532,10 @@ palettes:
     title: "NHN Cloud / Search"
     kind: category
     category: search
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-search
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-search-autocomplete
         name: "Autocomplete"
@@ -514,7 +547,8 @@ palettes:
     title: "NHN Cloud / Data Analytics"
     kind: category
     category: data-analytics
-    category_icon: ic-data-analytics
+    category_icon:
+      slug: ic-data-analytics
     services:
       - slug: ic-data-analytics-data-lake-storage
         name: "Data Lake Storage"
@@ -532,7 +566,8 @@ palettes:
     title: "NHN Cloud / Dev Tools"
     kind: category
     category: dev-tools
-    category_icon: ic-dev-tools
+    category_icon:
+      slug: ic-dev-tools
     services:
       - slug: ic-dev-tools-deploy
         name: "Deploy"
@@ -544,7 +579,10 @@ palettes:
     title: "NHN Cloud / Management"
     kind: category
     category: management
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-management
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-management-certificate-manager
         name: "Certificate Manager"
@@ -556,7 +594,10 @@ palettes:
     title: "NHN Cloud / Bill"
     kind: category
     category: bill
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-bill
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-bill-etax
         name: "eTax"
@@ -564,12 +605,18 @@ palettes:
     title: "NHN Cloud / Collaboration"
     kind: category
     category: collaboration
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-collaboration
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
   - id: "26-contact-center"
     title: "NHN Cloud / Contact Center"
     kind: category
     category: contact-center
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-contact-center
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-contact-center-online-contact
         name: "Online Contact"
@@ -577,7 +624,10 @@ palettes:
     title: "NHN Cloud / Governance Audit"
     kind: category
     category: governance-audit
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-governance-audit
+      format: png       # SVG 없음, 비트맵으로 관리
+      black: false      # 블랙 버전 없음
     services:
       - slug: ic-governance-audit-cloudtrail
         name: "Cloudtrail"

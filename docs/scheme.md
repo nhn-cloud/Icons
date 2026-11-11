@@ -335,9 +335,22 @@ icons/
 
 **블랙 버전을 별도 폴더가 아니라 접미사로 두는 이유**: 같은 아이콘의 두 파일이 목록에서 바로 옆에 붙어 누락이 눈에 띕니다. 실제로 현재 저장소에는 블랙이 없는 SVG가 3건 있는데(`ic-ai_service-fashion`, Database 리소스 2개), 폴더가 나뉘어 있어 두 목록을 대조해야만 찾을 수 있었습니다. 세 건 모두 이미 정리 대상이라 드리프트 자체는 경미하지만, 붙여 두면 같은 사고가 재발하지 않습니다.
 
-### PNG는 저장소에 두지 않습니다
+### 파일 형식: SVG 원칙, 없으면 PNG
 
-원본은 SVG만 관리합니다. PNG는 draw.io에서 필요할 때 바로 얻을 수 있습니다.
+원본은 SVG로 관리합니다. 다만 **SVG가 아예 없는 자산은 PNG로 보관**합니다. AWS도 공식 아이콘
+패키지에 PNG를 함께 넣습니다. 현재 PNG로 관리하는 것은 13개입니다.
+
+| 대상 | 수량 | 비고 |
+| --- | --- | --- |
+| 카테고리 아이콘 | 12 | compute, container, network, monitoring, hybrid-private-cloud, game, search, management, bill, collaboration, contact-center, governance-audit |
+| Flow Log (Network) | 1 | 서비스 SVG는 없고 PNG만 있었음 |
+
+`taxonomy.yaml`에 `format: png`로 기록하고, 생성기가 `data:image/png`로 임베드합니다.
+SVG를 확보하면 PNG를 지우고 교체하면 됩니다.
+
+반대로 **SVG에서 뽑아낼 수 있는 PNG는 저장소에 두지 않습니다.** 재편 전 PNG 596개는
+SVG 546개와 어긋나 드리프트 중이었고(`services/network/color`는 PNG 21 / SVG 20),
+전부 삭제했습니다. 필요할 때 draw.io에서 얻습니다.
 
 | 방법 | 경로 | 비고 |
 | --- | --- | --- |
@@ -345,10 +358,6 @@ icons/
 | 클립보드 복사 | 선택 후 우클릭 > Copy as Image (`Ctrl+Alt+X`, v21.7.3+) | PPT·Word에 바로 붙여넣기 |
 
 주의: Copy as Image로 붙여넣으면 배경이 검게 나오는 사례가 보고돼 있습니다. 문서 배경을 흰색으로 지정하거나 내보내기에서 투명 배경을 끄면 해결됩니다.
-
-AWS도 draw.io용 벡터 셰이프와 PowerPoint용 PPTx 툴킷을 별도로 배포합니다. draw.io의 AWS 셰이프(`Sidebar-AWS4.js`, 셰이프 등록 1,036건)에는 PNG 참조가 한 건도 없습니다. 우리 `make_drawio_libs.py`도 이미 `*.svg`만 읽어 `data:image/svg+xml`로 임베드하므로, PNG는 draw.io 파이프라인에 들어간 적이 없습니다.
-
-PNG를 빼면 현재 드리프트도 함께 해소됩니다. 지금 저장소는 SVG 546개에 PNG 596개로 PNG가 50개 더 많고, `services/network/color`만 봐도 PNG 21개 / SVG 20개입니다.
 
 ### 기존 경로 호환
 

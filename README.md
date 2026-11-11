@@ -44,9 +44,13 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 
 전부 소문자 kebab-case입니다. 파일명은 슬러그일 뿐이고, 표시명은 `taxonomy.yaml`에만 둡니다.
 
-## PNG
+## 파일 형식
 
-저장소는 PNG를 보관하지 않습니다. 필요하면 draw.io에서 바로 얻습니다.
+원본은 **SVG가 원칙**이고, SVG가 없는 자산만 PNG로 관리합니다. 현재 13개입니다
+(카테고리 아이콘 12개, Flow Log 1개). `taxonomy.yaml`에 `format: png`로 표시되며
+라이브러리 생성기가 그대로 임베드합니다. SVG를 확보하면 PNG를 지우고 교체하세요.
+
+SVG에서 뽑아낼 수 있는 PNG는 저장소에 두지 않습니다. 필요하면 draw.io에서 바로 얻습니다.
 
 - `File > Export as > PNG` — 확대율·DPI·여백·투명 배경·선택 영역 지정 가능
 - 선택 후 우클릭 `Copy as Image` (`Ctrl+Alt+X`) — PPT·Word에 바로 붙여넣기

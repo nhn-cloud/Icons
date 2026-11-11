@@ -51,23 +51,31 @@ def title_of(slug, strip_prefix):
 
 
 def entries(d, strip_prefix):
+    """컬러 원본(.svg 우선, 없으면 .png)을 찾아 (slug, name, black, fmt) 로."""
     out = []
     if not d.exists():
         return out
-    for p in sorted(d.glob('*.svg')):
-        if p.name.endswith('.black.svg'):
+    seen = set()
+    for p in sorted(list(d.glob('*.svg')) + list(d.glob('*.png'))):
+        if p.stem.endswith('.black'):
             continue
         slug = p.stem
-        out.append((slug, title_of(slug, strip_prefix),
-                    p.with_name(slug + '.black.svg').exists()))
+        if slug in seen:
+            continue        # 같은 슬러그의 .svg 를 이미 잡았으면 .png 는 건너뜀
+        seen.add(slug)
+        black = (p.with_name(slug + '.black.svg').exists()
+                 or p.with_name(slug + '.black.png').exists())
+        out.append((slug, title_of(slug, strip_prefix), black, p.suffix[1:]))
     return out
 
 
 def emit(lines, items, indent):
     pad = ' ' * indent
-    for slug, name, black in items:
+    for slug, name, black, fmt in items:
         lines.append('%s- slug: %s' % (pad, slug))
         lines.append('%s  name: "%s"' % (pad, name))
+        if fmt != 'svg':
+            lines.append('%s  format: %s       # SVG 없음, 비트맵으로 관리' % (pad, fmt))
         if not black:
             lines.append('%s  black: false      # 블랙 버전 없음' % pad)
 
@@ -112,7 +120,16 @@ def main():
         L.append('    kind: category')
         L.append('    category: %s' % cat)
         ci = entries(d / 'category', ['ic-'])
-        L.append('    category_icon: %s' % (ci[0][0] if ci else 'null   # 없음, 제작 필요'))
+        if ci:
+            slug, _n, black, fmt = ci[0]
+            L.append('    category_icon:')
+            L.append('      slug: %s' % slug)
+            if fmt != 'svg':
+                L.append('      format: %s       # SVG 없음, 비트맵으로 관리' % fmt)
+            if not black:
+                L.append('      black: false      # 블랙 버전 없음')
+        else:
+            L.append('    category_icon: null   # 없음, 제작 필요')
         svc = entries(d / 'services', ['ic-%s-' % cat])
         if svc:
             L.append('    services:')
@@ -122,12 +139,14 @@ def main():
             # 리소스 슬러그에서 상위 서비스 슬러그를 떼어내 parent 로 기록
             svc_slugs = sorted((s[0] for s in svc), key=len, reverse=True)
             L.append('    resources:')
-            for slug, _name, black in res:
+            for slug, _name, black, fmt in res:
                 parent = next((x for x in svc_slugs if slug.startswith(x + '-')), None)
                 tail = slug[len(parent) + 1:] if parent else slug[len('ic-%s-' % cat):]
                 L.append('      - slug: %s' % slug)
                 L.append('        name: "%s"' % title_of(tail, []))
                 L.append('        parent: %s' % (parent or 'null   # 상위 서비스 확인 필요'))
+                if fmt != 'svg':
+                    L.append('        format: %s       # SVG 없음, 비트맵으로 관리' % fmt)
                 if not black:
                     L.append('        black: false      # 블랙 버전 없음')
 

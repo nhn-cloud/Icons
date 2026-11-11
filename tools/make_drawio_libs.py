@@ -62,11 +62,26 @@ def svg_size(text, default=(60, 60)):
     return default
 
 
-def svg_data_uri(path):
+def png_size(blob, default=(60, 60)):
+    """PNG IHDR 청크에서 가로·세로를 읽는다 (바이트 16~24)."""
+    if blob[:8] == b'\x89PNG\r\n\x1a\n' and blob[12:16] == b'IHDR':
+        return (int.from_bytes(blob[16:20], 'big'),
+                int.from_bytes(blob[20:24], 'big'))
+    return default
+
+
+def data_uri(path):
+    """SVG 또는 PNG 원본을 draw.io style 에 넣을 data URI 로.
+
+    draw.io 스타일 문자열에서는 ';base64' 를 쓸 수 없어 콤마 뒤에 바로 base64를 둔다.
+    """
+    if path.suffix.lower() == '.png':
+        blob = path.read_bytes()
+        w, h = png_size(blob)
+        return 'data:image/png,%s' % base64.b64encode(blob).decode('ascii'), w, h
     text = path.read_text(encoding='utf-8')
     w, h = svg_size(text)
     b64 = base64.b64encode(text.encode('utf-8')).decode('ascii')
-    # draw.io 스타일 문자열에서는 ';base64' 를 쓸 수 없어 콤마 뒤에 바로 base64를 둔다.
     return 'data:image/svg+xml,%s' % b64, w, h
 
 
@@ -125,9 +140,16 @@ def container_entry(title, uri, stroke, dashed):
 
 # ---------------------------------------------------------------- collect
 
-def svg_path(pal_dir, sub, slug, black):
-    name = slug + ('.black.svg' if black else '.svg')
-    return (pal_dir / sub / name) if sub else (pal_dir / name)
+def asset_path(pal_dir, sub, slug, black, fmt):
+    """taxonomy 의 format(기본 svg)에 맞는 원본 경로. 없으면 다른 확장자도 본다."""
+    d = (pal_dir / sub) if sub else pal_dir
+    variant = '.black' if black else ''
+    order = [fmt] + [x for x in ('svg', 'png') if x != fmt]
+    for ext in order:
+        p = d / ('%s%s.%s' % (slug, variant, ext))
+        if p.exists():
+            return p
+    return d / ('%s%s.%s' % (slug, variant, fmt))
 
 
 def add(entries, pal_dir, sub, item, black, kind, cat=None):
@@ -135,11 +157,11 @@ def add(entries, pal_dir, sub, item, black, kind, cat=None):
     slug = item['slug']
     if black and item.get('black') is False:
         return
-    p = svg_path(pal_dir, sub, slug, black)
+    p = asset_path(pal_dir, sub, slug, black, item.get('format', 'svg'))
     if not p.exists():
         warnings.append('%s 없음: %s' % ('black' if black else 'color', p.relative_to(ROOT)))
         return
-    uri, w, h = svg_data_uri(p)
+    uri, w, h = data_uri(p)
     title = item.get('name') or slug
     if kind == 'container':
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
@@ -171,8 +193,9 @@ def build(pal, black):
     # category
     ci = pal.get('category_icon')
     if ci:
-        add(e, pal_dir, 'category', {'slug': ci, 'name': pal['title'].split(' / ')[-1]},
-            black, 'flat')
+        item = dict(ci) if isinstance(ci, dict) else {'slug': ci}
+        item.setdefault('name', pal['title'].split(' / ')[-1])
+        add(e, pal_dir, 'category', item, black, 'flat')
     for it in pal.get('services') or []:
         add(e, pal_dir, 'services', it, black, 'service')
     for it in pal.get('resources') or []:

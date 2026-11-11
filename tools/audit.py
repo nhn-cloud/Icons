@@ -70,8 +70,8 @@ for title, cnt, svc_cell, _res in rows:
         continue
     expected = [s.strip() for s in svc_cell.split(',')]
     d = ICONS / CATDIR[cat] / 'services'
-    have = {p.stem[len('ic-%s-' % cat):] for p in d.glob('*.svg')
-            if not p.name.endswith('.black.svg')}
+    have = {p.stem[len('ic-%s-' % cat):] for p in list(d.glob('*.svg')) + list(d.glob('*.png'))
+            if not p.stem.endswith('.black')}
     miss = []
     for e in expected:
         mark = ''
@@ -104,18 +104,22 @@ for pid, label, expect in [('01-arrows', '화살표', 6), ('02-general', '일반
                            ('03-industry', '산업·개념', None), ('04-identity', '계정·역할', 7),
                            ('05-groups/containers', '그룹 컨테이너', 11)]:
     d = ICONS / pid
-    n = len([p for p in d.glob('*.svg') if not p.name.endswith('.black.svg')]) if d.exists() else 0
+    n = len([p for p in list(d.glob('*.svg')) + list(d.glob('*.png'))
+             if not p.stem.endswith('.black')]) if d.exists() else 0
     note = '' if expect is None else ('  <- %d개 기대, %d개 부족' % (expect, expect - n) if n < expect else '')
     print('  %-22s %3d개%s' % (label, n, note))
 
 print('\n카테고리 아이콘:')
 no_ci = [c for c in CATS if not (ICONS / CATDIR[c] / 'category').exists()
-         or not list((ICONS / CATDIR[c] / 'category').glob('*.svg'))]
+         or not (list((ICONS / CATDIR[c] / 'category').glob('*.svg'))
+                 + list((ICONS / CATDIR[c] / 'category').glob('*.png')))]
 print('  보유 %d / 22, 없음 %d개: %s' % (22 - len(no_ci), len(no_ci), ', '.join(no_ci)))
 
 print('\n블랙 버전 없음:')
-nob = [p for p in ICONS.rglob('*.svg') if not p.name.endswith('.black.svg')
-       and not p.with_name(p.stem + '.black.svg').exists()]
+nob = [p for p in list(ICONS.rglob('*.svg')) + list(ICONS.rglob('*.png'))
+       if not p.stem.endswith('.black')
+       and not p.with_name(p.stem + '.black.svg').exists()
+       and not p.with_name(p.stem + '.black.png').exists()]
 for p in nob:
     print('  %s' % p.relative_to(ICONS))
 print('  합계 %d개' % len(nob))
