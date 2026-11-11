@@ -1,5 +1,5 @@
 # NHN Cloud 아이콘 분류 단일 원천
-# 생성: tools/make_taxonomy.py (2026-11-11)
+# 생성: tools/make_taxonomy.py (2026-11-12)
 #
 # name 값은 슬러그에서 기계적으로 유도한 초안이다.
 # 공식 홈페이지 서비스 목록 표기로 검증해야 한다. docs/scheme.md 참고.
@@ -416,6 +416,8 @@ palettes:
     services:
       - slug: ic-hybrid-private-cloud-nhn-cloud-private-deck
         name: "NHN Cloud Private Deck"
+      - slug: ic-hybrid-private-cloud-nhn-cloud-private-region
+        name: "NHN Cloud Private Region"
       - slug: ic-hybrid-private-cloud-nhn-cloud-private-station
         name: "NHN Cloud Private Station"
       - slug: ic-hybrid-private-cloud-nhn-hybrid-cloud

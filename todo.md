@@ -4,11 +4,11 @@
 현황 수치는 `python tools/audit.py`로 언제든 다시 뽑을 수 있다.
 
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
-서비스 아이콘 **116/119**, 일반 아이콘 **52개**. 남은 것은 **신규 제작 3건**과 **Identity 7건**, **Arrows 6종**이다.
+서비스 아이콘 **117/119**, 일반 아이콘 **52개**. 남은 것은 **신규 제작 2건**과 **Identity 7건**, **Arrows 6종**이다.
 
 | 구분 | 이전 | 현재 |
 | --- | --- | --- |
-| 서비스 아이콘 | 113 / 119 | **116 / 119** |
+| 서비스 아이콘 | 113 / 119 | **117 / 119** |
 | 일반 아이콘 | 16 | **52** |
 | 리소스 | IPSec VPN 없음 | **확보** |
 | 카테고리 아이콘 | 10 / 22 | 범위에서 제외 (아래 참고) |
@@ -25,7 +25,7 @@
 
 | 순위 | 작업 | 수량 | 방법 | 막힘 |
 | --- | --- | --- | --- | --- |
-| 1 | 디자인팀 신규 제작 요청 | 3 | Database Migration Service, NHN Cloud Foundry, NHN Cloud Private Region | 디자인 리소스 |
+| 1 | 디자인팀 신규 제작 요청 | 2 | Database Migration Service, NHN Cloud Foundry | 디자인 리소스 |
 | 2 | Identity 아이콘 확보 | 7 | Figma 에 라이트 버전이 없음 (아래 1-3) | 확인 필요 |
 | 3 | Arrows 스펙 입력 | 6 | PPT 16쪽 (파일 아님) | 없음 |
 | 4 | 산업·개념 보강 | 2 | Finance, Machine Learning (아래 1-6) | 정의 확인 필요 |
@@ -70,13 +70,12 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
 - [ ] 점선의 실제 dash 패턴 값을 PPT에서 확인 (현재 표에 없음)
 - [ ] `styles.yaml` 스키마를 정하고 `make_drawio_libs.py`가 엣지 스타일 엔트리를 생성하도록 추가
 
-### 1-5. 누락 서비스 아이콘 3개 — 전부 신규 제작
+### 1-5. 누락 서비스 아이콘 2개 — 전부 신규 제작
 
 | 서비스 | 카테고리 | 상태 |
 | --- | --- | --- |
 | Database Migration Service | Database | Figma 에 전용 페이지(`260820 DMS`)가 있으나 **아키텍처 아이콘은 별개로 신규 요청 필요** |
 | NHN Cloud Foundry | Machine Learning | 전용 페이지(`260731 Foundry`) 동일 |
-| NHN Cloud Private Region | Hybrid & Private Cloud | Figma 에도 없음 |
 
 **확보 완료된 것** (Figma 에서 추출)
 
@@ -86,6 +85,7 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
 | Dooray! | `icons/25-collaboration/services/ic-collaboration-dooray.svg` |
 | Contiple | 기존 `online-contact` 와 **path 가 완전히 일치**해 `ic-contact-center-contiple.svg` 로 개명 |
 | IPSec VPN | `icons/14-security/resources/ic-security-network-firewall-ipsec-vpn.svg` |
+| NHN Cloud Private Region | `icons/12-hybrid-private-cloud/services/ic-hybrid-private-cloud-nhn-cloud-private-region.svg` (2026-11-12 추가) |
 
 ### 1-6. 산업·개념 2개 — 정의 확인 필요
 
@@ -128,7 +128,10 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
 
 - [ ] **`taxonomy.yaml`의 표시명 전수 검증** — 슬러그에서 기계적으로 유도한 초안이다. 공식 홈페이지 표기와 대조 필요
 - [ ] `online-contact` = Contiple 인지 확인 (1-5 참고)
-- [ ] `nhn-private-cloud`(Retired)가 Private Station인지 Region인지 — scheme.md Retired 목록은 "개명 전 NHN Private Cloud"로 보지만, § 주석은 미확인으로 남겨 둠
+- [ ] `nhn-private-cloud`(Retired)가 Private Station인지 Region인지 — **Figma 에서 Private Region 쪽으로 확인됐다.**
+      `Groups` 변형(`4954:54491`)에서 "NHN Cloud Private Region" 셀의 박스가 `ic-hybrid_n_private_cloud-nhn_private_cloud-box` 이고,
+      Private Station 셀은 `ic-hybrid_n_private_cloud-nhn_cloud_private_station-box` 로 따로 있다.
+      이 결론을 반영해 `docs/scheme.md` § 주석(117행)과 388행 항목을 갱신할지 결정 필요
 - [ ] Public/Private subnet 레이블 프리셋을 Groups 팔레트에 항목 2개로 넣을지, 한 항목에 레이블만 바꿔 쓸지
 - [ ] 홈페이지 서비스 목록 변경 시 분류표를 다시 맞추는 주기 (예: 분기 1회)
 
