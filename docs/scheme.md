@@ -52,7 +52,7 @@ V2.1(2025.3.25) 대비 V2.2의 주요 변경은 다음과 같습니다. 그룹 1
 
 V2.2 PPT에 있던 Mobile Service(IAP)는 홈페이지에 없으므로 카테고리에서 빼고 Retired로 옮깁니다.
 
-카테고리 구성은 V2.2의 Service Category Icons(20쪽) 23개와 정확히 일치합니다. V2.1에 있던 Dooray! 하위 서비스 아이콘과 IDC(NCC) 아이콘은 Retired 팔레트로 옮깁니다. 블랙 버전은 같은 구성으로 `black/` 폴더에 둡니다.
+카테고리 구성은 V2.2의 Service Category Icons(20쪽) 23개와 정확히 일치합니다. V2.1에 있던 Dooray! 하위 서비스 아이콘과 IDC(NCC) 아이콘은 Retired 팔레트로 옮깁니다.
 
 ## 아이콘 유형과 크기 규칙
 
@@ -234,7 +234,6 @@ Retired 아이콘은 Retired 라이브러리로만 배포하고 기본 배포 �
 | 카테고리 키 | 저장소 폴더명과 동일 | `data_analytics`, `hybrid_private_cloud` |
 | 박스 아이콘 | 서비스 파일명 + `-box` | `ic-network-vpc-box.svg` |
 | 라이브러리 파일 | `NHNCloud-<Category>.xml`, 공통 팔레트는 번호 접두사 | `NHNCloud-Network.xml`, `NHNCloud-04-Groups.xml` |
-| 버전 | `color` / `black`은 폴더로 구분, 파일명에 넣지 않음 | `drawio/black/NHNCloud-Network.xml` |
 
 파일명에서 `&`는 `n`으로 쓰는 기존 관례(`data_n_analytics`, `log_n_crash_search`)를 유지합니다. 다만 카테고리 키는 폴더명(`data_analytics`)과 파일명(`data_n_analytics`)이 달라서, 둘 중 하나로 맞춰야 합니다. 폴더명 쪽이 짧고 이미 라이브러리 생성 스크립트가 읽는 값이므로 폴더명 기준을 권장합니다.
 
@@ -289,9 +288,7 @@ Retired 아이콘은 Retired 라이브러리로만 배포하고 기본 배포 �
 Icons/
 ├─ taxonomy.yaml          단일 원천 (분류·표시명·한글명·유형·순서·태그)
 ├─ icons/                 원본 SVG (팔레트 28개와 1:1)
-├─ dist/                  생성물, 커밋 대상
-│   ├─ color/  NHNCloud-01-Arrows.xml … NHNCloud-28-Retired.xml
-│   └─ black/
+├─ dist/                  생성물, 커밋 대상 (팔레트 1개 = XML 1개, 25개)
 ├─ tools/                 make_drawio_libs.py, validate.py
 ├─ docs/                  scheme.md, taxonomy.yaml에서 생성한 카탈로그
 └─ assets/pptx/
@@ -308,10 +305,10 @@ icons/
 ├─ 03-industry/
 ├─ 04-identity/
 ├─ 05-groups/
-│   ├─ containers/               grp-vpc.svg, grp-vpc.black.svg …        16종
+│   ├─ containers/               grp-vpc.svg …                            16종
 │   └─ service-boxes/            box-container-nks.svg …                  9종
 ├─ 06-compute/
-│   ├─ category/                 ic-compute.svg, ic-compute.black.svg
+│   ├─ category/                 ic-compute.svg
 │   ├─ services/                 ic-compute-instance.svg …
 │   └─ resources/                (리소스가 있는 8개 카테고리만)
 ├─ 07-container/ … 27-governance-audit/
@@ -329,35 +326,29 @@ icons/
 | 리소스 | `ic-<category>-<service>-<resource>` | `ic-database-rds-for-mysql-rds-instance` |
 | 그룹 컨테이너 | `grp-<name>` | `grp-private-subnet` |
 | 서비스 박스 | `box-<category>-<service>` | `box-container-nks` |
-| 블랙 버전 | 위 이름 + `.black.svg` | `ic-database.black.svg` |
 
 전부 소문자 kebab-case입니다. **파일명은 슬러그일 뿐이고 표시명은 `taxonomy.yaml`에만 둡니다.** 지금은 `secutiry`·`lauching` 오탈자와 한글 파일명, `@2x` 접미사가 그대로 라이브러리 표시명으로 새어 나오는데, 이 규칙으로 끊깁니다.
 
-**블랙 버전을 별도 폴더가 아니라 접미사로 두는 이유**: 같은 아이콘의 두 파일이 목록에서 바로 옆에 붙어 누락이 눈에 띕니다. 실제로 현재 저장소에는 블랙이 없는 SVG가 3건 있는데(`ic-ai_service-fashion`, Database 리소스 2개), 폴더가 나뉘어 있어 두 목록을 대조해야만 찾을 수 있었습니다. 세 건 모두 이미 정리 대상이라 드리프트 자체는 경미하지만, 붙여 두면 같은 사고가 재발하지 않습니다.
+### 파일 형식: 컬러 SVG 하나
 
-### 파일 형식: SVG 원칙, 없으면 PNG
+원본은 **컬러 SVG 한 가지만** 관리합니다. PNG 와 블랙 버전은 저장소에 두지 않습니다.
 
-원본은 SVG로 관리합니다. 다만 **SVG가 아예 없는 자산은 PNG로 보관**합니다. AWS도 공식 아이콘
-패키지에 PNG를 함께 넣습니다. 현재 PNG로 관리하는 것은 13개입니다.
+재편 전에는 PNG 596개가 SVG 546개와 어긋나 드리프트 중이었고(`services/network/color` 는
+PNG 21 / SVG 20), 블랙은 199개가 컬러와 짝이 맞지 않았습니다. 관리 대상을 하나로 줄여
+짝 맞추기 문제 자체를 없앴습니다.
 
-| 대상 | 수량 | 비고 |
-| --- | --- | --- |
-| 카테고리 아이콘 | 12 | compute, container, network, monitoring, hybrid-private-cloud, game, search, management, bill, collaboration, contact-center, governance-audit |
-| Flow Log (Network) | 1 | 서비스 SVG는 없고 PNG만 있었음 |
-
-`taxonomy.yaml`에 `format: png`로 기록하고, 생성기가 `data:image/png`로 임베드합니다.
-SVG를 확보하면 PNG를 지우고 교체하면 됩니다.
-
-반대로 **SVG에서 뽑아낼 수 있는 PNG는 저장소에 두지 않습니다.** 재편 전 PNG 596개는
-SVG 546개와 어긋나 드리프트 중이었고(`services/network/color`는 PNG 21 / SVG 20),
-전부 삭제했습니다. 필요할 때 draw.io에서 얻습니다.
+PNG 는 draw.io 에서 필요할 때 얻습니다.
 
 | 방법 | 경로 | 비고 |
 | --- | --- | --- |
 | 내보내기 | File > Export as > PNG | 확대율, DPI, 여백, 투명 배경, 선택 영역만 지정 가능 |
-| 클립보드 복사 | 선택 후 우클릭 > Copy as Image (`Ctrl+Alt+X`, v21.7.3+) | PPT·Word에 바로 붙여넣기 |
+| 클립보드 복사 | 선택 후 우클릭 > Copy as Image (`Ctrl+Alt+X`, v21.7.3+) | PPT·Word 에 바로 붙여넣기 |
 
-주의: Copy as Image로 붙여넣으면 배경이 검게 나오는 사례가 보고돼 있습니다. 문서 배경을 흰색으로 지정하거나 내보내기에서 투명 배경을 끄면 해결됩니다.
+주의: Copy as Image 로 붙여넣으면 배경이 검게 나오는 사례가 보고돼 있습니다.
+문서 배경을 흰색으로 지정하거나 내보내기에서 투명 배경을 끄면 해결됩니다.
+
+흑백 인쇄가 필요하면 draw.io 내보내기에서 처리하거나, 블랙 자산이 다시 필요해지면
+`d1915f1` 이전 이력에서 복구할 수 있습니다.
 
 ### 기존 경로 호환
 
@@ -382,7 +373,7 @@ Retired는 링크에 넣지 않고 README에서 따로 안내합니다. 자체 �
 - [ ] `nhn_private_cloud-box`가 Private Station인지 Private Region인지 확인 후 개명, 아니면 Private Station 박스 신규 제작
 - [ ] 저장소 `files/pptx/` 사본을 포털 최신판(2026.4.8, 58쪽)으로 교체
 - [ ] 저장소를 `icons/` 28개 디렉터리 구조로 재배치 (팔레트 번호 = 디렉터리 번호)
-- [ ] 모든 PNG 삭제, 블랙 버전을 `.black.svg` 접미사로 통합
+- [x] 모든 PNG와 블랙 자산 삭제, 컴러 SVG 단일 관리로 전환 (2026-11-11)
 - [ ] `validate.py` 작성 (블랙 누락, 슬러그 규칙 위반, taxonomy 미등록 검출)
 - [ ] 원본 정리 22건 반영 (파일명 변경, 중복 제거, Retired 이동)
 - [ ] †표 아이콘과 PPT 일반 아이콘 약 40개 SVG 추출, §표 2개 신규 제작 요청

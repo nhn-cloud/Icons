@@ -1,7 +1,7 @@
 <h1 align="center">NHN Cloud 아이콘 라이브러리</h1>
 <p align="center">
 NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아이콘, 리소스 아이콘, 일반 아이콘을 제공합니다.
-원본은 SVG 컬러·블랙 두 버전으로 관리합니다.
+원본은 컬러 SVG 로만 관리합니다.
 </p>
 
 > [!Note]\
@@ -14,7 +14,7 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 | --- | --- |
 | `icons/` | 원본 SVG. 팔레트 28개와 1:1 |
 | `taxonomy.yaml` | 분류·표시명의 단일 원천. 라이브러리는 여기서 생성 |
-| `dist/` | 생성된 draw.io 라이브러리 (`color/`, `black/`) |
+| `dist/` | 생성된 draw.io 라이브러리 25개 |
 | `tools/` | 생성·검증 스크립트 |
 | `docs/` | 분류 체계 문서와 샘플 구성도 |
 | `assets/pptx/` | 아키텍처 아이콘 PPT |
@@ -40,23 +40,27 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 | 리소스 | `ic-<category>-<service>-<resource>` | `ic-database-rds-for-mysql-rds-instance` |
 | 그룹 컨테이너 | `grp-<name>` | `grp-subnet` |
 | 서비스 박스 | `box-<category>-<service>` | `box-container-nks` |
-| 블랙 버전 | 위 이름 + `.black.svg` | `ic-database.black.svg` |
 
 전부 소문자 kebab-case입니다. 파일명은 슬러그일 뿐이고, 표시명은 `taxonomy.yaml`에만 둡니다.
 
 ## 파일 형식
 
-원본은 **SVG가 원칙**이고, SVG가 없는 자산만 PNG로 관리합니다. 현재 13개입니다
-(카테고리 아이콘 12개, Flow Log 1개). `taxonomy.yaml`에 `format: png`로 표시되며
-라이브러리 생성기가 그대로 임베드합니다. SVG를 확보하면 PNG를 지우고 교체하세요.
+**컬러 SVG 한 가지만** 관리합니다. PNG 와 블랙 버전은 저장소에 두지 않습니다.
 
-SVG에서 뽑아낼 수 있는 PNG는 저장소에 두지 않습니다. 필요하면 draw.io에서 바로 얻습니다.
+PNG 가 필요하면 draw.io 에서 바로 얻습니다.
 
 - `File > Export as > PNG` — 확대율·DPI·여백·투명 배경·선택 영역 지정 가능
-- 선택 후 우클릭 `Copy as Image` (`Ctrl+Alt+X`) — PPT·Word에 바로 붙여넣기
+- 선택 후 우클릭 `Copy as Image` (`Ctrl+Alt+X`) — PPT·Word 에 바로 붙여넣기
 
 > [!Warning]\
-> `Copy as Image`로 붙여넣으면 배경이 검게 나오는 사례가 있습니다. 문서 배경을 흰색으로 두거나 내보내기에서 투명 배경을 끄세요.
+> `Copy as Image` 로 붙여넣으면 배경이 검게 나오는 사례가 있습니다. 문서 배경을 흰색으로 두거나 내보내기에서 투명 배경을 끄세요.
+
+## 라이브러리 링크
+
+draw.io 배포 링크는 하나입니다. `python tools/make_links.py --branch <브랜치>` 로 생성합니다.
+`clibs` 링크는 GitHub raw URL 을 draw.io 가 직접 읽으므로, 해당 브랜치가 origin 에 푸시되어 있어야 동작합니다.
+
+로컬에서 바로 쓰려면 draw.io 에서 `도형 > 라이브러리 열기 > 기기` 로 `dist/*.xml` 을 올리면 됩니다.
 
 ## 분류 체계
 

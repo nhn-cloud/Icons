@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 """taxonomy.yaml + icons/ -> draw.io shape libraries (dist/).
 
+저장소는 컬러 SVG 만 관리한다. 블랙 팔레트와 PNG 는 제공하지 않는다.
+
 팔레트 1개 = 라이브러리 XML 1개. 디렉터리 번호가 곧 팔레트 번호이자 패널 순서다.
 SVG 원본을 base64로 임베드하므로 네트워크 없이 동작하고, 내보내기(PNG/PDF)에서도
 아이콘이 그대로 렌더링된다.
@@ -140,26 +142,17 @@ def container_entry(title, uri, stroke, dashed):
 
 # ---------------------------------------------------------------- collect
 
-def asset_path(pal_dir, sub, slug, black, fmt):
-    """taxonomy 의 format(기본 svg)에 맞는 원본 경로. 없으면 다른 확장자도 본다."""
+def asset_path(pal_dir, sub, slug):
     d = (pal_dir / sub) if sub else pal_dir
-    variant = '.black' if black else ''
-    order = [fmt] + [x for x in ('svg', 'png') if x != fmt]
-    for ext in order:
-        p = d / ('%s%s.%s' % (slug, variant, ext))
-        if p.exists():
-            return p
-    return d / ('%s%s.%s' % (slug, variant, fmt))
+    return d / (slug + '.svg')
 
 
-def add(entries, pal_dir, sub, item, black, kind, cat=None):
+def add(entries, pal_dir, sub, item, kind, cat=None):
     """taxonomy 항목 1개를 라이브러리 엔트리로."""
     slug = item['slug']
-    if black and item.get('black') is False:
-        return
-    p = asset_path(pal_dir, sub, slug, black, item.get('format', 'svg'))
+    p = asset_path(pal_dir, sub, slug)
     if not p.exists():
-        warnings.append('%s 없음: %s' % ('black' if black else 'color', p.relative_to(ROOT)))
+        warnings.append('없음: %s' % p.relative_to(ROOT))
         return
     uri, w, h = data_uri(p)
     title = item.get('name') or slug
@@ -173,7 +166,7 @@ def add(entries, pal_dir, sub, item, black, kind, cat=None):
         entries.append(icon_entry(title, uri, w, h, size))
 
 
-def build(pal, black):
+def build(pal):
     pid = pal['id']
     pal_dir = ICONS / pid
     e = []
@@ -182,24 +175,24 @@ def build(pal, black):
         return e
     if kind == 'groups':
         for it in pal.get('containers') or []:
-            add(e, pal_dir, 'containers', it, black, 'container')
+            add(e, pal_dir, 'containers', it, 'container')
         for it in pal.get('service_boxes') or []:
-            add(e, pal_dir, 'service-boxes', it, black, 'box')
+            add(e, pal_dir, 'service-boxes', it, 'box')
         return e
     if kind == 'flat':
         for it in pal.get('icons') or []:
-            add(e, pal_dir, None, it, black, 'flat')
+            add(e, pal_dir, None, it, 'flat')
         return e
     # category
     ci = pal.get('category_icon')
     if ci:
         item = dict(ci) if isinstance(ci, dict) else {'slug': ci}
         item.setdefault('name', pal['title'].split(' / ')[-1])
-        add(e, pal_dir, 'category', item, black, 'flat')
+        add(e, pal_dir, 'category', item, 'flat')
     for it in pal.get('services') or []:
-        add(e, pal_dir, 'services', it, black, 'service')
+        add(e, pal_dir, 'services', it, 'service')
     for it in pal.get('resources') or []:
-        add(e, pal_dir, 'resources', it, black, 'resource')
+        add(e, pal_dir, 'resources', it, 'resource')
     return e
 
 
@@ -207,18 +200,16 @@ def main():
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     rows = []
     for pal in tax['palettes']:
-        for black in (False, True):
-            entries = build(pal, black)
-            if not entries:
-                continue
-            theme = 'black' if black else 'color'
-            out = OUT / theme / ('NHNCloud-%s.xml' % pal['id'])
-            payload = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
-            blob = '<mxlibrary>%s</mxlibrary>' % payload
-            if not DRY:
-                out.parent.mkdir(parents=True, exist_ok=True)
-                out.write_text(blob, encoding='utf-8')
-            rows.append((out.relative_to(ROOT).as_posix(), len(entries), len(blob)))
+        entries = build(pal)
+        if not entries:
+            continue
+        out = OUT / ('NHNCloud-%s.xml' % pal['id'])
+        payload = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
+        blob = '<mxlibrary>%s</mxlibrary>' % payload
+        if not DRY:
+            out.parent.mkdir(parents=True, exist_ok=True)
+            out.write_text(blob, encoding='utf-8')
+        rows.append((out.relative_to(ROOT).as_posix(), len(entries), len(blob)))
 
     for rel, n, b in rows:
         print('%-38s %4d개  %8.1f KB' % (rel, n, b / 1024))
@@ -227,11 +218,6 @@ def main():
 
     if warnings:
         print('\n경고 %d건:' % len(warnings))
-        seen = {}
-        for w in warnings:
-            seen[w.split(' 없음: ')[0]] = seen.get(w.split(' 없음: ')[0], 0) + 1
-        for k, v in seen.items():
-            print('  %s 파일 없음 %d건' % (k, v))
         for w in warnings[:8]:
             print('    %s' % w)
         if len(warnings) > 8:

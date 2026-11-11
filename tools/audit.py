@@ -114,12 +114,3 @@ no_ci = [c for c in CATS if not (ICONS / CATDIR[c] / 'category').exists()
          or not (list((ICONS / CATDIR[c] / 'category').glob('*.svg'))
                  + list((ICONS / CATDIR[c] / 'category').glob('*.png')))]
 print('  보유 %d / 22, 없음 %d개: %s' % (22 - len(no_ci), len(no_ci), ', '.join(no_ci)))
-
-print('\n블랙 버전 없음:')
-nob = [p for p in list(ICONS.rglob('*.svg')) + list(ICONS.rglob('*.png'))
-       if not p.stem.endswith('.black')
-       and not p.with_name(p.stem + '.black.svg').exists()
-       and not p.with_name(p.stem + '.black.png').exists()]
-for p in nob:
-    print('  %s' % p.relative_to(ICONS))
-print('  합계 %d개' % len(nob))
