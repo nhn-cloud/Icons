@@ -1,0 +1,620 @@
+# NHN Cloud 아이콘 분류 단일 원천
+# 생성: tools/make_taxonomy.py (2026-11-11)
+#
+# name 값은 슬러그에서 기계적으로 유도한 초안이다.
+# 공식 홈페이지 서비스 목록 표기로 검증해야 한다. docs/scheme.md 참고.
+version: 1
+palettes:
+  - id: "01-arrows"
+    title: "NHN Cloud / Arrows"
+    kind: styles
+    source: styles.yaml
+  - id: "02-general"
+    title: "NHN Cloud / General Resources"
+    kind: flat
+    icons:
+      - slug: ic-general-application-instance
+        name: "Application Instance"
+      - slug: ic-general-desktop-phone
+        name: "Desktop Phone"
+      - slug: ic-general-desktop
+        name: "Desktop"
+      - slug: ic-general-external-user
+        name: "External User"
+      - slug: ic-general-gateway
+        name: "Gateway"
+      - slug: ic-general-interface
+        name: "Interface"
+      - slug: ic-general-internal-user
+        name: "Internal User"
+      - slug: ic-general-ip-acl
+        name: "IP ACL"
+      - slug: ic-general-laptop
+        name: "Laptop"
+      - slug: ic-general-login-security-settings
+        name: "Login Security Settings"
+      - slug: ic-general-manager
+        name: "Manager"
+      - slug: ic-general-mobile-devices
+        name: "Mobile Devices"
+      - slug: ic-general-peering
+        name: "Peering"
+      - slug: ic-general-phone
+        name: "Phone"
+      - slug: ic-general-private-network
+        name: "Private Network"
+      - slug: ic-general-subnet
+        name: "Subnet"
+  - id: "03-industry"
+    title: "NHN Cloud / Industry & Concepts"
+    kind: flat
+    icons:
+      - slug: ic-industry-iot
+        name: "IoT"
+      - slug: ic-industry-manufacturing
+        name: "Manufacturing"
+      - slug: ic-industry-medical-healthcare
+        name: "Medical Healthcare"
+  - id: "04-identity"
+    title: "NHN Cloud / Identity"
+    kind: flat
+  - id: "05-groups"
+    title: "NHN Cloud / Groups"
+    kind: groups
+    containers:
+      - slug: grp-auto-scaling-group
+        name: "Auto Scaling Group"
+      - slug: grp-instance-contents
+        name: "Instance Contents"
+      - slug: grp-nhn-cloud-account
+        name: "NHN Cloud Account"
+      - slug: grp-nhn-cloud
+        name: "NHN Cloud"
+      - slug: grp-on-premise
+        name: "On Premise"
+      - slug: grp-organization
+        name: "Organization"
+      - slug: grp-project
+        name: "Project"
+      - slug: grp-region
+        name: "Region"
+      - slug: grp-server-contents
+        name: "Server Contents"
+      - slug: grp-subnet
+        name: "Subnet"
+      - slug: grp-vpc
+        name: "VPC"
+    service_boxes:
+      - slug: box-container-ncs
+        name: "NCS"
+        black: false      # 블랙 버전 없음
+      - slug: box-container-nks
+        name: "NKS"
+        black: false      # 블랙 버전 없음
+      - slug: box-database-easycache
+        name: "EasyCache"
+        black: false      # 블랙 버전 없음
+      - slug: box-database-rds-for-mysql
+        name: "RDS for MySQL"
+        black: false      # 블랙 버전 없음
+      - slug: box-dev-tools-pipeline
+        name: "Pipeline"
+        black: false      # 블랙 버전 없음
+      - slug: box-machine-learning-ai-easymaker
+        name: "AI EasyMaker"
+        black: false      # 블랙 버전 없음
+      - slug: box-security-network-firewall
+        name: "Network Firewall"
+        black: false      # 블랙 버전 없음
+      - slug: box-storage-backup
+        name: "Backup"
+        black: false      # 블랙 버전 없음
+  - id: "06-compute"
+    title: "NHN Cloud / Compute"
+    kind: category
+    category: compute
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-compute-auto-scale
+        name: "Auto Scale"
+      - slug: ic-compute-cloud-functions
+        name: "Cloud Functions"
+      - slug: ic-compute-gpu-instance
+        name: "GPU Instance"
+      - slug: ic-compute-image-builder
+        name: "Image Builder"
+      - slug: ic-compute-image
+        name: "Image"
+      - slug: ic-compute-instance-template
+        name: "Instance Template"
+      - slug: ic-compute-instance
+        name: "Instance"
+      - slug: ic-compute-virtual-desktop
+        name: "Virtual Desktop"
+  - id: "07-container"
+    title: "NHN Cloud / Container"
+    kind: category
+    category: container
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-container-ncr
+        name: "NCR"
+      - slug: ic-container-ncs
+        name: "NCS"
+      - slug: ic-container-nks
+        name: "NKS"
+    resources:
+      - slug: ic-container-ncr-image
+        name: "Image"
+        parent: ic-container-ncr
+      - slug: ic-container-ncr-registry
+        name: "Registry"
+        parent: ic-container-ncr
+      - slug: ic-container-ncs-workload
+        name: "Workload"
+        parent: ic-container-ncs
+      - slug: ic-container-nks-container
+        name: "Container"
+        parent: ic-container-nks
+  - id: "08-network"
+    title: "NHN Cloud / Network"
+    kind: category
+    category: network
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-network-colocation-gateway
+        name: "Colocation Gateway"
+      - slug: ic-network-direct-connect
+        name: "Direct Connect"
+      - slug: ic-network-dns-plus
+        name: "DNS Plus"
+      - slug: ic-network-floating-ip
+        name: "Floating IP"
+      - slug: ic-network-internet-gateway
+        name: "Internet Gateway"
+      - slug: ic-network-load-balancer-dsr
+        name: "Load Balancer DSR"
+      - slug: ic-network-load-balancer
+        name: "Load Balancer"
+      - slug: ic-network-nat-gateway
+        name: "NAT Gateway"
+      - slug: ic-network-nat-instance
+        name: "NAT Instance"
+      - slug: ic-network-network-acl
+        name: "Network ACL"
+      - slug: ic-network-network-interface
+        name: "Network Interface"
+      - slug: ic-network-peering-gateway
+        name: "Peering Gateway"
+      - slug: ic-network-private-dns
+        name: "Private DNS"
+      - slug: ic-network-security-groups
+        name: "Security Groups"
+      - slug: ic-network-service-gateway
+        name: "Service Gateway"
+      - slug: ic-network-traffic-mirroring
+        name: "Traffic Mirroring"
+      - slug: ic-network-transit-hub
+        name: "Transit Hub"
+      - slug: ic-network-vpc
+        name: "VPC"
+      - slug: ic-network-vpn-gateway
+        name: "VPN Gateway"
+    resources:
+      - slug: ic-network-colocation-gateway-nhn-cloud-zone
+        name: "NHN Cloud Zone"
+        parent: ic-network-colocation-gateway
+      - slug: ic-network-dns-plus-dns
+        name: "DNS"
+        parent: ic-network-dns-plus
+      - slug: ic-network-dns-plus-gslb
+        name: "GSLB"
+        parent: ic-network-dns-plus
+      - slug: ic-network-transit-hub-attachment
+        name: "Attachment"
+        parent: ic-network-transit-hub
+      - slug: ic-network-vpc-peering-connection
+        name: "Peering Connection"
+        parent: ic-network-vpc
+      - slug: ic-network-vpc-router
+        name: "Router"
+        parent: ic-network-vpc
+      - slug: ic-network-vpc-routing-table
+        name: "Routing Table"
+        parent: ic-network-vpc
+      - slug: ic-network-vpn-gateway-vpn-connection
+        name: "VPN Connection"
+        parent: ic-network-vpn-gateway
+  - id: "09-storage"
+    title: "NHN Cloud / Storage"
+    kind: category
+    category: storage
+    category_icon: ic-storage
+    services:
+      - slug: ic-storage-backup
+        name: "Backup"
+      - slug: ic-storage-block-storage
+        name: "Block Storage"
+      - slug: ic-storage-data-transporter
+        name: "Data Transporter"
+      - slug: ic-storage-nas-for-bigdata
+        name: "NAS for Bigdata"
+      - slug: ic-storage-nas-offline
+        name: "NAS Offline"
+      - slug: ic-storage-nas
+        name: "NAS"
+      - slug: ic-storage-object-storage
+        name: "Object Storage"
+      - slug: ic-storage-storage-gateway
+        name: "Storage Gateway"
+    resources:
+      - slug: ic-storage-backup-backup-policy
+        name: "Backup Policy"
+        parent: ic-storage-backup
+      - slug: ic-storage-backup-backup-recovery
+        name: "Backup Recovery"
+        parent: ic-storage-backup
+      - slug: ic-storage-backup-backup-replication
+        name: "Backup Replication"
+        parent: ic-storage-backup
+      - slug: ic-storage-backup-backup-store
+        name: "Backup Store"
+        parent: ic-storage-backup
+      - slug: ic-storage-block-storage-snapshot
+        name: "Snapshot"
+        parent: ic-storage-block-storage
+      - slug: ic-storage-block-storage-volume
+        name: "Volume"
+        parent: ic-storage-block-storage
+      - slug: ic-storage-data-transporter-import-export
+        name: "Import Export"
+        parent: ic-storage-data-transporter
+      - slug: ic-storage-nas-file-system
+        name: "File System"
+        parent: ic-storage-nas
+      - slug: ic-storage-object-storage-container-replication
+        name: "Container Replication"
+        parent: ic-storage-object-storage
+      - slug: ic-storage-object-storage-container
+        name: "Container"
+        parent: ic-storage-object-storage
+      - slug: ic-storage-object-storage-object
+        name: "Object"
+        parent: ic-storage-object-storage
+  - id: "10-database"
+    title: "NHN Cloud / Database"
+    kind: category
+    category: database
+    category_icon: ic-database
+    services:
+      - slug: ic-database-cubrid-instance
+        name: "CUBRID Instance"
+      - slug: ic-database-easycache
+        name: "EasyCache"
+      - slug: ic-database-mariadb-instance
+        name: "MariaDB Instance"
+      - slug: ic-database-ms-sql-instance
+        name: "MS-SQL Instance"
+      - slug: ic-database-mysql-instance
+        name: "MySQL Instance"
+      - slug: ic-database-postgresql-instance
+        name: "PostgreSQL Instance"
+      - slug: ic-database-rds-for-mariadb
+        name: "RDS for MariaDB"
+      - slug: ic-database-rds-for-ms-sql
+        name: "RDS for MS-SQL"
+      - slug: ic-database-rds-for-mysql
+        name: "RDS for MySQL"
+      - slug: ic-database-rds-for-postgresql
+        name: "RDS for PostgreSQL"
+      - slug: ic-database-tibero-instance
+        name: "Tibero Instance"
+      - slug: ic-database-valkey-instance
+        name: "Valkey Instance"
+    resources:
+      - slug: ic-database-easycache-cache-node
+        name: "Cache Node"
+        parent: ic-database-easycache
+      - slug: ic-database-rds-for-mysql-rds-instance
+        name: "RDS Instance"
+        parent: ic-database-rds-for-mysql
+  - id: "11-monitoring"
+    title: "NHN Cloud / Monitoring"
+    kind: category
+    category: monitoring
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-monitoring-cloud-monitoring
+        name: "Cloud Monitoring"
+      - slug: ic-monitoring-monitoring
+        name: "Monitoring"
+      - slug: ic-monitoring-service-monitoring
+        name: "Service Monitoring"
+    resources:
+      - slug: ic-monitoring-cloud-monitoring-dashboard
+        name: "Dashboard"
+        parent: ic-monitoring-cloud-monitoring
+      - slug: ic-monitoring-cloud-monitoring-notification
+        name: "Notification"
+        parent: ic-monitoring-cloud-monitoring
+  - id: "12-hybrid-private-cloud"
+    title: "NHN Cloud / Hybrid Private Cloud"
+    kind: category
+    category: hybrid-private-cloud
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-hybrid-private-cloud-nhn-cloud-private-deck
+        name: "NHN Cloud Private Deck"
+      - slug: ic-hybrid-private-cloud-nhn-cloud-private-station
+        name: "NHN Cloud Private Station"
+      - slug: ic-hybrid-private-cloud-nhn-hybrid-cloud
+        name: "NHN Hybrid Cloud"
+  - id: "13-game"
+    title: "NHN Cloud / Game"
+    kind: category
+    category: game
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-game-game-starter
+        name: "Game Starter"
+      - slug: ic-game-gameanvil
+        name: "GameAnvil"
+      - slug: ic-game-gamebase
+        name: "Gamebase"
+      - slug: ic-game-lauching
+        name: "Lauching"
+      - slug: ic-game-leaderboard
+        name: "Leaderboard"
+  - id: "14-security"
+    title: "NHN Cloud / Security"
+    kind: category
+    category: security
+    category_icon: ic-security
+    services:
+      - slug: ic-security-app-security-check
+        name: "App Security Check"
+      - slug: ic-security-basic-security
+        name: "Basic Security"
+      - slug: ic-security-cloud-access
+        name: "Cloud Access"
+      - slug: ic-security-ddos-guard
+        name: "Ddos Guard"
+      - slug: ic-security-network-firewall
+        name: "Network Firewall"
+      - slug: ic-security-nhn-appguard
+        name: "NHN Appguard"
+      - slug: ic-security-nhn-bastion
+        name: "NHN Bastion"
+      - slug: ic-security-secure-key-manager
+        name: "Secure Key Manager"
+      - slug: ic-security-security-advisor
+        name: "Security Advisor"
+      - slug: ic-security-security-compliance
+        name: "Security Compliance"
+      - slug: ic-security-security-monitoring
+        name: "Security Monitoring"
+      - slug: ic-security-server-security-check
+        name: "Server Security Check"
+      - slug: ic-security-siem
+        name: "SIEM"
+      - slug: ic-security-vaccine
+        name: "Vaccine"
+      - slug: ic-security-web-firewall
+        name: "Web Firewall"
+      - slug: ic-security-webshell-threat-detector
+        name: "Webshell Threat Detector"
+    resources:
+      - slug: ic-security-network-firewall-firewall
+        name: "Firewall"
+        parent: ic-security-network-firewall
+  - id: "15-content-delivery"
+    title: "NHN Cloud / Content Delivery"
+    kind: category
+    category: content-delivery
+    category_icon: ic-content-delivery
+    services:
+      - slug: ic-content-delivery-cdn
+        name: "CDN"
+      - slug: ic-content-delivery-image
+        name: "Image"
+    resources:
+      - slug: ic-content-delivery-cdn-edge-server
+        name: "Edge Server"
+        parent: ic-content-delivery-cdn
+  - id: "16-notification"
+    title: "NHN Cloud / Notification"
+    kind: category
+    category: notification
+    category_icon: ic-notification
+    services:
+      - slug: ic-notification-email
+        name: "Email"
+      - slug: ic-notification-kakaotalk-bizmessage
+        name: "Kakaotalk Bizmessage"
+      - slug: ic-notification-notification-hub
+        name: "Notification Hub"
+      - slug: ic-notification-push
+        name: "Push"
+      - slug: ic-notification-rcs-bizmessage
+        name: "RCS Bizmessage"
+      - slug: ic-notification-sms
+        name: "SMS"
+  - id: "17-ai-service"
+    title: "NHN Cloud / AI Service"
+    kind: category
+    category: ai-service
+    category_icon: ic-ai-service
+    services:
+      - slug: ic-ai-service-face-recognition
+        name: "Face Recognition"
+      - slug: ic-ai-service-ocr
+        name: "OCR"
+      - slug: ic-ai-service-speech-to-text
+        name: "Speech To Text"
+      - slug: ic-ai-service-text-to-speech
+        name: "Text To Speech"
+  - id: "18-machine-learning"
+    title: "NHN Cloud / Machine Learning"
+    kind: category
+    category: machine-learning
+    category_icon: ic-machine-learning
+    services:
+      - slug: ic-machine-learning-ai-easymaker
+        name: "AI EasyMaker"
+      - slug: ic-machine-learning-deep-learning-instance
+        name: "Deep Learning Instance"
+    resources:
+      - slug: ic-machine-learning-ai-easymaker-inference
+        name: "Inference"
+        parent: ic-machine-learning-ai-easymaker
+        black: false      # 블랙 버전 없음
+      - slug: ic-machine-learning-ai-easymaker-model
+        name: "Model"
+        parent: ic-machine-learning-ai-easymaker
+        black: false      # 블랙 버전 없음
+      - slug: ic-machine-learning-ai-easymaker-notebook
+        name: "Notebook"
+        parent: ic-machine-learning-ai-easymaker
+        black: false      # 블랙 버전 없음
+      - slug: ic-machine-learning-ai-easymaker-pipeline
+        name: "Pipeline"
+        parent: ic-machine-learning-ai-easymaker
+        black: false      # 블랙 버전 없음
+      - slug: ic-machine-learning-ai-easymaker-training
+        name: "Training"
+        parent: ic-machine-learning-ai-easymaker
+        black: false      # 블랙 버전 없음
+  - id: "19-application-service"
+    title: "NHN Cloud / Application Service"
+    kind: category
+    category: application-service
+    category_icon: ic-application-service
+    services:
+      - slug: ic-application-service-api-gateway
+        name: "API Gateway"
+      - slug: ic-application-service-cloud-scheduler
+        name: "Cloud Scheduler"
+      - slug: ic-application-service-file-crafter
+        name: "File Crafter"
+      - slug: ic-application-service-role
+        name: "Role"
+      - slug: ic-application-service-shorturl
+        name: "ShortURL"
+  - id: "20-search"
+    title: "NHN Cloud / Search"
+    kind: category
+    category: search
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-search-autocomplete
+        name: "Autocomplete"
+      - slug: ic-search-cloud-search
+        name: "Cloud Search"
+      - slug: ic-search-corporation-search
+        name: "Corporation Search"
+  - id: "21-data-analytics"
+    title: "NHN Cloud / Data Analytics"
+    kind: category
+    category: data-analytics
+    category_icon: ic-data-analytics
+    services:
+      - slug: ic-data-analytics-data-lake-storage
+        name: "Data Lake Storage"
+      - slug: ic-data-analytics-dataflow
+        name: "Dataflow"
+      - slug: ic-data-analytics-dataquery
+        name: "Dataquery"
+      - slug: ic-data-analytics-easyqueue
+        name: "Easyqueue"
+      - slug: ic-data-analytics-kafka-instance
+        name: "Kafka Instance"
+      - slug: ic-data-analytics-log-n-crash-search
+        name: "Log & Crash Search"
+  - id: "22-dev-tools"
+    title: "NHN Cloud / Dev Tools"
+    kind: category
+    category: dev-tools
+    category_icon: ic-dev-tools
+    services:
+      - slug: ic-dev-tools-deploy
+        name: "Deploy"
+      - slug: ic-dev-tools-nhn-native-deck
+        name: "NHN Native Deck"
+      - slug: ic-dev-tools-pipeline
+        name: "Pipeline"
+  - id: "23-management"
+    title: "NHN Cloud / Management"
+    kind: category
+    category: management
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-management-certificate-manager
+        name: "Certificate Manager"
+      - slug: ic-management-private-ca
+        name: "Private Ca"
+      - slug: ic-management-support-plan
+        name: "Support Plan"
+  - id: "24-bill"
+    title: "NHN Cloud / Bill"
+    kind: category
+    category: bill
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-bill-etax
+        name: "eTax"
+  - id: "25-collaboration"
+    title: "NHN Cloud / Collaboration"
+    kind: category
+    category: collaboration
+    category_icon: null   # 없음, 제작 필요
+  - id: "26-contact-center"
+    title: "NHN Cloud / Contact Center"
+    kind: category
+    category: contact-center
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-contact-center-online-contact
+        name: "Online Contact"
+  - id: "27-governance-audit"
+    title: "NHN Cloud / Governance Audit"
+    kind: category
+    category: governance-audit
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-governance-audit-cloudtrail
+        name: "Cloudtrail"
+      - slug: ic-governance-audit-resource-watcher
+        name: "Resource Watcher"
+  - id: "28-retired"
+    title: "NHN Cloud / Retired"
+    kind: flat
+    icons:
+      - slug: ic-ai-service-fashion
+        name: "AI Service Fashion"
+        black: false      # 블랙 버전 없음
+      - slug: ic-application-service-jeus-instance
+        name: "Application Service JEUS Instance"
+      - slug: ic-application-service-maps
+        name: "Application Service Maps"
+      - slug: ic-application-service-rtcs
+        name: "Application Service RTCS"
+      - slug: ic-application-service-webtob-instance
+        name: "Application Service WebtoB Instance"
+      - slug: ic-collaboration-dooray-erp-finance
+        name: "Collaboration Dooray ERP Finance"
+      - slug: ic-compute-bare-metal-instance
+        name: "Compute Bare Metal Instance"
+      - slug: ic-compute-ephemeral-storage-instance
+        name: "Compute Ephemeral Storage Instance"
+      - slug: ic-contact-center-mobile-contact
+        name: "Contact Center Mobile Contact"
+      - slug: ic-database-redis-instance
+        name: "Database Redis Instance"
+      - slug: ic-game-smart-downloader
+        name: "Game Smart Downloader"
+      - slug: ic-mobile-service-iap
+        name: "Mobile Service IAP"
+      - slug: ic-security-captcha
+        name: "Security Captcha"
+      - slug: ic-security-csap-saas-guide
+        name: "Security Csap Saas Guide"

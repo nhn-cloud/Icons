@@ -1,0 +1,5 @@
+# Arrows 팔레트: 이미지가 아니라 draw.io 엣지 스타일로 만듭니다.
+# 화살표 6종의 선 색·굵기·대시 패턴은 PPT V2.2 "2.3 Arrows"에서 옮겨야 합니다.
+# TODO: PPT에서 실제 값 추출 후 채울 것. docs/scheme.md 참고.
+version: 1
+arrows: []
