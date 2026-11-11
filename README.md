@@ -57,8 +57,18 @@ PNG 가 필요하면 draw.io 에서 바로 얻습니다.
 
 ## 라이브러리 링크
 
-draw.io 배포 링크는 하나입니다. `python tools/make_links.py --branch <브랜치>` 로 생성합니다.
-`clibs` 링크는 GitHub raw URL 을 draw.io 가 직접 읽으므로, 해당 브랜치가 origin 에 푸시되어 있어야 동작합니다.
+draw.io 배포 링크는 **하나**입니다. 팔레트 25개를 한 링크에 담습니다.
+
+```
+python tools/make_links.py                  # GitHub Pages 기준, 약 1,500자 (권장)
+python tools/make_links.py --host raw --branch <브랜치>   # raw, 약 2,150자
+```
+
+`clibs` 링크는 draw.io 가 XML 을 직접 읽어가는 방식이라 해당 브랜치가 origin 에 푸시되어 있어야 하고,
+호스트가 `Access-Control-Allow-Origin: *` 을 보내야 합니다. GitHub raw 와 GitHub Pages 모두 보냅니다.
+
+링크에는 라이브러리 1개마다 URL 이 하나씩 들어갑니다. 그래서 `dist/` 파일명을 팔레트 번호
+두 자리(`02.xml`)로 줄였습니다. 패널에 보이는 이름은 파일명이 아니라 XML 의 `title` 속성이 정합니다.
 
 로컬에서 바로 쓰려면 draw.io 에서 `도형 > 라이브러리 열기 > 기기` 로 `dist/*.xml` 을 올리면 됩니다.
 

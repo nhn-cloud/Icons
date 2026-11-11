@@ -64,23 +64,11 @@ def svg_size(text, default=(60, 60)):
     return default
 
 
-def png_size(blob, default=(60, 60)):
-    """PNG IHDR 청크에서 가로·세로를 읽는다 (바이트 16~24)."""
-    if blob[:8] == b'\x89PNG\r\n\x1a\n' and blob[12:16] == b'IHDR':
-        return (int.from_bytes(blob[16:20], 'big'),
-                int.from_bytes(blob[20:24], 'big'))
-    return default
-
-
 def data_uri(path):
-    """SVG 또는 PNG 원본을 draw.io style 에 넣을 data URI 로.
+    """SVG 원본을 draw.io style 에 넣을 data URI 로.
 
     draw.io 스타일 문자열에서는 ';base64' 를 쓸 수 없어 콤마 뒤에 바로 base64를 둔다.
     """
-    if path.suffix.lower() == '.png':
-        blob = path.read_bytes()
-        w, h = png_size(blob)
-        return 'data:image/png,%s' % base64.b64encode(blob).decode('ascii'), w, h
     text = path.read_text(encoding='utf-8')
     w, h = svg_size(text)
     b64 = base64.b64encode(text.encode('utf-8')).decode('ascii')
@@ -203,9 +191,11 @@ def main():
         entries = build(pal)
         if not entries:
             continue
-        out = OUT / ('NHNCloud-%s.xml' % pal['id'])
+        # 파일명은 팔레트 번호 2자리만 쓴다. clibs 링크 1개에 25개 URL 이 들어가므로
+        # 파일명 1자가 25자씩 불어난다. 패널에 보이는 이름은 title 속성이 결정한다.
+        out = OUT / ('%s.xml' % pal['id'].split('-')[0])
         payload = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
-        blob = '<mxlibrary>%s</mxlibrary>' % payload
+        blob = '<mxlibrary title="%s">%s</mxlibrary>' % (esc(pal['title']), payload)
         if not DRY:
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(blob, encoding='utf-8')

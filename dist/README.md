@@ -11,6 +11,10 @@ python tools/make_drawio_libs.py --dry-run   # 쓰지 않고 점검만
 저장소에 파일이 있어야 배포가 됩니다.
 
 팔레트 1개 = XML 1개, 전부 25개입니다. 컬러 SVG 만 제공하므로 테마 구분이 없습니다.
+
+파일명은 팔레트 번호 두 자리입니다(`02.xml`). `clibs` 배포 링크에 25개 URL 이 들어가므로
+파일명 1자가 링크 25자로 불어나기 때문입니다. draw.io 패널에 보이는 이름은 파일명이 아니라
+XML 의 `title` 속성(`<mxlibrary title="NHN Cloud / Database">`)이 정합니다.
 서비스 아이콘 64px, 리소스 아이콘 48px, 그룹 컨테이너와 서비스 박스는
 320×200 컨테이너 도형(`container=1`)으로 생성합니다.
 
