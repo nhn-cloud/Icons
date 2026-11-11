@@ -51,10 +51,12 @@ files = sorted(p.name for p in (ROOT / 'dist').glob('*.xml'))
 if not files:
     raise SystemExit('dist/ 에 라이브러리가 없습니다. make_drawio_libs.py 를 먼저 실행하세요.')
 
-# draw.io 는 clibs 목록을 역순으로 패널에 쌓는다(실측: 4회 반복 모두 역순).
-# 패널에서 02-general 이 위, 28-retired 가 아래로 보이게 하려면 링크에서 뒤집어 넣는다.
-link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='')
-                         for f in reversed(files))
+# 패널 표시 순서에 대한 실측 결과:
+#   최초 방문(저장된 설정 없음) -> clibs 의 역순으로 쌓인다
+#   재방문                      -> clibs 순서 그대로 쌓인다
+# 둘을 동시에 만족시킬 수 없다. 재방문이 일반적이므로 자연 순서를 쓴다.
+# 그 결과 아주 처음 한 번만 Retired 가 위에 오고, 이후에는 계속 정상 순서다.
+link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='') for f in files)
 
 INDEX = """<!doctype html>
 <html lang="ko">
