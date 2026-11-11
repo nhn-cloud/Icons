@@ -58,6 +58,12 @@ if not files:
 # 그 결과 아주 처음 한 번만 Retired 가 위에 오고, 이후에는 계속 정상 순서다.
 link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='') for f in files)
 
+# draw.io 탭 제목은 열린 파일 이름을 따른다(title 파라미터는 무시된다).
+# 이름만 있는 빈 시작 파일을 #U 로 열어 "제목 없는 다이어그램" 대신 이름이 나오게 한다.
+# 파일명에 한글을 쓰면 제목에 퍼센트 인코딩된 채 나오므로 ASCII 로 둔다(공백은 그대로 보인다).
+STARTER = 'https://%s.github.io/%s/NHN Cloud Icons.drawio' % (OWNER, NAME)
+link += '#U' + urllib.parse.quote(STARTER, safe='')
+
 INDEX = """<!doctype html>
 <html lang="ko">
 <meta charset="utf-8">
