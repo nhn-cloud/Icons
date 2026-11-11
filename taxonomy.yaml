@@ -16,38 +16,110 @@ palettes:
     title: "NHN Cloud / General Resources"
     kind: flat
     icons:
+      - slug: ic-general-administrator
+        name: "Administrator"
+      - slug: ic-general-alert
+        name: "Alert"
       - slug: ic-general-application-instance
         name: "Application Instance"
+      - slug: ic-general-authenticated-user
+        name: "Authenticated User"
+      - slug: ic-general-chat
+        name: "Chat"
+      - slug: ic-general-client
+        name: "Client"
+      - slug: ic-general-cold-storage
+        name: "Cold Storage"
+      - slug: ic-general-credentials
+        name: "Credentials"
+      - slug: ic-general-data-stream
+        name: "Data Stream"
+      - slug: ic-general-data-table
+        name: "Data Table"
       - slug: ic-general-desktop-phone
         name: "Desktop Phone"
       - slug: ic-general-desktop
         name: "Desktop"
+      - slug: ic-general-disk
+        name: "Disk"
+      - slug: ic-general-document
+        name: "Document"
+      - slug: ic-general-documents
+        name: "Documents"
+      - slug: ic-general-email
+        name: "Email"
       - slug: ic-general-external-user
         name: "External User"
+      - slug: ic-general-folder
+        name: "Folder"
+      - slug: ic-general-folders
+        name: "Folders"
       - slug: ic-general-gateway
         name: "Gateway"
+      - slug: ic-general-generic-application
+        name: "Generic Application"
+      - slug: ic-general-git-repository
+        name: "Git Repository"
+      - slug: ic-general-globe
+        name: "Globe"
       - slug: ic-general-interface
         name: "Interface"
       - slug: ic-general-internal-user
         name: "Internal User"
+      - slug: ic-general-internet
+        name: "Internet"
       - slug: ic-general-ip-acl
         name: "IP ACL"
+      - slug: ic-general-json-script
+        name: "Json Script"
       - slug: ic-general-laptop
         name: "Laptop"
       - slug: ic-general-login-security-settings
         name: "Login Security Settings"
+      - slug: ic-general-logs
+        name: "Logs"
       - slug: ic-general-manager
         name: "Manager"
+      - slug: ic-general-metrics
+        name: "Metrics"
+      - slug: ic-general-mobile-client
+        name: "Mobile Client"
       - slug: ic-general-mobile-devices
         name: "Mobile Devices"
+      - slug: ic-general-multimedia
+        name: "Multimedia"
+      - slug: ic-general-nhn-cloud-console
+        name: "NHN Cloud Console"
+      - slug: ic-general-office-building
+        name: "Office Building"
       - slug: ic-general-peering
         name: "Peering"
       - slug: ic-general-phone
         name: "Phone"
       - slug: ic-general-private-network
         name: "Private Network"
+      - slug: ic-general-programming-language
+        name: "Programming Language"
+      - slug: ic-general-saml-token
+        name: "Saml Token"
+      - slug: ic-general-sdk
+        name: "Sdk"
+      - slug: ic-general-server
+        name: "Server"
+      - slug: ic-general-servers
+        name: "Servers"
+      - slug: ic-general-source-code
+        name: "Source Code"
+      - slug: ic-general-ssl-padlock
+        name: "Ssl Padlock"
       - slug: ic-general-subnet
         name: "Subnet"
+      - slug: ic-general-tape-storage
+        name: "Tape Storage"
+      - slug: ic-general-toolkit
+        name: "Toolkit"
+      - slug: ic-general-users
+        name: "Users"
   - id: "03-industry"
     title: "NHN Cloud / Industry & Concepts"
     kind: flat
@@ -165,6 +237,8 @@ palettes:
         name: "DNS Plus"
       - slug: ic-network-floating-ip
         name: "Floating IP"
+      - slug: ic-network-flow-log
+        name: "Flow Log"
       - slug: ic-network-internet-gateway
         name: "Internet Gateway"
       - slug: ic-network-load-balancer-dsr
@@ -406,6 +480,9 @@ palettes:
       - slug: ic-security-network-firewall-firewall
         name: "Firewall"
         parent: ic-security-network-firewall
+      - slug: ic-security-network-firewall-ipsec-vpn
+        name: "Ipsec VPN"
+        parent: ic-security-network-firewall
   - id: "15-content-delivery"
     title: "NHN Cloud / Content Delivery"
     kind: category
@@ -570,14 +647,22 @@ palettes:
     services:
       - slug: ic-bill-etax
         name: "eTax"
+  - id: "25-collaboration"
+    title: "NHN Cloud / Collaboration"
+    kind: category
+    category: collaboration
+    category_icon: null   # 없음, 제작 필요
+    services:
+      - slug: ic-collaboration-dooray
+        name: "Dooray"
   - id: "26-contact-center"
     title: "NHN Cloud / Contact Center"
     kind: category
     category: contact-center
     category_icon: null   # 없음, 제작 필요
     services:
-      - slug: ic-contact-center-online-contact
-        name: "Online Contact"
+      - slug: ic-contact-center-contiple
+        name: "Contiple"
   - id: "27-governance-audit"
     title: "NHN Cloud / Governance Audit"
     kind: category

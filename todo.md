@@ -3,18 +3,19 @@
 `alpha` 브랜치 재편 후 남은 작업. 기준 문서는 `docs/scheme.md`.
 현황 수치는 `python tools/audit.py`로 언제든 다시 뽑을 수 있다.
 
-**한 줄 요약**: 저장소는 **컬러 SVG 211개**만 관리한다. 확보해야 할 아이콘은 **65개**다.
+**한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
+서비스 아이콘 **116/119**, 일반 아이콘 **52개**. 남은 것은 **신규 제작 3건**과 **Identity 7건**, **Arrows 6종**이다.
 
-| 구분 | 수량 | 내역 |
+| 구분 | 이전 | 현재 |
 | --- | --- | --- |
-| PPT V2.2 에서 추출 | 62 | 일반 38, 카테고리 12, Identity 7, 산업 2, 리소스 1, Flow Log 1, Dooray! 1 |
-| 디자인팀 신규 제작 | 2 | Database Migration Service, NHN Cloud Foundry |
-| PPT 확인 후 결정 | 1 | NHN Cloud Private Region |
+| 서비스 아이콘 | 113 / 119 | **116 / 119** |
+| 일반 아이콘 | 16 | **52** |
+| 리소스 | IPSec VPN 없음 | **확보** |
+| 카테고리 아이콘 | 10 / 22 | 범위에서 제외 (아래 참고) |
 
-여기에 파일이 아닌 **Arrows 스펙 6종**(PPT 16쪽)과, 자산은 있으나 이름만 맞추면 되는
-**Contiple 개명 1건**이 별도로 있다.
-
-블랙 버전과 PNG 는 더 이상 관리하지 않는다. 흑백이 필요하면 draw.io 내보내기로 처리한다.
+**카테고리 아이콘은 이번 작업 범위에서 제외한다.** Figma `03 Architecture icon` 페이지는
+카테고리를 섹션 프레임과 텍스트 라벨로만 구분하고 카테고리 아이콘을 두지 않는다.
+기존에 확보한 10개는 그대로 쓰고, 없는 12개는 추적하지 않는다.
 
 ---
 
@@ -24,37 +25,34 @@
 
 | 순위 | 작업 | 수량 | 방법 | 막힘 |
 | --- | --- | --- | --- | --- |
-| 1 | 일반 아이콘 추출 | 38 | PPT 18\~19쪽 | 없음 |
-| 2 | 카테고리 아이콘 제작 | 12 | PPT 20쪽 또는 신규 | 디자인 리소스 |
-| 3 | Identity 아이콘 추출 | 7 | PPT 17쪽 | 없음 |
-| 4 | Arrows 스펙 입력 | 6 | PPT 16쪽 (파일 아님) | 없음 |
-| 5 | 누락 서비스 아이콘 | 6 | 추출 2 / 신규 2 / 확인 2 | DMS·Foundry는 디자인팀 |
-| 6 | 산업·개념 아이콘 | 2 | PPT | Machine Learning은 중복 확인 필요 |
-| 7 | 리소스 1건 | 1 | PPT | 없음 |
+| 1 | 디자인팀 신규 제작 요청 | 3 | Database Migration Service, NHN Cloud Foundry, NHN Cloud Private Region | 디자인 리소스 |
+| 2 | Identity 아이콘 확보 | 7 | Figma 에 라이트 버전이 없음 (아래 1-3) | 확인 필요 |
+| 3 | Arrows 스펙 입력 | 6 | PPT 16쪽 (파일 아님) | 없음 |
+| 4 | 산업·개념 보강 | 2 | Finance, Machine Learning (아래 1-6) | 정의 확인 필요 |
 
-### 1-2. 일반 아이콘 38개 — PPT 18~19쪽에서 추출
+### 1-2. 일반 아이콘 — 확보 완료
 
-기대 53개 중 15개 확인(보유 파일은 16개이고 그중 `manager`는 기대 목록에 없음). 추출 시 60×60 캔버스, 브랜드 블루 `#125DE6` 기준.
+Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-general/` 에 넣었다.
+기존 16개와 합쳐 **52개**가 되었고, scheme.md 가 기대한 53개를 사실상 채웠다.
 
-| 묶음 | 없는 아이콘 |
-| --- | --- |
-| 사람 (3) | Administrator, Authenticated user, Users |
-| 단말 (2) | Client, Mobile client |
-| 범용 인프라 (9) | Disk, Internet, Globe, Server, Servers, Storage, Tape storage, Cold storage, Office building |
-| 애플리케이션·개발 (10) | Application Service, Generic application, Git repository, Programming language, Source code, SDK, Toolkit, Dev Tools, JSON script, NHN Cloud Console |
-| 데이터·문서 (9) | Data stream, Data table, Document, Documents, Folder, Folders, Logs, Metrics, Multimedia |
-| 보안·알림 (5) | Credentials, SAML token, SSL padlock, Alert, Chat |
+추출 경로: Figma 노드 내보내기(SVG) → `tools/figma_clean.py` 로 배경 제거 → `ic-general-<슬러그>.svg`.
+브랜드 블루 `#125DE6`, 60×60 캔버스로 기존 자산과 형식이 같다.
 
-> 보유 16개: application-instance, desktop, desktop-phone, external-user, gateway, interface, internal-user, ip-acl, laptop, login-security-settings, manager, mobile-devices, peering, phone, private-network, subnet
+- [ ] `ic-general-manager` 와 `ic-general-administrator` 는 **서로 다른 아이콘**으로 확인됐다(path 비교).
+      둘 다 유지했으나 표시명이 겹칠 수 있어 `taxonomy.yaml` 에서 구분이 필요한지 확인
 
-- [ ] `manager`가 기대 목록의 **Administrator**와 같은 것인지 확인. 같으면 `ic-general-administrator`로 개명, 다르면 Administrator를 따로 추출
+### 1-3. Identity 7개 — Figma 에 라이트 버전이 없음
 
-### 1-3. Identity 7개 — PPT 17쪽에서 추출
+`03 Architecture icon` 페이지에서 찾은 계정·역할 아이콘은 전부
+`General Resources Icon/Dark Backgrounds/...` 즉 **어두운 배경용 변형**이다.
+저장소는 컬러 한 가지만 관리하므로 그대로 쓸 수 없다.
 
-`icons/04-identity/`가 비어 있다. 파일명은 `ic-identity-<name>.svg`.
+- [ ] 라이트 버전이 `02 Service icon` 페이지나 다른 곳에 있는지 확인
+- [ ] 없다면 디자인팀에 라이트 버전 요청
 
-- NHN Cloud 계정: Owner, Admin, Member, Viewer
-- IAM 계정: Admin, Member, Viewer
+필요한 7종: NHN Cloud 계정 Owner / Admin / Member / Viewer, IAM 계정 Admin / Member / Viewer
+
+> Figma 에는 Billing Viewer, Log Viewer 등 **문서에 없던 역할도 있다.** 포함할지 결정 필요.
 
 ### 1-4. Arrows 6종 — PPT 16쪽, 파일이 아니라 엣지 스타일
 
@@ -72,34 +70,43 @@
 - [ ] 점선의 실제 dash 패턴 값을 PPT에서 확인 (현재 표에 없음)
 - [ ] `styles.yaml` 스키마를 정하고 `make_drawio_libs.py`가 엣지 스타일 엔트리를 생성하도록 추가
 
-### 1-5. 누락 서비스 아이콘 6개
+### 1-5. 누락 서비스 아이콘 3개 — 전부 신규 제작
 
-| 서비스 | 카테고리 | 상태 | 조치 |
-| --- | --- | --- | --- |
-| Flow Log | Network | SVG 없음. PNG 만 있었으나 PNG 관리를 중단해 삭제 | PPT 에서 추출 |
-| Dooray! | Collaboration | 컬러 SVG 없음 (블랙만 있었으나 삭제) | 박스에서 추출하거나 PPT에서 |
-| NHN Cloud Private Region | Hybrid & Private Cloud | 자산 전혀 없음 | PPT 확인 후 없으면 신규 제작 |
-| Database Migration Service § | Database | 아이콘 자체 없음 | **디자인팀 신규 제작 요청** |
-| NHN Cloud Foundry § | Machine Learning | 아이콘 자체 없음 | **디자인팀 신규 제작 요청** |
-| Contiple | Contact Center | 파일은 `ic-contact-center-online-contact`로 존재 | 같은 상품인지 확인 후 개명 |
+| 서비스 | 카테고리 | 상태 |
+| --- | --- | --- |
+| Database Migration Service | Database | Figma 에 전용 페이지(`260820 DMS`)가 있으나 **아키텍처 아이콘은 별개로 신규 요청 필요** |
+| NHN Cloud Foundry | Machine Learning | 전용 페이지(`260731 Foundry`) 동일 |
+| NHN Cloud Private Region | Hybrid & Private Cloud | Figma 에도 없음 |
 
-### 1-6. 산업·개념 2개
+**확보 완료된 것** (Figma 에서 추출)
 
-- Finance — PPT에서 추출
-- Machine Learning — `ic-machine-learning`을 `18-machine-learning/category/`에 카테고리 아이콘으로 배치했는데, scheme.md는 산업·개념 목록에도 올려 두었다. **같은 아이콘인지 확인**하고, 같다면 어느 쪽에 둘지(또는 양쪽 모두) 결정
+| 서비스 | 결과 |
+| --- | --- |
+| Flow Log | `icons/08-network/services/ic-network-flow-log.svg` |
+| Dooray! | `icons/25-collaboration/services/ic-collaboration-dooray.svg` |
+| Contiple | 기존 `online-contact` 와 **path 가 완전히 일치**해 `ic-contact-center-contiple.svg` 로 개명 |
+| IPSec VPN | `icons/14-security/resources/ic-security-network-firewall-ipsec-vpn.svg` |
 
-### 1-7. 리소스 1개
+### 1-6. 산업·개념 2개 — 정의 확인 필요
 
-- IPSec VPN † (Security / Network Firewall) — PPT에서 추출. 현재 Security 리소스는 Firewall 1개뿐
+현재 3개 보유 (IoT, Manufacturing, Medical & Healthcare). scheme.md 는 5개를 기대한다.
 
-### 1-8. 카테고리 아이콘 12개 — 자산 없음
+- **Finance** — Figma 에서 이 이름으로 걸리는 것은 `ic-dooray_erp-finance`(Dooray! ERP 재무, Retired 대상)뿐이다.
+  산업·개념으로서의 Finance 아이콘은 존재하지 않는 것으로 보인다. 분류표에서 뺄지 확인 필요
+- **Machine Learning** — `ic-machine-learning` 을 `18-machine-learning/category/` 에 카테고리 아이콘으로 두었다.
+  산업·개념에도 올릴지, 카테고리 아이콘만으로 둘지 결정 필요
 
-PNG 로 임시 운용하던 것을 PNG 관리 중단과 함께 삭제했다. SVG 로 다시 확보해야 한다.
-PNG 원본은 `git show d1915f1:files/category_icons/` 로 꺼내 참고할 수 있다.
+### 1-7. 리소스 — 확보 완료
 
-`compute` · `container` · `network` · `monitoring` · `hybrid-private-cloud` · `game` · `search` · `management` · `bill` · `collaboration` · `contact-center` · `governance-audit`
+IPSec VPN 을 Figma 에서 추출해 넣었다. Security 리소스가 Firewall, IPSec VPN 2개로 분류표와 일치한다.
 
-> 나머지 10개(storage, database, security, ai-service, application-service, content-delivery, data-analytics, dev-tools, machine-learning, notification)는 SVG 보유.
+### 1-8. 카테고리 아이콘 — 범위 제외
+
+이번 작업에서 제외한다. 보유한 10개는 그대로 쓰고, 없는 12개는 추적하지 않는다.
+
+Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + 텍스트 라벨**로만 구분한다.
+예를 들어 `Compute` 는 1958×650 프레임과 1942×29 텍스트이고, 아이콘 노드가 아니다.
+필요해지면 `02 Service icon` 페이지를 따로 확인해야 한다.
 
 ---
 
@@ -151,3 +158,4 @@ PNG 원본은 `git show d1915f1:files/category_icons/` 로 꺼내 참고할 수 
 | 중복·잔재 SVG | 9 | `@2x`, `(dsr)` 중복, 위치 오류 리소스 등 |
 | 블랙 SVG | 199 | 컬러만 제공하기로 결정 |
 | 복구했던 PNG | 13 | PNG 관리 중단 (카테고리 12, Flow Log 1) |
+| `ic-contact-center-online-contact` | 1 | Contiple 로 개명 (Figma 대조로 동일 확인) |

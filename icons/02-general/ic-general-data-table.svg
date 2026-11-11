@@ -1,0 +1,5 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Union" fill-rule="evenodd" clip-rule="evenodd" d="M53 27H7V31H53V27ZM7 37H53V41H7V37ZM7 47H53V51H7V47Z" fill="#555555"/>
+<path id="Union_2" fill-rule="evenodd" clip-rule="evenodd" d="M11 51L11 9H7V51H11ZM25 9L25 51H21L21 9H25ZM39 51L39 9H35L35 51H39ZM53 51V9H49V51H53Z" fill="#555555"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M53 9H7V21H53V9ZM19 14H13V16H19V14ZM33 14H27V16H33V14ZM41 14H47V16H41V14Z" fill="#555555"/>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path id="Vector 6" d="M38 11H24L18 29H8" stroke="#555555" stroke-width="4"/>
+<path id="Vector 11" d="M42 48.5H31L25 43H8" stroke="#555555" stroke-width="4"/>
+<path id="Vector 9" d="M8 22L36 22" stroke="#555555" stroke-width="4"/>
+<path id="Vector 10" d="M8 36L36 36" stroke="#555555" stroke-width="4"/>
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M47 56C50.866 56 54 52.866 54 49C54 45.134 50.866 42 47 42C43.134 42 40 45.134 40 49C40 52.866 43.134 56 47 56ZM47 52C48.6569 52 50 50.6569 50 49C50 47.3431 48.6569 46 47 46C45.3431 46 44 47.3431 44 49C44 50.6569 45.3431 52 47 52Z" fill="#555555"/>
+<path id="Subtract_2" fill-rule="evenodd" clip-rule="evenodd" d="M43 18C46.866 18 50 14.866 50 11C50 7.13401 46.866 4 43 4C39.134 4 36 7.13401 36 11C36 14.866 39.134 18 43 18ZM43 14C44.6569 14 46 12.6569 46 11C46 9.34315 44.6569 8 43 8C41.3431 8 40 9.34315 40 11C40 12.6569 41.3431 14 43 14Z" fill="#555555"/>
+<circle id="Oval" cx="38" cy="36" r="6" fill="#555555"/>
+<circle id="Oval_2" cx="32" cy="22" r="6" fill="#555555"/>
+</svg>
