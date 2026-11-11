@@ -58,8 +58,7 @@ INDEX = """<!doctype html>
 <meta charset="utf-8">
 <title>NHN Cloud 아이콘 라이브러리</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta http-equiv="refresh" content="0; url=__LINK__">
-<link rel="canonical" href="__LINK__">
+<meta name="robots" content="noindex">
 <style>
   body{font:15px/1.7 -apple-system,"Segoe UI",system-ui,sans-serif;color:#222;
        max-width:34rem;margin:18vh auto;padding:0 1.5rem}
@@ -71,6 +70,8 @@ INDEX = """<!doctype html>
 <p><a id="go" href="__LINK__">draw.io 에서 라이브러리 열기</a></p>
 <p class="sub">팔레트 __N__개가 왼쪽 도형 패널에 추가됩니다.
 원본 저장소: <a href="https://github.com/__REPO__">github.com/__REPO__</a></p>
+<!-- 리다이렉트는 한 가지만 쓴다. meta refresh 와 함께 쓰면 두 번 이동해
+     draw.io 가 라이브러리를 중복 등록할 수 있다. -->
 <script>location.replace(document.getElementById("go").href);</script>
 </html>
 """
