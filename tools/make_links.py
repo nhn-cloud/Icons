@@ -51,7 +51,10 @@ files = sorted(p.name for p in (ROOT / 'dist').glob('*.xml'))
 if not files:
     raise SystemExit('dist/ 에 라이브러리가 없습니다. make_drawio_libs.py 를 먼저 실행하세요.')
 
-link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='') for f in files)
+# draw.io 는 clibs 목록을 역순으로 패널에 쌓는다(실측: 4회 반복 모두 역순).
+# 패널에서 02-general 이 위, 28-retired 가 아래로 보이게 하려면 링크에서 뒤집어 넣는다.
+link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='')
+                         for f in reversed(files))
 
 INDEX = """<!doctype html>
 <html lang="ko">
