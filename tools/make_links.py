@@ -5,6 +5,7 @@
     python tools/make_links.py --host raw           # raw.githubusercontent.com
     python tools/make_links.py --branch draft       # 브랜치 지정
     python tools/make_links.py --markdown           # README 에 붙일 한 줄
+    python tools/make_links.py --write-index        # index.html 리다이렉트 페이지 생성
 
 clibs 링크는 라이브러리 1개마다 URL 이 하나씩 들어가므로, 팔레트가 25개면
 링크가 길어진다. 그래서 파일명을 팔레트 번호 2자리로 줄였고
@@ -15,6 +16,11 @@ clibs 링크는 라이브러리 1개마다 URL 이 하나씩 들어가므로, �
 | pages  | 약 1,440자 | 저장소에 GitHub Pages 를 켜야 함 |
 
 두 호스트 모두 draw.io 가 요구하는 Access-Control-Allow-Origin: * 을 보낸다.
+
+배포용 짧은 주소가 필요하면 --write-index 로 리다이렉트 페이지를 만든다.
+NHN Cloud ShortURL 은 원본 URL 을 255자까지만 받으므로 clibs 링크를 그대로 넣을 수 없다
+(팔레트 25개면 CDN 을 써도 1,206자). 리다이렉트 페이지 주소는 30자 안팎이라
+그대로 배포하거나 ShortURL 에 넣을 수 있다.
 """
 import sys
 import urllib.parse
@@ -29,6 +35,7 @@ argv = sys.argv
 BRANCH = argv[argv.index('--branch') + 1] if '--branch' in argv else 'main'
 HOST = argv[argv.index('--host') + 1] if '--host' in argv else 'pages'
 MARKDOWN = '--markdown' in argv
+WRITE_INDEX = '--write-index' in argv
 
 if HOST == 'raw':
     PREFIX = 'https://raw.githubusercontent.com/%s/%s/dist/' % (REPO, BRANCH)
@@ -43,7 +50,40 @@ if not files:
 
 link = EDITOR % ';'.join('U' + urllib.parse.quote(PREFIX + f, safe='') for f in files)
 
-if MARKDOWN:
+INDEX = """<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<title>NHN Cloud 아이콘 라이브러리</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="refresh" content="0; url=__LINK__">
+<link rel="canonical" href="__LINK__">
+<style>
+  body{font:15px/1.7 -apple-system,"Segoe UI",system-ui,sans-serif;color:#222;
+       max-width:34rem;margin:18vh auto;padding:0 1.5rem}
+  a{color:#125DE6}
+  p.sub{color:#666;font-size:13px}
+</style>
+<h1>NHN Cloud 아이콘 라이브러리</h1>
+<p>draw.io 로 이동하는 중입니다. 자동으로 열리지 않으면 아래를 누르세요.</p>
+<p><a id="go" href="__LINK__">draw.io 에서 라이브러리 열기</a></p>
+<p class="sub">팔레트 __N__개가 왼쪽 도형 패널에 추가됩니다.
+원본 저장소: <a href="https://github.com/__REPO__">github.com/__REPO__</a></p>
+<script>location.replace(document.getElementById("go").href);</script>
+</html>
+"""
+
+if WRITE_INDEX:
+    html = (INDEX.replace('__LINK__', link.replace('&', '&amp;'))
+                 .replace('__N__', str(len(files)))
+                 .replace('__REPO__', REPO))
+    out = ROOT / 'index.html'
+    out.write_text(html, encoding='utf-8', newline='\n')
+    print('index.html 생성 (%d바이트). host=%s, 팔레트 %d개' % (len(html), HOST, len(files)))
+    print('배포 주소 예:')
+    print('  https://%s.github.io/%s/            (GitHub Pages, %d자)'
+          % (OWNER, NAME, len('https://%s.github.io/%s/' % (OWNER, NAME))))
+    print('  CDN 에 올리면 더 짧게 가능')
+elif MARKDOWN:
     print('[NHN Cloud 아이콘 라이브러리 열기](%s)' % link)
 else:
     print('팔레트 %d개 · %d자 · host=%s%s'

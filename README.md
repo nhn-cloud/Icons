@@ -59,6 +59,14 @@ PNG 가 필요하면 draw.io 에서 바로 얻습니다.
 
 draw.io 배포 링크는 **하나**입니다. 팔레트 25개를 한 링크에 담습니다.
 
+배포는 `index.html` 리다이렉트 페이지로 합니다. NHN Cloud ShortURL 이 원본 URL 을
+**255자까지만** 받기 때문에 clibs 링크(팔레트 25개면 CDN 을 써도 1,206자)를 그대로
+넣을 수 없습니다. 리다이렉트 페이지 주소는 30자 안팎이라 그대로 배포하거나 ShortURL 에 넣을 수 있습니다.
+
+```
+python tools/make_links.py --host raw --branch <브랜치> --write-index
+```
+
 ```
 python tools/make_links.py                  # GitHub Pages 기준, 약 1,500자 (권장)
 python tools/make_links.py --host raw --branch <브랜치>   # raw, 약 2,150자
