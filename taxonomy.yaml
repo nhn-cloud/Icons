@@ -3,6 +3,9 @@
 #
 # name 값은 슬러그에서 기계적으로 유도한 초안이다.
 # 공식 홈페이지 서비스 목록 표기로 검증해야 한다. docs/scheme.md 참고.
+#
+# 이미 등록된 슬러그의 name 은 재생성해도 보존된다(검증한 표시명 유지).
+# 슬러그에서 다시 유도하려면 --reset 을 준다.
 version: 1
 palettes:
   - id: "01-arrows"
@@ -115,6 +118,7 @@ palettes:
     category: compute
     category_icon:
       slug: ic-compute
+      name: "Compute"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -140,6 +144,7 @@ palettes:
     category: container
     category_icon:
       slug: ic-container
+      name: "Container"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -168,6 +173,7 @@ palettes:
     category: network
     category_icon:
       slug: ic-network
+      name: "Network"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -244,6 +250,7 @@ palettes:
     category: storage
     category_icon:
       slug: ic-storage
+      name: "Storage"
     services:
       - slug: ic-storage-backup
         name: "Backup"
@@ -301,6 +308,7 @@ palettes:
     category: database
     category_icon:
       slug: ic-database
+      name: "Database"
     services:
       - slug: ic-database-cubrid-instance
         name: "CUBRID Instance"
@@ -339,6 +347,7 @@ palettes:
     category: monitoring
     category_icon:
       slug: ic-monitoring
+      name: "Monitoring"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -359,6 +368,7 @@ palettes:
     category: hybrid-private-cloud
     category_icon:
       slug: ic-hybrid-private-cloud
+      name: "Hybrid Private Cloud"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -374,6 +384,7 @@ palettes:
     category: game
     category_icon:
       slug: ic-game
+      name: "Game"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -393,6 +404,7 @@ palettes:
     category: security
     category_icon:
       slug: ic-security
+      name: "Security"
     services:
       - slug: ic-security-app-security-check
         name: "App Security Check"
@@ -436,6 +448,7 @@ palettes:
     category: content-delivery
     category_icon:
       slug: ic-content-delivery
+      name: "Content Delivery"
     services:
       - slug: ic-content-delivery-cdn
         name: "CDN"
@@ -451,6 +464,7 @@ palettes:
     category: notification
     category_icon:
       slug: ic-notification
+      name: "Notification"
     services:
       - slug: ic-notification-email
         name: "Email"
@@ -470,6 +484,7 @@ palettes:
     category: ai-service
     category_icon:
       slug: ic-ai-service
+      name: "AI Service"
     services:
       - slug: ic-ai-service-face-recognition
         name: "Face Recognition"
@@ -485,6 +500,7 @@ palettes:
     category: machine-learning
     category_icon:
       slug: ic-machine-learning
+      name: "Machine Learning"
     services:
       - slug: ic-machine-learning-ai-easymaker
         name: "AI EasyMaker"
@@ -517,6 +533,7 @@ palettes:
     category: application-service
     category_icon:
       slug: ic-application-service
+      name: "Application Service"
     services:
       - slug: ic-application-service-api-gateway
         name: "API Gateway"
@@ -534,6 +551,7 @@ palettes:
     category: search
     category_icon:
       slug: ic-search
+      name: "Search"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -549,6 +567,7 @@ palettes:
     category: data-analytics
     category_icon:
       slug: ic-data-analytics
+      name: "Data Analytics"
     services:
       - slug: ic-data-analytics-data-lake-storage
         name: "Data Lake Storage"
@@ -568,6 +587,7 @@ palettes:
     category: dev-tools
     category_icon:
       slug: ic-dev-tools
+      name: "Dev Tools"
     services:
       - slug: ic-dev-tools-deploy
         name: "Deploy"
@@ -581,6 +601,7 @@ palettes:
     category: management
     category_icon:
       slug: ic-management
+      name: "Management"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -596,6 +617,7 @@ palettes:
     category: bill
     category_icon:
       slug: ic-bill
+      name: "Bill"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -607,6 +629,7 @@ palettes:
     category: collaboration
     category_icon:
       slug: ic-collaboration
+      name: "Collaboration"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
   - id: "26-contact-center"
@@ -615,6 +638,7 @@ palettes:
     category: contact-center
     category_icon:
       slug: ic-contact-center
+      name: "Contact Center"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:
@@ -626,6 +650,7 @@ palettes:
     category: governance-audit
     category_icon:
       slug: ic-governance-audit
+      name: "Governance Audit"
       format: png       # SVG 없음, 비트맵으로 관리
       black: false      # 블랙 버전 없음
     services:

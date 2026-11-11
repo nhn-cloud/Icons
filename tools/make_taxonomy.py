@@ -6,7 +6,8 @@
 이 스크립트는 최초 부트스트랩과 누락 점검용이다.
 
     python tools/make_taxonomy.py            # 표준출력으로 미리보기
-    python tools/make_taxonomy.py --write    # taxonomy.yaml 에 기록
+    python tools/make_taxonomy.py --write    # taxonomy.yaml 에 기록 (기존 name 보존)
+    python tools/make_taxonomy.py --write --reset   # name 을 슬러그에서 다시 유도
 """
 import io
 import sys
@@ -15,6 +16,28 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 ICONS = ROOT / 'icons'
+
+# 기존 taxonomy.yaml 의 slug -> name. 사람이 검증해 고친 표시명을 보존한다.
+KEPT = {}
+
+
+def load_kept():
+    """기존 taxonomy.yaml 에서 slug 별 표시명을 읽어 둔다.
+
+    --reset 을 주지 않는 한, 이미 등록된 슬러그의 name 은 그대로 유지하고
+    새로 들어온 파일만 슬러그에서 이름을 유도한다.
+    """
+    p = ROOT / 'taxonomy.yaml'
+    if '--reset' in sys.argv or not p.exists():
+        return
+    slug = None
+    for line in io.open(p, encoding='utf-8'):
+        s = line.strip()
+        if s.startswith('- slug:') or s.startswith('slug:'):
+            slug = s.split(':', 1)[1].strip()
+        elif s.startswith('name:') and slug:
+            KEPT[slug] = s.split(':', 1)[1].strip().strip('"')
+            slug = None
 
 TITLES = {
     '01-arrows': 'Arrows', '02-general': 'General Resources',
@@ -65,7 +88,8 @@ def entries(d, strip_prefix):
         seen.add(slug)
         black = (p.with_name(slug + '.black.svg').exists()
                  or p.with_name(slug + '.black.png').exists())
-        out.append((slug, title_of(slug, strip_prefix), black, p.suffix[1:]))
+        out.append((slug, KEPT.get(slug) or title_of(slug, strip_prefix),
+                    black, p.suffix[1:]))
     return out
 
 
@@ -81,12 +105,16 @@ def emit(lines, items, indent):
 
 
 def main():
+    load_kept()
     L = []
     L.append('# NHN Cloud 아이콘 분류 단일 원천')
     L.append('# 생성: tools/make_taxonomy.py (%s)' % date.today().isoformat())
     L.append('#')
     L.append('# name 값은 슬러그에서 기계적으로 유도한 초안이다.')
     L.append('# 공식 홈페이지 서비스 목록 표기로 검증해야 한다. docs/scheme.md 참고.')
+    L.append('#')
+    L.append('# 이미 등록된 슬러그의 name 은 재생성해도 보존된다(검증한 표시명 유지).')
+    L.append('# 슬러그에서 다시 유도하려면 --reset 을 준다.')
     L.append('version: 1')
     L.append('palettes:')
 
@@ -124,6 +152,7 @@ def main():
             slug, _n, black, fmt = ci[0]
             L.append('    category_icon:')
             L.append('      slug: %s' % slug)
+            L.append('      name: "%s"' % (KEPT.get(slug) or _n))
             if fmt != 'svg':
                 L.append('      format: %s       # SVG 없음, 비트맵으로 관리' % fmt)
             if not black:
@@ -143,7 +172,7 @@ def main():
                 parent = next((x for x in svc_slugs if slug.startswith(x + '-')), None)
                 tail = slug[len(parent) + 1:] if parent else slug[len('ic-%s-' % cat):]
                 L.append('      - slug: %s' % slug)
-                L.append('        name: "%s"' % title_of(tail, []))
+                L.append('        name: "%s"' % (KEPT.get(slug) or title_of(tail, [])))
                 L.append('        parent: %s' % (parent or 'null   # 상위 서비스 확인 필요'))
                 if fmt != 'svg':
                     L.append('        format: %s       # SVG 없음, 비트맵으로 관리' % fmt)
