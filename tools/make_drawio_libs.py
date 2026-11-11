@@ -1,115 +1,57 @@
-"""NHN Cloud Icons -> draw.io shape libraries (.xml, mxlibrary).
+# -*- coding: utf-8 -*-
+"""taxonomy.yaml + icons/ -> draw.io shape libraries (dist/).
 
+팔레트 1개 = 라이브러리 XML 1개. 디렉터리 번호가 곧 팔레트 번호이자 패널 순서다.
 SVG 원본을 base64로 임베드하므로 네트워크 없이 동작하고, 내보내기(PNG/PDF)에서도
 아이콘이 그대로 렌더링된다.
+
+    python tools/make_drawio_libs.py            # dist/ 에 생성
+    python tools/make_drawio_libs.py --dry-run  # 쓰지 않고 점검만
 """
 import base64
 import html
 import json
-import os
-import re
 import sys
 import urllib.parse
 import zlib
 from pathlib import Path
 
-ROOT = Path(sys.argv[1]).resolve()
-OUT = Path(sys.argv[2]).resolve()
+import yaml
 
-# ---------------------------------------------------------------- md catalog
+ROOT = Path(__file__).resolve().parent.parent
+ICONS = ROOT / 'icons'
+OUT = ROOT / 'dist'
+DRY = '--dry-run' in sys.argv
 
-CATALOGS = [
-    ROOT / "service_icons" / "service_icons.md",
-    ROOT / "service_icons" / "resource_icons.md",
-    ROOT / "general_icons" / "general_icons.md",
-    ROOT / "box_type" / "box_type.md",
-]
+SIZE_SERVICE = 64
+SIZE_RESOURCE = 48
+SIZE_FLAT = 64
 
-TR = re.compile(r"<tr\b.*?</tr>", re.S | re.I)
-CELL = re.compile(r"<t[hd]\b[^>]*>(.*?)</t[hd]>", re.S | re.I)
-IMG = re.compile(r'<img[^>]+src="([^"]+)"', re.I)
-TAG = re.compile(r"<[^>]+>")
-
-
-def stem_key(src: str) -> str:
-    """파일 경로에서 확장자/variant를 뺀 식별자."""
-    return Path(urllib.parse.unquote(src)).stem
-
-
-def load_names() -> dict:
-    """stem -> ['Compute', 'Instance'] 형태의 표시 이름 조각."""
-    names = {}
-    for md in CATALOGS:
-        if not md.exists():
-            continue
-        text = md.read_text(encoding="utf-8")
-        for row in TR.findall(text):
-            cells = CELL.findall(row)
-            parts, srcs = [], []
-            for c in cells:
-                found = IMG.findall(c)
-                if found:
-                    srcs.extend(found)
-                else:
-                    t = html.unescape(TAG.sub("", c)).strip()
-                    if t:
-                        parts.append(" ".join(t.split()))
-            if not srcs or not parts:
-                continue
-            for s in srcs:
-                names.setdefault(stem_key(s), parts)
-    return names
-
-
-NAMES = load_names()
-
-PREFIXES = {"ic", "iaas", "paas", "saas", "general", "resources", "groups", "icon"}
-NOISE = {"box", "dk", "content"}
-ACRONYMS = {
-    "ai", "api", "cdn", "dns", "rds", "nks", "nce", "vpc", "iam", "waf", "sms",
-    "cli", "sdk", "gpu", "cpu", "nat", "ip", "db", "obs", "nhn", "ssl", "tls",
-    "lb", "vm", "os", "id", "url", "http", "https", "mte", "crm", "erp", "mysql",
-    "mssql", "mariadb", "pg", "iot", "ocr", "stt", "tts", "nlp", "bgp", "efs",
-    "nas", "san", "gslb", "dr", "ha", "ad", "ldap", "sso", "mfa", "kms", "hsm",
+# scheme.md '그룹 정의' 표의 선 색·선 종류. 키는 컨테이너 슬러그.
+GROUP_STYLE = {
+    'grp-nhn-cloud':           ('#111111', False),
+    'grp-on-premise':          ('#555555', False),
+    'grp-organization':        ('#555555', False),
+    'grp-project':             ('#555555', False),
+    'grp-region':              ('#999999', True),
+    'grp-vpc':                 ('#999999', False),
+    'grp-subnet':              ('#BBBBBB', False),
+    'grp-auto-scaling-group':  ('#125CE7', True),
+    'grp-instance-contents':   ('#125CE7', False),
+    'grp-server-contents':     ('#BBBBBB', False),
+    'grp-nhn-cloud-account':   ('#BBBBBB', False),
 }
+# 서비스 박스 기본 스타일 (그룹 컨테이너와 구분되도록 점선 회색)
+BOX_STYLE = ('#999999', True)
+
+warnings = []
 
 
-def titlecase(text: str) -> str:
-    out = []
-    for w in text.split():
-        if w.isupper() and len(w) > 1:
-            out.append(w)
-        elif w.lower() in ACRONYMS:
-            out.append(w.upper())
-        else:
-            out.append(w[:1].upper() + w[1:])
-    return " ".join(out)
+# ---------------------------------------------------------------- svg -> uri
 
-
-def fallback_name(stem: str) -> list:
-    parts = [p for p in stem.split("-") if p]
-    if len(parts) > 1:
-        parts = [p for p in parts if p.lower() not in PREFIXES] or parts[1:]
-    out = []
-    for p in parts:
-        words = [w for w in p.replace("_", " ").split()
-                 if w.lower() not in NOISE and not w.isdigit()]
-        if words:
-            out.append(titlecase(" ".join(words)))
-    return out
-
-
-def display(stem: str) -> list:
-    return NAMES.get(stem) or fallback_name(stem) or [stem]
-
-
-# ---------------------------------------------------------------- svg -> style
-
-VIEWBOX = re.compile(r'viewBox="([\d.\s+-]+)"', re.I)
-
-
-def svg_size(text: str, default=(60, 60)):
-    m = VIEWBOX.search(text)
+def svg_size(text, default=(60, 60)):
+    import re
+    m = re.search(r'viewBox="([\d.\s+-]+)"', text, re.I)
     if m:
         v = m.group(1).split()
         if len(v) == 4:
@@ -120,129 +62,157 @@ def svg_size(text: str, default=(60, 60)):
     return default
 
 
-def svg_data_uri(path: Path) -> tuple:
-    text = path.read_text(encoding="utf-8")
+def svg_data_uri(path):
+    text = path.read_text(encoding='utf-8')
     w, h = svg_size(text)
-    b64 = base64.b64encode(text.encode("utf-8")).decode("ascii")
+    b64 = base64.b64encode(text.encode('utf-8')).decode('ascii')
     # draw.io 스타일 문자열에서는 ';base64' 를 쓸 수 없어 콤마 뒤에 바로 base64를 둔다.
-    return f"data:image/svg+xml,{b64}", w, h
+    return 'data:image/svg+xml,%s' % b64, w, h
 
 
 # ---------------------------------------------------------------- mxlibrary
 
-def compress(xml: str) -> str:
+def compress(xml):
     """Graph.compress = base64(deflateRaw(encodeURIComponent(xml)))"""
     quoted = urllib.parse.quote(xml, safe="!~*'()")
     co = zlib.compressobj(9, zlib.DEFLATED, -15)
-    raw = co.compress(quoted.encode("utf-8")) + co.flush()
-    return base64.b64encode(raw).decode("ascii")
+    raw = co.compress(quoted.encode('utf-8')) + co.flush()
+    return base64.b64encode(raw).decode('ascii')
 
 
-def esc(s: str) -> str:
+def esc(s):
     return html.escape(s, quote=True)
 
 
-def model(cells_xml: str) -> str:
-    return (
-        '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>'
-        + cells_xml
-        + "</root></mxGraphModel>"
-    )
+def model(cells_xml):
+    return ('<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>'
+            + cells_xml + '</root></mxGraphModel>')
 
 
-def icon_entry(label, title, uri, w, h, size):
+def icon_entry(title, uri, w, h, size):
     scale = size / max(w, h)
     cw, ch = round(w * scale), round(h * scale)
-    style = (
-        "shape=image;html=1;labelBackgroundColor=none;imageAspect=0;aspect=fixed;"
-        "verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;"
-        f"image={uri};"
-    )
-    cell = (
-        f'<mxCell id="2" value="{esc(label)}" style="{esc(style)}" vertex="1" parent="1">'
-        f'<mxGeometry x="0" y="0" width="{cw}" height="{ch}" as="geometry"/></mxCell>'
-    )
-    return {"xml": compress(model(cell)), "w": cw, "h": ch,
-            "aspect": "fixed", "title": title}
+    style = ('shape=image;html=1;labelBackgroundColor=none;imageAspect=0;aspect=fixed;'
+             'verticalLabelPosition=bottom;verticalAlign=top;fontSize=11;'
+             'image=%s;' % uri)
+    cell = ('<mxCell id="2" value="%s" style="%s" vertex="1" parent="1">'
+            '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
+            % (esc(title), esc(style), cw, ch))
+    return {'xml': compress(model(cell)), 'w': cw, 'h': ch,
+            'aspect': 'fixed', 'title': title}
 
 
-def group_entry(label, title, uri, w, h):
-    """박스 형태 아이콘: 컨테이너 사각형 + 좌상단 배지 아이콘."""
+def container_entry(title, uri, stroke, dashed):
+    """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 좌상단 모서리 아이콘."""
     gw, gh = 320, 200
-    box = (
-        "rounded=0;html=1;whiteSpace=wrap;container=1;collapsible=0;"
-        "recursiveResize=0;pointerEvents=0;expand=0;"
-        "fillColor=none;strokeColor=#999999;dashed=1;dashPattern=8 4;"
-        "verticalAlign=top;align=left;spacingLeft=38;spacingTop=4;"
-        "fontSize=12;fontColor=#666666;"
-    )
-    badge = (
-        "shape=image;html=1;imageAspect=0;aspect=fixed;movable=0;resizable=0;"
-        f"rotatable=0;deletable=0;editable=0;connectable=0;image={uri};"
-    )
-    cells = (
-        f'<mxCell id="2" value="{esc(label)}" style="{esc(box)}" vertex="1" parent="1">'
-        f'<mxGeometry x="0" y="0" width="{gw}" height="{gh}" as="geometry"/></mxCell>'
-        f'<mxCell id="3" value="" style="{esc(badge)}" vertex="1" parent="2">'
-        f'<mxGeometry x="6" y="6" width="26" height="26" as="geometry"/></mxCell>'
-    )
-    return {"xml": compress(model(cells)), "w": gw, "h": gh, "title": title}
-
-
-def write_library(path: Path, entries: list):
-    path.parent.mkdir(parents=True, exist_ok=True)
-    payload = json.dumps(entries, ensure_ascii=False, separators=(",", ":"))
-    path.write_text(f"<mxlibrary>{payload}</mxlibrary>", encoding="utf-8")
-    return len(entries), path.stat().st_size
+    box = ('rounded=0;html=1;whiteSpace=wrap;container=1;collapsible=0;'
+           'recursiveResize=0;pointerEvents=0;expand=0;'
+           'fillColor=none;strokeColor=%s;%s'
+           'verticalAlign=top;align=left;spacingLeft=38;spacingTop=4;'
+           'fontSize=12;fontColor=#666666;'
+           % (stroke, 'dashed=1;dashPattern=8 4;' if dashed else 'dashed=0;'))
+    cells = ('<mxCell id="2" value="%s" style="%s" vertex="1" parent="1">'
+             '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
+             % (esc(title), esc(box), gw, gh))
+    if uri:
+        badge = ('shape=image;html=1;imageAspect=0;aspect=fixed;movable=0;resizable=0;'
+                 'rotatable=0;deletable=0;editable=0;connectable=0;image=%s;' % uri)
+        cells += ('<mxCell id="3" value="" style="%s" vertex="1" parent="2">'
+                  '<mxGeometry x="6" y="6" width="24" height="24" as="geometry"/></mxCell>'
+                  % esc(badge))
+    return {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
 
 
 # ---------------------------------------------------------------- collect
 
-GROUPS = [
-    ("Services", ROOT / "files" / "services", 64, False),
-    ("Resources", ROOT / "files" / "resources", 56, False),
-    ("General", ROOT / "files" / "general_icons", 64, False),
-    ("BoxType", ROOT / "files" / "box_type", 64, True),
-]
+def svg_path(pal_dir, sub, slug, black):
+    name = slug + ('.black.svg' if black else '.svg')
+    return (pal_dir / sub / name) if sub else (pal_dir / name)
 
 
-def variant_of(p: Path) -> str:
-    parts = [x.lower() for x in p.parts]
-    if "black" in parts:
-        return "black"
-    if "color" in parts:
-        return "color"
-    return "color"
+def add(entries, pal_dir, sub, item, black, kind, cat=None):
+    """taxonomy 항목 1개를 라이브러리 엔트리로."""
+    slug = item['slug']
+    if black and item.get('black') is False:
+        return
+    p = svg_path(pal_dir, sub, slug, black)
+    if not p.exists():
+        warnings.append('%s 없음: %s' % ('black' if black else 'color', p.relative_to(ROOT)))
+        return
+    uri, w, h = svg_data_uri(p)
+    title = item.get('name') or slug
+    if kind == 'container':
+        stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
+        entries.append(container_entry(title, uri, stroke, dashed))
+    elif kind == 'box':
+        entries.append(container_entry(title, uri, *BOX_STYLE))
+    else:
+        size = SIZE_RESOURCE if kind == 'resource' else SIZE_FLAT
+        entries.append(icon_entry(title, uri, w, h, size))
+
+
+def build(pal, black):
+    pid = pal['id']
+    pal_dir = ICONS / pid
+    e = []
+    kind = pal.get('kind')
+    if kind == 'styles':
+        return e
+    if kind == 'groups':
+        for it in pal.get('containers') or []:
+            add(e, pal_dir, 'containers', it, black, 'container')
+        for it in pal.get('service_boxes') or []:
+            add(e, pal_dir, 'service-boxes', it, black, 'box')
+        return e
+    if kind == 'flat':
+        for it in pal.get('icons') or []:
+            add(e, pal_dir, None, it, black, 'flat')
+        return e
+    # category
+    ci = pal.get('category_icon')
+    if ci:
+        add(e, pal_dir, 'category', {'slug': ci, 'name': pal['title'].split(' / ')[-1]},
+            black, 'flat')
+    for it in pal.get('services') or []:
+        add(e, pal_dir, 'services', it, black, 'service')
+    for it in pal.get('resources') or []:
+        add(e, pal_dir, 'resources', it, black, 'resource')
+    return e
 
 
 def main():
-    index = []
-    for name, base, size, is_group in GROUPS:
-        if not base.exists():
-            continue
-        buckets = {"color": [], "black": []}
-        for svg in sorted(base.rglob("*.svg"), key=lambda p: str(p).lower()):
-            stem = svg.stem
-            parts = display(stem)
-            label = parts[-1]
-            title = " / ".join(parts)
-            uri, w, h = svg_data_uri(svg)
-            entry = (group_entry(label, title, uri, w, h) if is_group
-                     else icon_entry(label, title, uri, w, h, size))
-            buckets[variant_of(svg)].append((title.lower(), entry))
-
-        for variant, items in buckets.items():
-            if not items:
+    tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
+    rows = []
+    for pal in tax['palettes']:
+        for black in (False, True):
+            entries = build(pal, black)
+            if not entries:
                 continue
-            items.sort(key=lambda t: t[0])
-            sub = "" if variant == "color" else "black/"
-            out = OUT / f"{sub}NHNCloud-{name}-{variant}.xml"
-            n, size_b = write_library(out, [e for _, e in items])
-            index.append((out.relative_to(OUT).as_posix(), n, size_b))
+            theme = 'black' if black else 'color'
+            out = OUT / theme / ('NHNCloud-%s.xml' % pal['id'])
+            payload = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
+            blob = '<mxlibrary>%s</mxlibrary>' % payload
+            if not DRY:
+                out.parent.mkdir(parents=True, exist_ok=True)
+                out.write_text(blob, encoding='utf-8')
+            rows.append((out.relative_to(ROOT).as_posix(), len(entries), len(blob)))
 
-    for rel, n, size_b in index:
-        print(f"{rel:46s} {n:4d} icons  {size_b/1024:8.1f} KB")
-    print(f"\ntotal {sum(n for _, n, _ in index)} entries in {len(index)} libraries")
+    for rel, n, b in rows:
+        print('%-38s %4d개  %8.1f KB' % (rel, n, b / 1024))
+    print('\n라이브러리 %d개 · 엔트리 %d개%s'
+          % (len(rows), sum(n for _, n, _ in rows), ' (dry-run, 쓰지 않음)' if DRY else ''))
+
+    if warnings:
+        print('\n경고 %d건:' % len(warnings))
+        seen = {}
+        for w in warnings:
+            seen[w.split(' 없음: ')[0]] = seen.get(w.split(' 없음: ')[0], 0) + 1
+        for k, v in seen.items():
+            print('  %s 파일 없음 %d건' % (k, v))
+        for w in warnings[:8]:
+            print('    %s' % w)
+        if len(warnings) > 8:
+            print('    ... 외 %d건' % (len(warnings) - 8))
 
 
 main()

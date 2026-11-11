@@ -326,8 +326,6 @@ palettes:
     services:
       - slug: ic-monitoring-cloud-monitoring
         name: "Cloud Monitoring"
-      - slug: ic-monitoring-monitoring
-        name: "Monitoring"
       - slug: ic-monitoring-service-monitoring
         name: "Service Monitoring"
     resources:
@@ -361,8 +359,8 @@ palettes:
         name: "GameAnvil"
       - slug: ic-game-gamebase
         name: "Gamebase"
-      - slug: ic-game-lauching
-        name: "Lauching"
+      - slug: ic-game-launching
+        name: "Launching"
       - slug: ic-game-leaderboard
         name: "Leaderboard"
   - id: "14-security"
@@ -415,8 +413,8 @@ palettes:
     services:
       - slug: ic-content-delivery-cdn
         name: "CDN"
-      - slug: ic-content-delivery-image
-        name: "Image"
+      - slug: ic-content-delivery-image-manager
+        name: "Image Manager"
     resources:
       - slug: ic-content-delivery-cdn-edge-server
         name: "Edge Server"
@@ -614,6 +612,8 @@ palettes:
         name: "Game Smart Downloader"
       - slug: ic-mobile-service-iap
         name: "Mobile Service IAP"
+      - slug: ic-monitoring-compute-monitoring
+        name: "Monitoring Compute Monitoring"
       - slug: ic-security-captcha
         name: "Security Captcha"
       - slug: ic-security-csap-saas-guide
