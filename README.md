@@ -14,7 +14,7 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 | --- | --- |
 | `icons/` | 원본 SVG. 팔레트 28개와 1:1 |
 | `taxonomy.yaml` | 분류·표시명의 단일 원천. 라이브러리는 여기서 생성 |
-| `dist/` | 생성된 draw.io 라이브러리 25개 |
+| `dist/` | 생성된 draw.io 라이브러리 26개 |
 | `tools/` | 생성·검증 스크립트 |
 | `docs/` | 분류 체계 문서와 샘플 구성도 |
 | `assets/pptx/` | 아키텍처 아이콘 PPT |
@@ -57,34 +57,47 @@ PNG 가 필요하면 draw.io 에서 바로 얻습니다.
 
 ## 라이브러리 링크
 
-draw.io 배포 링크는 **하나**입니다. 팔레트 25개를 한 링크에 담습니다.
+draw.io 배포 링크는 **하나**입니다: <https://nhn-cloud.github.io/Icons/>
 
-배포는 `index.html` 리다이렉트 페이지로 합니다. NHN Cloud ShortURL 이 원본 URL 을
-**255자까지만** 받기 때문에 clibs 링크(팔레트 25개면 CDN 을 써도 1,206자)를 그대로
-넣을 수 없습니다. 리다이렉트 페이지 주소는 30자 안팎이라 그대로 배포하거나 ShortURL 에 넣을 수 있습니다.
+이 페이지는 공식 draw.io(app.diagrams.net)의 **설정 링크**(`#_CONFIG_`)로 팔레트를 등록합니다.
+
+| 조건 | 충족 방법 |
+| --- | --- |
+| 단일 URL | `index.html` 배포 페이지 1개 |
+| 다시 열어도 팔레트 접힘 | 설정 `expandLibraries: false` (URL 파라미터로는 줄 수 없는 값) |
+| 내보내기·클라우드 저장 유지 | 공식 app.diagrams.net 을 그대로 사용 |
+| GitHub 원본 | 라이브러리는 `dist/*.xml` 을 raw URL 로 직접 읽음 |
+| '그 외 도형' 목록 | 설정 `libraries` 로 'NHN Cloud' 항목 등록 (AWS 처럼 체크 하나로 켜고 끔) |
+| 도형 검색 | `libraries` 로 등록한 아이콘은 검색 색인에 들어감 |
 
 ```
-python tools/make_links.py --write-index          # GitHub Pages 기준 (배포용)
+python tools/make_config_link.py --write-index                 # index.html 생성 (main 브랜치)
+python tools/make_config_link.py --write-index --branch draft  # 브랜치 지정
+python tools/make_config_link.py                               # 설정 JSON 과 링크만 출력
 ```
 
-배포 주소: <https://nhn-cloud.github.io/Icons/>
+### 사용자 동작
 
-```
-python tools/make_links.py                  # GitHub Pages 기준, 약 1,500자 (권장)
-python tools/make_links.py --host raw --branch <브랜치>   # raw, 약 2,150자
-```
+- **처음 열 때** draw.io 가 설정 적용 여부를 **두 번** 묻습니다. 두 번 모두 확인을 누르면 새로고침되고 팔레트 26개가 접힌 상태로 붙습니다.
+- 팔레트는 **+ 그 외 도형** 창 맨 위 'NHN Cloud' 항목으로 켜고 끕니다. 내장 팔레트(AWS 등)도 같은 창에서 켜고 끕니다.
+- 검색창에 아이콘 이름(예: `Gamebase`, `Auto Scale`)을 넣으면 NHN Cloud 아이콘도 검색됩니다. `Instance` 처럼 흔한 단어는 draw.io 내장 도형이 먼저 나올 수 있습니다.
+- **다음부터는** 같은 주소를 열면 확인 없이 바로 draw.io 로 이동합니다. 아무 파라미터 없는 app.diagrams.net 을 열어도 팔레트가 그대로 있습니다.
+- 팔레트가 보이지 않으면 `https://nhn-cloud.github.io/Icons/?setup` 으로 다시 설정합니다.
 
-링크에는 `libs=none` 이 붙습니다. 이게 없으면 draw.io 내장 팔레트(일반·기타·고급·기본·
-화살표·순서도·ER·UML) 8개가 함께 열려 NHN Cloud 아이콘을 찾기 어렵습니다.
-스크래치 패드는 사용자 기능이라 URL 로 끌 수 없지만 비어 있어 방해되지 않습니다.
+### 동작 원리
 
-`clibs` 링크는 draw.io 가 XML 을 직접 읽어가는 방식이라 해당 브랜치가 origin 에 푸시되어 있어야 하고,
-호스트가 `Access-Control-Allow-Origin: *` 을 보내야 합니다. GitHub raw 와 GitHub Pages 모두 보냅니다.
+- 배포 페이지는 적용한 설정 `version` 을 자기 도메인 localStorage 에 기억해, 처음이거나 version 이 바뀐 경우에만 설정 링크로 보냅니다.
+- `version` 은 `dist/` 내용의 해시입니다. 팔레트를 고치고 `index.html` 을 다시 생성하면 version 이 바뀌어, 사용자는 다음 방문 때 한 번만 다시 확인을 누르면 됩니다.
+- 설정은 `{"merge": {...}}` 형식이라 사용자가 따로 가진 draw.io 설정은 지우지 않습니다. 단, version 이 바뀌면 draw.io 의 패널 구성(열어 둔 팔레트, 최근 색 등)은 초기화됩니다.
+- 라이브러리 호스트는 `raw.githubusercontent.com` 입니다. draw.io 가 프록시 없이 직접 읽는 호스트이기 때문입니다.
 
-링크에는 라이브러리 1개마다 URL 이 하나씩 들어갑니다. 그래서 `dist/` 파일명을 팔레트 번호
-두 자리(`02.xml`)로 줄였습니다. 패널에 보이는 이름은 파일명이 아니라 XML 의 `title` 속성이 정합니다.
+> [!Note]\
+> 라이브러리를 읽지 못하면(네트워크 차단, 브랜치 미푸시 등) 해당 팔레트에 오류가 표시됩니다. 네트워크가 복구되면 새로고침으로 다시 읽습니다.
 
-로컬에서 바로 쓰려면 draw.io 에서 `도형 > 라이브러리 열기 > 기기` 로 `dist/*.xml` 을 올리면 됩니다.
+### 이전 방식 (참고)
+
+`tools/make_links.py` 의 `clibs` 링크는 설정 없이 바로 열리지만 팔레트가 매번 펼쳐진 채로 열립니다.
+`embed/` 는 팔레트를 접을 수 있지만 클라우드 저장을 쓸 수 없습니다.
 
 ## 분류 체계
 
