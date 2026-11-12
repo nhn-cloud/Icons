@@ -4,7 +4,9 @@
 현황 수치는 `python tools/audit.py`로 언제든 다시 뽑을 수 있다.
 
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
-서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**. 남은 것은 **신규 제작 2건**과 **Identity 7건**, **Arrows 6종**이다.
+서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**.
+**SVG 가 없는 아이콘은 9개**다 — 신규 제작 2개, 있는지 확인부터 할 것 7개. 목록은 **1-1** 에 모아 두었다.
+Arrows 6종은 이미지가 아니라 엣지 스타일이라 따로 센다.
 
 | 구분 | 이전 | 현재 |
 | --- | --- | --- |
@@ -21,14 +23,69 @@
 
 ## 1. 자산 확보
 
-### 1-1. 우선순위 요약
+### 1-1. 아직 SVG가 없는 아이콘 — 한눈에
 
-| 순위 | 작업 | 수량 | 방법 | 막힘 |
-| --- | --- | --- | --- | --- |
-| 1 | 디자인팀 신규 제작 요청 | 2 | Database Migration Service, NHN Cloud Foundry | 디자인 리소스 |
-| 2 | Identity 아이콘 확보 | 7 | Figma 에 라이트 버전이 없음 (아래 1-3) | 확인 필요 |
-| 3 | Arrows 스펙 입력 | 6 | PPT 16쪽 (파일 아님) | 없음 |
-| ~~4~~ | ~~산업·개념 보강~~ | ~~2~~ | **완료 (2026-11-12)** — 아래 1-6 | — |
+**그림을 새로 받아야 하는 것은 2개, 있는지 확인부터 해야 하는 것이 7개. 합계 9개.**
+수치는 `python tools/audit.py` 로 언제든 다시 센다.
+
+#### (가) 디자인팀에 신규 제작 요청 — 2개
+
+아키텍처 아이콘이 어디에도 없다. Figma 에 서비스 전용 페이지는 있지만 그건 서비스 소개용이라
+아키텍처 아이콘과 별개다.
+
+| 서비스 | 넣을 파일 | 확인한 곳 |
+| --- | --- | --- |
+| Database Migration Service | `icons/10-database/services/ic-database-database-migration-service.svg` | Figma `260820 DMS` 페이지는 있으나 아키텍처 아이콘 아님 |
+| NHN Cloud Foundry | `icons/18-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg` | Figma `260731 Foundry` 페이지, 위와 같음 |
+
+→ 이 2개를 채우면 서비스 아이콘이 **117/119 → 119/119** 가 된다.
+
+#### (나) 있는지 확인 먼저 — Identity 계정·역할 7개
+
+`icons/04-identity/` 가 비어 있다(README 만 있음). 형식은 `ic-identity-<슬러그>.svg` 까지만
+정해져 있고 **역할별 슬러그는 아직 정한 적이 없다.** 아래 파일명은 제안이다.
+
+| 계열 | 역할 | 파일 이름 (제안) |
+| --- | --- | --- |
+| NHN Cloud 계정 | Owner | `ic-identity-nhn-cloud-owner.svg` |
+| NHN Cloud 계정 | Admin | `ic-identity-nhn-cloud-admin.svg` |
+| NHN Cloud 계정 | Member | `ic-identity-nhn-cloud-member.svg` |
+| NHN Cloud 계정 | Viewer | `ic-identity-nhn-cloud-viewer.svg` |
+| IAM 계정 | Admin | `ic-identity-iam-admin.svg` |
+| IAM 계정 | Member | `ic-identity-iam-member.svg` |
+| IAM 계정 | Viewer | `ic-identity-iam-viewer.svg` |
+
+- [ ] 역할별 슬러그 확정 (위는 제안). 서비스 아이콘과 달리 `audit.py` 가 유도하는 규칙이 없다
+
+**막힌 이유**: Figma `03 Architecture icon` 에서 이 아이콘들은 Color·Black 변형 양쪽 모두
+`General Resources Icon/Dark Backgrounds/...` 컴포넌트로만 들어가 있다. 어두운 배경용 변형이라
+그대로 쓸 수 없다. 자세한 내용은 아래 1-3.
+
+> 산업·개념 2개(Finance, Machine Learning)는 Black 변형에 있어도 그대로 썼다. 그쪽은 원래
+> `#222222` 단색이라 색이 맞았기 때문이고(아래 1-6), Identity 는 어두운 배경 전용이라 사정이 다르다.
+
+→ 순서: ① `02 Service icon` 페이지 등 다른 곳에 라이트 버전이 있는지 확인
+→ ② 없으면 디자인팀에 제작 요청. 확인 전에는 제작 요청하지 않는다.
+
+#### (다) SVG 가 필요 없는 것 — Arrows 6종
+
+화살표는 **이미지 파일이 아니라 draw.io 엣지 스타일**이다. `icons/01-arrows/styles.yaml` 이
+비어 있을 뿐이고, 값은 PPT 16쪽에 다 있다(아래 1-4). 막힌 곳 없음.
+
+#### (라) 추적하지 않는 것 — 카테고리 아이콘 12종
+
+이번 작업 범위에서 제외했다(문서 맨 위 참고). 보유한 10개는 그대로 쓴다.
+없는 12개: compute, container, network, monitoring, hybrid-private-cloud, game, search,
+management, bill, collaboration, contact-center, governance-audit.
+
+#### 확보 완료 (참고)
+
+| 항목 | 결과 |
+| --- | --- |
+| 일반 아이콘 | 16 → **52개** (1-2) |
+| 산업·개념 | 3 → **5개** (1-6, 2026-11-12) |
+| 리소스 IPSec VPN | **확보** (1-7) |
+| 그룹 박스 | PPT 15쪽 **15종** 전부 (2026-11-12) |
 
 ### 1-2. 일반 아이콘 — 확보 완료
 
@@ -46,6 +103,11 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
 `03 Architecture icon` 페이지에서 찾은 계정·역할 아이콘은 전부
 `General Resources Icon/Dark Backgrounds/...` 즉 **어두운 배경용 변형**이다.
 저장소는 컬러 한 가지만 관리하므로 그대로 쓸 수 없다.
+
+**2026-11-12 재확인**: 산업·개념 2개를 Black 변형에서 가져오면서 Identity 도 다시 봤다.
+Color 변형과 Black 변형 **양쪽 모두** 같은 `Dark Backgrounds` 컴포넌트만 쓰고 있어
+결론은 그대로다. 산업·개념은 원래 `#222222` 단색이라 Black 에서 가져와도 됐지만(1-6),
+Identity 는 어두운 배경 전용이라 사정이 다르다.
 
 - [ ] 라이트 버전이 `02 Service icon` 페이지나 다른 곳에 있는지 확인
 - [ ] 없다면 디자인팀에 라이트 버전 요청
