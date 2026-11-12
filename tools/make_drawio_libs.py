@@ -81,6 +81,7 @@ def data_uri(path):
 
 
 # ---------------------------------------------------------------- mxlibrary
+LIBRARY_TAGS = 'nhn nhncloud'
 
 def compress(xml):
     """Graph.compress = base64(deflateRaw(encodeURIComponent(xml)))"""
@@ -207,7 +208,12 @@ def main():
         # 파일명 1자가 25자씩 불어난다. 패널에 보이는 이름은 title 속성이 결정한다.
         out = OUT / ('%s.xml' % pal['id'].split('-')[0])
         payload = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
-        blob = '<mxlibrary title="%s">%s</mxlibrary>' % (esc(pal['title']), payload)
+        # tags 는 draw.io 가 라이브러리의 모든 아이콘 검색어에 덧붙인다.
+        # 검색창에 'nhn load balancer' 처럼 nhn 을 함께 치면 NHN Cloud 아이콘만 남는다
+        # (draw.io 검색은 단어 AND 이고 내장 도형에는 nhn 태그가 없다).
+        # Configuration libraries 로 등록했을 때만 검색 색인에 들어간다.
+        blob = '<mxlibrary title="%s" tags="%s">%s</mxlibrary>' % (
+            esc(pal['title']), LIBRARY_TAGS, payload)
         if not DRY:
             out.parent.mkdir(parents=True, exist_ok=True)
             out.write_text(blob, encoding='utf-8')

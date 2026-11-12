@@ -92,7 +92,7 @@ import html as _html
 import re as _re
 
 def lib_title(path):
-    m = _re.match(r'<mxlibrary title="([^"]*)"', path.read_text(encoding='utf-8')[:300])
+    m = _re.search(r'<mxlibrary[^>]*\stitle="([^"]*)"', path.read_text(encoding='utf-8')[:300])
     return _html.unescape(m.group(1)) if m else path.stem
 
 ENTRY_ID = 'nhncloud'
@@ -124,6 +124,12 @@ def drawio_compress(text):
     raw = c.compress(encoded.encode('ascii')) + c.flush()
     return base64.b64encode(raw).decode('ascii')
 
+
+# draw.io 탭 제목은 열린 파일 이름을 따른다(make_links.py 와 같은 시작 파일).
+# 설정 링크(#_CONFIG_)와 함께 쓸 수 없으므로 재방문용 이동 주소에만 붙인다.
+# 첫 방문은 설정 적용 후 draw.io 가 새로고침하므로 '제목 없는 다이어그램'으로 열린다.
+STARTER = opt('--starter', 'https://%s.github.io/%s/NHN Cloud Icons.drawio' % (OWNER, NAME))
+OPEN_URL = EDITOR + ('#U' + urllib.parse.quote(STARTER, safe='') if STARTER else '')
 
 config_json = json.dumps(config, ensure_ascii=False, separators=(',', ':'))
 link = EDITOR + '#_CONFIG_' + drawio_compress(config_json)
@@ -171,7 +177,7 @@ INDEX = """<!doctype html>
 
 if WRITE_INDEX:
     html = (INDEX.replace('__LINK__', link)
-                 .replace('__EDITOR__', EDITOR)
+                 .replace('__EDITOR__', OPEN_URL)
                  .replace('__VERSION__', VERSION)
                  .replace('__N__', str(len(files)))
                  .replace('__REPO__', REPO))

@@ -365,6 +365,23 @@ PNG 는 draw.io 에서 필요할 때 얻습니다.
 그래서 **리다이렉트 방식**을 택했다. 접힘 고정과 순서 일관성은 포기하고, 클라우드 저장과
 공유 기능을 지켰다. 임베드 시험판은 `embed/` 에 남겨 두었다(배포용 아님).
 
+#### 갱신: 설정 링크(`#_CONFIG_`) 방식으로 해결된 항목
+
+위 표 중 일부는 **app.diagrams.net 의 설정 링크**로 해결된다. Configuration 은 임베드뿐 아니라
+`https://app.diagrams.net/#_CONFIG_<압축 JSON>` 링크로도 전달된다(Extras → Configuration → Link 가
+만드는 형식). 사용자가 확인 2번을 누르면 그 브라우저에 저장되고, 이후 파라미터 없이 열어도 유지된다.
+`tools/make_config_link.py` 가 이 링크와 배포 페이지를 만든다. draw.io 최신 소스로 로컬 실측했다.
+
+| 항목 | 설정 링크 방식 결과 |
+| --- | --- |
+| 검색 범위 | 내장 스텐실 제외는 여전히 **불가**. 다만 Configuration `libraries` 로 등록한 팔레트는 **검색 색인에 들어간다.** `Gamebase`, `Auto Scale` 은 NHN Cloud 아이콘이 첫 결과. `Instance` 같은 흔한 단어는 내장 도형이 먼저 나온다. 순위 가중치(`librarySearchWeights`)는 설정으로 못 바꾼다. 대신 라이브러리에 `tags="nhn nhncloud"` 를 넣어 **`nhn load balancer` 처럼 치면 NHN Cloud 아이콘만** 남게 했다(검색은 단어 AND) |
+| 팔레트 순서 | **고정.** `libraries` 의 `libs` 배열 순서대로 팔레트가 만들어진다 |
+| 팔레트 접힘 고정 | **가능.** `expandLibraries:false` 면 저장된 펼침 상태와 관계없이 항상 접힌 채로 시작 |
+| 탭 제목 | 재방문 이동 주소에 시작 파일 `#U` 를 붙인다. 첫 방문은 설정 적용 후 draw.io 가 새로고침하므로 제목 없는 다이어그램으로 열린다 |
+| '그 외 도형' | `libraries` 로 'NHN Cloud' 항목이 추가되어 AWS 처럼 체크 하나로 켜고 끈다 |
+
+남는 비용: 브라우저마다 첫 방문 때 확인 2번, 설정 구조나 `dist/` 가 바뀌면 다음 방문 때 확인 2번.
+
 ### 기존 경로 호환
 
 전면 개편이므로 구 경로는 유지하지 않습니다. 저장소 SVG를 raw URL로 직접 링크해 쓰던 곳은 깨지며, README에 안내만 둡니다. 이미 그린 draw.io 다이어그램은 SVG가 base64로 내장돼 있어 영향받지 않습니다.

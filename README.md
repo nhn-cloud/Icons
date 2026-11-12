@@ -80,7 +80,8 @@ python tools/make_config_link.py                               # 설정 JSON 과
 
 - **처음 열 때** draw.io 가 설정 적용 여부를 **두 번** 묻습니다. 두 번 모두 확인을 누르면 새로고침되고 팔레트 26개가 접힌 상태로 붙습니다.
 - 팔레트는 **+ 그 외 도형** 창 맨 위 'NHN Cloud' 항목으로 켜고 끕니다. 내장 팔레트(AWS 등)도 같은 창에서 켜고 끕니다.
-- 검색창에 아이콘 이름(예: `Gamebase`, `Auto Scale`)을 넣으면 NHN Cloud 아이콘도 검색됩니다. `Instance` 처럼 흔한 단어는 draw.io 내장 도형이 먼저 나올 수 있습니다.
+- 검색창에 아이콘 이름(예: `Gamebase`, `Auto Scale`)을 넣으면 NHN Cloud 아이콘도 검색됩니다. `Instance`, `Load Balancer` 처럼 흔한 단어는 draw.io 내장 도형·타사 클라우드 아이콘이 먼저 나옵니다.
+- **NHN Cloud 아이콘만 보려면 검색어 앞에 `nhn` 을 붙이세요.** 예: `nhn load balancer`, `nhn instance`. 모든 NHN Cloud 아이콘에 `nhn` 검색 태그가 들어 있습니다.
 - **다음부터는** 같은 주소를 열면 확인 없이 바로 draw.io 로 이동합니다. 아무 파라미터 없는 app.diagrams.net 을 열어도 팔레트가 그대로 있습니다.
 - 팔레트가 보이지 않으면 `https://nhn-cloud.github.io/Icons/?setup` 으로 다시 설정합니다.
 
