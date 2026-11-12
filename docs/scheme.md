@@ -11,6 +11,8 @@ NHN Cloud 아이콘을 AWS draw.io 라이브러리처럼 **공통 팔레트 5개
 - **[NHN Cloud 공식 홈페이지 서비스 목록](https://www.nhncloud.com/kr/service) (최종 기준)**: 카테고리 22개, 서비스 119개. 카테고리·서비스 구성, 표시명, 순서는 모두 이 목록을 따름
 - **[NHN Cloud Architecture Icons V2.2 (2026.4.8, PPT)](https://static.toastoven.net/portal/public/resources/reference-architecture/NHN_Cloud_Architecture_Icons_2026.pptx)**: 아이콘 유형, 그룹, 화살표 가이드의 기준. 저장소 사본 `assets/pptx/NHN_Cloud_Architecture_Icons_2026.pptx` 가 이 포털 최신판(58쪽)입니다(2026-11-12 교체, 이전 사본은 2026.1.29판 57쪽). 포털판은 Data Lake Storage 슬라이드와 개편된 Arrows 슬라이드가 추가되고 AI Fashion이 빠졌으며, "NHN Cloud 계정 용어 변경 논의중" 메모 슬라이드가 삭제돼 용어가 확정됐음을 보여줍니다
 
+- **[Figma `NHN Cloud Service icon`](https://www.figma.com/design/i2vBIR2Fd8YwGlziRQqyAy/NHN-Cloud-Service-icon?node-id=4487-14877)**: `03 Architecture icon` 페이지. 아이콘 원본과 그룹 박스 배치의 디자인 원본입니다. 그룹 15종 표는 `4597:219944`, 서비스 박스 변형은 `[NHNCloud]_architecture_icon_Groups`(`4954:54169`) 입니다.
+
 두 자료가 다를 때는 홈페이지 > PPT 순으로 따릅니다. 홈페이지에 없는 아이콘은 PPT에 있어도 Retired 팔레트로 보냅니다.
 
 저장소([github.com/nhn-cloud/Icons](https://github.com/nhn-cloud/Icons))는 **전면 개편 대상이므로 기준으로 삼지 않습니다.** 이 문서에서 저장소를 언급하는 부분은 보유한 SVG 자산의 유무와 파일명을 확인하기 위한 현황 정보이며, 분류·표시명·순서의 근거가 아닙니다.
@@ -95,6 +97,15 @@ NHN Cloud의 그룹은 AWS처럼 그룹마다 다른 색을 쓰지 않고, **회
 | – | Generic Group (실선) | #DDDDDD | 실선 | 없음 | 없음 (PPT 도형) |
 
 중첩 순서는 PPT 예시 구성도(10\~13쪽)에서 실제로 겹쳐 쓴 순서입니다. 같은 번호는 같은 계층의 형제 그룹입니다.
+
+**모서리 아이콘과 레이블 배치** (PPT 15쪽·Figma `4597:219944` 양쪽에서 같음)
+
+| 배치 | 대상 | draw.io 스타일 |
+| --- | --- | --- |
+| 아이콘 좌상단, 레이블 오른쪽 | 아이콘이 있는 10종 | `align=left;spacingLeft=40`(아이콘 32 + 간격 8), 아이콘 `x=0` |
+| 아이콘 상단 가운데, 레이블 그 아래 가운데 | **Auto Scaling Group 만** | `align=center;spacingTop=36`(아이콘 32 + 간격 4), 아이콘 `x=(520-32)/2=244` |
+| 아이콘 없음, 레이블 좌상단 | 아이콘이 없는 4종 | `align=left;spacingLeft=10` — 아이콘 자리만큼 들여쓰지 않는다 |
+
 
 **(2026-11-12 철회)** 아래 서비스 박스 선정은 유지하되, **Groups 팔레트에는 싣지 않습니다.** Groups 팔레트는 PPT 15쪽의 그룹 박스 15종만 담습니다. SVG 는 `icons/05-groups/service-boxes/` 에 그대로 두었고, `taxonomy.yaml` 의 `service_boxes` 만 비웠습니다. 아래는 그때의 선정 근거입니다.
 

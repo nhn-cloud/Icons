@@ -54,6 +54,11 @@ GROUP_STYLE = {
     'grp-generic-group-dashed': ('#DDDDDD', True),
     'grp-generic-group-solid':  ('#DDDDDD', False),
 }
+# PPT 15쪽과 Figma `03 Architecture icon` 페이지의 Groups 표(4597:219944) 모두에서
+# Auto Scaling Group 만 모서리 아이콘이 좌상단이 아니라 상단 가운데이고, 레이블도
+# 그 아이콘 아래에 가운데로 붙는다. 나머지 14종은 모두 좌상단이다.
+BADGE_TOP_CENTER = {'grp-auto-scaling-group'}
+
 # 서비스 박스 기본 스타일 (그룹 컨테이너와 구분되도록 점선 회색).
 # 현재 taxonomy.yaml 의 service_boxes 는 비어 있다 (PPT 15쪽 그룹 박스만 싣는다).
 BOX_STYLE = ('#999999', True)
@@ -120,22 +125,38 @@ def icon_entry(title, uri, w, h, size):
             'aspect': 'fixed', 'title': title}
 
 
-def container_entry(title, uri, stroke, dashed):
-    """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 좌상단 모서리 아이콘.
+def container_entry(title, uri, stroke, dashed, badge_center=False):
+    """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 모서리 아이콘.
 
     AWS 그룹 도형(aws-sample-groups.svg)에서 실측한 비율을 따른다.
     AWS 는 박스 390x280, 모서리 아이콘 25x25 를 (0,0) 에 밀착시키고
     레이블을 x=32 부터 쓴다. 서비스 아이콘은 48px.
     우리 서비스 아이콘이 64px 이라 1.33배를 적용했다.
+
+    badge_center 면 PPT 의 Auto Scaling Group 처럼 아이콘을 상단 가운데에 두고
+    레이블을 그 아래 가운데에 둔다.
     """
     gw, gh = GROUP_W, GROUP_H
+    if badge_center:
+        # Figma 4597:220072 — 아이콘을 가운데 두고 그 아래 4px 띄워 레이블도 가운데.
+        label = 'align=center;spacingLeft=0;spacingTop=%d;' % (BADGE + 4)
+        bx = (gw - BADGE) // 2
+    elif uri:
+        # Figma — 아이콘 32 다음 8px 띄우고 레이블(텍스트 x=40).
+        label = 'align=left;spacingLeft=%d;spacingTop=6;' % (BADGE + 8)
+        bx = 0
+    else:
+        # 모서리 아이콘이 없는 4종은 레이블을 아이콘 자리만큼 들여쓰지 않는다
+        # (Figma 는 박스 왼쪽에서 10px, PPT 는 박스 왼쪽에 붙임).
+        label = 'align=left;spacingLeft=10;spacingTop=6;'
+        bx = 0
     box = ('rounded=0;html=1;whiteSpace=wrap;container=1;collapsible=0;'
            'recursiveResize=0;pointerEvents=0;expand=0;'
            'fillColor=none;strokeColor=%s;%s'
-           'verticalAlign=top;align=left;spacingLeft=%d;spacingTop=6;'
+           'verticalAlign=top;%s'
            'fontSize=13;fontColor=#666666;'
            % (stroke, 'dashed=1;dashPattern=8 4;' if dashed else 'dashed=0;',
-              BADGE + 8))
+              label))
     cells = ('<mxCell id="2" value="%s" style="%s" vertex="1" parent="1">'
              '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
              % (esc(title), esc(box), gw, gh))
@@ -143,8 +164,8 @@ def container_entry(title, uri, stroke, dashed):
         badge = ('shape=image;html=1;imageAspect=0;aspect=fixed;movable=0;resizable=0;'
                  'rotatable=0;deletable=0;editable=0;connectable=0;image=%s;' % uri)
         cells += ('<mxCell id="3" value="" style="%s" vertex="1" parent="2">'
-                  '<mxGeometry x="0" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
-                  % (esc(badge), BADGE, BADGE))
+                  '<mxGeometry x="%d" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
+                  % (esc(badge), bx, BADGE, BADGE))
     return {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
 
 
@@ -163,7 +184,8 @@ def add(entries, pal_dir, sub, item, kind, cat=None):
     # 없는 박스다. SVG 를 찾지 않고 컨테이너만 만든다.
     if kind == 'container' and item.get('icon') is False:
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
-        entries.append(container_entry(title, None, stroke, dashed))
+        entries.append(container_entry(title, None, stroke, dashed,
+                                       slug in BADGE_TOP_CENTER))
         return
     p = asset_path(pal_dir, sub, slug)
     if not p.exists():
@@ -172,7 +194,8 @@ def add(entries, pal_dir, sub, item, kind, cat=None):
     uri, w, h = data_uri(p)
     if kind == 'container':
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
-        entries.append(container_entry(title, uri, stroke, dashed))
+        entries.append(container_entry(title, uri, stroke, dashed,
+                                       slug in BADGE_TOP_CENTER))
     elif kind == 'box':
         entries.append(container_entry(title, uri, *BOX_STYLE))
     else:
