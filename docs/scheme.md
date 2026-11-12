@@ -176,7 +176,7 @@ Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, 
 | 데이터·문서 | Data stream, Data table, Document, Documents, Folder, Folders, Logs, Metrics, Multimedia |
 | 보안·알림 | Credentials, Login Security Settings, SAML token, SSL padlock, Alert, Chat |
 
-**Industry & Concepts**: Finance, Manufacturing, Medical & Healthcare, IoT, Machine Learning 개념 아이콘입니다. AWS의 Illustrations에 해당하며, 구성도보다 제안서·개요 장표에서 쓰입니다.
+**Industry & Concepts**: Finance, Manufacturing, Medical & Healthcare, IoT, Machine Learning 개념 아이콘입니다. AWS의 Illustrations에 해당하며, 구성도보다 제안서·개요 장표에서 쓰입니다. 5개 모두 확보했습니다(2026-11-12). 원본은 Figma `03 Architecture icon` 의 `[NHNCloud]_architecture_icon_Black` 변형에 한 줄로 모여 있고, Color 변형에는 없습니다. 이 5개는 브랜드 블루가 아니라 **`#222222` 단색**입니다. Finance 는 Dooray! ERP 재무(`ic-dooray_erp-finance`)와 같은 그림을 씁니다 — Figma 가 Finance 칸에 그 아이콘을 두고 있습니다.
 
 **Identity**: PPT 17쪽의 계정과 역할 아이콘입니다. NHN Cloud 계정(Owner, Admin, Member, Viewer)과 IAM 계정(Admin, Member, Viewer) 2계열로 묶습니다. AWS는 IAM을 Security, Identity & Compliance 카테고리에 두지만, NHN Cloud에서 계정·역할은 Organization·Project 그룹과 함께 쓰이므로 Groups 바로 앞의 공통 팔레트로 둡니다. 표시명은 V2.2 확정 용어인 "NHN Cloud 계정", "IAM 계정"을 쓰고, 그룹 팔레트의 계정 그룹도 "NHN Cloud 계정"으로 맞춥니다.
 

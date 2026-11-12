@@ -124,8 +124,12 @@ palettes:
     title: "NHN Cloud / Industry & Concepts"
     kind: flat
     icons:
+      - slug: ic-industry-finance
+        name: "Finance"
       - slug: ic-industry-iot
         name: "IoT"
+      - slug: ic-industry-machine-learning
+        name: "Machine Learning"
       - slug: ic-industry-manufacturing
         name: "Manufacturing"
       - slug: ic-industry-medical-healthcare

@@ -4,7 +4,7 @@
 현황 수치는 `python tools/audit.py`로 언제든 다시 뽑을 수 있다.
 
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
-서비스 아이콘 **117/119**, 일반 아이콘 **52개**. 남은 것은 **신규 제작 2건**과 **Identity 7건**, **Arrows 6종**이다.
+서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**. 남은 것은 **신규 제작 2건**과 **Identity 7건**, **Arrows 6종**이다.
 
 | 구분 | 이전 | 현재 |
 | --- | --- | --- |
@@ -28,7 +28,7 @@
 | 1 | 디자인팀 신규 제작 요청 | 2 | Database Migration Service, NHN Cloud Foundry | 디자인 리소스 |
 | 2 | Identity 아이콘 확보 | 7 | Figma 에 라이트 버전이 없음 (아래 1-3) | 확인 필요 |
 | 3 | Arrows 스펙 입력 | 6 | PPT 16쪽 (파일 아님) | 없음 |
-| 4 | 산업·개념 보강 | 2 | Finance, Machine Learning (아래 1-6) | 정의 확인 필요 |
+| ~~4~~ | ~~산업·개념 보강~~ | ~~2~~ | **완료 (2026-11-12)** — 아래 1-6 | — |
 
 ### 1-2. 일반 아이콘 — 확보 완료
 
@@ -87,14 +87,34 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
 | IPSec VPN | `icons/14-security/resources/ic-security-network-firewall-ipsec-vpn.svg` |
 | NHN Cloud Private Region | `icons/12-hybrid-private-cloud/services/ic-hybrid-private-cloud-nhn-cloud-private-region.svg` (2026-11-12 추가) |
 
-### 1-6. 산업·개념 2개 — 정의 확인 필요
+### 1-6. 산업·개념 2개 — 확보 완료 (2026-11-12)
 
-현재 3개 보유 (IoT, Manufacturing, Medical & Healthcare). scheme.md 는 5개를 기대한다.
+**5개 전부 확보했다** (Finance, IoT, Machine Learning, Manufacturing, Medical & Healthcare).
+scheme.md 179행이 기대한 구성과 같다.
 
-- **Finance** — Figma 에서 이 이름으로 걸리는 것은 `ic-dooray_erp-finance`(Dooray! ERP 재무, Retired 대상)뿐이다.
-  산업·개념으로서의 Finance 아이콘은 존재하지 않는 것으로 보인다. 분류표에서 뺄지 확인 필요
-- **Machine Learning** — `ic-machine-learning` 을 `18-machine-learning/category/` 에 카테고리 아이콘으로 두었다.
-  산업·개념에도 올릴지, 카테고리 아이콘만으로 둘지 결정 필요
+근거는 Figma `03 Architecture icon` 페이지의 **`[NHNCloud]_architecture_icon_Black` 변형**이다.
+이 변형 안에 산업·개념 5칸이 한 줄로 나란히 있다(Medical & Healthcare, Manufacturing,
+Finance, Machine Learning, IoT). Color 변형에는 이 줄이 없다.
+
+| 셀 | Figma 인스턴스 | 쓴 파일 |
+| --- | --- | --- |
+| Finance | `ic-dooray_erp-finance-black` (`4938:66008`) | `icons/03-industry/ic-industry-finance.svg` |
+| Machine Learning | `ic-machine_learning-black` (`4938:66013`) | `icons/03-industry/ic-industry-machine-learning.svg` |
+
+**Black 변형이지만 그대로 쓴다.** 산업·개념 아이콘은 원래 `#222222` 단색이다. 기존 3개
+(IoT, Manufacturing, Medical & Healthcare)도 모두 `#222222` 라 색이 어긋나지 않는다.
+Identity 7종의 'Dark Backgrounds 변형이라 못 쓴다'(1-3)와는 다른 사안이다.
+
+- **Finance 아트워크는 Dooray! ERP 재무 아이콘과 같은 그림이다.** Figma 에서 내보낸
+  `ic-dooray_erp-finance-black` 의 path 4개가 `icons/28-retired/ic-collaboration-dooray-erp-finance.svg`
+  와 완전히 일치했다. Figma 가 Finance 칸에 그 아이콘을 쓰고 있으므로 같은 그림을 복사해 넣었다.
+  파일 2개가 내용이 같은 것은 의도한 것이다(Retired 슬롯 1개, 산업·개념 슬롯 1개)
+- **Machine Learning 은 `18-machine-learning/category/ic-machine-learning.svg` 를 복사했다.**
+  카테고리 아이콘으로도 계속 쓴다
+
+- [ ] Machine Learning 은 Figma 내보내기와 path 대조를 하지 못했다(Figma MCP 호출 한도).
+      이름 규칙(`ic-machine_learning-black` ↔ `ic-machine-learning`)과 색(`#222222`)만 맞춰
+      기존 저장소 파일을 복사했다. 한도가 풀리면 `4938:66013` 을 내보내 대조할 것
 
 ### 1-7. 리소스 — 확보 완료
 
