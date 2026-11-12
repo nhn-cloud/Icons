@@ -69,6 +69,8 @@ draw.io 배포 링크는 **하나**입니다: <https://nhn-cloud.github.io/Icons
 | GitHub 원본 | 라이브러리는 `dist/*.xml` 을 raw URL 로 직접 읽음 |
 | '그 외 도형' 목록 | 설정 `libraries` 로 'NHN Cloud' 항목 등록 (AWS 처럼 체크 하나로 켜고 끔) |
 | 도형 검색 | `libraries` 로 등록한 아이콘은 검색 색인에 들어감 |
+| 팔레트 이름 표시 | 설정 `sidebarTitles: true` — 팔레트를 펼치면 도형 아래에 이름이 보임 |
+| 탭 제목 고정 | `?title=NHN%20Cloud%20Icons` — 열린 파일 이름 대신 이 제목을 씀 |
 
 ```
 python tools/make_config_link.py --write-index                 # index.html 생성 (main 브랜치)

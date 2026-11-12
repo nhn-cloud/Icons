@@ -85,7 +85,7 @@ for p in files:
     h.update(p.name.encode())
     h.update(p.read_bytes())
 h.update(PREFIX.encode())
-h.update(b'config-schema-2')  # 설정 구조를 바꾸면 이 값을 올린다
+h.update(b'config-schema-3')  # 설정 구조를 바꾸면 이 값을 올린다
 VERSION = 'nhncloud-icons-' + h.hexdigest()[:10]
 
 import html as _html
@@ -101,6 +101,9 @@ PREVIEW = PREFIX.rsplit('/dist/', 1)[0] + '/icons/05-groups/containers/grp-nhn-c
 config = {'merge': {
     'version': VERSION,
     'expandLibraries': False,
+    # 팔레트를 펼쳤을 때 도형 아래에 이름을 보여 준다. 그룹 박스는 테두리만 다르고
+    # 생김새가 같아서 이름 없이는 구분이 안 된다. 모든 팔레트에 함께 적용된다.
+    'sidebarTitles': True,
     'defaultLibraries': ENTRY_ID,
     'libraries': [{
         'title': {'main': 'NHN Cloud'},
@@ -125,14 +128,19 @@ def drawio_compress(text):
     return base64.b64encode(raw).decode('ascii')
 
 
-# draw.io 탭 제목은 열린 파일 이름을 따른다(make_links.py 와 같은 시작 파일).
-# 설정 링크(#_CONFIG_)와 함께 쓸 수 없으므로 재방문용 이동 주소에만 붙인다.
-# 첫 방문은 설정 적용 후 draw.io 가 새로고침하므로 '제목 없는 다이어그램'으로 열린다.
+# 제목을 비워 두면 draw.io 가 '제목 없는 다이어그램'으로 연다. ?title= 로 고정한다.
+# 시작 파일은 재방문에선 #U, 첫 방문에선 ?url= 로 연다. ?url= 은 #U 의 구형 표기지만
+# 설정 해시(#_CONFIG_)와 같이 쓸 수 있는 유일한 형식이고, 설정 적용 뒤 draw.io 가
+# 새로고침할 때 질의 문자열이 남아 시작 파일이 그대로 열린다.
+TITLE = opt('--title', 'NHN Cloud Icons')
 STARTER = opt('--starter', 'https://%s.github.io/%s/NHN Cloud Icons.drawio' % (OWNER, NAME))
-OPEN_URL = EDITOR + ('#U' + urllib.parse.quote(STARTER, safe='') if STARTER else '')
+TITLE_Q = urllib.parse.quote(TITLE, safe='')
+STARTER_Q = urllib.parse.quote(STARTER, safe='') if STARTER else ''
+OPEN_URL = EDITOR + '?title=' + TITLE_Q + ('#U' + STARTER_Q if STARTER else '')
 
 config_json = json.dumps(config, ensure_ascii=False, separators=(',', ':'))
-link = EDITOR + '#_CONFIG_' + drawio_compress(config_json)
+link = (EDITOR + '?' + ('url=' + STARTER_Q + '&' if STARTER else '')
+        + 'title=' + TITLE_Q + '#_CONFIG_' + drawio_compress(config_json))
 
 INDEX = """<!doctype html>
 <html lang="ko">
@@ -176,8 +184,9 @@ INDEX = """<!doctype html>
 """
 
 if WRITE_INDEX:
-    html = (INDEX.replace('__LINK__', link)
-                 .replace('__EDITOR__', OPEN_URL)
+    # 설정 링크에 &title= 가 들어가므로 속성값으로 넣기 전에 HTML 이스케이프한다.
+    html = (INDEX.replace('__LINK__', _html.escape(link, quote=True))
+                 .replace('__EDITOR__', _html.escape(OPEN_URL, quote=True))
                  .replace('__VERSION__', VERSION)
                  .replace('__N__', str(len(files)))
                  .replace('__REPO__', REPO))

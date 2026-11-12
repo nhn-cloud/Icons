@@ -119,6 +119,9 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
   - [x] 모서리 아이콘 24×24가 박스 좌상단에 표시됨
   - [x] 컨테이너 동작 — VPC 박스에 Instance를 떨어뜨린 뒤 박스를 이동하니 자식이 함께 따라옴
   - [ ] 나머지 팔레트 일괄 로드 확인 (2개만 표본 검증함)
+  - [ ] **재확인 필요 (2026-11-12)**: Groups 팔레트를 PPT 15쪽 그룹 박스 15종으로 교체했다.
+        서비스 박스 8종을 뺐고, 모서리 아이콘이 없는 4종(Security Groups, Availability Zone,
+        Generic Group 2종)을 넣었다. 위 19개 기준 체크는 이 교체 이전 것이다
 - [ ] `docs/sample-3tier-architecture.drawio`를 새 라이브러리로 다시 그려 비교
 - [ ] PPT V2.2 10\~13쪽 예시 구성도를 draw.io로 재현해 누락 아이콘 확인
 
@@ -142,7 +145,7 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
 - [ ] **`alpha` 를 origin 에 푸시해야 `clibs` 링크가 동작한다**
 - [ ] 링크 URL 이 2,660자다. 사내 브라우저·프록시에서 잘리지 않는지 확인하고,
       문제가 있으면 분할하거나 `defaultCustomLibraries` 방식으로 전환
-- [ ] 저장소 `assets/pptx/` 사본을 포털 최신판(2026.4.8, 58쪽)으로 교체 — 현재 2026.1.29판(57쪽)
+- [x] 저장소 `assets/pptx/` 사본을 포털 최신판(2026.4.8, 58쪽)으로 교체 (2026-11-12). `NHN_Cloud_Architecture_Icons_20260129.pptx`(57쪽) 삭제, `NHN_Cloud_Architecture_Icons_2026.pptx` 추가
 - [ ] PPT 다음 개정을 홈페이지 기준으로 갱신 요청 (Face Liveness 중복 표기, 단종 아이콘 포함, 신규 2개 누락)
 - [ ] `tools/validate.py` 작성 — 블랙 누락, 슬러그 규칙 위반, taxonomy 미등록 검출을 CI로
 

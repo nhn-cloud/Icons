@@ -35,6 +35,8 @@ GROUP_W, GROUP_H = 520, 370
 BADGE = 32
 
 # scheme.md '그룹 정의' 표의 선 색·선 종류. 키는 컨테이너 슬러그.
+# PPT 15쪽(Icons / Groups)의 도형 값과 일치한다. 모서리 아이콘이 없는 4종은
+# taxonomy 에서 icon: false 로 표시하고 박스만 만든다.
 GROUP_STYLE = {
     'grp-nhn-cloud':           ('#111111', False),
     'grp-on-premise':          ('#555555', False),
@@ -42,13 +44,18 @@ GROUP_STYLE = {
     'grp-project':             ('#555555', False),
     'grp-region':              ('#999999', True),
     'grp-vpc':                 ('#999999', False),
+    'grp-availability-zone':   ('#B28FD1', True),
     'grp-subnet':              ('#BBBBBB', False),
+    'grp-security-groups':     ('#EE97AA', False),
     'grp-auto-scaling-group':  ('#125CE7', True),
     'grp-instance-contents':   ('#125CE7', False),
     'grp-server-contents':     ('#BBBBBB', False),
     'grp-nhn-cloud-account':   ('#BBBBBB', False),
+    'grp-generic-group-dashed': ('#DDDDDD', True),
+    'grp-generic-group-solid':  ('#DDDDDD', False),
 }
-# 서비스 박스 기본 스타일 (그룹 컨테이너와 구분되도록 점선 회색)
+# 서비스 박스 기본 스타일 (그룹 컨테이너와 구분되도록 점선 회색).
+# 현재 taxonomy.yaml 의 service_boxes 는 비어 있다 (PPT 15쪽 그룹 박스만 싣는다).
 BOX_STYLE = ('#999999', True)
 
 warnings = []
@@ -151,12 +158,18 @@ def asset_path(pal_dir, sub, slug):
 def add(entries, pal_dir, sub, item, kind, cat=None):
     """taxonomy 항목 1개를 라이브러리 엔트리로."""
     slug = item['slug']
+    title = item.get('name') or slug
+    # PPT 15쪽의 Security Groups·Availability Zone·Generic Group 2종은 모서리 아이콘이
+    # 없는 박스다. SVG 를 찾지 않고 컨테이너만 만든다.
+    if kind == 'container' and item.get('icon') is False:
+        stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
+        entries.append(container_entry(title, None, stroke, dashed))
+        return
     p = asset_path(pal_dir, sub, slug)
     if not p.exists():
         warnings.append('없음: %s' % p.relative_to(ROOT))
         return
     uri, w, h = data_uri(p)
-    title = item.get('name') or slug
     if kind == 'container':
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
         entries.append(container_entry(title, uri, stroke, dashed))

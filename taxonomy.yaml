@@ -137,45 +137,40 @@ palettes:
     title: "NHN Cloud / Groups"
     kind: groups
     containers:
-      - slug: grp-auto-scaling-group
-        name: "Auto Scaling Group"
-      - slug: grp-instance-contents
-        name: "Instance Contents"
-      - slug: grp-nhn-cloud-account
-        name: "NHN Cloud Account"
       - slug: grp-nhn-cloud
         name: "NHN Cloud"
-      - slug: grp-on-premise
-        name: "On Premise"
       - slug: grp-organization
         name: "Organization"
       - slug: grp-project
         name: "Project"
+      - slug: grp-on-premise
+        name: "On-Premise/IDC/Co-lo Zone"
       - slug: grp-region
         name: "Region"
-      - slug: grp-server-contents
-        name: "Server Contents"
-      - slug: grp-subnet
-        name: "Subnet"
       - slug: grp-vpc
         name: "VPC"
-    service_boxes:
-      - slug: box-container-ncs
-        name: "NCS"
-      - slug: box-container-nks
-        name: "NKS"
-      - slug: box-database-easycache
-        name: "EasyCache"
-      - slug: box-database-rds-for-mysql
-        name: "RDS for MySQL"
-      - slug: box-dev-tools-pipeline
-        name: "Pipeline"
-      - slug: box-machine-learning-ai-easymaker
-        name: "AI EasyMaker"
-      - slug: box-security-network-firewall
-        name: "Network Firewall"
-      - slug: box-storage-backup
-        name: "Backup"
+      - slug: grp-subnet
+        name: "Subnet"
+      - slug: grp-nhn-cloud-account
+        name: "NHN Cloud Member"
+      - slug: grp-server-contents
+        name: "Server Contents"
+      - slug: grp-security-groups
+        name: "Security Groups"
+        icon: false
+      - slug: grp-availability-zone
+        name: "Availability Zone"
+        icon: false
+      - slug: grp-auto-scaling-group
+        name: "Auto Scaling Group"
+      - slug: grp-instance-contents
+        name: "Instance Contents"
+      - slug: grp-generic-group-dashed
+        name: "Generic Group (점선)"
+        icon: false
+      - slug: grp-generic-group-solid
+        name: "Generic Group (실선)"
+        icon: false
   - id: "06-compute"
     title: "NHN Cloud / Compute"
     kind: category

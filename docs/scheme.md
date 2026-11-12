@@ -9,7 +9,7 @@ NHN Cloud 아이콘을 AWS draw.io 라이브러리처럼 **공통 팔레트 5개
 기준 자료는 두 가지입니다.
 
 - **[NHN Cloud 공식 홈페이지 서비스 목록](https://www.nhncloud.com/kr/service) (최종 기준)**: 카테고리 22개, 서비스 119개. 카테고리·서비스 구성, 표시명, 순서는 모두 이 목록을 따름
-- **[NHN Cloud Architecture Icons V2.2 (2026.4.8, PPT)](https://static.toastoven.net/portal/public/resources/reference-architecture/NHN_Cloud_Architecture_Icons_2026.pptx)**: 아이콘 유형, 그룹, 화살표 가이드의 기준. 레퍼런스 아키텍처 페이지에서 받는 이 포털 사본이 최신(58쪽)이며, 저장소 `files/pptx/`의 사본은 2026.1.29판(57쪽)으로 약 3개월 낡았습니다. 포털판은 Data Lake Storage 슬라이드와 개편된 Arrows 슬라이드가 추가되고 AI Fashion이 빠졌으며, "NHN Cloud 계정 용어 변경 논의중" 메모 슬라이드가 삭제돼 용어가 확정됐음을 보여줍니다
+- **[NHN Cloud Architecture Icons V2.2 (2026.4.8, PPT)](https://static.toastoven.net/portal/public/resources/reference-architecture/NHN_Cloud_Architecture_Icons_2026.pptx)**: 아이콘 유형, 그룹, 화살표 가이드의 기준. 저장소 사본 `assets/pptx/NHN_Cloud_Architecture_Icons_2026.pptx` 가 이 포털 최신판(58쪽)입니다(2026-11-12 교체, 이전 사본은 2026.1.29판 57쪽). 포털판은 Data Lake Storage 슬라이드와 개편된 Arrows 슬라이드가 추가되고 AI Fashion이 빠졌으며, "NHN Cloud 계정 용어 변경 논의중" 메모 슬라이드가 삭제돼 용어가 확정됐음을 보여줍니다
 
 두 자료가 다를 때는 홈페이지 > PPT 순으로 따릅니다. 홈페이지에 없는 아이콘은 PPT에 있어도 Retired 팔레트로 보냅니다.
 
@@ -44,7 +44,7 @@ V2.1(2025.3.25) 대비 V2.2의 주요 변경은 다음과 같습니다. 그룹 1
 | 02 | NHN Cloud / General Resources | `NHNCloud-01-General.xml` | 사용자, 단말, 범용 인프라, 데이터·문서 |
 | 03 | NHN Cloud / Industry & Concepts | `NHNCloud-02-Industry.xml` | 금융, 제조, 의료, IoT 등 산업·개념 일러스트 |
 | 04 | NHN Cloud / Identity | `NHNCloud-03-Identity.xml` | NHN Cloud 계정·IAM 계정과 역할(Owner/Admin/Member/Viewer) |
-| 05 | NHN Cloud / Groups | `NHNCloud-04-Groups.xml` | 그룹 컨테이너 16종 + 서비스 박스 9종 (아래 그룹 정의) |
+| 05 | NHN Cloud / Groups | `NHNCloud-04-Groups.xml` | PPT 15쪽의 그룹 박스 15종 (아래 그룹 정의). 서비스 박스는 싣지 않는다 |
 | 06\~27 | NHN Cloud / Compute \~ Governance & Audit | `NHNCloud-<category>.xml` | 서비스 카테고리 22개 (아래 분류표) |
 | 28 | NHN Cloud / Retired | `NHNCloud-Retired.xml` | 홈페이지에서 빠지거나 개명된 아이콘. 기존 다이어그램 호환용 |
 
@@ -90,13 +90,15 @@ NHN Cloud의 그룹은 AWS처럼 그룹마다 다른 색을 쓰지 않고, **회
 | 9 | Auto Scaling Group | #125CE7 | 점선 | Auto Scale (상단 가운데) | `General_Resources_Groups_Auto_Scaling_Group` |
 | 10 | Instance Contents | #125CE7 | 실선 | 인스턴스 | `IaaS-Compute-Instance` |
 | 10 | Server Contents | #BBBBBB | 실선 | 서버 | `General_Resources_Server_content` |
-| – | NHN Cloud 계정 | #BBBBBB | 실선 | 사용자 | `General_Resources_Groups_NHNCloud_Member` |
+| – | NHN Cloud Member | #BBBBBB | 실선 | 사용자 | `General_Resources_Groups_NHNCloud_Member` |
 | – | Generic Group (점선) | #DDDDDD | 점선 | 없음 | 없음 (PPT 도형) |
 | – | Generic Group (실선) | #DDDDDD | 실선 | 없음 | 없음 (PPT 도형) |
 
 중첩 순서는 PPT 예시 구성도(10\~13쪽)에서 실제로 겹쳐 쓴 순서입니다. 같은 번호는 같은 계층의 형제 그룹입니다.
 
-**서비스 박스 아이콘은 149개에서 9개로 줄여 위 Groups 팔레트에 함께 넣습니다.** 별도 Service Groups 팔레트를 만들지 않는 이유는, 서비스 박스도 결국 안에 자원을 담는 컨테이너라 그룹 컨테이너 16종과 쓰임이 같기 때문입니다. 팔레트를 둘로 나누면 "박스를 찾을 때 어디를 봐야 하는지"가 모호해집니다. 패널에서는 그룹 컨테이너 16종 다음에 서비스 박스 9종을 둡니다.
+**(2026-11-12 철회)** 아래 서비스 박스 선정은 유지하되, **Groups 팔레트에는 싣지 않습니다.** Groups 팔레트는 PPT 15쪽의 그룹 박스 15종만 담습니다. SVG 는 `icons/05-groups/service-boxes/` 에 그대로 두었고, `taxonomy.yaml` 의 `service_boxes` 만 비웠습니다. 아래는 그때의 선정 근거입니다.
+
+~~서비스 박스 아이콘은 149개에서 9개로 줄여 위 Groups 팔레트에 함께 넣습니다.~~ 별도 Service Groups 팔레트를 만들지 않는 이유는, 서비스 박스도 결국 안에 자원을 담는 컨테이너라 그룹 컨테이너 16종과 쓰임이 같기 때문입니다. 팔레트를 둘로 나누면 "박스를 찾을 때 어디를 봐야 하는지"가 모호해집니다. 패널에서는 그룹 컨테이너 16종 다음에 서비스 박스 9종을 둡니다.
 
 남기는 기준은 **"NHN Cloud 공식 레퍼런스 아키텍처 36건에서 실제로 다른 자원을 담는 박스로 그려진 서비스"** 하나뿐입니다. 추정으로 넣은 항목은 없습니다. 중첩 순서는 모두 10(Instance Contents와 같은 최하위 계층)이며, 보통 서브넷 안에 놓입니다.
 
@@ -137,7 +139,7 @@ Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, 
 
 **서브넷 표현 (확정)**: Public subnet과 Private subnet은 같은 스타일(#BBBBBB 실선, 자물쇠 아이콘)을 쓰고 레이블로만 구분합니다. AWS처럼 색을 나누지 않으므로 팔레트에는 "Public subnet", "Private subnet" 레이블이 미리 입력된 항목 2개를 둡니다.
 
-**계정 그룹 표시명 (확정)**: PPT 15쪽의 "NHN Cloud Member"는 V2.2 확정 용어에 맞춰 "NHN Cloud 계정"으로 표시합니다.
+**계정 그룹 표시명 (2026-11-12 변경)**: 팔레트 표시명을 PPT 15쪽 그대로 "NHN Cloud Member"로 되돌렸습니다. 앞서는 V2.2 확정 용어에 맞춰 "NHN Cloud 계정"으로 적기로 했으나, Groups 팔레트를 PPT 15쪽에서 그대로 옮기기로 하면서 출처 표기를 따릅니다. 본문·Identity 팔레트의 "NHN Cloud 계정" 표기는 그대로 둡니다.
 
 ## 공통 팔레트
 
@@ -377,7 +379,8 @@ PNG 는 draw.io 에서 필요할 때 얻습니다.
 | 검색 범위 | 내장 스텐실 제외는 여전히 **불가**. 다만 Configuration `libraries` 로 등록한 팔레트는 **검색 색인에 들어간다.** `Gamebase`, `Auto Scale` 은 NHN Cloud 아이콘이 첫 결과. `Instance` 같은 흔한 단어는 내장 도형이 먼저 나온다. 순위 가중치(`librarySearchWeights`)는 설정으로 못 바꾼다. 대신 라이브러리에 `tags="nhn nhncloud"` 를 넣어 **`nhn load balancer` 처럼 치면 NHN Cloud 아이콘만** 남게 했다(검색은 단어 AND) |
 | 팔레트 순서 | **고정.** `libraries` 의 `libs` 배열 순서대로 팔레트가 만들어진다 |
 | 팔레트 접힘 고정 | **가능.** `expandLibraries:false` 면 저장된 펼침 상태와 관계없이 항상 접힌 채로 시작 |
-| 탭 제목 | 재방문 이동 주소에 시작 파일 `#U` 를 붙인다. 첫 방문은 설정 적용 후 draw.io 가 새로고침하므로 제목 없는 다이어그램으로 열린다 |
+| 탭 제목 | **고정 가능.** 위 표의 "`title=` 는 무시된다"는 실측이 틀렸다. `?title=NHN%20Cloud%20Icons` 가 파일 이름을 덮어써 제목이 그대로 쓰인다(확장자도 안 붙는다). 설정 해시와 같이 쓰려면 시작 파일을 `#U` 가 아니라 질의 문자열 `?url=` 로 준다. `?url=<시작 파일>&title=<제목>#_CONFIG_<설정>` 이면 설정 적용 후 새로고침에도 질의 문자열이 남아 첫 방문부터 제목이 고정된다 |
+| 팔레트 이름 표시 | **가능.** `sidebarTitles:true` 면 팔레트를 펼쳤을 때 도형 아래에 이름이 보인다(`sidebarTitleSize` 로 크기 조절, 기본 8pt). 그룹 박스는 테두리만 다르고 생김새가 같아 이름 없이는 구분이 안 된다. 설정이라 모든 팔레트에 함께 적용된다 |
 | '그 외 도형' | `libraries` 로 'NHN Cloud' 항목이 추가되어 AWS 처럼 체크 하나로 켜고 끈다 |
 
 남는 비용: 브라우저마다 첫 방문 때 확인 2번, 설정 구조나 `dist/` 가 바뀌면 다음 방문 때 확인 2번.
