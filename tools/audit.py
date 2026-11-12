@@ -100,12 +100,18 @@ print('\n서비스 합계: 기대 %d · 보유 %d · 누락 %d' % (total_exp, to
 print('\n' + '=' * 64)
 print('기타 팔레트')
 print('=' * 64)
-for pid, label, expect in [('01-arrows', '화살표', 6), ('02-general', '일반 리소스', None),
+for pid, label, expect in [('01-arrows', '화살표', 18), ('02-general', '일반 리소스', None),
                            ('03-industry', '산업·개념', None), ('04-identity', '계정·역할', 7),
                            ('05-groups/containers', '그룹 컨테이너', 11)]:
     d = ICONS / pid
-    n = len([p for p in list(d.glob('*.svg')) + list(d.glob('*.png'))
-             if not p.stem.endswith('.black')]) if d.exists() else 0
+    if pid == '01-arrows':
+        # 화살표는 SVG 가 아니라 styles.yaml 의 엣지 스타일이라 파일 수로 셀 수 없다.
+        import yaml
+        f = d / 'styles.yaml'
+        n = len((yaml.safe_load(f.read_text(encoding='utf-8')) or {}).get('arrows') or [])             if f.exists() else 0
+    else:
+        n = len([p for p in list(d.glob('*.svg')) + list(d.glob('*.png'))
+                 if not p.stem.endswith('.black')]) if d.exists() else 0
     note = '' if expect is None else ('  <- %d개 기대, %d개 부족' % (expect, expect - n) if n < expect else '')
     print('  %-22s %3d개%s' % (label, n, note))
 

@@ -169,6 +169,51 @@ def container_entry(title, uri, stroke, dashed, badge_center=False):
     return {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
 
 
+# 엣지 미리보기 크기. 가로 100, 선은 세로 가운데에 둔다(높이 0 이면 패널 썸네일이 찌그러진다).
+EDGE_W, EDGE_H = 100, 20
+
+
+def edge_entry(title, color, pattern, ends):
+    """Arrows 팔레트 항목: 도형이 아니라 연결선 스타일 1개.
+
+    PPT 16쪽의 선은 모두 1pt 이고 화살촉은 채운 삼각형(triangle)이다.
+    draw.io 에서는 block + endFill=1 이 같은 모양이다.
+    """
+    arrow = {
+        'forward': 'startArrow=none;startFill=0;endArrow=block;endFill=1;',
+        'both':    'startArrow=block;startFill=1;endArrow=block;endFill=1;',
+        'none':    'startArrow=none;startFill=0;endArrow=none;endFill=0;',
+    }[ends]
+    dash = 'dashed=1;dashPattern=%s;' % pattern if pattern else 'dashed=0;'
+    style = ('edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;'
+             'orthogonalLoop=1;labelBackgroundColor=#FFFFFF;fontSize=11;'
+             'strokeColor=%s;strokeWidth=1;%s%s' % (color, dash, arrow))
+    cell = ('<mxCell id="2" value="" style="%s" edge="1" parent="1">'
+            '<mxGeometry width="%d" height="%d" relative="1" as="geometry">'
+            '<mxPoint x="0" y="%d" as="sourcePoint"/>'
+            '<mxPoint x="%d" y="%d" as="targetPoint"/>'
+            '</mxGeometry></mxCell>'
+            % (esc(style), EDGE_W, EDGE_H, EDGE_H // 2, EDGE_W, EDGE_H // 2))
+    return {'xml': compress(model(cell)), 'w': EDGE_W, 'h': EDGE_H, 'title': title}
+
+
+def style_entries(path):
+    """icons/01-arrows/styles.yaml -> 엣지 스타일 엔트리."""
+    if not path.exists():
+        warnings.append('없음: %s' % path.relative_to(ROOT))
+        return []
+    data = yaml.safe_load(path.read_text(encoding='utf-8')) or {}
+    patterns = data.get('dash_patterns') or {}
+    out = []
+    for it in data.get('arrows') or []:
+        dash = it.get('dash', 'solid')
+        if dash not in patterns:
+            warnings.append('%s: 모르는 dash 값 %r' % (it['slug'], dash))
+            continue
+        out.append(edge_entry(it.get('name') or it['slug'], it['color'],
+                              patterns[dash], it.get('ends', 'forward')))
+    return out
+
 # ---------------------------------------------------------------- collect
 
 def asset_path(pal_dir, sub, slug):
@@ -209,7 +254,7 @@ def build(pal):
     e = []
     kind = pal.get('kind')
     if kind == 'styles':
-        return e
+        return style_entries(pal_dir / pal.get('source', 'styles.yaml'))
     if kind == 'groups':
         for it in pal.get('containers') or []:
             add(e, pal_dir, 'containers', it, 'container')

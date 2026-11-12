@@ -154,16 +154,24 @@ Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, 
 
 ## 공통 팔레트
 
-**Arrows**: PPT 16쪽의 화살표 규칙을 연결선 스타일로 등록합니다. 선 두께는 모두 1pt입니다.
+**Arrows (2026-11-12 실측으로 교체)**: PPT 16쪽의 연결선 도형을 그대로 엣지 스타일로 등록합니다.
+원본은 **6종이 아니라 18종**입니다. 슬라이드가 3열(Primary Path / Secondary Path / Success Status) x 6행이고,
+3열만 녹색·빨강이 번갈아 들어가 Success 3종 + Failure 3종이 됩니다. 선 두께는 모두 1pt입니다.
+값은 `icons/01-arrows/styles.yaml` 이 단일 원천이고, `tools/make_drawio_libs.py` 가 `dist/01.xml` 을 만듭니다.
 
-| 항목 | 선 색 | 선 종류 | 화살촉 |
-| --- | --- | --- | --- |
-| Primary Path (주 경로) | #555555 | 실선 | 삼각형 / 없음 |
-| Secondary Path (보조 경로) | #555555 | 점선 | 삼각형 / 없음 |
-| Primary Path (연한 배경용) | #999999 | 실선 | 삼각형 / 없음 |
-| Secondary Path (연한 배경용) | #999999 | 점선 | 삼각형 / 없음 |
-| Success Status | #09C72C | 실선 | 삼각형 / 없음 |
-| Failure Status | #EF0F0F | 실선 | 삼각형 / 없음 |
+| 항목 | 선 색 | 화살촉 조합 | 선 종류 | 종수 |
+| --- | --- | --- | --- | --- |
+| Primary Path | #555555 | 끝 / 양쪽 / 없음 | 각 실선·점선 | 6 |
+| Secondary Path | #999999 | 끝 / 양쪽 / 없음 | 각 실선·점선 | 6 |
+| Success Status | #09C72C | 끝 / 양쪽 / 없음 | 실선만 | 3 |
+| Failure Status | #EF0F0F | 끝 / 양쪽 / 없음 | 실선만 | 3 |
+
+- 화살촉은 PPT `triangle`(채운 삼각형)이고 draw.io 에서는 `endArrow=block;endFill=1` 이 같은 모양입니다.
+- 점선은 OOXML 프리셋을 그대로 옮겼습니다. `dash` = `dashPattern=4 3`, `sysDash` = `dashPattern=3 1`.
+- **원본 불일치 1건**: 1열 2행(Primary Path 점선, 끝 화살촉)만 `sysDash` 이고 나머지 점선은 모두 `dash` 입니다.
+  PPT 작성상의 흔들림으로 보이지만 실물을 그대로 옮겨 두었습니다. 통일하려면 디자인팀 확인이 필요합니다.
+- 이전 표에 있던 "Primary Path (연한 배경용)" 은 실물에 없는 항목이었습니다. #999999 열의 슬라이드 제목은
+  Secondary Path 이고, 본문 설명은 실선=주 경로 / 점선=보조 경로로 따로 적고 있습니다.
 
 **General Resources**: PPT 18\~19쪽의 일반 아이콘 중 사람, 단말, 범용 인프라, 데이터를 모읍니다. 팔레트 안에서는 AWS General Resources처럼 의미 묶음 순으로 둡니다.
 

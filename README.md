@@ -14,7 +14,7 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 | --- | --- |
 | `icons/` | 원본 SVG. 팔레트 28개와 1:1 |
 | `taxonomy.yaml` | 분류·표시명의 단일 원천. 라이브러리는 여기서 생성 |
-| `dist/` | 생성된 draw.io 라이브러리 26개 |
+| `dist/` | 생성된 draw.io 라이브러리 27개 |
 | `tools/` | 생성·검증 스크립트 |
 | `docs/` | 분류 체계 문서와 샘플 구성도 |
 | `assets/pptx/` | 아키텍처 아이콘 PPT |
@@ -22,7 +22,7 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 ### icons/ 구성
 
 ```
-01-arrows        엣지 스타일 (SVG 없음)
+01-arrows        엣지 스타일 18종 (SVG 없음, styles.yaml)
 02-general       일반 리소스          03-industry   산업·개념
 04-identity      계정·역할            05-groups     그룹 컨테이너 + 서비스 박스
 06-compute … 27-governance-audit      서비스 카테고리 22개 (홈페이지 메뉴 순)
@@ -80,7 +80,7 @@ python tools/make_config_link.py                               # 설정 JSON 과
 
 ### 사용자 동작
 
-- **처음 열 때** draw.io 가 설정 적용 여부를 **두 번** 묻습니다. 두 번 모두 확인을 누르면 새로고침되고 팔레트 26개가 접힌 상태로 붙습니다.
+- **처음 열 때** draw.io 가 설정 적용 여부를 **두 번** 묻습니다. 두 번 모두 확인을 누르면 새로고침되고 팔레트 27개가 접힌 상태로 붙습니다.
 - 팔레트는 **+ 그 외 도형** 창 맨 위 'NHN Cloud' 항목으로 켜고 끕니다. 내장 팔레트(AWS 등)도 같은 창에서 켜고 끕니다.
 - 검색창에 아이콘 이름(예: `Gamebase`, `Auto Scale`)을 넣으면 NHN Cloud 아이콘도 검색됩니다. `Instance`, `Load Balancer` 처럼 흔한 단어는 draw.io 내장 도형·타사 클라우드 아이콘이 먼저 나옵니다.
 - **NHN Cloud 아이콘만 보려면 검색어 앞에 `nhn` 을 붙이세요.** 예: `nhn load balancer`, `nhn instance`. 모든 NHN Cloud 아이콘에 `nhn` 검색 태그가 들어 있습니다.

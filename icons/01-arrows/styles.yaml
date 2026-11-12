@@ -1,5 +1,119 @@
 # Arrows 팔레트: 이미지가 아니라 draw.io 엣지 스타일로 만듭니다.
-# 화살표 6종의 선 색·굵기·대시 패턴은 PPT V2.2 "2.3 Arrows"에서 옮겨야 합니다.
-# TODO: PPT에서 실제 값 추출 후 채울 것. docs/scheme.md 참고.
+#
+# 값은 PPT V2.2 16쪽 "4.2 Arrows" 의 연결선 도형 18개에서 그대로 옮겼습니다
+# (2026-11-12, assets/pptx/NHN_Cloud_Architecture_Icons_2026.pptx 실측).
+#   선 두께  w="12700" EMU = 1pt  -> 모든 선이 같다
+#   화살촉   <a:tailEnd type="triangle"/> / <a:headEnd type="triangle"/> / 없음
+#   선 종류  <a:prstDash val="..."/> 없으면 실선
+#
+# 슬라이드는 3열(Primary Path / Secondary Path / Success Status) x 6행이고,
+# 3열은 녹색·빨강이 번갈아 들어가 Success 3종 + Failure 3종입니다.
+# 여기서는 보기 쉽게 색끼리 묶어 Success 3종 뒤에 Failure 3종을 둡니다.
 version: 1
-arrows: []
+
+# dash 이름 -> draw.io dashPattern (선 두께의 배수). OOXML 프리셋 정의와 같은 값.
+dash_patterns:
+  solid:
+  dash: "4 3"
+  sysDash: "3 1"
+
+# ends: forward(끝에만) | both(양쪽) | none(화살촉 없음)
+arrows:
+  # --- 1열 Primary Path (#555555) -------------------------------------
+  - slug: arr-primary-path
+    name: "Primary Path"
+    color: "#555555"
+    dash: solid
+    ends: forward
+  # PPT 원본만 이 한 줄이 sysDash 이고 나머지 점선은 모두 dash 다. 실물을 그대로 옮긴다.
+  - slug: arr-primary-path-dashed
+    name: "Primary Path · 점선"
+    color: "#555555"
+    dash: sysDash
+    ends: forward
+  - slug: arr-primary-path-both
+    name: "Primary Path · 양방향"
+    color: "#555555"
+    dash: solid
+    ends: both
+  - slug: arr-primary-path-both-dashed
+    name: "Primary Path · 양방향 점선"
+    color: "#555555"
+    dash: dash
+    ends: both
+  - slug: arr-primary-path-plain
+    name: "Primary Path · 화살촉 없음"
+    color: "#555555"
+    dash: solid
+    ends: none
+  - slug: arr-primary-path-plain-dashed
+    name: "Primary Path · 점선, 화살촉 없음"
+    color: "#555555"
+    dash: dash
+    ends: none
+
+  # --- 2열 Secondary Path (#999999) -----------------------------------
+  - slug: arr-secondary-path
+    name: "Secondary Path"
+    color: "#999999"
+    dash: solid
+    ends: forward
+  - slug: arr-secondary-path-dashed
+    name: "Secondary Path · 점선"
+    color: "#999999"
+    dash: dash
+    ends: forward
+  - slug: arr-secondary-path-both
+    name: "Secondary Path · 양방향"
+    color: "#999999"
+    dash: solid
+    ends: both
+  - slug: arr-secondary-path-both-dashed
+    name: "Secondary Path · 양방향 점선"
+    color: "#999999"
+    dash: dash
+    ends: both
+  - slug: arr-secondary-path-plain
+    name: "Secondary Path · 화살촉 없음"
+    color: "#999999"
+    dash: solid
+    ends: none
+  - slug: arr-secondary-path-plain-dashed
+    name: "Secondary Path · 점선, 화살촉 없음"
+    color: "#999999"
+    dash: dash
+    ends: none
+
+  # --- 3열 Success Status (#09C72C) -----------------------------------
+  - slug: arr-success-status
+    name: "Success Status"
+    color: "#09C72C"
+    dash: solid
+    ends: forward
+  - slug: arr-success-status-both
+    name: "Success Status · 양방향"
+    color: "#09C72C"
+    dash: solid
+    ends: both
+  - slug: arr-success-status-plain
+    name: "Success Status · 화살촉 없음"
+    color: "#09C72C"
+    dash: solid
+    ends: none
+
+  # --- 3열 Failure Status (#EF0F0F) -----------------------------------
+  - slug: arr-failure-status
+    name: "Failure Status"
+    color: "#EF0F0F"
+    dash: solid
+    ends: forward
+  - slug: arr-failure-status-both
+    name: "Failure Status · 양방향"
+    color: "#EF0F0F"
+    dash: solid
+    ends: both
+  - slug: arr-failure-status-plain
+    name: "Failure Status · 화살촉 없음"
+    color: "#EF0F0F"
+    dash: solid
+    ends: none
