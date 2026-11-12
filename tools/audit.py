@@ -101,7 +101,7 @@ print('\n' + '=' * 64)
 print('기타 팔레트')
 print('=' * 64)
 for pid, label, expect in [('01-arrows', '화살표', 18), ('02-general', '일반 리소스', None),
-                           ('03-industry', '산업·개념', None), ('04-identity', '계정·역할', 7),
+                           ('03-industry', '산업·개념', None), ('04-identity', '계정·역할', 9),
                            ('05-groups/containers', '그룹 컨테이너', 11)]:
     d = ICONS / pid
     if pid == '01-arrows':

@@ -137,6 +137,25 @@ palettes:
   - id: "04-identity"
     title: "NHN Cloud / Identity"
     kind: flat
+    icons:
+      - slug: ic-identity-nhn-cloud
+        name: "NHN Cloud 계정"
+      - slug: ic-identity-nhn-cloud-owner
+        name: "NHN Cloud 계정 Owner"
+      - slug: ic-identity-nhn-cloud-admin
+        name: "NHN Cloud 계정 Admin"
+      - slug: ic-identity-nhn-cloud-member
+        name: "NHN Cloud 계정 Member"
+      - slug: ic-identity-nhn-cloud-viewer
+        name: "NHN Cloud 계정 Viewer"
+      - slug: ic-identity-iam
+        name: "IAM 계정"
+      - slug: ic-identity-iam-admin
+        name: "IAM 계정 Admin"
+      - slug: ic-identity-iam-member
+        name: "IAM 계정 Member"
+      - slug: ic-identity-iam-viewer
+        name: "IAM 계정 Viewer"
   - id: "05-groups"
     title: "NHN Cloud / Groups"
     kind: groups

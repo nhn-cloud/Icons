@@ -5,7 +5,8 @@
 
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
 서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**.
-**SVG 가 없는 아이콘은 9개**다 — 신규 제작 2개, 있는지 확인부터 할 것 7개. 목록은 **1-1** 에 모아 두었다.
+**SVG 가 없는 아이콘은 2개**로 줄었다 — 둘 다 디자인팀 신규 제작 건이다. 목록은 **1-1** 에 모아 두었다.
+계정·역할 7개는 Figma Identity & Governance 표에서 **9개로 확보해 팔레트까지 반영**했다(1-3).
 Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 배포까지 확인 완료**(1-4).
 
 | 구분 | 이전 | 현재 |
@@ -13,6 +14,7 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 | 서비스 아이콘 | 113 / 119 | **117 / 119** |
 | 일반 아이콘 | 16 | **52** |
 | 리소스 | IPSec VPN 없음 | **확보** |
+| 계정·역할 | 0 / 7 | **9개(완료)** |
 | 카테고리 아이콘 | 10 / 22 | 범위에서 제외 (아래 참고) |
 
 **카테고리 아이콘은 이번 작업 범위에서 제외한다.** Figma `03 Architecture icon` 페이지는
@@ -25,7 +27,7 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 
 ### 1-1. 아직 SVG가 없는 아이콘 — 한눈에
 
-**그림을 새로 받아야 하는 것은 2개, 있는지 확인부터 해야 하는 것이 7개. 합계 9개.**
+**남은 것은 디자인팀 신규 제작 2개뿐이다.** 계정·역할 7개는 2026-11-12 에 확보해 (나)로 옮겼다.
 수치는 `python tools/audit.py` 로 언제든 다시 센다.
 
 #### (가) 디자인팀에 신규 제작 요청 — 2개
@@ -40,32 +42,22 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 
 → 이 2개를 채우면 서비스 아이콘이 **117/119 → 119/119** 가 된다.
 
-#### (나) 있는지 확인 먼저 — Identity 계정·역할 7개
+#### (나) 확보 완료 — Identity 계정·역할 9개 (2026-11-12)
 
-`icons/04-identity/` 가 비어 있다(README 만 있음). 형식은 `ic-identity-<슬러그>.svg` 까지만
-정해져 있고 **역할별 슬러그는 아직 정한 적이 없다.** 아래 파일명은 제안이다.
+`icons/04-identity/` 를 채웠다. 아래 슬러그로 확정했고 팔레트 `dist/04.xml` 까지 생성된다.
+자세한 경위는 1-3.
 
-| 계열 | 역할 | 파일 이름 (제안) |
+| 계열 | 아이콘 | 파일 이름 |
 | --- | --- | --- |
+| NHN Cloud 계정 | 계열 상위 | `ic-identity-nhn-cloud.svg` |
 | NHN Cloud 계정 | Owner | `ic-identity-nhn-cloud-owner.svg` |
 | NHN Cloud 계정 | Admin | `ic-identity-nhn-cloud-admin.svg` |
 | NHN Cloud 계정 | Member | `ic-identity-nhn-cloud-member.svg` |
 | NHN Cloud 계정 | Viewer | `ic-identity-nhn-cloud-viewer.svg` |
+| IAM 계정 | 계열 상위 | `ic-identity-iam.svg` |
 | IAM 계정 | Admin | `ic-identity-iam-admin.svg` |
 | IAM 계정 | Member | `ic-identity-iam-member.svg` |
 | IAM 계정 | Viewer | `ic-identity-iam-viewer.svg` |
-
-- [ ] 역할별 슬러그 확정 (위는 제안). 서비스 아이콘과 달리 `audit.py` 가 유도하는 규칙이 없다
-
-**막힌 이유**: Figma `03 Architecture icon` 에서 이 아이콘들은 Color·Black 변형 양쪽 모두
-`General Resources Icon/Dark Backgrounds/...` 컴포넌트로만 들어가 있다. 어두운 배경용 변형이라
-그대로 쓸 수 없다. 자세한 내용은 아래 1-3.
-
-> 산업·개념 2개(Finance, Machine Learning)는 Black 변형에 있어도 그대로 썼다. 그쪽은 원래
-> `#222222` 단색이라 색이 맞았기 때문이고(아래 1-6), Identity 는 어두운 배경 전용이라 사정이 다르다.
-
-→ 순서: ① `02 Service icon` 페이지 등 다른 곳에 라이트 버전이 있는지 확인
-→ ② 없으면 디자인팀에 제작 요청. 확인 전에는 제작 요청하지 않는다.
 
 #### (다) SVG 가 필요 없는 것 — Arrows (완료)
 
@@ -87,6 +79,7 @@ management, bill, collaboration, contact-center, governance-audit.
 | 리소스 IPSec VPN | **확보** (1-7) |
 | 그룹 박스 | PPT 15쪽 **15종** 전부 (2026-11-12) |
 | 화살표 | PPT 16쪽 **18종** 전부, 엣지 스타일. 배포 확인 완료 (1-4, 2026-11-12) |
+| 계정·역할 | Figma Identity & Governance 표에서 **9개** (1-3, 2026-11-12) |
 
 ### 1-2. 일반 아이콘 — 확보 완료
 
@@ -99,21 +92,20 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
 - [ ] `ic-general-manager` 와 `ic-general-administrator` 는 **서로 다른 아이콘**으로 확인됐다(path 비교).
       둘 다 유지했으나 표시명이 겹칠 수 있어 `taxonomy.yaml` 에서 구분이 필요한지 확인
 
-### 1-3. Identity 7개 — Figma 에 라이트 버전이 없음
+### 1-3. Identity 9개 — 확보 완료 (2026-11-12)
 
-`03 Architecture icon` 페이지에서 찾은 계정·역할 아이콘은 전부
-`General Resources Icon/Dark Backgrounds/...` 즉 **어두운 배경용 변형**이다.
-저장소는 컬러 한 가지만 관리하므로 그대로 쓸 수 없다.
+**앞서 '막혔다'고 적은 것은 찾은 곳이 틀렸기 때문이었다.** 계정·역할 아이콘은
+`General Resources Icon/Dark Backgrounds/...` 컴포넌트가 아니라, `03 Architecture icon` 페이지
+**Identity & Governance 표**(`[NHNCloud]_architecture_icon_Color` > `4597:218941`)에 있다.
+60x60 노드를 그대로 받아 넣었고 보정은 하지 않았다.
 
-**2026-11-12 재확인**: 산업·개념 2개를 Black 변형에서 가져오면서 Identity 도 다시 봤다.
-Color 변형과 Black 변형 **양쪽 모두** 같은 `Dark Backgrounds` 컴포넌트만 쓰고 있어
-결론은 그대로다. 산업·개념은 원래 `#222222` 단색이라 Black 에서 가져와도 됐지만(1-6),
-Identity 는 어두운 배경 전용이라 사정이 다르다.
+- PPT V2.2 17쪽의 9개와 그림을 1:1로 대조해 **전부 같은 것을 확인**했다.
+- 색은 브랜드 블루가 아니라 **`#555555` 단색**이다. PPT·Figma 양쪽이 그렇다.
+- PPT 17쪽이 표시명의 근거다. Figma 표 머리글은 `Subnet`, `Internet Gateway`, `Interface` 처럼
+  **다른 표에서 복사된 값**이라 역할명을 알 수 없다.
 
-- [ ] 라이트 버전이 `02 Service icon` 페이지나 다른 곳에 있는지 확인
-- [ ] 없다면 디자인팀에 라이트 버전 요청
-
-필요한 7종: NHN Cloud 계정 Owner / Admin / Member / Viewer, IAM 계정 Admin / Member / Viewer
+- [ ] **Figma 에만 있는 `C` + `$` 아이콘 1개**: PPT 17쪽에 없고 Figma 쪽 이름도 역할명이 아니라
+      무엇인지 확정할 수 없어 넣지 않았다. 역할명을 알면 10번째로 추가. 디자인팀 확인 필요
 
 > Figma 에는 Billing Viewer, Log Viewer 등 **문서에 없던 역할도 있다.** 포함할지 결정 필요.
 
