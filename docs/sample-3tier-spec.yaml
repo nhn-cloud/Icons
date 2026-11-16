@@ -1,0 +1,53 @@
+title: 3-Tier Web Service on NHN Cloud
+dir: row
+items:
+  - dir: col
+    group: Generic Group (점선)
+    label: Client
+    items:
+      - {id: users, icon: Users, label: 사용자}
+  - {id: dns, icon: DNS Plus}
+  - group: NHN Cloud
+    dir: row
+    items:
+      - group: Region
+        label: KR1 (판교)
+        items:
+          - group: VPC
+            dir: row
+            items:
+              - {id: igw, icon: Internet Gateway}
+              - group: Subnet
+                label: Public Subnet
+                dir: col
+                items:
+                  - {id: lb, icon: Load Balancer}
+              - group: Subnet
+                label: Private Subnet (App)
+                items:
+                  - group: Auto Scaling Group
+                    id: asg
+                    dir: col
+                    items:
+                      - {id: web1, icon: Instance, label: Web 1}
+                      - {id: web2, icon: Instance, label: Web 2}
+              - group: Subnet
+                label: Private Subnet (DB)
+                dir: col
+                items:
+                  - {id: db1, icon: RDS Instance, label: Master}
+                  - {id: db2, icon: RDS Instance, label: Replica}
+      - group: Generic Group (실선)
+        label: Managed Services
+        dir: col
+        items:
+          - {id: obs, icon: Object Storage}
+          - {id: mon, icon: Cloud Monitoring}
+edges:
+  - [users, dns]
+  - [dns, igw]
+  - [igw, lb]
+  - {from: lb, to: asg, label: HTTP}
+  - {from: asg, to: db1, label: "3306"}
+  - {from: db1, to: db2, style: Secondary Path · 점선, label: Replication}
+  - {from: asg, to: obs, style: Secondary Path · 점선, exit: top, entry: left}
