@@ -98,12 +98,12 @@ python tools/drawio_edit.py out.drawio remove db3        # 딸린 연결선도 �
 
 ```yaml
 title: 3-Tier Web Service on NHN Cloud   # 선택. 왼쪽 위 제목
-dir: row                                  # 최상위 배치 방향 row | col (기본 row)
+dir: row                                  # 최상위 배치 방향 row | col (기본·권장 row — 가로형)
 items:
   - {id: users, icon: Users, label: 사용자}
   - group: Region                         # Groups 팔레트 이름
     label: KR1 (판교)                      # 생략 시 그룹 이름이 레이블
-    dir: col
+    dir: row
     items:
       - group: VPC
         items:
@@ -128,10 +128,16 @@ Failure Status (각각 기본·양방향·화살촉 없음).
 
 ## 배치 요령
 
+**구성도는 가로형이 기본이다.** 사용자가 세로형을 명시적으로 요청하지 않는 한
+전체 흐름을 왼쪽 → 오른쪽으로 두고, 최상위와 바깥 그룹은 `dir: row` 로 쓴다.
+
 자동 배치는 `row`/`col` 중첩 패킹이라 단순하다. 다음을 지키면 결과가 훨씬 낫다.
 
-- **가로로 흐르게**: 외부 → 게이트웨이 → LB → 앱 → DB 를 `dir: row` 로 둔다.
-- **같은 층은 세로로**: 웹 서버 2대, DB Master/Replica 는 `dir: col` 로 묶는다.
+- **흐름은 가로로**: 외부 → 게이트웨이 → LB → 앱 → DB 를 `dir: row` 로 둔다.
+  Region·VPC·Subnet 같은 바깥 그룹도 기본은 `dir: row` 다.
+- **짝만 세로로**: 웹 서버 2대, DB Master/Replica 처럼 **같은 역할의 짝**만 `dir: col` 로 묶는다.
+- **한 층에 3개 이상 쌓이면 열로 쪼갠다**: `Generic Group (점선)` 으로 묶어 가로로 세운다.
+  (예: Private Subnet 안에 Web 열, DB 열) 그대로 `col` 로 쌓으면 그림이 세로로 길어진다.
 - **엣지는 꼭 필요한 것만**: 선이 많을수록 겹침이 심해진다. 교차가 생기면 `exit`/`entry` 로 방향을 고정한다.
 - 그룹이 너무 좁으면 `min_w` / `min_h` 로 넓힌다.
 
