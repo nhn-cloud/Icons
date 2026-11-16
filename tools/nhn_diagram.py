@@ -33,6 +33,7 @@ YAML/JSON 명세로 구성도를 만듭니다. 아이콘·그룹·화살표 스�
   노드 옵션: id, icon(필수), label, w/h(크기 덮어쓰기)
   그룹 옵션: id, group(필수), label, dir, gap, pad, align(center|start), min_w, min_h
   특수 항목: {spacer: 60}  — 빈 칸
+            {stack: col, items: [...]}  — 테두리 없는 배치 전용 묶음 (row | col)
   icon/group 이름은 대소문자·공백·하이픈을 무시하고 맞춥니다.
   이름이 여러 팔레트에 있으면 "Palette/Title" 로 지정합니다 (예: "Container/Image").
 """
@@ -128,7 +129,14 @@ class Node:
             v = spec["spacer"]
             self.w = self.h = int(v) if v else 40
             return
-        if "group" in spec:
+        if "stack" in spec:
+            self.kind = "stack"
+            self.dir = spec.get("stack") or "row"
+            self.gap = spec.get("gap", GAP)
+            self.pad = spec.get("pad", 0)
+            self.align = spec.get("align", "center")
+            self.children = [Node(c, lib, ids) for c in spec.get("items", [])]
+        elif "group" in spec:
             self.kind = "group"
             self.shape = lib.find(spec["group"], "group")
             self.dir = spec.get("dir", "row")
@@ -150,6 +158,8 @@ class Node:
 
     @property
     def head(self):
+        if self.kind == "stack":
+            return 0
         return ASG_HEAD if _norm(self.shape["title"]) == "autoscalinggroup" else GROUP_HEAD
 
     def measure(self):
@@ -165,12 +175,13 @@ class Node:
         main = sum((c.w if row else c.h) for c in self.children) + self.gap * max(0, len(self.children) - 1)
         cross = max([(c.h if row else c.w) for c in self.children] or [0])
         cw, ch = (main, cross) if row else (cross, main)
-        self.w = max(cw + 2 * self.pad, self.spec.get("min_w", 220))
-        self.h = max(ch + self.head + self.pad, self.spec.get("min_h", 140))
+        min_w, min_h = (0, 0) if self.kind == "stack" else (220, 140)
+        self.w = max(cw + 2 * self.pad, self.spec.get("min_w", min_w))
+        self.h = max(ch + self.head + self.pad, self.spec.get("min_h", min_h))
 
     def place(self):
         """자식 좌표를 이 그룹 기준 상대좌표로 정한다."""
-        if self.kind != "group":
+        if self.kind not in ("group", "stack"):
             return
         row = self.dir == "row"
         inner_w = self.w - 2 * self.pad
@@ -210,6 +221,12 @@ def _set_geom(cell, x, y, w, h):
 
 def emit(node, parent, out):
     if node.kind == "spacer":
+        return
+    if node.kind == "stack":
+        for ch in node.children:
+            ch.x += node.x
+            ch.y += node.y
+            emit(ch, parent, out)
         return
     cells = _cells(node.shape["xml"])
     main = cells[0] if node.kind == "icon" else next(c for c in cells if _attr(c, "parent") == "1")

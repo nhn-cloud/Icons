@@ -121,6 +121,7 @@ edges:
 | 그룹 | `id`, `group`(필수), `label`, `dir`, `gap`, `pad`, `align`(center/start), `min_w`, `min_h` |
 | 엣지 | `from`, `to`, `style`(Arrows 이름, 기본 Primary Path), `label`, `exit`/`entry`(left/right/top/bottom), `extra` |
 | 빈 칸 | `{spacer: 60}` |
+| 배치 전용 묶음 | `{stack: row|col, items: [...]}`, `gap`, `pad`, `align` |
 
 연결선은 이미지가 아니라 **엣지 스타일**이다. 18종: Primary Path / Secondary Path
 (각각 기본·점선·양방향·양방향 점선·화살촉 없음·점선+화살촉 없음), Success Status /
@@ -136,8 +137,9 @@ Failure Status (각각 기본·양방향·화살촉 없음).
 - **흐름은 가로로**: 외부 → 게이트웨이 → LB → 앱 → DB 를 `dir: row` 로 둔다.
   Region·VPC·Subnet 같은 바깥 그룹도 기본은 `dir: row` 다.
 - **짝만 세로로**: 웹 서버 2대, DB Master/Replica 처럼 **같은 역할의 짝**만 `dir: col` 로 묶는다.
-- **한 층에 3개 이상 쌓이면 열로 쪼갠다**: `Generic Group (점선)` 으로 묶어 가로로 세운다.
-  (예: Private Subnet 안에 Web 열, DB 열) 그대로 `col` 로 쌓으면 그림이 세로로 길어진다.
+- **한 층에 3개 이상 쌓이면 열로 쪼갠다**: `{stack: row, items: [...]}` 로 묶어 가로로 세운다.
+  `stack` 은 **테두리를 그리지 않는 배치 전용 묶음**이라 박스가 늘지 않는다. 원본 그림에 없는
+  점선 상자를 만들지 말고 이걸 쓴다. (예: Subnet 안에서 LB 를 위에, 서버 2대를 그 아래 줄에)
 - **엣지는 꼭 필요한 것만**: 선이 많을수록 겹침이 심해진다. 교차가 생기면 `exit`/`entry` 로 방향을 고정한다.
 - 그룹이 너무 좁으면 `min_w` / `min_h` 로 넓힌다.
 
