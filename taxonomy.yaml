@@ -148,6 +148,8 @@ palettes:
         name: "NHN Cloud 계정 Member"
       - slug: ic-identity-nhn-cloud-viewer
         name: "NHN Cloud 계정 Viewer"
+      - slug: ic-identity-nhn-cloud-billing
+        name: "NHN Cloud 계정 Billing"
       - slug: ic-identity-iam
         name: "IAM 계정"
       - slug: ic-identity-iam-admin

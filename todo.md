@@ -6,7 +6,8 @@
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
 서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**.
 **SVG 가 없는 아이콘은 2개**로 줄었다 — 둘 다 디자인팀 신규 제작 건이다. 목록은 **1-1** 에 모아 두었다.
-계정·역할 7개는 Figma Identity & Governance 표에서 **9개로 확보해 팔레트까지 반영**했다(1-3).
+계정·역할 7개는 Figma Identity & Governance 표에서 **10개로 확보해 팔레트까지 반영**했다(1-3).
+Figma 표의 10개를 **전부** 담았다(2026-11-16, Billing 추가로 완료).
 Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 배포까지 확인 완료**(1-4).
 
 | 구분 | 이전 | 현재 |
@@ -14,7 +15,7 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 | 서비스 아이콘 | 113 / 119 | **117 / 119** |
 | 일반 아이콘 | 16 | **52** |
 | 리소스 | IPSec VPN 없음 | **확보** |
-| 계정·역할 | 0 / 7 | **9개(완료)** |
+| 계정·역할 | 0 / 7 | **10개(완료)** |
 | 카테고리 아이콘 | 10 / 22 | 범위에서 제외 (아래 참고) |
 
 **카테고리 아이콘은 이번 작업 범위에서 제외한다.** Figma `03 Architecture icon` 페이지는
@@ -42,7 +43,7 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 
 → 이 2개를 채우면 서비스 아이콘이 **117/119 → 119/119** 가 된다.
 
-#### (나) 확보 완료 — Identity 계정·역할 9개 (2026-11-12)
+#### (나) 확보 완료 — Identity 계정·역할 10개 (2026-11-12, 2026-11-16 보완)
 
 `icons/04-identity/` 를 채웠다. 아래 슬러그로 확정했고 팔레트 `dist/04.xml` 까지 생성된다.
 자세한 경위는 1-3.
@@ -54,6 +55,7 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 | NHN Cloud 계정 | Admin | `ic-identity-nhn-cloud-admin.svg` |
 | NHN Cloud 계정 | Member | `ic-identity-nhn-cloud-member.svg` |
 | NHN Cloud 계정 | Viewer | `ic-identity-nhn-cloud-viewer.svg` |
+| NHN Cloud 계정 | Billing | `ic-identity-nhn-cloud-billing.svg` (2026-11-16) |
 | IAM 계정 | 계열 상위 | `ic-identity-iam.svg` |
 | IAM 계정 | Admin | `ic-identity-iam-admin.svg` |
 | IAM 계정 | Member | `ic-identity-iam-member.svg` |
@@ -79,7 +81,7 @@ management, bill, collaboration, contact-center, governance-audit.
 | 리소스 IPSec VPN | **확보** (1-7) |
 | 그룹 박스 | PPT 15쪽 **15종** 전부 (2026-11-12) |
 | 화살표 | PPT 16쪽 **18종** 전부, 엣지 스타일. 배포 확인 완료 (1-4, 2026-11-12) |
-| 계정·역할 | Figma Identity & Governance 표에서 **9개** (1-3, 2026-11-12) |
+| 계정·역할 | Figma Identity & Governance 표에서 **10개** (1-3, 2026-11-12 9개 · 2026-11-16 Billing 1개) |
 
 ### 1-2. 일반 아이콘 — 확보 완료
 
@@ -105,10 +107,14 @@ Figma 의 `ic-General_Icons-*` 프레임 **49개를 추출**해 `icons/02-genera
   **다른 표에서 복사된 값**이라 역할명을 알 수 없다.
 
 - [ ] 패널 표시명이 `NHN Cl…` 로 잘려 NHN Cloud 계열 5종이 구분되지 않는다. Arrows 와 같은 건이라 1-4 에 함께 적었다
-- [ ] **Figma 에만 있는 `C` + `$` 아이콘 1개**: PPT 17쪽에 없고 Figma 쪽 이름도 역할명이 아니라
-      무엇인지 확정할 수 없어 넣지 않았다. 역할명을 알면 10번째로 추가. 디자인팀 확인 필요
+- [x] **`C` + `$` 아이콘 추가 완료 (2026-11-16)**. Figma 레이어 이름은
+      `General_Resources_Icon_NHN_Cloud_Member_Billing_Viewer_dk`(노드 `4597:219525`)이고,
+      표시명은 사용자 지정에 따라 **`NHN Cloud 계정 Billing`** 으로 확정했다.
+      `ic-identity-nhn-cloud-billing.svg`, 팔레트 `dist/04.xml` 10종까지 반영·렌더링 확인.
 
-> Figma 에는 Billing Viewer, Log Viewer 등 **문서에 없던 역할도 있다.** 포함할지 결정 필요.
+> **기존 `NHN Cloud 계정 Viewer` 는 Figma 의 `Log_Viewer` 와 같은 아이콘이다**(path 전수 일치, 2026-11-16 확인).
+> 즉 Figma Identity & Governance 표의 10개를 모두 담았다. 다만 PPT 17쪽 표기가 `Viewer` 라서
+> 저장소 표시명도 `Viewer` 로 두었다. Log Viewer 로 바꿀지는 디자인팀·문서팀 확인 필요.
 
 ### 1-4. Arrows 18종 — 배포 확인 완료 (2026-11-12)
 
