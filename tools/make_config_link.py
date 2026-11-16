@@ -5,7 +5,7 @@
     python tools/make_config_link.py --write-index                 # index.html 생성 (배포용)
     python tools/make_config_link.py --write-index --branch draft  # 라이브러리 브랜치 지정
 
-clibs 링크(make_links.py)와 다른 점
+clibs 링크 방식과 다른 점
 -----------------------------------
 clibs 는 URL 로 팔레트를 '여는' 것뿐이라 펼침 여부를 정할 수 없다. draw.io 는
 expandLibraries 설정이 true(기본값)이면 팔레트를 펼친 채로 연다. 이 값은 URL 파라미터로
