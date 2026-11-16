@@ -1,9 +1,13 @@
 ---
-name: nhn-architecture-diagram
+name: nhncloud-archi
 description: 사용자가 말이나 글로 설명한 NHN Cloud 아키텍처 구성도를 draw.io 파일(.drawio)로 그려 브라우저 draw.io 편집기로 열어 준다. "구성도 그려줘", "아키텍처 다이어그램", "3-tier 구성도", "이 구성 그림으로", "drawio로 만들어줘" 같은 요청에 사용한다. 도형은 NHN Cloud 아이콘 라이브러리(https://nhn-cloud.github.io/Icons/)의 실제 팔레트에서만 가져오며, 라이브러리에 없는 아이콘은 지어내지 않는다.
 ---
 
 # NHN Cloud 아키텍처 구성도 생성
+
+> **사내 배포본은 <https://github.com/TOAST-DOCS/Icons> 입니다.**
+> 저장소 밖에서도 쓰려면 그쪽을 설치하세요. 이 사본은 Icons 저장소 안에서 작업할 때 쓰입니다.
+> 둘 중 하나를 고치면 다른 쪽도 맞춰야 합니다.
 
 사용자의 자연어 설명 → YAML 명세 → `.drawio` → 브라우저 draw.io 편집기.
 생성물은 **초안**이다. 세밀한 배치는 draw.io 에서 사용자가 직접 손본다.
