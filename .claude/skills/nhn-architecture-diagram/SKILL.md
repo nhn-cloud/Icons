@@ -10,7 +10,8 @@ description: 사용자가 말이나 글로 설명한 NHN Cloud 아키텍처 구�
 
 ## 도구
 
-저장소 루트(`sources/files`)에서 실행한다.
+클론한 **저장소 루트**(`dist/` 와 `tools/` 가 보이는 폴더)에서 실행한다.
+Python 3.9 이상과 PyYAML 이 필요하다.
 
 | 도구 | 용도 |
 | --- | --- |
