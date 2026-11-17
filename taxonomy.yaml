@@ -200,7 +200,9 @@ palettes:
     title: "NHN Cloud / Compute"
     kind: category
     category: compute
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-compute
+      name: "Compute"
     services:
       - slug: ic-compute-auto-scale
         name: "Auto Scale"
@@ -222,7 +224,9 @@ palettes:
     title: "NHN Cloud / Container"
     kind: category
     category: container
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-container
+      name: "Container"
     services:
       - slug: ic-container-ncr
         name: "NCR"
@@ -247,7 +251,9 @@ palettes:
     title: "NHN Cloud / Network"
     kind: category
     category: network
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-network
+      name: "Network"
     services:
       - slug: ic-network-colocation-gateway
         name: "Colocation Gateway"
@@ -415,7 +421,9 @@ palettes:
     title: "NHN Cloud / Monitoring"
     kind: category
     category: monitoring
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-monitoring
+      name: "Monitoring"
     services:
       - slug: ic-monitoring-cloud-monitoring
         name: "Cloud Monitoring"
@@ -432,7 +440,9 @@ palettes:
     title: "NHN Cloud / Hybrid Private Cloud"
     kind: category
     category: hybrid-private-cloud
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-hybrid-private-cloud
+      name: "Hybrid Private Cloud"
     services:
       - slug: ic-hybrid-private-cloud-nhn-cloud-private-deck
         name: "NHN Cloud Private Deck"
@@ -446,7 +456,9 @@ palettes:
     title: "NHN Cloud / Game"
     kind: category
     category: game
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-game
+      name: "Game"
     services:
       - slug: ic-game-game-starter
         name: "Game Starter"
@@ -607,7 +619,9 @@ palettes:
     title: "NHN Cloud / Search"
     kind: category
     category: search
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-search
+      name: "Search"
     services:
       - slug: ic-search-autocomplete
         name: "Autocomplete"
@@ -653,7 +667,9 @@ palettes:
     title: "NHN Cloud / Management"
     kind: category
     category: management
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-management
+      name: "Management"
     services:
       - slug: ic-management-certificate-manager
         name: "Certificate Manager"
@@ -665,7 +681,9 @@ palettes:
     title: "NHN Cloud / Bill"
     kind: category
     category: bill
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-bill
+      name: "Bill"
     services:
       - slug: ic-bill-etax
         name: "eTax"
@@ -673,7 +691,9 @@ palettes:
     title: "NHN Cloud / Collaboration"
     kind: category
     category: collaboration
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-collaboration
+      name: "Collaboration"
     services:
       - slug: ic-collaboration-dooray
         name: "Dooray"
@@ -681,7 +701,9 @@ palettes:
     title: "NHN Cloud / Contact Center"
     kind: category
     category: contact-center
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-contact-center
+      name: "Contact Center"
     services:
       - slug: ic-contact-center-contiple
         name: "Contiple"
@@ -689,7 +711,9 @@ palettes:
     title: "NHN Cloud / Governance Audit"
     kind: category
     category: governance-audit
-    category_icon: null   # 없음, 제작 필요
+    category_icon:
+      slug: ic-governance-audit
+      name: "Governance Audit"
     services:
       - slug: ic-governance-audit-cloudtrail
         name: "Cloudtrail"
