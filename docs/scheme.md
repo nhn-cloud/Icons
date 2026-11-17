@@ -219,7 +219,7 @@ Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, 
 | Contact Center (1) | Contiple | – |
 | Governance & Audit (2) | CloudTrail, Resource Watcher | – |
 
-§표 2개(Database Migration Service, NHN Cloud Foundry)는 홈페이지에 신규 서비스로 올라와 있지만 PPT와 저장소 어디에도 아이콘이 없어 제작 요청이 필요합니다.
+§표 2개(Database Migration Service, NHN Cloud Foundry)는 홈페이지에 신규 서비스로 올라와 있지만 PPT와 저장소 어디에도 아이콘이 없어 제작 요청이 필요했습니다. 2026-11-17 에 제작본을 받아 반영 완료했습니다.
 
 각 팔레트 안에서는 카테고리 아이콘 → 서비스 아이콘(홈페이지 순서) → 리소스 아이콘(상위 서비스 순서)으로 배치합니다. 홈페이지가 이미 RDS 계열과 EasyCache를 DB 엔진 Instance 계열보다 앞에 두므로 Database에도 별도 예외가 필요 없습니다.
 
@@ -293,7 +293,7 @@ Retired 아이콘은 Retired 라이브러리로만 배포하고 기본 배포 �
 | 홈페이지 기준 단종 | Bare Metal Instance는 저장소에만 있고 홈페이지·PPT에 없음 | Retired로 이동 |
 | 누락 SVG | †표 서비스 아이콘 2개(Flow Log, Dooray!)는 박스 버전만 있음 | 박스 아이콘에서 서비스 아이콘 추출 |
 | 누락 SVG | AI EasyMaker 리소스 5개, IPSec VPN, PPT 일반 아이콘 약 40개는 SVG 없음 | PPT V2.2에서 SVG 추출 |
-| 신규 제작 | §표 2개(Database Migration Service, NHN Cloud Foundry)는 아이콘 자체가 없음 | 디자인팀에 신규 아이콘 제작 요청 |
+| 신규 제작 | §표 2개(Database Migration Service, NHN Cloud Foundry)는 아이콘 자체가 없음 | 디자인팀에 신규 아이콘 제작 요청 → 2026-11-17 반영 완료 |
 | PNG 제거 | PNG 596개가 SVG 546개보다 많아 드리프트 중 (`services/network/color`는 PNG 21 / SVG 20) | PNG를 전부 삭제하고 SVG만 관리. PNG는 draw.io 내보내기·Copy as Image로 대체 |
 | 크기 | 서비스·리소스 원본 캔버스 60×60, 현재 리소스 라이브러리 56×56 | 64 / 48로 정규화 (원본 SVG는 그대로, 라이브러리 생성 시 지정) |
 | 문서 | PPT V2.2의 서비스 목록이 홈페이지와 다름 (Face Liveness 중복 표기, 단종 아이콘 포함, 신규 2개 누락) | PPT 다음 개정을 홈페이지 기준으로 요청 |

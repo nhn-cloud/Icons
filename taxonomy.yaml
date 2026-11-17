@@ -388,6 +388,8 @@ palettes:
     services:
       - slug: ic-database-cubrid-instance
         name: "CUBRID Instance"
+      - slug: ic-database-database-migration-service
+        name: "Database Migration Service"
       - slug: ic-database-easycache
         name: "EasyCache"
       - slug: ic-database-mariadb-instance
@@ -581,6 +583,8 @@ palettes:
         name: "AI EasyMaker"
       - slug: ic-machine-learning-deep-learning-instance
         name: "Deep Learning Instance"
+      - slug: ic-machine-learning-nhn-cloud-foundry
+        name: "NHN Cloud Foundry"
     resources:
       - slug: ic-machine-learning-ai-easymaker-inference
         name: "Inference"

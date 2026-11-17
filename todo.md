@@ -4,23 +4,24 @@
 현황 수치는 `python tools/audit.py`로 언제든 다시 뽑을 수 있다.
 
 **한 줄 요약**: Figma `03 Architecture icon` 페이지와 대조해 자산을 대거 확보했다.
-서비스 아이콘 **117/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**.
-**SVG 가 없는 아이콘은 2개**로 줄었다 — 둘 다 디자인팀 신규 제작 건이다. 목록은 **1-1** 에 모아 두었다.
+서비스 아이콘 **119/119**, 일반 아이콘 **52개**, 산업·개념 **5개(완료)**.
+**SVG 가 없는 아이콘은 0개다** — 디자인팀 신규 제작 2건(Database Migration Service,
+NHN Cloud Foundry)을 2026-11-17 에 받아 반영했다(1-1).
 계정·역할 7개는 Figma Identity & Governance 표에서 **10개로 확보해 팔레트까지 반영**했다(1-3).
 Figma 표의 10개를 **전부** 담았다(2026-11-16, Billing 추가로 완료).
 Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 배포까지 확인 완료**(1-4).
 
 | 구분 | 이전 | 현재 |
 | --- | --- | --- |
-| 서비스 아이콘 | 113 / 119 | **117 / 119** |
+| 서비스 아이콘 | 113 / 119 | **119 / 119** |
 | 일반 아이콘 | 16 | **52** |
 | 리소스 | IPSec VPN 없음 | **확보** |
 | 계정·역할 | 0 / 7 | **10개(완료)** |
-| 카테고리 아이콘 | 10 / 22 | 범위에서 제외 (아래 참고) |
+| 카테고리 아이콘 | 10 / 22 | **22 / 22 (완료)** |
 
-**카테고리 아이콘은 이번 작업 범위에서 제외한다.** Figma `03 Architecture icon` 페이지는
-카테고리를 섹션 프레임과 텍스트 라벨로만 구분하고 카테고리 아이콘을 두지 않는다.
-기존에 확보한 10개는 그대로 쓰고, 없는 12개는 추적하지 않는다.
+**카테고리 아이콘 22종은 2026-11-17 에 완료했다.** Figma `03 Architecture icon` 페이지의
+Color 변형(#125DE6)으로 전부 통일했다. 기존 10종은 재색상하고, 없던 12종은 새로 받아 넣었다.
+`taxonomy.yaml` 의 `category_icon` 에 빈 항목은 없다.
 
 ---
 
@@ -28,20 +29,21 @@ Arrows 는 이미지가 아니라 엣지 스타일이라 따로 센다. **18종 
 
 ### 1-1. 아직 SVG가 없는 아이콘 — 한눈에
 
-**남은 것은 디자인팀 신규 제작 2개뿐이다.** 계정·역할 7개는 2026-11-12 에 확보해 (나)로 옮겼다.
+**남은 것은 없다.** 디자인팀 신규 제작 2개는 2026-11-17 에 받아 반영했다.
+계정·역할 7개는 2026-11-12 에 확보해 (나)로 옮겼다.
 수치는 `python tools/audit.py` 로 언제든 다시 센다.
 
-#### (가) 디자인팀에 신규 제작 요청 — 2개
+#### (가) 디자인팀 신규 제작 — 2개 (2026-11-17 반영 완료)
 
-아키텍처 아이콘이 어디에도 없다. Figma 에 서비스 전용 페이지는 있지만 그건 서비스 소개용이라
-아키텍처 아이콘과 별개다.
+아키텍처 아이콘이 어디에도 없어 신규 제작을 요청했던 건이다. 2026-11-17 에 SVG 를 받아
+아래 경로에 그대로 넣었고 팔레트까지 반영했다.
 
 | 서비스 | 넣을 파일 | 확인한 곳 |
 | --- | --- | --- |
 | Database Migration Service | `icons/10-database/services/ic-database-database-migration-service.svg` | Figma `260820 DMS` 페이지는 있으나 아키텍처 아이콘 아님 |
 | NHN Cloud Foundry | `icons/18-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg` | Figma `260731 Foundry` 페이지, 위와 같음 |
 
-→ 이 2개를 채우면 서비스 아이콘이 **117/119 → 119/119** 가 된다.
+→ 반영 완료. 서비스 아이콘 **117/119 → 119/119**.
 
 #### (나) 확보 완료 — Identity 계정·역할 10개 (2026-11-12, 2026-11-16 보완)
 
@@ -153,12 +155,12 @@ dash 패턴은 OOXML 프리셋 그대로다. `dash` = `4 3`, `sysDash` = `3 1` (
       변별 부분을 앞에 두면(`점선 Primary Path`, `Owner · NHN Cloud 계정`) 잘려도 구분되지만
       PPT 표기에서 벗어난다. 두 팔레트를 같은 규칙으로 정해야 한다. 결정 필요
 
-### 1-5. 누락 서비스 아이콘 2개 — 전부 신규 제작
+### 1-5. 누락 서비스 아이콘 2개 — 2026-11-17 반영 완료
 
 | 서비스 | 카테고리 | 상태 |
 | --- | --- | --- |
-| Database Migration Service | Database | Figma 에 전용 페이지(`260820 DMS`)가 있으나 **아키텍처 아이콘은 별개로 신규 요청 필요** |
-| NHN Cloud Foundry | Machine Learning | 전용 페이지(`260731 Foundry`) 동일 |
+| Database Migration Service | Database | 신규 제작본 반영 완료 (`icons/10-database/services/ic-database-database-migration-service.svg`) |
+| NHN Cloud Foundry | Machine Learning | 신규 제작본 반영 완료 (`icons/18-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg`) |
 
 **확보 완료된 것** (Figma 에서 추출)
 
