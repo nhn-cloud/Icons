@@ -32,6 +32,9 @@ YAML/JSON 명세로 구성도를 만듭니다. 아이콘·그룹·화살표 스�
 
   노드 옵션: id, icon(필수), label, w/h(크기 덮어쓰기)
   그룹 옵션: id, group(필수), label, dir, gap, pad, align(center|start), min_w, min_h
+            over(형제 id 목록) — 자동 배치에서 빠지고 그 도형들 위에 걸쳐 그린다.
+                                 inset [위, 오른쪽, 아래, 왼쪽] 으로 파고드는 깊이를 준다.
+                                 예: Security Groups 띠가 AZ 2개를 가로지르는 PPT 10·11쪽 배치
   특수 항목: {spacer: 60}  — 빈 칸
             {stack: col, items: [...]}  — 테두리 없는 배치 전용 묶음 (row | col)
   icon/group 이름은 대소문자·공백·하이픈을 무시하고 맞춥니다.
@@ -118,6 +121,9 @@ GROUP_HEAD = 44        # 그룹 머리 (모서리 아이콘 32 + 여백)
 ASG_HEAD = 64          # Auto Scaling Group: 아이콘+레이블이 위 가운데
 GROUP_PAD = 24
 GAP = 36
+# over 로 겹쳐 그릴 때 대상 도형에서 얼마나 안쪽으로 들어갈지 (위, 오른쪽, 아래, 왼쪽).
+# PPT 10·11쪽 Security Groups 띠의 실측 비율에서 가져왔다.
+OVER_INSET = (44, 24, 24, 24)
 
 class Node:
     def __init__(self, spec, lib, ids):
@@ -143,6 +149,9 @@ class Node:
             self.gap = spec.get("gap", GAP)
             self.pad = spec.get("pad", GROUP_PAD)
             self.align = spec.get("align", "center")
+            # over 가 있으면 형제 도형들 위에 걸쳐 그린다. 자동 배치에서 빠진다.
+            self.over = spec.get("over")
+            self.inset = spec.get("inset") or list(OVER_INSET)
             self.children = [Node(c, lib, ids) for c in spec.get("items", [])]
         else:
             self.kind = "icon"
@@ -155,6 +164,15 @@ class Node:
         if self.id in ids:
             raise SystemExit(f"id 중복: {self.id}")
         ids[self.id] = self
+
+    @property
+    def packed(self):
+        """자동 배치 대상 자식. over 로 겹쳐 그리는 것은 뺀다."""
+        return [c for c in self.children if not getattr(c, "over", None)]
+
+    @property
+    def floating(self):
+        return [c for c in self.children if getattr(c, "over", None)]
 
     @property
     def head(self):
@@ -171,9 +189,10 @@ class Node:
             return
         for c in self.children:
             c.measure()
+        kids = self.packed
         row = self.dir == "row"
-        main = sum((c.w if row else c.h) for c in self.children) + self.gap * max(0, len(self.children) - 1)
-        cross = max([(c.h if row else c.w) for c in self.children] or [0])
+        main = sum((c.w if row else c.h) for c in kids) + self.gap * max(0, len(kids) - 1)
+        cross = max([(c.h if row else c.w) for c in kids] or [0])
         cw, ch = (main, cross) if row else (cross, main)
         min_w, min_h = (0, 0) if self.kind == "stack" else (220, 140)
         self.w = max(cw + 2 * self.pad, self.spec.get("min_w", min_w))
@@ -186,9 +205,10 @@ class Node:
         row = self.dir == "row"
         inner_w = self.w - 2 * self.pad
         inner_h = self.h - self.head - self.pad
-        main_total = sum((c.w if row else c.h) for c in self.children) + self.gap * max(0, len(self.children) - 1)
+        kids = self.packed
+        main_total = sum((c.w if row else c.h) for c in kids) + self.gap * max(0, len(kids) - 1)
         off = ((inner_w if row else inner_h) - main_total) / 2
-        for c in self.children:
+        for c in kids:
             if row:
                 c.x = self.pad + off
                 c.y = self.head + ((inner_h - c.h) / 2 if self.align == "center" else 0)
@@ -198,6 +218,28 @@ class Node:
                 c.x = self.pad + ((inner_w - c.w) / 2 if self.align == "center" else 0)
                 off += c.h + self.gap
             c.place()
+        for c in self.floating:
+            c.cover(self)
+            c.place()
+
+    def cover(self, parent):
+        """over 가 가리키는 형제 도형들의 바깥 사각형에 맞춰 자리를 잡는다."""
+        by_id = {c.spec.get("id"): c for c in parent.children if c.spec.get("id")}
+        targets = []
+        for name in self.over:
+            if name not in by_id:
+                raise SystemExit(
+                    f"over 의 '{name}' 는 '{self.spec.get('group')}' 와 같은 그룹 안의 형제여야 합니다. "
+                    f"형제 id: {sorted(k for k in by_id if k)}")
+            targets.append(by_id[name])
+        top, right, bottom, left = self.inset
+        x0 = min(t.x for t in targets)
+        y0 = min(t.y for t in targets)
+        x1 = max(t.x + t.w for t in targets)
+        y1 = max(t.y + t.h for t in targets)
+        self.x, self.y = x0 + left, y0 + top
+        self.w = max(x1 - x0 - left - right, 40)
+        self.h = max(y1 - y0 - top - bottom, 40)
 
 # ---------- XML 출력 ----------
 
@@ -254,7 +296,7 @@ def emit(node, parent, out):
         sw, sh = (int(gm.group(1)), int(gm.group(2))) if gm else (32, 32)
         sx = (node.w - sw) / 2 if node.head == ASG_HEAD else 0
         out.append(_set_geom(s, sx, 0, sw, sh))
-    for ch in node.children:
+    for ch in node.packed + node.floating:   # 겹치는 것을 마지막에 그려 위로 올린다
         emit(ch, node.id, out)
 
 def edge_cell(i, e, lib, ids):

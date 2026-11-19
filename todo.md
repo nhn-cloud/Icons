@@ -233,8 +233,11 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
     전부 추출해 대조했고 Instance, RDS Instance, Cache Node, Service Gateway 등 모두 보유 중이다
   - 서비스 박스 RDS for MySQL·EasyCache 2종을 `05-groups` 에 다시 실었다.
     12·13쪽이 두 서비스를 박스로 그리므로 "레퍼런스 아키텍처 근거"가 생겼다 (5절 참고)
-  - 중첩 레이아웃의 한계로 원본과 다르게 옮긴 부분: 10·11쪽 Security Groups 띠(AZ 위에 걸침)는
-    AZ 2개를 감싸도록, 12쪽 RDS for MySQL 박스(Region 2개에 걸침)는 Region 마다 1개씩
+  - 10·11쪽 Security Groups 띠는 2026-11-19 에 PPT 대로 고쳤다. `nhn_diagram.py` 에 `over`
+    옵션을 더해 형제 도형 위에 걸쳐 그릴 수 있게 했다(자동 배치에서 빠지고 마지막에 그린다)
+  - 중첩 레이아웃의 한계로 아직 원본과 다른 부분: 12쪽 RDS for MySQL 박스가 Region 판교·평촌
+    두 개에 걸쳐 그려져 있는데, Region 마다 박스를 하나씩 두었다. `over` 는 형제끼리만 되므로
+    부모가 다른 이 경우는 아직 안 된다
   - [ ] 13쪽 연결선 17개 중 3개는 양 끝 도형을 특정하지 못해 뺐다. 슬라이드 위쪽에서 내려오는
         긴 사선으로, GSLB·Users·Admin 중 무엇에 붙는지 PPT 에서 눈으로 확인해 보완 필요
 

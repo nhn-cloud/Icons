@@ -1,7 +1,8 @@
 # PPT V2.2 10쪽 "Example / NHN Cloud Groups Blank"
 #
-# 원본은 Security Groups 띠가 Availability Zone (A)·(B) 위를 가로질러 겹쳐 있다.
-# 중첩 레이아웃으로는 걸침을 표현할 수 없어 Security Groups 안에 AZ 2개를 넣었다.
+# 원본에서 Security Groups 실선 띠는 Availability Zone (A)·(B) 점선 박스 두 개를
+# 가로질러 그 안에 걸쳐 그려진다(PPT 실측: AZ y 3.59~4.82 안에 SG y 3.92~4.62).
+# over 로 두 AZ 위에 겹쳐 올린다.
 title: NHN Cloud Groups Blank
 dir: row
 items:
@@ -18,9 +19,11 @@ items:
                       - group: Subnet
                         label: Private subnet
                         items:
+                          - group: Availability Zone
+                            id: aza
+                            label: Availability Zone (A)
+                          - group: Availability Zone
+                            id: azb
+                            label: Availability Zone (B)
                           - group: Security Groups
-                            items:
-                              - group: Availability Zone
-                                label: Availability Zone (A)
-                              - group: Availability Zone
-                                label: Availability Zone (B)
+                            over: [aza, azb]

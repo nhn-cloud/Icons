@@ -1,6 +1,6 @@
 # PPT V2.2 11쪽 "Example / External Links Blank"
 #
-# Security Groups 띠는 10쪽과 같은 이유로 AZ 2개를 감싸는 중첩으로 바꿨다.
+# Security Groups 실선 띠는 10쪽과 같이 AZ 2개 위에 걸쳐 그린다(over).
 # Internet·Other Cloud 는 PPT 에서 모서리 아이콘이 없는 박스라 Generic Group (실선)을 쓴다.
 title: External Links Blank
 dir: row
@@ -21,12 +21,14 @@ items:
           - group: Subnet
             label: Public subnet
             items:
+              - group: Availability Zone
+                id: aza
+                label: Availability Zone (A)
+              - group: Availability Zone
+                id: azb
+                label: Availability Zone (B)
               - group: Security Groups
-                items:
-                  - group: Availability Zone
-                    label: Availability Zone (A)
-                  - group: Availability Zone
-                    label: Availability Zone (B)
+                over: [aza, azb]
       - id: igw
         icon: Internet Gateway
         label: Internet Gateway
