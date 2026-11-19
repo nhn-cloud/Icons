@@ -196,6 +196,12 @@ palettes:
       - slug: grp-generic-group-solid
         name: "Generic Group (실선)"
         icon: false
+    service_boxes:
+      # PPT V2.2 12·13쪽 예시 구성도가 두 서비스를 박스로 그린다. 29-architecture 가 쓴다.
+      - slug: box-database-rds-for-mysql
+        name: "RDS for MySQL"
+      - slug: box-database-easycache
+        name: "EasyCache"
   - id: "06-compute"
     title: "NHN Cloud / Compute"
     kind: category
