@@ -202,7 +202,19 @@ palettes:
         name: "RDS for MySQL"
       - slug: box-database-easycache
         name: "EasyCache"
-  - id: "06-compute"
+  - id: "06-architecture"
+    title: "NHN Cloud / Architecture"
+    kind: compositions
+    compositions:
+      - slug: nhn-cloud-groups-blank
+        name: "NHN Cloud Groups Blank"
+      - slug: external-links-blank
+        name: "External Links Blank"
+      - slug: rds-for-mysql-multi-region-ha
+        name: "RDS for MySQL Multi-Region HA"
+      - slug: webapp-multi-region-ha
+        name: "Webapp Multi-Region HA"
+  - id: "07-compute"
     title: "NHN Cloud / Compute"
     kind: category
     category: compute
@@ -226,7 +238,7 @@ palettes:
         name: "Instance"
       - slug: ic-compute-virtual-desktop
         name: "Virtual Desktop"
-  - id: "07-container"
+  - id: "08-container"
     title: "NHN Cloud / Container"
     kind: category
     category: container
@@ -253,7 +265,7 @@ palettes:
       - slug: ic-container-nks-container
         name: "Container"
         parent: ic-container-nks
-  - id: "08-network"
+  - id: "09-network"
     title: "NHN Cloud / Network"
     kind: category
     category: network
@@ -326,7 +338,7 @@ palettes:
       - slug: ic-network-vpn-gateway-vpn-connection
         name: "VPN Connection"
         parent: ic-network-vpn-gateway
-  - id: "09-storage"
+  - id: "10-storage"
     title: "NHN Cloud / Storage"
     kind: category
     category: storage
@@ -384,7 +396,7 @@ palettes:
       - slug: ic-storage-object-storage-object
         name: "Object"
         parent: ic-storage-object-storage
-  - id: "10-database"
+  - id: "11-database"
     title: "NHN Cloud / Database"
     kind: category
     category: database
@@ -425,7 +437,7 @@ palettes:
       - slug: ic-database-rds-for-mysql-rds-instance
         name: "RDS Instance"
         parent: ic-database-rds-for-mysql
-  - id: "11-monitoring"
+  - id: "12-monitoring"
     title: "NHN Cloud / Monitoring"
     kind: category
     category: monitoring
@@ -444,7 +456,7 @@ palettes:
       - slug: ic-monitoring-cloud-monitoring-notification
         name: "Notification"
         parent: ic-monitoring-cloud-monitoring
-  - id: "12-hybrid-private-cloud"
+  - id: "13-hybrid-private-cloud"
     title: "NHN Cloud / Hybrid Private Cloud"
     kind: category
     category: hybrid-private-cloud
@@ -460,7 +472,7 @@ palettes:
         name: "NHN Cloud Private Station"
       - slug: ic-hybrid-private-cloud-nhn-hybrid-cloud
         name: "NHN Hybrid Cloud"
-  - id: "13-game"
+  - id: "14-game"
     title: "NHN Cloud / Game"
     kind: category
     category: game
@@ -478,7 +490,7 @@ palettes:
         name: "Launching"
       - slug: ic-game-leaderboard
         name: "Leaderboard"
-  - id: "14-security"
+  - id: "15-security"
     title: "NHN Cloud / Security"
     kind: category
     category: security
@@ -525,7 +537,7 @@ palettes:
       - slug: ic-security-network-firewall-ipsec-vpn
         name: "Ipsec VPN"
         parent: ic-security-network-firewall
-  - id: "15-content-delivery"
+  - id: "16-content-delivery"
     title: "NHN Cloud / Content Delivery"
     kind: category
     category: content-delivery
@@ -541,7 +553,7 @@ palettes:
       - slug: ic-content-delivery-cdn-edge-server
         name: "Edge Server"
         parent: ic-content-delivery-cdn
-  - id: "16-notification"
+  - id: "17-notification"
     title: "NHN Cloud / Notification"
     kind: category
     category: notification
@@ -561,7 +573,7 @@ palettes:
         name: "RCS Bizmessage"
       - slug: ic-notification-sms
         name: "SMS"
-  - id: "17-ai-service"
+  - id: "18-ai-service"
     title: "NHN Cloud / AI Service"
     kind: category
     category: ai-service
@@ -577,7 +589,7 @@ palettes:
         name: "Speech To Text"
       - slug: ic-ai-service-text-to-speech
         name: "Text To Speech"
-  - id: "18-machine-learning"
+  - id: "19-machine-learning"
     title: "NHN Cloud / Machine Learning"
     kind: category
     category: machine-learning
@@ -607,7 +619,7 @@ palettes:
       - slug: ic-machine-learning-ai-easymaker-training
         name: "Training"
         parent: ic-machine-learning-ai-easymaker
-  - id: "19-application-service"
+  - id: "20-application-service"
     title: "NHN Cloud / Application Service"
     kind: category
     category: application-service
@@ -625,7 +637,7 @@ palettes:
         name: "Role"
       - slug: ic-application-service-shorturl
         name: "ShortURL"
-  - id: "20-search"
+  - id: "21-search"
     title: "NHN Cloud / Search"
     kind: category
     category: search
@@ -639,7 +651,7 @@ palettes:
         name: "Cloud Search"
       - slug: ic-search-corporation-search
         name: "Corporation Search"
-  - id: "21-data-analytics"
+  - id: "22-data-analytics"
     title: "NHN Cloud / Data Analytics"
     kind: category
     category: data-analytics
@@ -659,7 +671,7 @@ palettes:
         name: "Kafka Instance"
       - slug: ic-data-analytics-log-n-crash-search
         name: "Log & Crash Search"
-  - id: "22-dev-tools"
+  - id: "23-dev-tools"
     title: "NHN Cloud / Dev Tools"
     kind: category
     category: dev-tools
@@ -673,7 +685,7 @@ palettes:
         name: "NHN Native Deck"
       - slug: ic-dev-tools-pipeline
         name: "Pipeline"
-  - id: "23-management"
+  - id: "24-management"
     title: "NHN Cloud / Management"
     kind: category
     category: management
@@ -687,7 +699,7 @@ palettes:
         name: "Private Ca"
       - slug: ic-management-support-plan
         name: "Support Plan"
-  - id: "24-bill"
+  - id: "25-bill"
     title: "NHN Cloud / Bill"
     kind: category
     category: bill
@@ -697,7 +709,7 @@ palettes:
     services:
       - slug: ic-bill-etax
         name: "eTax"
-  - id: "25-collaboration"
+  - id: "26-collaboration"
     title: "NHN Cloud / Collaboration"
     kind: category
     category: collaboration
@@ -707,7 +719,7 @@ palettes:
     services:
       - slug: ic-collaboration-dooray
         name: "Dooray"
-  - id: "26-contact-center"
+  - id: "27-contact-center"
     title: "NHN Cloud / Contact Center"
     kind: category
     category: contact-center
@@ -717,7 +729,7 @@ palettes:
     services:
       - slug: ic-contact-center-contiple
         name: "Contiple"
-  - id: "27-governance-audit"
+  - id: "28-governance-audit"
     title: "NHN Cloud / Governance Audit"
     kind: category
     category: governance-audit
@@ -729,7 +741,7 @@ palettes:
         name: "Cloudtrail"
       - slug: ic-governance-audit-resource-watcher
         name: "Resource Watcher"
-  - id: "28-retired"
+  - id: "29-retired"
     title: "NHN Cloud / Retired"
     kind: flat
     icons:
@@ -763,15 +775,3 @@ palettes:
         name: "Security Captcha"
       - slug: ic-security-csap-saas-guide
         name: "Security Csap Saas Guide"
-  - id: "29-architecture"
-    title: "NHN Cloud / Architecture"
-    kind: compositions
-    compositions:
-      - slug: nhn-cloud-groups-blank
-        name: "NHN Cloud Groups Blank"
-      - slug: external-links-blank
-        name: "External Links Blank"
-      - slug: rds-for-mysql-multi-region-ha
-        name: "RDS for MySQL Multi-Region HA"
-      - slug: webapp-multi-region-ha
-        name: "Webapp Multi-Region HA"

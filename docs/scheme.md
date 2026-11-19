@@ -46,9 +46,10 @@ V2.1(2025.3.25) 대비 V2.2의 주요 변경은 다음과 같습니다. 그룹 1
 | 02 | NHN Cloud / General Resources | `NHNCloud-01-General.xml` | 사용자, 단말, 범용 인프라, 데이터·문서 |
 | 03 | NHN Cloud / Industry & Concepts | `NHNCloud-02-Industry.xml` | 금융, 제조, 의료, IoT 등 산업·개념 일러스트 |
 | 04 | NHN Cloud / Identity | `NHNCloud-03-Identity.xml` | NHN Cloud 계정·IAM 계정과 역할(Owner/Admin/Member/Viewer) |
-| 05 | NHN Cloud / Groups | `NHNCloud-04-Groups.xml` | PPT 15쪽의 그룹 박스 15종 (아래 그룹 정의). 서비스 박스는 싣지 않는다 |
-| 06\~27 | NHN Cloud / Compute \~ Governance & Audit | `NHNCloud-<category>.xml` | 서비스 카테고리 22개 (아래 분류표) |
-| 28 | NHN Cloud / Retired | `NHNCloud-Retired.xml` | 홈페이지에서 빠지거나 개명된 아이콘. 기존 다이어그램 호환용 |
+| 05 | NHN Cloud / Groups | `NHNCloud-04-Groups.xml` | PPT 15쪽의 그룹 박스 15종 (아래 그룹 정의) + 서비스 박스 2종 |
+| 06 | NHN Cloud / Architecture | — | PPT 10\~13쪽 예시 구성도 4건. 아이콘이 아니라 구성도 1개가 엔트리 1개 |
+| 07\~28 | NHN Cloud / Compute \~ Governance & Audit | `NHNCloud-<category>.xml` | 서비스 카테고리 22개 (아래 분류표) |
+| 29 | NHN Cloud / Retired | `NHNCloud-Retired.xml` | 홈페이지에서 빠지거나 개명된 아이콘. 기존 다이어그램 호환용 |
 
 **서비스 카테고리 22개 (홈페이지 메뉴 순)**: Compute, Container, Network, Storage, Database, Monitoring, Hybrid & Private Cloud, Game, Security, Content Delivery, Notification, AI Service, Machine Learning, Application Service, Search, Data & Analytics, Dev Tools, Management, Bill, Collaboration, Contact Center, Governance & Audit
 
@@ -328,12 +329,14 @@ icons/
 ├─ 05-groups/
 │   ├─ containers/               grp-vpc.svg …                            16종
 │   └─ service-boxes/            box-container-nks.svg …                  9종
-├─ 06-compute/
+├─ 06-architecture/
+│   └─ compositions/             webapp-multi-region-ha.yaml …             4종
+├─ 07-compute/
 │   ├─ category/                 ic-compute.svg
 │   ├─ services/                 ic-compute-instance.svg …
 │   └─ resources/                (리소스가 있는 8개 카테고리만)
-├─ 07-container/ … 27-governance-audit/
-└─ 28-retired/                   + RETIRED.md (사유·시점·대체 아이콘)
+├─ 08-container/ … 28-governance-audit/
+└─ 29-retired/                   + RETIRED.md (사유·시점·대체 아이콘)
 ```
 
 카테고리 06\~27은 홈페이지 메뉴 순서입니다: compute, container, network, storage, database, monitoring, hybrid-private-cloud, game, security, content-delivery, notification, ai-service, machine-learning, application-service, search, data-analytics, dev-tools, management, bill, collaboration, contact-center, governance-audit.

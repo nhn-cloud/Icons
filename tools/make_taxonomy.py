@@ -42,7 +42,7 @@ def load_kept():
 TITLES = {
     '01-arrows': 'Arrows', '02-general': 'General Resources',
     '03-industry': 'Industry & Concepts', '04-identity': 'Identity',
-    '05-groups': 'Groups', '28-retired': 'Retired',
+    '05-groups': 'Groups', '29-retired': 'Retired',
 }
 # 슬러그 -> 표시명에서 대문자로 살려야 하는 토큰
 ACRONYM = {
@@ -124,7 +124,7 @@ def main():
             L.append('    service_boxes:')
             emit(L, entries(d / "service-boxes", ["box-container-", "box-database-", "box-dev-tools-", "box-machine-learning-", "box-security-", "box-storage-", "box-"]), 6)
             continue
-        if pid in ('02-general', '03-industry', '04-identity', '28-retired'):
+        if pid in ('02-general', '03-industry', '04-identity', '29-retired'):
             L.append('    kind: flat')
             items = entries(d, ['ic-general-', 'ic-industry-', 'ic-'])
             if items:

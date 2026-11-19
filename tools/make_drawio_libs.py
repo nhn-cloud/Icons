@@ -316,11 +316,22 @@ def main():
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     rows = []
     built = []          # (팔레트 id, title, 엔트리) — compositions 가 도형을 꺼내 쓴다
-    for pal in tax['palettes']:
+    made = {}           # 팔레트 id -> 엔트리
+
+    # compositions 는 다른 팔레트의 도형을 꺼내 쓰므로 나중에 만든다.
+    # 팔레트 번호(= 패널 순서)와 무관하게 동작해야 해서 생성 순서와 출력 순서를 나눈다.
+    todo = [p for p in tax['palettes'] if p.get('kind') != 'compositions']
+    todo += [p for p in tax['palettes'] if p.get('kind') == 'compositions']
+    for pal in todo:
         entries = build(pal, built)
+        made[pal['id']] = entries
+        if entries:
+            built.append((pal['id'], pal['title'], entries))
+
+    for pal in tax['palettes']:        # 쓰기는 taxonomy 순서대로
+        entries = made.get(pal['id'])
         if not entries:
             continue
-        built.append((pal['id'], pal['title'], entries))
         # 파일명은 팔레트 번호 2자리만 쓴다. clibs 링크 1개에 25개 URL 이 들어가므로
         # 파일명 1자가 25자씩 불어난다. 패널에 보이는 이름은 title 속성이 결정한다.
         out = OUT / ('%s.xml' % pal['id'].split('-')[0])

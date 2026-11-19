@@ -40,8 +40,8 @@ Color 변형(#125DE6)으로 전부 통일했다. 기존 10종은 재색상하고
 
 | 서비스 | 넣을 파일 | 확인한 곳 |
 | --- | --- | --- |
-| Database Migration Service | `icons/10-database/services/ic-database-database-migration-service.svg` | Figma `260820 DMS` 페이지는 있으나 아키텍처 아이콘 아님 |
-| NHN Cloud Foundry | `icons/18-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg` | Figma `260731 Foundry` 페이지, 위와 같음 |
+| Database Migration Service | `icons/11-database/services/ic-database-database-migration-service.svg` | Figma `260820 DMS` 페이지는 있으나 아키텍처 아이콘 아님 |
+| NHN Cloud Foundry | `icons/19-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg` | Figma `260731 Foundry` 페이지, 위와 같음 |
 
 → 반영 완료. 서비스 아이콘 **117/119 → 119/119**.
 
@@ -159,18 +159,18 @@ dash 패턴은 OOXML 프리셋 그대로다. `dash` = `4 3`, `sysDash` = `3 1` (
 
 | 서비스 | 카테고리 | 상태 |
 | --- | --- | --- |
-| Database Migration Service | Database | 신규 제작본 반영 완료 (`icons/10-database/services/ic-database-database-migration-service.svg`) |
-| NHN Cloud Foundry | Machine Learning | 신규 제작본 반영 완료 (`icons/18-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg`) |
+| Database Migration Service | Database | 신규 제작본 반영 완료 (`icons/11-database/services/ic-database-database-migration-service.svg`) |
+| NHN Cloud Foundry | Machine Learning | 신규 제작본 반영 완료 (`icons/19-machine-learning/services/ic-machine-learning-nhn-cloud-foundry.svg`) |
 
 **확보 완료된 것** (Figma 에서 추출)
 
 | 서비스 | 결과 |
 | --- | --- |
-| Flow Log | `icons/08-network/services/ic-network-flow-log.svg` |
-| Dooray! | `icons/25-collaboration/services/ic-collaboration-dooray.svg` |
+| Flow Log | `icons/09-network/services/ic-network-flow-log.svg` |
+| Dooray! | `icons/26-collaboration/services/ic-collaboration-dooray.svg` |
 | Contiple | 기존 `online-contact` 와 **path 가 완전히 일치**해 `ic-contact-center-contiple.svg` 로 개명 |
-| IPSec VPN | `icons/14-security/resources/ic-security-network-firewall-ipsec-vpn.svg` |
-| NHN Cloud Private Region | `icons/12-hybrid-private-cloud/services/ic-hybrid-private-cloud-nhn-cloud-private-region.svg` (2026-11-12 추가) |
+| IPSec VPN | `icons/15-security/resources/ic-security-network-firewall-ipsec-vpn.svg` |
+| NHN Cloud Private Region | `icons/13-hybrid-private-cloud/services/ic-hybrid-private-cloud-nhn-cloud-private-region.svg` (2026-11-12 추가) |
 
 ### 1-6. 산업·개념 2개 — 확보 완료 (2026-11-12)
 
@@ -191,10 +191,10 @@ Finance, Machine Learning, IoT). Color 변형에는 이 줄이 없다.
 Identity 7종의 'Dark Backgrounds 변형이라 못 쓴다'(1-3)와는 다른 사안이다.
 
 - **Finance 아트워크는 Dooray! ERP 재무 아이콘과 같은 그림이다.** Figma 에서 내보낸
-  `ic-dooray_erp-finance-black` 의 path 4개가 `icons/28-retired/ic-collaboration-dooray-erp-finance.svg`
+  `ic-dooray_erp-finance-black` 의 path 4개가 `icons/29-retired/ic-collaboration-dooray-erp-finance.svg`
   와 완전히 일치했다. Figma 가 Finance 칸에 그 아이콘을 쓰고 있으므로 같은 그림을 복사해 넣었다.
   파일 2개가 내용이 같은 것은 의도한 것이다(Retired 슬롯 1개, 산업·개념 슬롯 1개)
-- **Machine Learning 은 `18-machine-learning/category/ic-machine-learning.svg` 를 복사했다.**
+- **Machine Learning 은 `19-machine-learning/category/ic-machine-learning.svg` 를 복사했다.**
   카테고리 아이콘으로도 계속 쓴다
 
 - [ ] Machine Learning 은 Figma 내보내기와 path 대조를 하지 못했다(Figma MCP 호출 한도).
@@ -219,7 +219,7 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
 
 - [x] **draw.io에서 라이브러리 렌더링 확인** (2026-11-11, app.diagrams.net)
   - [x] `05-groups` 19개 로드, 타이틀 19개 모두 정상 표기
-  - [x] `06-compute` 로드 (당시 카테고리 PNG 포함 9개, 현재는 서비스 8개)
+  - [x] `07-compute` 로드 (당시 카테고리 PNG 포함 9개, 현재는 서비스 8개)
   - [x] 그룹 컨테이너 선 스타일 — VPC 회색 실선, Auto Scaling Group 파란 점선으로 구분됨
   - [x] 모서리 아이콘 24×24가 박스 좌상단에 표시됨
   - [x] 컨테이너 동작 — VPC 박스에 Instance를 떨어뜨린 뒤 박스를 이동하니 자식이 함께 따라옴
@@ -229,7 +229,7 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
         Generic Group 2종)을 넣었다. 위 19개 기준 체크는 이 교체 이전 것이다
 - [ ] `docs/sample-3tier-architecture.drawio`를 새 라이브러리로 다시 그려 비교
 - [x] PPT V2.2 10\~13쪽 예시 구성도를 draw.io로 재현해 누락 아이콘 확인 (2026-11-19)
-  - `29-architecture` 팔레트로 4건을 넣었다. **누락 아이콘은 없었다** — PPT 이미지 30종을
+  - `06-architecture` 팔레트로 4건을 넣었다. **누락 아이콘은 없었다** — PPT 이미지 30종을
     전부 추출해 대조했고 Instance, RDS Instance, Cache Node, Service Gateway 등 모두 보유 중이다
   - 서비스 박스 RDS for MySQL·EasyCache 2종을 `05-groups` 에 다시 실었다.
     12·13쪽이 두 서비스를 박스로 그리므로 "레퍼런스 아키텍처 근거"가 생겼다 (5절 참고)

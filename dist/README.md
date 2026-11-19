@@ -13,7 +13,7 @@ python tools/make_drawio_libs.py --dry-run   # 쓰지 않고 점검만
 팔레트 1개 = XML 1개, 전부 29개입니다. 컬러 SVG 만 제공하므로 테마 구분이 없습니다.
 
 `29.xml`(Architecture)만 아이콘이 아니라 **구성도 1개가 엔트리 1개**입니다.
-`icons/29-architecture/compositions/*.yaml` 명세를 `tools/nhn_diagram.py` 의
+`icons/06-architecture/compositions/*.yaml` 명세를 `tools/nhn_diagram.py` 의
 레이아웃으로 펼쳐 만들며, 끌어다 놓으면 그룹 박스·아이콘·연결선이 한꺼번에 들어갑니다.
 
 파일명은 팔레트 번호 두 자리입니다(`02.xml`). `clibs` 배포 링크에 25개 URL 이 들어가므로
