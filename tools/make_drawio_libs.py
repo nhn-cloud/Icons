@@ -214,6 +214,38 @@ def style_entries(path):
                               patterns[dash], it.get('ends', 'forward')))
     return out
 
+# ------------------------------------------------------------- compositions
+
+def composition_entries(pal, built):
+    """구성도 명세(YAML) 1개 = 라이브러리 엔트리 1개.
+
+    끌어다 놓으면 그룹 박스·아이콘·연결선이 한꺼번에 들어가는 예시 구성도다.
+    도형은 이번 실행에서 이미 만든 다른 팔레트의 엔트리에서 꺼내 쓴다.
+    dist/ 의 지난 결과를 읽지 않으므로 taxonomy 를 고친 직후에도 어긋나지 않는다.
+    """
+    import nhn_diagram as nd
+    shapes = []
+    for pid, title, entries in built:
+        palette = title.replace('NHN Cloud / ', '')
+        for e in entries:
+            shapes.append({'palette': palette, 'no': int(pid.split('-')[0]),
+                           'title': e['title'], 'w': e.get('w'), 'h': e.get('h'),
+                           'xml': nd._decode(e['xml'])})
+    lib = nd.Library(shapes)
+    out = []
+    for it in pal.get('compositions') or []:
+        src = ICONS / pal['id'] / 'compositions' / (it['slug'] + '.yaml')
+        if not src.exists():
+            warnings.append('없음: %s' % src.relative_to(ROOT))
+            continue
+        spec = yaml.safe_load(src.read_text(encoding='utf-8'))
+        cells, w, h = nd.compose(spec, lib)
+        out.append({'xml': compress(model(''.join(cells))),
+                    'w': round(w), 'h': round(h),
+                    'title': it.get('name') or it['slug']})
+    return out
+
+
 # ---------------------------------------------------------------- collect
 
 def asset_path(pal_dir, sub, slug):
@@ -248,13 +280,15 @@ def add(entries, pal_dir, sub, item, kind, cat=None):
         entries.append(icon_entry(title, uri, w, h, size))
 
 
-def build(pal):
+def build(pal, built):
     pid = pal['id']
     pal_dir = ICONS / pid
     e = []
     kind = pal.get('kind')
     if kind == 'styles':
         return style_entries(pal_dir / pal.get('source', 'styles.yaml'))
+    if kind == 'compositions':
+        return composition_entries(pal, built)
     if kind == 'groups':
         for it in pal.get('containers') or []:
             add(e, pal_dir, 'containers', it, 'container')
@@ -281,10 +315,12 @@ def build(pal):
 def main():
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     rows = []
+    built = []          # (팔레트 id, title, 엔트리) — compositions 가 도형을 꺼내 쓴다
     for pal in tax['palettes']:
-        entries = build(pal)
+        entries = build(pal, built)
         if not entries:
             continue
+        built.append((pal['id'], pal['title'], entries))
         # 파일명은 팔레트 번호 2자리만 쓴다. clibs 링크 1개에 25개 URL 이 들어가므로
         # 파일명 1자가 25자씩 불어난다. 패널에 보이는 이름은 title 속성이 결정한다.
         out = OUT / ('%s.xml' % pal['id'].split('-')[0])

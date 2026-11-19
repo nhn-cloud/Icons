@@ -277,7 +277,15 @@ def edge_cell(i, e, lib, ids):
             f'edge="1" parent="1" source="{e["from"]}" target="{e["to"]}">'
             f'<mxGeometry relative="1" as="geometry"/></mxCell>')
 
-def build(spec, lib):
+MARGIN = 20            # 구성도 바깥 여백
+TITLE_H = 70           # 제목이 있을 때 첫 도형이 시작하는 y
+
+
+def compose(spec, lib, margin=MARGIN):
+    """명세를 mxCell 목록과 바깥 크기 (cells, w, h) 로 바꾼다.
+
+    .drawio 파일(build)과 라이브러리 엔트리(make_drawio_libs.py)가 함께 쓴다.
+    """
     ids = {}
     root = Node({"group": "Generic Group (실선)", "items": spec.get("items", []),
                  "dir": spec.get("dir", "row"), "gap": spec.get("gap", 60), "pad": 0,
@@ -286,21 +294,25 @@ def build(spec, lib):
     root.measure()
     # 최상위는 머리 없이 배치
     root.shape = dict(root.shape, title="__root")
-    top = 70 if spec.get("title") else 20
+    top = TITLE_H if spec.get("title") else margin
     root.h -= GROUP_HEAD
     root.place()
     out = []
     if spec.get("title"):
         out.append(f'<mxCell id="__title" value={quoteattr(spec["title"])} '
                    f'style="text;html=1;align=left;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#222222;" '
-                   f'vertex="1" parent="1"><mxGeometry x="20" y="16" width="800" height="36" as="geometry"/></mxCell>')
+                   f'vertex="1" parent="1"><mxGeometry x="{margin}" y="16" width="800" height="36" as="geometry"/></mxCell>')
     for c in root.children:
-        c.x += 20
+        c.x += margin
         c.y += top - GROUP_HEAD
         emit(c, "1", out)
     for i, e in enumerate(spec.get("edges", []), 1):
         out.append(edge_cell(i, e, lib, ids))
-    body = "".join(out)
+    return out, root.w + 2 * margin, top + root.h + margin
+
+
+def build(spec, lib):
+    body = "".join(compose(spec, lib)[0])
     name = escape(spec.get("title") or "NHN Cloud Architecture")
     return ('<mxfile host="nhn_diagram.py"><diagram name=' + quoteattr(name) + ' id="nhn">'
             '<mxGraphModel dx="1200" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" '

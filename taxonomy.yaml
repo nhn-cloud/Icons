@@ -763,3 +763,15 @@ palettes:
         name: "Security Captcha"
       - slug: ic-security-csap-saas-guide
         name: "Security Csap Saas Guide"
+  - id: "29-architecture"
+    title: "NHN Cloud / Architecture"
+    kind: compositions
+    compositions:
+      - slug: nhn-cloud-groups-blank
+        name: "NHN Cloud Groups Blank"
+      - slug: external-links-blank
+        name: "External Links Blank"
+      - slug: rds-for-mysql-multi-region-ha
+        name: "RDS for MySQL Multi-Region HA"
+      - slug: webapp-multi-region-ha
+        name: "Webapp Multi-Region HA"

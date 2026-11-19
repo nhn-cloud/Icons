@@ -1,0 +1,46 @@
+# PPT V2.2 11쪽 "Example / External Links Blank"
+#
+# Security Groups 띠는 10쪽과 같은 이유로 AZ 2개를 감싸는 중첩으로 바꿨다.
+# Internet·Other Cloud 는 PPT 에서 모서리 아이콘이 없는 박스라 Generic Group (실선)을 쓴다.
+title: External Links Blank
+dir: row
+items:
+  - group: On-Premise/IDC/Co-lo Zone
+    id: onprem
+  - id: dc
+    icon: Direct Connect
+    label: DirectConnect
+  - group: NHN Cloud
+    dir: row
+    items:
+      - id: colo
+        icon: Colocation Gateway
+        label: Colocation Gateway
+      - group: VPC
+        items:
+          - group: Subnet
+            label: Public subnet
+            items:
+              - group: Security Groups
+                items:
+                  - group: Availability Zone
+                    label: Availability Zone (A)
+                  - group: Availability Zone
+                    label: Availability Zone (B)
+      - id: igw
+        icon: Internet Gateway
+        label: Internet Gateway
+  - stack: col
+    items:
+      - group: "Generic Group (실선)"
+        id: internet
+        label: Internet
+      - group: "Generic Group (실선)"
+        id: othercloud
+        label: Other Cloud
+edges:
+  # PPT 실측: 네 선 모두 #555555 1pt, 화살촉 없음
+  - [onprem, dc, "Primary Path · 화살촉 없음"]
+  - [dc, colo, "Primary Path · 화살촉 없음"]
+  - [igw, internet, "Primary Path · 화살촉 없음"]
+  - [igw, othercloud, "Primary Path · 화살촉 없음"]

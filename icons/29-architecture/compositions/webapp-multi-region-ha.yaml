@@ -1,0 +1,158 @@
+# PPT V2.2 13쪽 "Example / Webapp Multi-Region High Availability"
+#
+# PPT 는 VPN Gateway·Internet Gateway·Object Storage 를 VPC 테두리에 걸쳐 놓는다.
+# 중첩 레이아웃으로는 걸침을 표현할 수 없어 Region 바로 아래 한 줄로 올렸다.
+# 원본 연결선 17개 중 14개를 옮겼다. 나머지 3개(슬라이드 위쪽에서 내려오는 긴 사선)는
+# 양 끝 도형을 특정할 수 없어 뺐다. todo.md 참고.
+title: Webapp Multi-Region High Availability
+dir: col
+gap: 40
+items:
+  - stack: row
+    gap: 260
+    items:
+      - group: On-Premise/IDC/Co-lo Zone
+        id: onprem
+        items:
+          - id: admin
+            icon: Administrator
+            label: Admin
+      - group: "Generic Group (실선)"
+        id: internet
+        label: Internet
+        items:
+          - id: users
+            icon: Users
+            label: Users
+  - stack: row
+    items:
+      - id: cdn
+        icon: CDN
+        label: CDN
+      - id: gslb
+        icon: GSLB
+        label: GSLB
+  - group: NHN Cloud
+    dir: row
+    items:
+      - group: Region
+        label: Region A
+        id: regiona
+        dir: col
+        items:
+          - stack: row
+            items:
+              - id: vpngw
+                icon: VPN Gateway
+                label: VPN Gateway
+              - id: igwa
+                icon: Internet Gateway
+                label: Internet Gateway
+              - id: obs
+                icon: Object Storage
+                label: Object Storage
+          - group: VPC
+            dir: row
+            items:
+              - group: Subnet
+                label: Public subnet
+                dir: col
+                items:
+                  - id: natgw
+                    icon: NAT Gateway
+                    label: NAT Gateway
+                  - stack: row
+                    items:
+                      - id: bastion
+                        icon: NHN Bastion
+                        label: NHN Bastion
+                      - id: lb
+                        icon: Load Balancer
+                        label: Load Balancer
+              - group: Subnet
+                label: Private subnet
+                dir: col
+                items:
+                  - id: svcgw
+                    icon: Service Gateway
+                    label: Service Gateway
+                  - group: Auto Scaling Group
+                    label: Scaling Group
+                    id: asg
+                    dir: col
+                    items:
+                      - stack: row
+                        items:
+                          - {id: ia1, icon: Instance, label: ""}
+                          - {id: ia2, icon: Instance, label: ""}
+                      - stack: row
+                        items:
+                          - {id: ia3, icon: Instance, label: ""}
+                          - {id: ia4, icon: Instance, label: ""}
+              - group: Subnet
+                label: Private subnet
+                dir: col
+                items:
+                  - group: RDS for MySQL
+                    id: rds
+                    dir: row
+                    items:
+                      - id: rdsm
+                        icon: RDS Instance
+                        label: Master
+                      - id: rdsc
+                        icon: RDS Instance
+                        label: Candidate Master
+                  - group: EasyCache
+                    id: cache
+                    dir: row
+                    items:
+                      - id: cm
+                        icon: Cache Node
+                        label: Master
+                      - id: cr
+                        icon: Cache Node
+                        label: Replica
+      - id: pgw
+        icon: Peering Gateway
+        label: Peering Gateway
+      - group: Region
+        label: Region B
+        id: regionb
+        items:
+          - group: VPC
+            dir: col
+            items:
+              - id: igwb
+                icon: Internet Gateway
+                label: Internet Gateway
+              - group: "Generic Group (실선)"
+                label: Failover Resource
+                id: failover
+                dir: col
+                items:
+                  - {id: lbb, icon: Load Balancer, label: ""}
+                  - stack: row
+                    items:
+                      - {id: ib1, icon: Instance, label: ""}
+                      - {id: ib2, icon: Instance, label: ""}
+                  - stack: row
+                    items:
+                      - {id: ib3, icon: Instance, label: ""}
+                      - {id: ib4, icon: Instance, label: ""}
+edges:
+  # PPT 실측: 전부 #555555 1pt. 화살촉은 아래 표시한 것만 다르다.
+  - {from: onprem, to: vpngw}
+  - {from: vpngw, to: bastion}
+  - {from: igwa, to: lb, style: "Primary Path · 양방향"}
+  - {from: natgw, to: igwa}
+  - {from: natgw, to: asg}
+  - {from: lb, to: asg}
+  - {from: asg, to: svcgw}
+  - {from: svcgw, to: obs}
+  - {from: obs, to: cdn}
+  - {from: asg, to: rdsm}
+  - {from: asg, to: cm}
+  - [regiona, pgw, "Primary Path · 화살촉 없음"]
+  - [pgw, regionb, "Primary Path · 화살촉 없음"]
+  - {from: igwb, to: failover}

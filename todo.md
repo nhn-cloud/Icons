@@ -228,7 +228,15 @@ Figma `03 Architecture icon` 페이지는 카테고리를 **섹션 프레임 + �
         서비스 박스 8종을 뺐고, 모서리 아이콘이 없는 4종(Security Groups, Availability Zone,
         Generic Group 2종)을 넣었다. 위 19개 기준 체크는 이 교체 이전 것이다
 - [ ] `docs/sample-3tier-architecture.drawio`를 새 라이브러리로 다시 그려 비교
-- [ ] PPT V2.2 10\~13쪽 예시 구성도를 draw.io로 재현해 누락 아이콘 확인
+- [x] PPT V2.2 10\~13쪽 예시 구성도를 draw.io로 재현해 누락 아이콘 확인 (2026-11-19)
+  - `29-architecture` 팔레트로 4건을 넣었다. **누락 아이콘은 없었다** — PPT 이미지 30종을
+    전부 추출해 대조했고 Instance, RDS Instance, Cache Node, Service Gateway 등 모두 보유 중이다
+  - 서비스 박스 RDS for MySQL·EasyCache 2종을 `05-groups` 에 다시 실었다.
+    12·13쪽이 두 서비스를 박스로 그리므로 "레퍼런스 아키텍처 근거"가 생겼다 (5절 참고)
+  - 중첩 레이아웃의 한계로 원본과 다르게 옮긴 부분: 10·11쪽 Security Groups 띠(AZ 위에 걸침)는
+    AZ 2개를 감싸도록, 12쪽 RDS for MySQL 박스(Region 2개에 걸침)는 Region 마다 1개씩
+  - [ ] 13쪽 연결선 17개 중 3개는 양 끝 도형을 특정하지 못해 뺐다. 슬라이드 위쪽에서 내려오는
+        긴 사선으로, GSLB·Users·Admin 중 무엇에 붙는지 PPT 에서 눈으로 확인해 보완 필요
 
 ---
 

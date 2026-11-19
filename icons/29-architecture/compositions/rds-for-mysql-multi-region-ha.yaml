@@ -1,0 +1,76 @@
+# PPT V2.2 12쪽 "Example / RDS for MySQL Multi-Region High Availability"
+#
+# 원본은 RDS for MySQL 서비스 박스 하나가 Region 판교·평촌 두 개를 가로질러 그려져 있다.
+# 중첩 레이아웃으로는 걸침을 표현할 수 없어 Region 마다 박스를 하나씩 뒀다.
+title: RDS for MySQL Multi-Region High Availability
+dir: row
+items:
+  - group: NHN Cloud
+    dir: row
+    items:
+      - group: Region
+        label: Region 판교
+        dir: col
+        items:
+          - id: obs1
+            icon: Object Storage
+            label: Object Storage
+          - group: VPC
+            label: VPC Private
+            items:
+              - group: Subnet
+                label: Private subnet
+                items:
+                  - group: RDS for MySQL
+                    id: rds1
+                    dir: row
+                    items:
+                      - group: Availability Zone
+                        label: Availability Zone (A)
+                        items:
+                          - id: master
+                            icon: RDS Instance
+                            label: Master
+                      - group: Availability Zone
+                        label: Availability Zone (B)
+                        dir: row
+                        items:
+                          - id: cand
+                            icon: RDS Instance
+                            label: Candidate Master
+                          - id: rr1
+                            icon: RDS Instance
+                            label: Read Replica
+      - id: pgw
+        icon: Peering Gateway
+        label: Peering Gateway
+      - group: Region
+        label: Region 평촌
+        dir: col
+        items:
+          - id: obs2
+            icon: Object Storage
+            label: Object Storage
+          - group: VPC
+            label: VPC Private
+            items:
+              - group: Subnet
+                label: Private subnet
+                items:
+                  - group: RDS for MySQL
+                    id: rds2
+                    items:
+                      - group: Availability Zone
+                        label: Availability Zone (A)
+                        items:
+                          - id: rr2
+                            icon: RDS Instance
+                            label: Read Replica
+edges:
+  # PPT 실측: 전부 #555555 1pt. Region 사이 연결만 화살촉이 없다.
+  - {from: master, to: cand, label: Replication}
+  - {from: cand, to: rr1}
+  - {from: cand, to: obs1, label: Back up}
+  - {from: rr2, to: obs2, label: Back up}
+  - [rds1, pgw, "Primary Path · 화살촉 없음"]
+  - [pgw, rds2, "Primary Path · 화살촉 없음"]
