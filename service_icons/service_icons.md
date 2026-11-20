@@ -443,7 +443,14 @@
         <td><img src="/files/services/database/black/ic-database-valkey_instance.png"></td>
         <td><img src="/files/services/database/color/ic-database-valkey_instance.svg"></td>
         <td><img src="/files/services/database/black/ic-database-valkey_instance.svg"></td>
-    </tr>    
+    </tr>
+    <tr>
+        <th>DMS</th>
+        <td><img src="/files/services/database/color/ic-database-DMS.png"></td>
+        <td><img src="/files/services/database/black/ic-database-DMS.png"></td>
+        <td><img src="/files/services/database/color/ic-database-DMS.svg"></td>
+        <td><img src="/files/services/database/black/ic-database-DMS.svg"></td>
+    </tr>  
 </table>
 
 ### Monitoring
@@ -875,7 +882,14 @@
         <td><img src="/files/services/machine_learning/black/ic-machine_learning-ai_easymaker.png"></td>
         <td><img src="/files/services/machine_learning/color/ic-machine_learning-ai_easymaker.svg"></td>
         <td><img src="/files/services/machine_learning/black/ic-machine_learning-ai_easymaker.svg"></td>
-    </tr>   
+    </tr>
+    <tr>
+        <th>Foundry</th>
+        <td><img src="/files/services/machine_learning/color/ic-machine_learning-foundry.png"></td>
+        <td><img src="/files/services/machine_learning/black/ic-machine_learning-foundry.png"></td>
+        <td><img src="/files/services/machine_learning/color/ic-machine_learning-foundry.svg"></td>
+        <td><img src="/files/services/machine_learning/black/ic-machine_learning-foundry.svg"></td>
+    </tr>
 </table>
 
 ### Application Service
@@ -1230,5 +1244,29 @@
         <td><img src="/files/services/collaboration/black/ic-collaboration-dooray.png"></td>
         <td><img src="/files/services/collaboration/color/ic-dooray-project-box.svg"></td>
         <td><img src="/files/services/collaboration/black/ic-collaboration-dooray.svg"></td>
+    </tr>
+</table>
+
+
+### Integration
+
+<table>
+    <tr>
+        <th rowspan="2">Service</th>
+        <th colspan="2">PNG</th>
+        <th colspan="2">SVG</th>
+    </tr>
+    <tr>
+        <th>color</th>
+        <th>black</th>
+        <th>color</th>
+        <th>black</th>
+    </tr>
+    <tr>
+        <th>EventBus</th>
+        <td><img src="/files/services/integration/color/ic-integration-eventbus.png"></td>
+        <td><img src="/files/services/integration/black/ic-integration-eventbus.png"></td>
+        <td><img src="/files/services/integration/color/ic-integration-eventbus.svg"></td>
+        <td><img src="/files/services/integration/black/ic-integration-eventbus.svg"></td>
     </tr>
 </table>
