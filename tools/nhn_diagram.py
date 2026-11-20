@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """NHN Cloud 아키텍처 구성도(.drawio) 생성기.
 
-NHN Cloud draw.io 아이콘 라이브러리(dist/01.xml ~ 28.xml)의 도형을 그대로 꺼내
+NHN Cloud draw.io 아이콘 라이브러리(dist/01.xml ~ 29.xml)의 도형을 그대로 꺼내
 YAML/JSON 명세로 구성도를 만듭니다. 아이콘·그룹·화살표 스타일은 라이브러리 값을
 그대로 쓰므로 draw.io 팔레트에서 끌어다 놓은 것과 같은 결과가 나옵니다.
 
@@ -42,6 +42,11 @@ YAML/JSON 명세로 구성도를 만듭니다. 아이콘·그룹·화살표 스�
 """
 import argparse, base64, json, re, sys, urllib.parse, urllib.request, zlib, os
 from xml.sax.saxutils import escape, quoteattr
+
+# Windows 콘솔 기본 코드페이지에서 도형·스타일 이름의 한글이 깨지지 않게 한다.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
 
 DEFAULT_URL = "https://raw.githubusercontent.com/nhn-cloud/Icons/draft/dist"
 

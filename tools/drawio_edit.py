@@ -23,6 +23,11 @@ import argparse, base64, os, re, sys, urllib.parse, zlib
 import xml.etree.ElementTree as ET
 from xml.sax.saxutils import quoteattr
 
+# Windows 콘솔 기본 코드페이지에서 레이블의 한글이 깨지지 않게 한다.
+for _s in (sys.stdout, sys.stderr):
+    if hasattr(_s, "reconfigure"):
+        _s.reconfigure(encoding="utf-8")
+
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import nhn_diagram as nd
 

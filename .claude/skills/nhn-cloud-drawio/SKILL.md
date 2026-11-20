@@ -19,7 +19,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 
 | 도구 | 용도 |
 | --- | --- |
-| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (276개) |
+| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (297개) |
 | `python tools/nhn_diagram.py spec.yaml out.drawio` | 명세 → .drawio **최초 생성** |
 | `python tools/drawio_edit.py out.drawio ...` | 이미 있는 .drawio **제자리 수정** |
 | `python tools/drawio_open.py out.drawio` | 브라우저 draw.io 로 열기 |
@@ -37,24 +37,34 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 - 감쌀 것(그룹): NHN Cloud / Region / VPC / Subnet / Auto Scaling Group 등 중첩 관계
 - 이을 것(엣지): 무엇에서 무엇으로, 어떤 선으로
 
+요청이 PPT 예시 구성도(멀티 리전 HA, 외부 연동 등)와 비슷하면 **빈 명세부터 쓰지 말고**
+`icons/06-architecture/compositions/*.yaml` 중 가까운 것을 복사해 고친다. 4종이 있다:
+`nhn-cloud-groups-blank` · `external-links-blank` · `rds-for-mysql-multi-region-ha` ·
+`webapp-multi-region-ha`. 같은 그림이 팔레트 `06 Architecture` 에도 통째로 올라가 있어
+draw.io 에서 끌어다 놓고 고쳐도 된다.
+
 ### 2. 아이콘 이름 조회 — 건너뛰지 않는다
 
 **기억으로 아이콘 이름을 쓰지 않는다.** 반드시 `--list` 로 실제 이름을 확인한다.
 
 ```bash
-python tools/nhn_diagram.py --list 로드밸런      # 한글/영문 부분 일치, 대소문자·공백·하이픈 무시
-python tools/nhn_diagram.py --list groups        # 그룹 박스 15종
-python tools/nhn_diagram.py --list arrows        # 연결선 18종
+python tools/nhn_diagram.py --list 로드밸런        # 한글/영문 부분 일치, 대소문자·공백·하이픈 무시
+python tools/nhn_diagram.py --list groups          # 그룹 박스 17종
+python tools/nhn_diagram.py --list arrows          # 연결선 18종
+python tools/nhn_diagram.py --list architecture    # PPT 예시 구성도 4종
 ```
 
 - 못 찾으면 생성기가 비슷한 이름을 알려 준다. 그래도 없으면 **임의로 다른 아이콘을 대체하지 말고**
   사용자에게 "라이브러리에 없다. 무엇으로 대체할까" 하고 묻는다.
-- 같은 이름이 여러 팔레트에 있으면 `"Network/Security Groups"` 처럼 `팔레트/이름` 으로 적는다.
-  (실제 충돌 예: `Security Groups` 는 Groups 와 Network 양쪽에 있다)
+- 같은 이름이 여러 팔레트에 있으면 `"Container/Image"` 처럼 `팔레트/이름` 으로 적는다.
+  실제 충돌은 `Image`(Compute·Container), `Notification`(Monitoring·Notification),
+  `Container`(Container·Storage) 세 건이다. `Security Groups`·`VPC` 처럼 그룹과 아이콘에
+  같은 이름이 있는 경우는 `group:`·`icon:` 자리로 구분되니 이름만 써도 된다.
 
 ### 3. 명세 작성 → 사용자 확인
 
 YAML 을 작성해 **사용자에게 먼저 보여주고 확정**한 뒤 생성한다. 구조 오해를 그림까지 가서 발견하면 손해다.
+참고 예시: `docs/sample-3tier-spec.yaml`, `icons/06-architecture/compositions/*.yaml`.
 
 ### 4. 생성과 열기
 
@@ -64,8 +74,11 @@ python tools/drawio_open.py out.drawio
 ```
 
 `drawio_open.py` 는 `out.open.html` 리다이렉트 파일을 만들고 기본 브라우저로 draw.io 를 띄운다
-(URL 조각 방식이라 사내 프록시를 타지 않는다). 사용자 브라우저에는 NHN Cloud 팔레트 28개가
-이미 붙어 있어 그 자리에서 아이콘을 더 끌어다 쓸 수 있다.
+(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 29개가 붙어 있으면
+그 자리에서 아이콘을 더 끌어다 쓸 수 있다.
+
+처음 쓰는 브라우저는 왼쪽 도형 패널에 팔레트가 없다. 그때는 <https://nhn-cloud.github.io/Icons/>
+를 한 번 열어 설정을 적용하라고 안내한다(브라우저에 저장되어 다음부터는 그대로 뜬다).
 
 **편집 결과 저장**: draw.io 웹의 Ctrl+S 는 다운로드다. 제자리 저장을 원하면
 draw.io 에서 `파일 > 열기 > 디바이스` 로 `.drawio` 를 직접 열라고 안내한다.
@@ -108,6 +121,11 @@ items:
       - group: VPC
         items:
           - {id: lb, icon: Load Balancer}
+          - group: Subnet
+            items:
+              - {id: aza, group: Availability Zone, label: AZ (A)}
+              - {id: azb, group: Availability Zone, label: AZ (B)}
+              - {group: Security Groups, over: [aza, azb]}   # 두 AZ 위에 띠로 걸친다
 edges:
   - [users, lb]                                   # 기본 Primary Path
   - [lb, web1, Secondary Path · 점선]
@@ -119,6 +137,7 @@ edges:
 | --- | --- |
 | 노드 | `id`, `icon`(필수), `label`, `w`/`h` |
 | 그룹 | `id`, `group`(필수), `label`, `dir`, `gap`, `pad`, `align`(center/start), `min_w`, `min_h` |
+| 걸치는 그룹 | `over`(형제 id 목록), `inset`(위·오른쪽·아래·왼쪽 파고드는 깊이, 기본 `[44, 24, 24, 24]`) |
 | 엣지 | `from`, `to`, `style`(Arrows 이름, 기본 Primary Path), `label`, `exit`/`entry`(left/right/top/bottom), `extra` |
 | 빈 칸 | `{spacer: 60}` |
 | 배치 전용 묶음 | `{stack: row|col, items: [...]}`, `gap`, `pad`, `align` |
@@ -140,6 +159,10 @@ Failure Status (각각 기본·양방향·화살촉 없음).
 - **한 층에 3개 이상 쌓이면 열로 쪼갠다**: `{stack: row, items: [...]}` 로 묶어 가로로 세운다.
   `stack` 은 **테두리를 그리지 않는 배치 전용 묶음**이라 박스가 늘지 않는다. 원본 그림에 없는
   점선 상자를 만들지 말고 이걸 쓴다. (예: Subnet 안에서 LB 를 위에, 서버 2대를 그 아래 줄에)
+- **여러 박스를 가로지르는 띠는 `over`**: Security Groups 처럼 AZ 두 개에 걸치는 박스는 어느 한쪽
+  자식으로 넣지 말고 **같은 그룹의 형제**로 두고 `over: [aza, azb]` 를 준다. 자동 배치에서 빠지고
+  대상들의 바깥 사각형에 맞춰 그 위에 그려진다. 파고드는 깊이는 `inset` 으로 조절한다.
+  (PPT 10·11쪽 배치가 이 방식이다. `over` 대상은 반드시 같은 그룹 안의 형제 id 여야 한다)
 - **엣지는 꼭 필요한 것만**: 선이 많을수록 겹침이 심해진다. 교차가 생기면 `exit`/`entry` 로 방향을 고정한다.
 - 그룹이 너무 좁으면 `min_w` / `min_h` 로 넓힌다.
 
