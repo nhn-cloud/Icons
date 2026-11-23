@@ -156,8 +156,8 @@ function Ed-Place($model, $w, $h) {
         $anchor = Ed-FindCell $model $anchorId
         $g = Ed-Geom $anchor
         if ($null -eq $g) { Nd-Die '기준 도형에 좌표가 없습니다(연결선은 기준으로 쓸 수 없습니다).' }
-        if ($Below) { return @($anchor.GetAttribute('parent'), $g['x'], $g['y'] + $g['height'] + $GAP_Y) }
-        return @($anchor.GetAttribute('parent'), $g['x'] + $g['width'] + $GAP_X, $g['y'])
+        if ($Below) { return @($anchor.GetAttribute('parent'), $g['x'], ($g['y'] + $g['height'] + $GAP_Y)) }
+        return @($anchor.GetAttribute('parent'), ($g['x'] + $g['width'] + $GAP_X), $g['y'])
     }
     $parent = $(if ($Into) { $Into } else { '1' })
     if ($parent -ne '1') { [void](Ed-FindCell $model $parent) }
@@ -178,7 +178,7 @@ function Ed-Place($model, $w, $h) {
         if ($b -gt $lowBottom) { $lowBottom = $b; $low = $c }
     }
     $g = Ed-Geom $low
-    return @($parent, $g['x'], $g['y'] + $g['height'] + $GAP_Y)
+    return @($parent, $g['x'], ($g['y'] + $g['height'] + $GAP_Y))
 }
 
 function Ed-GrowParent($model, [string]$parentId, $x, $y, $w, $h) {
