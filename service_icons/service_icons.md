@@ -174,6 +174,13 @@
         <td><img src="/files/services/network/black/ic-network-load_balancer.svg"></td>
     </tr>
     <tr>
+        <th>Load Balancer(DSR)</th>
+        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.png"></td>
+        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.png"></td>
+        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.svg"></td>
+        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.svg"></td>
+    </tr>
+    <tr>
         <th>NAT Instance</th>
         <td><img src="/files/services/network/color/ic-network-nat_instance.png"></td>
         <td><img src="/files/services/network/black/ic-network-nat_instance.png"></td>
@@ -256,13 +263,6 @@
         <td><img src="/files/services/network/black/ic-network-direct_connect.png"></td>
         <td><img src="/files/services/network/color/ic-network-direct_connect.svg"></td>
         <td><img src="/files/services/network/black/ic-network-direct_connect.svg"></td>
-    </tr>
-    <tr>
-        <th>Load Balancer(DSR)</th>
-        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.png"></td>
-        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.png"></td>
-        <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.svg"></td>
-        <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.svg"></td>
     </tr>
 </table>
 
