@@ -66,6 +66,12 @@ function Nd-DecodeEntry([string]$s) {
     return [Uri]::UnescapeDataString($text)
 }
 
+function Nd-FullPath([string]$path) {
+    # PowerShell 의 현재 위치는 프로세스 CWD 와 따로 논다. Set-Location 으로 폴더를 옮겨도
+    # [IO.File] 은 옛 폴더를 본다. 상대경로를 넘기기 전에 항상 절대경로로 바꾼다.
+    return $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($path)
+}
+
 function Nd-ReadSource([string]$src, [string]$name) {
     if ($src -match '^https?://') {
         $url = $src.TrimEnd('/') + '/' + $name
@@ -76,7 +82,7 @@ function Nd-ReadSource([string]$src, [string]$name) {
         if ($r.Content -is [byte[]]) { return [Text.Encoding]::UTF8.GetString($r.Content) }
         return [string]$r.Content
     }
-    $p = Join-Path $src $name
+    $p = Nd-FullPath (Join-Path $src $name)
     if (-not (Test-Path -LiteralPath $p)) { return $null }
     return [IO.File]::ReadAllText($p, [Text.Encoding]::UTF8)
 }

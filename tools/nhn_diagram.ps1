@@ -46,5 +46,5 @@ if (-not (Test-Path -LiteralPath $Spec)) { Nd-Die "명세 파일이 없습니다
 
 $specData = Nd-LoadSpec (Resolve-Path -LiteralPath $Spec).Path
 $xml = Nd-Build $specData $library
-[IO.File]::WriteAllText($Out, $xml, (New-Object Text.UTF8Encoding($false)))
+[IO.File]::WriteAllText((Nd-FullPath $Out), $xml, (New-Object Text.UTF8Encoding($false)))
 Write-Output "저장: $Out"
