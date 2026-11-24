@@ -27,6 +27,37 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 `dist/` 가 없으면 `https://raw.githubusercontent.com/nhn-cloud/Icons/draft/dist` 에서
 자동으로 받아 쓴다. PyYAML 이 필요하다.
 
+### 파이썬이 없는 PC — PowerShell 판
+
+`tools/*.ps1` 이 같은 일을 한다. PowerShell 5.1 이면 되고 **설치할 것이 없다**(PyYAML 불필요).
+산출물은 파이썬판과 바이트까지 같다. 사용자용 4종만 이식했고 빌드·감사 도구
+(`make_drawio_libs.py`, `audit.py` 등)는 파이썬판만 있다.
+
+| 파이썬 | PowerShell |
+| --- | --- |
+| `python tools/nhn_diagram.py --list 로드밸런` | `.\tools\nhn_diagram.ps1 -List 로드밸런` |
+| `python tools/nhn_diagram.py spec.yaml out.drawio` | `.\tools\nhn_diagram.ps1 spec.yaml out.drawio` |
+| `python tools/drawio_edit.py out.drawio list` | `.\tools\drawio_edit.ps1 out.drawio list` |
+| `python tools/drawio_open.py out.drawio` | `.\tools\drawio_open.ps1 out.drawio` |
+
+**인자 표기가 다르다.** `--icon` 은 PowerShell 판에서 통하지 않는다. `-Icon` 처럼 쓴다.
+
+```powershell
+.\tools\drawio_edit.ps1 out.drawio add -Icon "RDS Instance" -Id db3 -Label "Replica 2" -Below db2
+.\tools\drawio_edit.ps1 out.drawio edge -From db1 -To db3 -Style "Secondary Path · 점선"
+```
+
+| 파이썬 | PowerShell |
+| --- | --- |
+| `--lib` `--list` | `-Lib` `-List` |
+| `--icon` `--group` `--id` `--label` | `-Icon` `-Group` `-Id` `-Label` |
+| `--into` `--below` `--right-of` | `-Into` `-Below` `-RightOf` |
+| `--from` `--to` `--style` | `-From` `-To` `-Style` |
+| `--exit` `--entry` `--w` `--h` | `-Exit` `-Entry` `-W` `-H` |
+
+`list` · `relabel ID LABEL` · `remove ID...` 는 양쪽 표기가 같다.
+파이썬판과 결과가 같은지는 `.\tools\compare_ports.ps1` 로 확인한다(파이썬이 없으면 건너뛴다).
+
 ## 절차
 
 ### 1. 구조 파악
