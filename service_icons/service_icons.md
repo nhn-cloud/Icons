@@ -258,7 +258,7 @@
         <td><img src="/files/services/network/black/ic-network-direct_connect.svg"></td>
     </tr>
     <tr>
-        <th>Direct Connect</th>
+        <th>Load Balancer(DSR)</th>
         <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.png"></td>
         <td><img src="/files/services/network/black/ic-network-load_balancer_dsr.png"></td>
         <td><img src="/files/services/network/color/ic-network-load_balancer_dsr.svg"></td>
