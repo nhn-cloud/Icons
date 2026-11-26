@@ -65,7 +65,9 @@ def opt(name, default):
 
 # 검증용으로 바꿀 수 있게 열어 둔다. 배포에는 기본값을 쓴다.
 EDITOR = opt('--editor', 'https://app.diagrams.net/')
-BRANCH = opt('--branch', 'main')
+# dist/ 는 draft 브랜치에만 있다. main 은 아이콘 원본(files/, box_type/ …) 저장소라
+# dist/ 가 없어 main 으로 만들면 팔레트가 전부 404 가 된다.
+BRANCH = opt('--branch', 'draft')
 HOST = opt('--host', 'raw')
 if HOST == 'raw':
     _default_prefix = 'https://raw.githubusercontent.com/%s/%s/dist/' % (REPO, BRANCH)

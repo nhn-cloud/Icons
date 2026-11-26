@@ -42,7 +42,7 @@ items:
         label: Other Cloud
 edges:
   # PPT 실측: 네 선 모두 #555555 1pt, 화살촉 없음
-  - [onprem, dc, "Primary Path · 화살촉 없음"]
-  - [dc, colo, "Primary Path · 화살촉 없음"]
-  - [igw, internet, "Primary Path · 화살촉 없음"]
-  - [igw, othercloud, "Primary Path · 화살촉 없음"]
+  - [onprem, dc, "Primary · 선"]
+  - [dc, colo, "Primary · 선"]
+  - [igw, internet, "Primary · 선"]
+  - [igw, othercloud, "Primary · 선"]

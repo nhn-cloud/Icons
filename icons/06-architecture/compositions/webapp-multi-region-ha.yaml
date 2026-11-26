@@ -144,7 +144,7 @@ edges:
   # PPT 실측: 전부 #555555 1pt. 화살촉은 아래 표시한 것만 다르다.
   - {from: onprem, to: vpngw}
   - {from: vpngw, to: bastion}
-  - {from: igwa, to: lb, style: "Primary Path · 양방향"}
+  - {from: igwa, to: lb, style: "Primary · 양방향"}
   - {from: natgw, to: igwa}
   - {from: natgw, to: asg}
   - {from: lb, to: asg}
@@ -153,6 +153,6 @@ edges:
   - {from: obs, to: cdn}
   - {from: asg, to: rdsm}
   - {from: asg, to: cm}
-  - [regiona, pgw, "Primary Path · 화살촉 없음"]
-  - [pgw, regionb, "Primary Path · 화살촉 없음"]
+  - [regiona, pgw, "Primary · 선"]
+  - [pgw, regionb, "Primary · 선"]
   - {from: igwb, to: failover}

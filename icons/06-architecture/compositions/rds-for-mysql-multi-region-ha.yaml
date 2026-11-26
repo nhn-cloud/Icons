@@ -72,5 +72,5 @@ edges:
   - {from: cand, to: rr1}
   - {from: cand, to: obs1, label: Back up}
   - {from: rr2, to: obs2, label: Back up}
-  - [rds1, pgw, "Primary Path · 화살촉 없음"]
-  - [pgw, rds2, "Primary Path · 화살촉 없음"]
+  - [rds1, pgw, "Primary · 선"]
+  - [pgw, rds2, "Primary · 선"]

@@ -24,20 +24,23 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 팔레트는 **`main` 브랜치의 아이콘 유형 체계**를 따릅니다. 사내 배포 라이브러리
 (`NHNCloud-*.xml`)와 같은 구성입니다.
 
-| # | 팔레트 | 담긴 것 | 개수 |
-| --- | --- | --- | --- |
-| 01 | Box Type | 그룹 컨테이너 + 서비스마다의 박스 | 134 |
-| 02 | Services | 서비스 아이콘 | 119 |
-| 03 | Resources | 서비스에 딸린 리소스 아이콘 | 35 |
-| 04 | General | 일반 아이콘 (`main` 의 general_icons 30종) | 30 |
-| 05 | Arrows | 연결선 스타일 | 18 |
-| 06 | Extra | 계정·장비·문서 등 + 카테고리 아이콘 | 68 |
-| 07 | Templates | 예시 구성도 (끌어다 놓으면 통째로 들어감) | 4 |
-| 08 | Presentation | 제안서 보조용 flat 아이콘 | 12 |
-| 09 | Retired | 홈페이지에서 빠지거나 개명된 아이콘 | 15 |
+| # | 팔레트 | 담긴 것 | 개수 | 배포본 |
+| --- | --- | --- | --- | --- |
+| 01 | Box Type | 그룹 컨테이너 + 서비스마다의 박스 | 134 | 154 |
+| 02 | Services | 서비스 아이콘 | 119 | 136 |
+| 03 | Resources | 서비스에 딸린 리소스 아이콘 | 35 | 34 |
+| 04 | General | 일반 아이콘 (`main` 의 general_icons 30종) | 30 | 30 ✓ |
+| 05 | Arrows | 연결선 스타일 (4색 x 6변형) | 24 | 24 ✓ |
+| 06 | Annotations | 단계·문제·개선 번호, 말풍선·메모·제목·범례 | 22 | 22 ✓ |
+| 07 | Extra | 계정·장비·문서 등 + 카테고리 아이콘 | 68 | 71 |
+| 08 | Templates | 예시 구성도 (끌어다 놓으면 통째로 들어감) | 10 | 10 ✓ |
+| 09 | Presentation | 제안서 보조용 flat 아이콘 | 12 | — |
+| 10 | Retired | 홈페이지에서 빠지거나 개명된 아이콘 | 15 | — |
 
-> [!Note]> 배포 라이브러리에는 **Annotations**(단계·문제·개선·말풍선 22종)가 더 있습니다.
-> 저장소에 해당 자산이 없어 이 팔레트는 비어 있습니다.
+`Arrows` · `Annotations` · `Templates` 는 배포 라이브러리와 **내용이 한 글자까지 같습니다**
+(엔트리의 이름·크기·태그·도형 XML 전부 대조 확인). 아이콘이 아니라 draw.io 도형이라
+SVG 에서 만들 수 없어, 배포본에서 풀어 `icons/annotations` · `icons/templates` 에
+XML 로 두고 `kind: raw` 로 다시 압축합니다.
 
 ### icons/ 구성
 
@@ -47,11 +50,13 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 팔레트에 들어가는 경우**(General 과 Extra)가 있어 디렉터리로는 표현할 수 없습니다.
 
 ```
-01-arrows        엣지 스타일 18종 (SVG 없음, styles.yaml)   -> Arrows
+01-arrows        엣지 스타일 24종 (SVG 없음, styles.yaml)   -> Arrows
+annotations      주석 도형 22종 (SVG 없음, mxGraphModel XML)  -> Annotations
+templates        예시 구성도 10종 (SVG 없음, mxGraphModel XML) -> Templates
 02-general       일반 리소스          03-industry   산업·개념   -> General · Extra
 04-identity      계정·역할                                      -> Extra
 05-groups        그룹 컨테이너                                  -> Box Type
-06-architecture  예시 구성도 4건 (PPT 10~13쪽)                   -> Templates
+06-architecture  구성도 명세 4건 (생성기용 YAML. 팔레트에는 안 들어감)
 07-compute … 28-governance-audit      서비스 카테고리 22개       -> Services · Resources
                  (각 디렉터리의 category/ 는 Extra 와 General 양쪽으로)
 29-presentation  제안서·구성도 보조용 flat 아이콘 (Figma 출처)   -> Presentation
@@ -103,8 +108,8 @@ draw.io 배포 링크는 **하나**입니다: <https://nhn-cloud.github.io/Icons
 | 탭 제목 고정 | `?title=NHN%20Cloud%20Icons` — 열린 파일 이름 대신 이 제목을 씀 |
 
 ```
-python tools/make_config_link.py --write-index                 # index.html 생성 (main 브랜치)
-python tools/make_config_link.py --write-index --branch draft  # 브랜치 지정
+python tools/make_config_link.py --write-index                 # index.html 생성 (draft 브랜치)
+python tools/make_config_link.py --write-index --branch main   # 브랜치 지정
 python tools/make_config_link.py                               # 설정 JSON 과 링크만 출력
 python tools/make_gallery.py                                   # gallery.html 생성
 ```

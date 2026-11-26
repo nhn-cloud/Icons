@@ -19,7 +19,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 
 | 도구 | 용도 |
 | --- | --- |
-| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (435개) |
+| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (469개) |
 | `python tools/nhn_diagram.py spec.yaml out.drawio` | 명세 → .drawio **최초 생성** |
 | `python tools/drawio_edit.py out.drawio ...` | 이미 있는 .drawio **제자리 수정** |
 | `python tools/drawio_open.py out.drawio` | 브라우저 draw.io 로 열기 |
@@ -44,7 +44,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 
 ```powershell
 .\tools\drawio_edit.ps1 out.drawio add -Icon "RDS Instance" -Id db3 -Label "Replica 2" -Below db2
-.\tools\drawio_edit.ps1 out.drawio edge -From db1 -To db3 -Style "Secondary Path · 점선"
+.\tools\drawio_edit.ps1 out.drawio edge -From db1 -To db3 -Style "Secondary · 단방향 점선"
 ```
 
 | 파이썬 | PowerShell |
@@ -81,7 +81,7 @@ draw.io 에서 끌어다 놓고 고쳐도 된다.
 ```bash
 python tools/nhn_diagram.py --list 로드밸런        # 한글/영문 부분 일치, 대소문자·공백·하이픈 무시
 python tools/nhn_diagram.py --list "box type"      # 그룹 박스 + 서비스 박스 134종
-python tools/nhn_diagram.py --list arrows          # 연결선 18종
+python tools/nhn_diagram.py --list arrows          # 연결선 24종
 python tools/nhn_diagram.py --list templates       # PPT 예시 구성도 4종
 ```
 
@@ -106,7 +106,7 @@ python tools/drawio_open.py out.drawio
 ```
 
 `drawio_open.py` 는 `out.open.html` 리다이렉트 파일을 만들고 기본 브라우저로 draw.io 를 띄운다
-(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 9개가 붙어 있으면
+(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 10개가 붙어 있으면
 그 자리에서 아이콘을 더 끌어다 쓸 수 있다.
 
 처음 쓰는 브라우저는 왼쪽 도형 패널에 팔레트가 없다. 그때는 <https://nhn-cloud.github.io/Icons/>
@@ -133,7 +133,7 @@ draw.io 에서 `파일 > 열기 > 디바이스` 로 `.drawio` 를 직접 열라�
 ```bash
 python tools/drawio_edit.py out.drawio list              # 먼저 현재 id 를 본다
 python tools/drawio_edit.py out.drawio add --icon "RDS Instance" --id db3 --label "Replica 2" --below db2
-python tools/drawio_edit.py out.drawio edge --from db1 --to db3 --style "Secondary Path · 점선"
+python tools/drawio_edit.py out.drawio edge --from db1 --to db3 --style "Secondary · 단방향 점선"
 python tools/drawio_edit.py out.drawio relabel db2 "Replica (읽기)"
 python tools/drawio_edit.py out.drawio remove db3        # 딸린 연결선도 함께
 ```
@@ -168,9 +168,9 @@ items:
               - {id: azb, group: Availability Zone, label: AZ (B)}
               - {group: Security Groups, over: [aza, azb]}   # 두 AZ 위에 띠로 걸친다
 edges:
-  - [users, lb]                                   # 기본 Primary Path
-  - [lb, web1, Secondary Path · 점선]
-  - {from: web1, to: db, style: Primary Path, label: "3306"}
+  - [users, lb]                                   # 기본 Primary · 단방향
+  - [lb, web1, Secondary · 단방향 점선]
+  - {from: web1, to: db, style: Primary · 단방향, label: "3306"}
   - {from: asg, to: obs, exit: bottom, entry: top}
 ```
 
@@ -179,13 +179,16 @@ edges:
 | 노드 | `id`, `icon`(필수), `label`, `w`/`h` |
 | 그룹 | `id`, `group`(필수), `label`, `dir`, `gap`, `pad`, `align`(center/start), `min_w`, `min_h` |
 | 걸치는 그룹 | `over`(형제 id 목록), `inset`(위·오른쪽·아래·왼쪽 파고드는 깊이, 기본 `[44, 24, 24, 24]`) |
-| 엣지 | `from`, `to`, `style`(Arrows 이름, 기본 Primary Path), `label`, `exit`/`entry`(left/right/top/bottom), `extra` |
+| 엣지 | `from`, `to`, `style`(Arrows 이름, 기본 Primary · 단방향), `label`, `exit`/`entry`(left/right/top/bottom), `extra` |
 | 빈 칸 | `{spacer: 60}` |
 | 배치 전용 묶음 | `{stack: row|col, items: [...]}`, `gap`, `pad`, `align` |
 
-연결선은 이미지가 아니라 **엣지 스타일**이다. 18종: Primary Path / Secondary Path
-(각각 기본·점선·양방향·양방향 점선·화살촉 없음·점선+화살촉 없음), Success Status /
-Failure Status (각각 기본·양방향·화살촉 없음).
+연결선은 이미지가 아니라 **엣지 스타일**이다. 24종이고 배포 라이브러리와 같다.
+4색(Primary #555555 / Secondary #999999 / Success #09C72C / Failure #EF0F0F) x
+6변형(단방향 · 단방향 점선 · 양방향 · 양방향 점선 · 선 · 점선).
+
+`Annotations` 팔레트에 단계·문제·개선 번호(각 1~5), 문제/개선 영역, 말풍선, 메모,
+텍스트, 제목, 범례가 있다. 구성도에 설명을 얹을 때 쓴다.
 
 ## 배치 요령
 

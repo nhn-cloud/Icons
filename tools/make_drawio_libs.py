@@ -175,32 +175,35 @@ def container_entry(title, uri, stroke, dashed, badge_center=False, mark=None):
     return out
 
 
-# 엣지 미리보기 크기. 가로 100, 선은 세로 가운데에 둔다(높이 0 이면 패널 썸네일이 찌그러진다).
-EDGE_W, EDGE_H = 100, 20
+# 엣지 미리보기 크기. 배포 라이브러리와 같은 값(가로 160, 선이라 높이는 0).
+EDGE_W, EDGE_H = 160, 0
+
+# 배포 라이브러리 NHNCloud-Arrows.xml 의 스타일 문자열. 한 글자도 바꾸지 않는다.
+EDGE_STYLE = ('edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor={color};'
+              'strokeWidth=1;dashed={dashed};dashPattern=4 3;'
+              'startArrow={start};startFill=1;startSize=6;'
+              'endArrow={end};endFill=1;endSize=6;'
+              # 글자색은 선 색을 따라가지 않고 네 색 모두 #555555 다(배포본 실측).
+              'fontSize=11;fontColor=#555555;labelBackgroundColor=#FFFFFFB3;'
+              'labelPadding=2;sketch=0;shadow=0;glass=0;comic=0;'
+              'fontFamily=Helvetica;fontStyle=0;')
 
 
-def edge_entry(title, color, pattern, ends):
-    """Arrows 팔레트 항목: 도형이 아니라 연결선 스타일 1개.
-
-    PPT 16쪽의 선은 모두 1pt 이고 화살촉은 채운 삼각형(triangle)이다.
-    draw.io 에서는 block + endFill=1 이 같은 모양이다.
-    """
-    arrow = {
-        'forward': 'startArrow=none;startFill=0;endArrow=block;endFill=1;',
-        'both':    'startArrow=block;startFill=1;endArrow=block;endFill=1;',
-        'none':    'startArrow=none;startFill=0;endArrow=none;endFill=0;',
-    }[ends]
-    dash = 'dashed=1;dashPattern=%s;' % pattern if pattern else 'dashed=0;'
-    style = ('edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;jettySize=auto;'
-             'orthogonalLoop=1;labelBackgroundColor=#FFFFFF;fontSize=11;'
-             'strokeColor=%s;strokeWidth=1;%s%s' % (color, dash, arrow))
+def edge_entry(title, color, dashed, ends, tags=None):
+    """Arrows 팔레트 항목: 도형이 아니라 연결선 스타일 1개."""
+    start, end = {'forward': ('none', 'block'),
+                  'both':    ('block', 'block'),
+                  'none':    ('none', 'none')}[ends]
+    style = EDGE_STYLE.format(color=color, dashed=dashed, start=start, end=end)
     cell = ('<mxCell id="2" value="" style="%s" edge="1" parent="1">'
-            '<mxGeometry width="%d" height="%d" relative="1" as="geometry">'
-            '<mxPoint x="0" y="%d" as="sourcePoint"/>'
-            '<mxPoint x="%d" y="%d" as="targetPoint"/>'
-            '</mxGeometry></mxCell>'
-            % (esc(style), EDGE_W, EDGE_H, EDGE_H // 2, EDGE_W, EDGE_H // 2))
-    return {'xml': compress(model(cell)), 'w': EDGE_W, 'h': EDGE_H, 'title': title}
+            '<mxGeometry width="%d" relative="1" as="geometry">'
+            '<mxPoint x="0" y="0" as="sourcePoint"/>'
+            '<mxPoint x="%d" y="0" as="targetPoint"/>'
+            '</mxGeometry></mxCell>' % (esc(style), EDGE_W, EDGE_W))
+    out = {'xml': compress(model(cell)), 'w': EDGE_W, 'h': EDGE_H, 'title': title}
+    if tags:
+        out['tags'] = tags
+    return out
 
 
 def style_entries(path):
@@ -209,15 +212,33 @@ def style_entries(path):
         warnings.append('없음: %s' % path.relative_to(ROOT))
         return []
     data = yaml.safe_load(path.read_text(encoding='utf-8')) or {}
-    patterns = data.get('dash_patterns') or {}
     out = []
     for it in data.get('arrows') or []:
-        dash = it.get('dash', 'solid')
-        if dash not in patterns:
-            warnings.append('%s: 모르는 dash 값 %r' % (it['slug'], dash))
-            continue
         out.append(edge_entry(it.get('name') or it['slug'], it['color'],
-                              patterns[dash], it.get('ends', 'forward')))
+                              int(it.get('dashed', 0)), it.get('ends', 'forward'),
+                              it.get('tags')))
+    return out
+
+
+def raw_entries(pal):
+    """저장해 둔 mxGraphModel 을 그대로 엔트리로.
+
+    Annotations·Templates 는 아이콘이 아니라 draw.io 도형·그림이라 SVG 에서 만들 수
+    없다. 사내 배포 라이브러리에서 풀어 icons/ 에 XML 로 두고 여기서 다시 압축한다.
+    """
+    out = []
+    for it in pal.get('items') or []:
+        src = ICONS / it['src']
+        if not src.exists():
+            warnings.append('없음: %s' % src.relative_to(ROOT))
+            continue
+        e = {'xml': compress(src.read_text(encoding='utf-8').strip()),
+             'w': it['w'], 'h': it['h'], 'title': it.get('name') or it['slug']}
+        if it.get('aspect'):
+            e['aspect'] = it['aspect']
+        if it.get('tags'):
+            e['tags'] = it['tags']
+        out.append(e)
     return out
 
 # ------------------------------------------------------------- compositions
@@ -302,6 +323,8 @@ def build(pal, built):
     if kind == 'styles':
         src = pal.get('source', 'styles.yaml')
         return style_entries(ICONS / src if '/' in src else pal_dir / src)
+    if kind == 'raw':
+        return raw_entries(pal)
     if kind == 'compositions':
         return composition_entries(pal, built)
     if kind == 'groups':

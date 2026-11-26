@@ -392,7 +392,7 @@ function Nd-EdgeCell([int]$i, $e, $lib, $ids) {
     foreach ($k in @('from', 'to')) {
         if (-not $ids.ContainsKey([string]$e[$k])) { Nd-Die "edge 의 $k='$($e[$k])' 인 id 가 없습니다." }
     }
-    $shape = Nd-Find $lib (Nd-Get $e 'style' 'Primary Path') 'arrow'
+    $shape = Nd-Find $lib (Nd-Get $e 'style' 'Primary · 단방향') 'arrow'
     $style = Nd-Attr @(Nd-Cells $shape.xml)[0] 'style'
     $side = @{ left = @(0, 0.5); right = @(1, 0.5); top = @(0.5, 0); bottom = @(0.5, 1) }
     $extra = ''

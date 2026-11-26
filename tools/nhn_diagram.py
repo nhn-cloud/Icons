@@ -22,12 +22,12 @@ YAML/JSON 명세로 구성도를 만듭니다. 아이콘·그룹·화살표 스�
       dir: col                     # 자식 배치 방향
       items: [...]
   edges:
-    - [user, lb]                                    # 기본 Primary Path
-    - [lb, web1, Secondary Path · 점선]
-    - {from: web1, to: db, style: Primary Path, label: "3306"}
+    - [user, lb]                                    # 기본 Primary · 단방향
+    - [lb, web1, Secondary · 단방향 점선]
+    - {from: web1, to: db, style: Primary · 단방향, label: "3306"}
     - {from: asg, to: obs, exit: bottom, entry: top}   # 연결 방향 고정
 
-  edge 옵션: from, to (노드·그룹 id), style(Arrows 팔레트 이름, 기본 Primary Path),
+  edge 옵션: from, to (노드·그룹 id), style(Arrows 팔레트 이름, 기본 Primary · 단방향),
             label, exit/entry(left|right|top|bottom), extra(draw.io 스타일 문자열 추가)
 
   노드 옵션: id, icon(필수), label, w/h(크기 덮어쓰기)
@@ -318,7 +318,7 @@ def edge_cell(i, e, lib, ids):
     for k in ("from", "to"):
         if str(e[k]) not in ids:
             raise SystemExit(f"edge 의 {k}='{e[k]}' 인 id 가 없습니다.")
-    shape = lib.find(e.get("style") or "Primary Path", "arrow")
+    shape = lib.find(e.get("style") or "Primary · 단방향", "arrow")
     style = _attr(_cells(shape["xml"])[0], "style")
     side = {"left": (0, 0.5), "right": (1, 0.5), "top": (0.5, 0), "bottom": (0.5, 1)}
     extra = ""

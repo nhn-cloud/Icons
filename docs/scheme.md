@@ -156,6 +156,11 @@ Instance, VPC, Security Groups 박스도 Groups 팔레트의 Instance Contents, 
 ## 공통 팔레트
 
 **Arrows (2026-11-12 실측으로 교체)**: PPT 16쪽의 연결선 도형을 그대로 엣지 스타일로 등록합니다.
+> [!Note]> **아래는 PPT V2.2 원본 기록입니다.** 현재 Arrows 팔레트는 사내 배포 라이브러리
+> `NHNCloud-Arrows.xml` 의 24종(4색 x 6변형)을 그대로 쓰고 이름도 그쪽을 따릅니다.
+> `Primary Path` -> `Primary · 단방향`, `Primary Path · 화살촉 없음` -> `Primary · 선` 식입니다.
+> 배포본은 네 색 모두 글자색이 #555555 로 고정이고 선 길이는 160 입니다.
+
 원본은 **6종이 아니라 18종**입니다. 슬라이드가 3열(Primary Path / Secondary Path / Success Status) x 6행이고,
 3열만 녹색·빨강이 번갈아 들어가 Success 3종 + Failure 3종이 됩니다. 선 두께는 모두 1pt입니다.
 값은 `icons/01-arrows/styles.yaml` 이 단일 원천이고, `tools/make_drawio_libs.py` 가 `dist/01.xml` 을 만듭니다.

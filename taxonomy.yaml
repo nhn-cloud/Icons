@@ -1,15 +1,18 @@
 # NHN Cloud 아이콘 분류 단일 원천
 #
-# 팔레트는 main 브랜치(github.com/nhn-cloud/Icons)의 아이콘 유형 체계를 따른다.
-#   박스 형태 / 서비스 / 리소스 / 일반  +  Arrows · Extra · Templates
-# 사내 배포 라이브러리(NHNCloud-*.xml)와 같은 구성이다.
+# 팔레트는 사내 배포 라이브러리(NHNCloud-*.xml)와 같은 구성·같은 순서다.
+#   Box Type · Services · Resources · General · Arrows · Annotations · Extra · Templates
+# 앞의 넷은 main 브랜치(github.com/nhn-cloud/Icons)의 아이콘 유형 체계다.
+# Presentation 과 Retired 는 이 저장소에만 있는 팔레트라 뒤에 둔다.
 #
 # icons/ 는 서비스 카테고리(compute·network…)로 두고 팔레트와 1:1 로 맞추지 않는다.
 # 어느 파일을 쓰는지는 항목의 src 가 정한다(icons/ 기준 경로). 카테고리 아이콘처럼
 # 한 파일이 두 팔레트에 들어가는 경우가 있어 디렉터리로는 표현할 수 없다.
 #
-# Annotations(단계·문제·개선·말풍선 22종)는 저장소에 자산이 없어 비어 있다.
-version: 2
+# Annotations 와 Templates 는 아이콘이 아니라 draw.io 도형·그림이라 SVG 에서 만들 수
+# 없다. 배포 라이브러리에서 풀어 icons/annotations · icons/templates 에 XML 로 두고
+# kind: raw 로 다시 압축한다.
+version: 3
 palettes:
   - id: "01-box-type"
     title: "NHN Cloud / Box Type"
@@ -990,7 +993,143 @@ palettes:
     title: "NHN Cloud / Arrows"
     kind: styles
     source: 01-arrows/styles.yaml
-  - id: "06-extra"
+  - id: "06-annotations"
+    title: "NHN Cloud / Annotations"
+    kind: raw
+    items:
+      - slug: step-1
+        name: "Step 1 (단계)"
+        src: annotations/step-1.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 단계 순서 번호 배지 badge"
+      - slug: step-2
+        name: "Step 2 (단계)"
+        src: annotations/step-2.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 단계 순서 번호 배지 badge"
+      - slug: step-3
+        name: "Step 3 (단계)"
+        src: annotations/step-3.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 단계 순서 번호 배지 badge"
+      - slug: step-4
+        name: "Step 4 (단계)"
+        src: annotations/step-4.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 단계 순서 번호 배지 badge"
+      - slug: step-5
+        name: "Step 5 (단계)"
+        src: annotations/step-5.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 단계 순서 번호 배지 badge"
+      - slug: issue-1
+        name: "Issue 1 (문제)"
+        src: annotations/issue-1.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: issue-2
+        name: "Issue 2 (문제)"
+        src: annotations/issue-2.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: issue-3
+        name: "Issue 3 (문제)"
+        src: annotations/issue-3.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: issue-4
+        name: "Issue 4 (문제)"
+        src: annotations/issue-4.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: issue-5
+        name: "Issue 5 (문제)"
+        src: annotations/issue-5.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: improvement-1
+        name: "Improvement 1 (개선)"
+        src: annotations/improvement-1.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: improvement-2
+        name: "Improvement 2 (개선)"
+        src: annotations/improvement-2.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: improvement-3
+        name: "Improvement 3 (개선)"
+        src: annotations/improvement-3.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: improvement-4
+        name: "Improvement 4 (개선)"
+        src: annotations/improvement-4.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: improvement-5
+        name: "Improvement 5 (개선)"
+        src: annotations/improvement-5.xml
+        w: 24
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: issue-area
+        name: "Issue Area (문제 영역)"
+        src: annotations/issue-area.xml
+        w: 200
+        h: 120
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 문제 번호 배지 badge"
+      - slug: improvement-area
+        name: "Improvement Area (개선 영역)"
+        src: annotations/improvement-area.xml
+        w: 200
+        h: 120
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 개선 번호 배지 badge"
+      - slug: callout
+        name: "Callout (설명 말풍선)"
+        src: annotations/callout.xml
+        w: 180
+        h: 70
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 말풍선 설명"
+      - slug: note
+        name: "Note (메모)"
+        src: annotations/note.xml
+        w: 160
+        h: 80
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 메모"
+      - slug: text
+        name: "Text (텍스트)"
+        src: annotations/text.xml
+        w: 120
+        h: 24
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 텍스트 글자"
+      - slug: title
+        name: "Title (제목)"
+        src: annotations/title.xml
+        w: 360
+        h: 56
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 제목"
+      - slug: legend
+        name: "Legend (범례)"
+        src: annotations/legend.xml
+        w: 220
+        h: 208
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 범례"
+  - id: "07-extra"
     title: "NHN Cloud / Extra"
     kind: flat
     icons:
@@ -1198,23 +1337,71 @@ palettes:
       - slug: ic-general-users
         name: "Users"
         src: 02-general/ic-general-users.svg
-  - id: "07-templates"
+  - id: "08-templates"
     title: "NHN Cloud / Templates"
-    kind: compositions
-    compositions:
-      - slug: nhn-cloud-groups-blank
-        name: "NHN Cloud Groups Blank"
-        src: 06-architecture/compositions/nhn-cloud-groups-blank.yaml
+    kind: raw
+    items:
+      - slug: groups-blank
+        name: "Groups Blank"
+        src: templates/groups-blank.xml
+        w: 842
+        h: 455
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 빈 틀"
       - slug: external-links-blank
         name: "External Links Blank"
-        src: 06-architecture/compositions/external-links-blank.yaml
+        src: templates/external-links-blank.xml
+        w: 940
+        h: 455
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 빈 틀"
       - slug: rds-for-mysql-multi-region-ha
         name: "RDS for MySQL Multi-Region HA"
-        src: 06-architecture/compositions/rds-for-mysql-multi-region-ha.yaml
+        src: templates/rds-for-mysql-multi-region-ha.xml
+        w: 940
+        h: 455
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 리전 지역 mysql 마이에스큐엘 데이터베이스 db 디비 관계형 멀티리전 다중 이중화 고가용성"
       - slug: webapp-multi-region-ha
         name: "Webapp Multi-Region HA"
-        src: 06-architecture/compositions/webapp-multi-region-ha.yaml
-  - id: "08-presentation"
+        src: templates/webapp-multi-region-ha.xml
+        w: 940
+        h: 455
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 리전 지역 멀티리전 다중 이중화 고가용성"
+      - slug: three-tier-web-service
+        name: "3-Tier 웹 서비스"
+        src: templates/three-tier-web-service.xml
+        w: 900
+        h: 620
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 3티어 쓰리티어 웹서비스"
+      - slug: bundle-lb-auto-scaling
+        name: "묶음 · LB + Auto Scaling"
+        src: templates/bundle-lb-auto-scaling.xml
+        w: 310
+        h: 290
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 로드밸런서 오토스케일"
+      - slug: bundle-rds-ha
+        name: "묶음 · RDS 이중화"
+        src: templates/bundle-rds-ha.xml
+        w: 280
+        h: 200
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 데이터베이스 db 디비 관계형"
+      - slug: bundle-easycache-replication
+        name: "묶음 · EasyCache 복제"
+        src: templates/bundle-easycache-replication.xml
+        w: 280
+        h: 200
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 이지캐시 캐시 redis 레디스"
+      - slug: bundle-public-private-subnet
+        name: "묶음 · Public/Private subnet"
+        src: templates/bundle-public-private-subnet.xml
+        w: 560
+        h: 290
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 프라이빗 서브넷 사설"
+      - slug: bundle-hybrid-vpn
+        name: "묶음 · 하이브리드 VPN"
+        src: templates/bundle-hybrid-vpn.xml
+        w: 560
+        h: 230
+        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도"
+  - id: "09-presentation"
     title: "NHN Cloud / Presentation"
     kind: flat
     icons:
@@ -1254,7 +1441,7 @@ palettes:
       - slug: ic-presentation-internet
         name: "Web Globe"
         src: 29-presentation/ic-presentation-internet.svg
-  - id: "09-retired"
+  - id: "10-retired"
     title: "NHN Cloud / Retired"
     kind: flat
     icons:

@@ -9,7 +9,7 @@
   .\drawio_edit.ps1 FILE list                      # 현재 도형·연결 목록 (id 포함)
   .\drawio_edit.ps1 FILE add -Icon "RDS Instance" -Label Replica2 -Below db2
   .\drawio_edit.ps1 FILE add -Group Subnet -Label "Private Subnet (Cache)" -Into vpc
-  .\drawio_edit.ps1 FILE edge -From web1 -To db3 -Style "Primary Path · 점선" -Label 3306
+  .\drawio_edit.ps1 FILE edge -From web1 -To db3 -Style "Primary · 단방향 점선" -Label 3306
   .\drawio_edit.ps1 FILE relabel db2 "Replica (읽기 전용)"
   .\drawio_edit.ps1 FILE remove db3                # 딸린 연결선도 함께 지움
 
@@ -258,7 +258,7 @@ function Ed-CmdAdd($model, $library) {
 
 function Ed-CmdEdge($model, $library) {
     foreach ($cid in @($From, $To)) { [void](Ed-FindCell $model $cid) }
-    $shape = Nd-Find $library $(if ($Style) { $Style } else { 'Primary Path' }) 'arrow'
+    $shape = Nd-Find $library $(if ($Style) { $Style } else { 'Primary · 단방향' }) 'arrow'
     $style = Nd-Attr @(Nd-Cells $shape.xml)[0] 'style'
     $side = @{ left = @(0, 0.5); right = @(1, 0.5); top = @(0.5, 0); bottom = @(0.5, 1) }
     foreach ($pair in @(@('exit', $Exit), @('entry', $Entry))) {

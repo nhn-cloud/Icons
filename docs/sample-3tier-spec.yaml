@@ -49,5 +49,5 @@ edges:
   - [igw, lb]
   - {from: lb, to: asg, label: HTTP}
   - {from: asg, to: db1, label: "3306"}
-  - {from: db1, to: db2, style: Secondary Path · 점선, label: Replication}
-  - {from: asg, to: obs, style: Secondary Path · 점선, exit: top, entry: left}
+  - {from: db1, to: db2, style: Secondary · 단방향 점선, label: Replication}
+  - {from: asg, to: obs, style: Secondary · 단방향 점선, exit: top, entry: left}

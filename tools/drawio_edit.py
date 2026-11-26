@@ -9,7 +9,7 @@
   python drawio_edit.py FILE list                      # 현재 도형·연결 목록 (id 포함)
   python drawio_edit.py FILE add --icon "RDS Instance" --label Replica2 --below db2
   python drawio_edit.py FILE add --group Subnet --label "Private Subnet (Cache)" --into vpc
-  python drawio_edit.py FILE edge --from web1 --to db3 --style "Primary Path · 점선" --label 3306
+  python drawio_edit.py FILE edge --from web1 --to db3 --style "Primary · 단방향 점선" --label 3306
   python drawio_edit.py FILE relabel db2 "Replica (읽기 전용)"
   python drawio_edit.py FILE remove db3                # 딸린 연결선도 함께 지움
 
@@ -201,7 +201,7 @@ def cmd_add(model, lib, args):
 def cmd_edge(model, lib, args):
     for cid in (getattr(args, "from"), args.to):
         find_cell(model, cid)
-    shape = lib.find(args.style or "Primary Path", "arrow")
+    shape = lib.find(args.style or "Primary · 단방향", "arrow")
     style = nd._attr(nd._cells(shape["xml"])[0], "style")
     side = {"left": (0, 0.5), "right": (1, 0.5), "top": (0.5, 0), "bottom": (0.5, 1)}
     for key, pre in (("exit", "exit"), ("entry", "entry")):
