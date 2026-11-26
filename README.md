@@ -66,6 +66,7 @@ draw.io 배포 링크는 **하나**입니다: <https://nhn-cloud.github.io/Icons
 | 조건 | 충족 방법 |
 | --- | --- |
 | 단일 URL | `index.html` 배포 페이지 1개 |
+| 어떤 아이콘이 있는지 훑어보기 | `gallery.html` 카탈로그 — 설정이 끝난 사람은 배포 주소가 여기로 들어감 |
 | 다시 열어도 팔레트 접힘 | 설정 `expandLibraries: false` (URL 파라미터로는 줄 수 없는 값) |
 | 내보내기·클라우드 저장 유지 | 공식 app.diagrams.net 을 그대로 사용 |
 | GitHub 원본 | 라이브러리는 `dist/*.xml` 을 raw URL 로 직접 읽음 |
@@ -78,7 +79,25 @@ draw.io 배포 링크는 **하나**입니다: <https://nhn-cloud.github.io/Icons
 python tools/make_config_link.py --write-index                 # index.html 생성 (main 브랜치)
 python tools/make_config_link.py --write-index --branch draft  # 브랜치 지정
 python tools/make_config_link.py                               # 설정 JSON 과 링크만 출력
+python tools/make_gallery.py                                   # gallery.html 생성
 ```
+
+### 아이콘 카탈로그 (`gallery.html`)
+
+팔레트를 설치해도 **어떤 아이콘이 있는지는 안 보입니다.** draw.io 의 도형 검색은
+이름을 이미 알 때만 쓸모가 있어서, Figma 의 `flat icon` 페이지처럼 전부 펼쳐 놓은
+화면을 따로 둡니다. 도형 1개가 타일 1개이고 셋을 할 수 있습니다.
+
+| 동작 | 결과 | 언제 쓰나 |
+| --- | --- | --- |
+| 아이콘 클릭 | draw.io 새 탭에 그 도형 하나를 올린 새 그림이 열림 | 아이콘 하나로 그림을 시작할 때 |
+| 복사 | `mxGraphModel` XML 을 클립보드에 넣음 | **편집 중인 그림에 Ctrl+V** — 실제로 제일 많이 씀 |
+| SVG | 원본 SVG 내려받기 | PPT·문서에 넣을 때 |
+
+클릭이 열리는 원리는 `drawio_open.py` 와 같습니다. draw.io 는 URL 조각 `#R<데이터>` 에
+담긴 도형을 그대로 읽고, 조각은 서버로 가지 않아 사내 프록시를 타지 않습니다.
+SVG 가 base64 로 박혀 있어 **팔레트를 설치하지 않은 브라우저에서도 그려집니다.**
+`dist/` 를 고치면 `make_gallery.py` 를 다시 돌려야 카탈로그가 따라옵니다.
 
 ### 사용자 동작
 
@@ -86,7 +105,7 @@ python tools/make_config_link.py                               # 설정 JSON 과
 - 팔레트는 **+ 그 외 도형** 창 맨 위 'NHN Cloud' 항목으로 켜고 끕니다. 내장 팔레트(AWS 등)도 같은 창에서 켜고 끕니다.
 - 검색창에 아이콘 이름(예: `Gamebase`, `Auto Scale`)을 넣으면 NHN Cloud 아이콘도 검색됩니다. `Instance`, `Load Balancer` 처럼 흔한 단어는 draw.io 내장 도형·타사 클라우드 아이콘이 먼저 나옵니다.
 - **NHN Cloud 아이콘만 보려면 검색어 앞에 `nhn` 을 붙이세요.** 예: `nhn load balancer`, `nhn instance`. 모든 NHN Cloud 아이콘에 `nhn` 검색 태그가 들어 있습니다.
-- **다음부터는** 같은 주소를 열면 확인 없이 바로 draw.io 로 이동합니다. 아무 파라미터 없는 app.diagrams.net 을 열어도 팔레트가 그대로 있습니다.
+- **다음부터는** 같은 주소를 열면 확인 없이 바로 아이콘 카탈로그로 들어갑니다. 아무 파라미터 없는 app.diagrams.net 을 열어도 팔레트가 그대로 있습니다.
 - 팔레트가 보이지 않으면 `https://nhn-cloud.github.io/Icons/?setup` 으로 다시 설정합니다.
 
 ### 동작 원리

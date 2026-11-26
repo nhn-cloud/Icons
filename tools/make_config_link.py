@@ -41,8 +41,11 @@ draw.io 는 #_CONFIG_ 링크를 열 때마다 확인 창을 2번 띄운다. 매�
 배포 페이지가 자기 도메인 localStorage 에 적용한 version 을 기억한다.
 
   처음 방문 또는 version 이 바뀜  -> 설정 링크로 이동 (확인 2회)
-  이미 적용됨                     -> app.diagrams.net 으로 바로 이동
+  이미 적용됨                     -> gallery.html (아이콘 카탈로그) 로 이동
   주소 뒤에 ?setup               -> 무조건 설정 링크로 이동 (팔레트가 안 보일 때)
+
+설정이 끝난 사람에게 app.diagrams.net 을 바로 띄우면 빈 편집기만 남는다. 어떤 아이콘이
+있는지 훑어볼 데가 필요하므로 카탈로그로 보낸다. 카탈로그에 'draw.io 열기' 가 있다.
 """
 import base64
 import hashlib
@@ -155,11 +158,13 @@ INDEX = """<!doctype html>
   p.sub{color:#666;font-size:13px}
 </style>
 <h1>NHN Cloud 아이콘 라이브러리</h1>
-<p id="msg">draw.io 로 이동하는 중입니다.</p>
-<p><a id="go" href="__EDITOR__">draw.io 열기</a> ·
+<p id="msg">이동하는 중입니다.</p>
+<p><a id="cat" href="gallery.html">아이콘 카탈로그</a> ·
+   <a id="go" href="__EDITOR__">draw.io 열기</a> ·
    <a id="setup" href="__LINK__">팔레트 다시 설정</a></p>
 <p class="sub">처음 열 때 draw.io 가 설정 적용 여부를 두 번 묻습니다. 두 번 모두 <b>확인</b>을 누르세요.
 팔레트 __N__개가 접힌 상태로 왼쪽 도형 패널에 추가됩니다.<br>
+설정이 끝난 뒤부터는 이 주소가 <b>아이콘 카탈로그</b>로 바로 들어갑니다.<br>
 팔레트가 보이지 않으면 이 주소 뒤에 <code>?setup</code> 을 붙여 다시 여세요.<br>
 원본 저장소: <a href="https://github.com/__REPO__">github.com/__REPO__</a></p>
 <script>
@@ -167,7 +172,7 @@ INDEX = """<!doctype html>
   var VERSION = '__VERSION__';
   var KEY = 'nhncloud-drawio-config';
   var setupUrl = document.getElementById('setup').href;
-  var editorUrl = document.getElementById('go').href;
+  var catalogUrl = document.getElementById('cat').href;
   var applied = null;
   try { applied = localStorage.getItem(KEY); } catch (e) {}
   var force = /(^|[?&])setup\\b/.test(location.search);
@@ -176,7 +181,7 @@ INDEX = """<!doctype html>
     try { localStorage.setItem(KEY, VERSION); } catch (e) {}
     location.replace(setupUrl);
   } else {
-    location.replace(editorUrl);
+    location.replace(catalogUrl);
   }
 })();
 </script>
