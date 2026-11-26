@@ -19,16 +19,43 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 | `docs/` | 분류 체계 문서와 샘플 구성도 |
 | `assets/pptx/` | 아키텍처 아이콘 PPT |
 
+### 팔레트 구성
+
+팔레트는 **`main` 브랜치의 아이콘 유형 체계**를 따릅니다. 사내 배포 라이브러리
+(`NHNCloud-*.xml`)와 같은 구성입니다.
+
+| # | 팔레트 | 담긴 것 | 개수 |
+| --- | --- | --- | --- |
+| 01 | Box Type | 그룹 컨테이너 + 서비스마다의 박스 | 134 |
+| 02 | Services | 서비스 아이콘 | 119 |
+| 03 | Resources | 서비스에 딸린 리소스 아이콘 | 35 |
+| 04 | General | 일반 아이콘 (`main` 의 general_icons 30종) | 30 |
+| 05 | Arrows | 연결선 스타일 | 18 |
+| 06 | Extra | 계정·장비·문서 등 + 카테고리 아이콘 | 68 |
+| 07 | Templates | 예시 구성도 (끌어다 놓으면 통째로 들어감) | 4 |
+| 08 | Presentation | 제안서 보조용 flat 아이콘 | 12 |
+| 09 | Retired | 홈페이지에서 빠지거나 개명된 아이콘 | 15 |
+
+> [!Note]> 배포 라이브러리에는 **Annotations**(단계·문제·개선·말풍선 22종)가 더 있습니다.
+> 저장소에 해당 자산이 없어 이 팔레트는 비어 있습니다.
+
 ### icons/ 구성
 
+`icons/` 는 **자산 원본 트리**이고 팔레트와 1:1 이 아닙니다. 서비스 카테고리로 묶여
+있어 홈페이지 메뉴와 대조하기 쉽고, 어느 파일이 어느 팔레트에 들어가는지는
+`taxonomy.yaml` 각 항목의 `src` 가 정합니다. 카테고리 아이콘처럼 **한 파일이 두
+팔레트에 들어가는 경우**(General 과 Extra)가 있어 디렉터리로는 표현할 수 없습니다.
+
 ```
-01-arrows        엣지 스타일 18종 (SVG 없음, styles.yaml)
-02-general       일반 리소스          03-industry   산업·개념
-04-identity      계정·역할            05-groups     그룹 컨테이너 + 서비스 박스
-06-architecture  예시 구성도 4건 (PPT 10~13쪽). 아이콘이 아니라 구성도 1개가 엔트리 1개
-07-compute … 28-governance-audit      서비스 카테고리 22개 (홈페이지 메뉴 순)
-29-presentation  제안서·구성도 보조용 flat 아이콘 (Figma `flat icon` 출처)
-30-retired       홈페이지에서 빠지거나 개명된 아이콘
+01-arrows        엣지 스타일 18종 (SVG 없음, styles.yaml)   -> Arrows
+02-general       일반 리소스          03-industry   산업·개념   -> General · Extra
+04-identity      계정·역할                                      -> Extra
+05-groups        그룹 컨테이너                                  -> Box Type
+06-architecture  예시 구성도 4건 (PPT 10~13쪽)                   -> Templates
+07-compute … 28-governance-audit      서비스 카테고리 22개       -> Services · Resources
+                 (각 디렉터리의 category/ 는 Extra 와 General 양쪽으로)
+29-presentation  제안서·구성도 보조용 flat 아이콘 (Figma 출처)   -> Presentation
+30-retired       홈페이지에서 빠지거나 개명된 아이콘             -> Retired
 ```
 
 각 카테고리 디렉터리는 `category/`, `services/`, `resources/`로 나뉩니다. 리소스는 해당되는 8개 카테고리에만 있습니다.

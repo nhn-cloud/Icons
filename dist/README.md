@@ -10,13 +10,13 @@ python tools/make_drawio_libs.py --dry-run   # 쓰지 않고 점검만
 생성물이지만 커밋합니다. draw.io `clibs` 링크가 GitHub raw URL 을 직접 읽기 때문에
 저장소에 파일이 있어야 배포가 됩니다.
 
-팔레트 1개 = XML 1개, 전부 30개입니다. 컬러 SVG 만 제공하므로 테마 구분이 없습니다.
+팔레트 1개 = XML 1개, 전부 9개입니다. 구성은 `main` 브랜치의 아이콘 유형 체계를 따릅니다. 컬러 SVG 만 제공하므로 테마 구분이 없습니다.
 
-`06.xml`(Architecture)만 아이콘이 아니라 **구성도 1개가 엔트리 1개**입니다.
+`07.xml`(Templates)만 아이콘이 아니라 **구성도 1개가 엔트리 1개**입니다.
 `icons/06-architecture/compositions/*.yaml` 명세를 `tools/nhn_diagram.py` 의
 레이아웃으로 펼쳐 만들며, 끌어다 놓으면 그룹 박스·아이콘·연결선이 한꺼번에 들어갑니다.
 
-파일명은 팔레트 번호 두 자리입니다(`02.xml`). `clibs` 배포 링크에 30개 URL 이 들어가므로
+파일명은 팔레트 번호 두 자리입니다(`02.xml`). `clibs` 배포 링크에 9개 URL 이 들어가므로
 파일명 1자가 링크 25자로 불어나기 때문입니다. draw.io 패널에 보이는 이름은 파일명이 아니라
 XML 의 `title` 속성(`<mxlibrary title="NHN Cloud / Database">`)이 정합니다.
 서비스 아이콘 64px, 리소스 아이콘 48px, 그룹 컨테이너와 서비스 박스는

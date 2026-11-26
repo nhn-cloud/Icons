@@ -125,7 +125,7 @@ def icon_entry(title, uri, w, h, size):
             'aspect': 'fixed', 'title': title}
 
 
-def container_entry(title, uri, stroke, dashed, badge_center=False):
+def container_entry(title, uri, stroke, dashed, badge_center=False, mark=None):
     """그룹 컨테이너·서비스 박스: 크기 조절되는 컨테이너 + 모서리 아이콘.
 
     AWS 그룹 도형(aws-sample-groups.svg)에서 실측한 비율을 따른다.
@@ -166,7 +166,13 @@ def container_entry(title, uri, stroke, dashed, badge_center=False):
         cells += ('<mxCell id="3" value="" style="%s" vertex="1" parent="2">'
                   '<mxGeometry x="%d" y="0" width="%d" height="%d" as="geometry"/></mxCell>'
                   % (esc(badge), bx, BADGE, BADGE))
-    return {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
+    out = {'xml': compress(model(cells)), 'w': gw, 'h': gh, 'title': title}
+    # Box Type 에는 그룹 컨테이너와 서비스 박스가 같은 이름으로 들어간다(VPC, Security
+    # Groups 등). 구성도 생성기가 group: 을 서비스 박스로 잘못 집지 않도록 표시해 둔다.
+    # draw.io 는 모르는 키를 무시한다.
+    if mark:
+        out['k'] = mark
+    return out
 
 
 # 엣지 미리보기 크기. 가로 100, 선은 세로 가운데에 둔다(높이 0 이면 패널 썸네일이 찌그러진다).
@@ -230,11 +236,11 @@ def composition_entries(pal, built):
         for e in entries:
             shapes.append({'palette': palette, 'no': int(pid.split('-')[0]),
                            'title': e['title'], 'w': e.get('w'), 'h': e.get('h'),
-                           'xml': nd._decode(e['xml'])})
+                           'k': e.get('k'), 'xml': nd._decode(e['xml'])})
     lib = nd.Library(shapes)
     out = []
     for it in pal.get('compositions') or []:
-        src = ICONS / pal['id'] / 'compositions' / (it['slug'] + '.yaml')
+        src = (ICONS / it['src']) if it.get('src') else               (ICONS / pal['id'] / 'compositions' / (it['slug'] + '.yaml'))
         if not src.exists():
             warnings.append('없음: %s' % src.relative_to(ROOT))
             continue
@@ -248,9 +254,17 @@ def composition_entries(pal, built):
 
 # ---------------------------------------------------------------- collect
 
-def asset_path(pal_dir, sub, slug):
+def asset_path(pal_dir, sub, item):
+    """자산 경로. `src` 가 있으면 icons/ 기준 경로로 본다.
+
+    팔레트는 아이콘 유형(Services·Resources·General…)으로 묶고, icons/ 는 서비스
+    카테고리(compute·network…)로 두기 때문에 둘이 1:1 이 아니다. 같은 파일이 두
+    팔레트에 들어가기도 한다(카테고리 아이콘은 General 과 Extra 양쪽).
+    """
+    if item.get('src'):
+        return ICONS / item['src']
     d = (pal_dir / sub) if sub else pal_dir
-    return d / (slug + '.svg')
+    return d / (item['slug'] + '.svg')
 
 
 def add(entries, pal_dir, sub, item, kind, cat=None):
@@ -262,9 +276,9 @@ def add(entries, pal_dir, sub, item, kind, cat=None):
     if kind == 'container' and item.get('icon') is False:
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
         entries.append(container_entry(title, None, stroke, dashed,
-                                       slug in BADGE_TOP_CENTER))
+                                       slug in BADGE_TOP_CENTER, mark='g'))
         return
-    p = asset_path(pal_dir, sub, slug)
+    p = asset_path(pal_dir, sub, item)
     if not p.exists():
         warnings.append('없음: %s' % p.relative_to(ROOT))
         return
@@ -272,9 +286,9 @@ def add(entries, pal_dir, sub, item, kind, cat=None):
     if kind == 'container':
         stroke, dashed = GROUP_STYLE.get(slug, BOX_STYLE)
         entries.append(container_entry(title, uri, stroke, dashed,
-                                       slug in BADGE_TOP_CENTER))
+                                       slug in BADGE_TOP_CENTER, mark='g'))
     elif kind == 'box':
-        entries.append(container_entry(title, uri, *BOX_STYLE))
+        entries.append(container_entry(title, uri, *BOX_STYLE, mark='b'))
     else:
         size = SIZE_RESOURCE if kind == 'resource' else SIZE_FLAT
         entries.append(icon_entry(title, uri, w, h, size))
@@ -286,7 +300,8 @@ def build(pal, built):
     e = []
     kind = pal.get('kind')
     if kind == 'styles':
-        return style_entries(pal_dir / pal.get('source', 'styles.yaml'))
+        src = pal.get('source', 'styles.yaml')
+        return style_entries(ICONS / src if '/' in src else pal_dir / src)
     if kind == 'compositions':
         return composition_entries(pal, built)
     if kind == 'groups':

@@ -102,12 +102,13 @@ function Nd-LoadLibrary([string]$src) {
         $palette = $m.Groups[1].Value.Replace('&amp;', '&').Replace('NHN Cloud / ', '')
         $entries = $m.Groups[2].Value | ConvertFrom-Json
         foreach ($e in $entries) {
-            $w = $null; $h = $null
+            $w = $null; $h = $null; $k = $null
             if ($e.PSObject.Properties.Match('w').Count -gt 0) { $w = $e.w }
             if ($e.PSObject.Properties.Match('h').Count -gt 0) { $h = $e.h }
+            if ($e.PSObject.Properties.Match('k').Count -gt 0) { $k = $e.k }
             [void]$shapes.Add([pscustomobject]@{
                 palette = $palette; no = $i; title = $e.title
-                w = $w; h = $h; xml = (Nd-DecodeEntry $e.xml)
+                w = $w; h = $h; k = $k; xml = (Nd-DecodeEntry $e.xml)
             })
         }
     }
@@ -131,11 +132,13 @@ function Nd-Find($lib, [string]$name, [string]$kind) {
     $cands = @()
     if ($lib.by.ContainsKey($key)) { $cands = @($lib.by[$key]) }
     if ($kind -eq 'group') {
-        $cands = @($cands | Where-Object { $_.palette -eq 'Groups' })
+        $cands = @($cands | Where-Object { $_.palette -eq 'Box Type' -or $_.palette -eq 'Groups' })
+        $grp = @($cands | Where-Object { $_.k -eq 'g' })
+        if ($grp.Count -gt 0) { $cands = $grp }
     } elseif ($kind -eq 'arrow') {
         $cands = @($cands | Where-Object { $_.palette -eq 'Arrows' })
     } elseif ($kind -eq 'icon') {
-        $cands = @($cands | Where-Object { $_.palette -ne 'Groups' -and $_.palette -ne 'Arrows' })
+        $cands = @($cands | Where-Object { $_.palette -ne 'Box Type' -and $_.palette -ne 'Groups' -and $_.palette -ne 'Arrows' })
         $live = @($cands | Where-Object { $_.palette -ne 'Retired' })
         if ($live.Count -gt 0) { $cands = $live }
     }

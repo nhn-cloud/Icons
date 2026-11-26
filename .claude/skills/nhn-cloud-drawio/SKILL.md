@@ -19,7 +19,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 
 | 도구 | 용도 |
 | --- | --- |
-| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (309개) |
+| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (435개) |
 | `python tools/nhn_diagram.py spec.yaml out.drawio` | 명세 → .drawio **최초 생성** |
 | `python tools/drawio_edit.py out.drawio ...` | 이미 있는 .drawio **제자리 수정** |
 | `python tools/drawio_open.py out.drawio` | 브라우저 draw.io 로 열기 |
@@ -71,7 +71,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 요청이 PPT 예시 구성도(멀티 리전 HA, 외부 연동 등)와 비슷하면 **빈 명세부터 쓰지 말고**
 `icons/06-architecture/compositions/*.yaml` 중 가까운 것을 복사해 고친다. 4종이 있다:
 `nhn-cloud-groups-blank` · `external-links-blank` · `rds-for-mysql-multi-region-ha` ·
-`webapp-multi-region-ha`. 같은 그림이 팔레트 `06 Architecture` 에도 통째로 올라가 있어
+`webapp-multi-region-ha`. 같은 그림이 팔레트 `07 Templates` 에도 통째로 올라가 있어
 draw.io 에서 끌어다 놓고 고쳐도 된다.
 
 ### 2. 아이콘 이름 조회 — 건너뛰지 않는다
@@ -80,17 +80,18 @@ draw.io 에서 끌어다 놓고 고쳐도 된다.
 
 ```bash
 python tools/nhn_diagram.py --list 로드밸런        # 한글/영문 부분 일치, 대소문자·공백·하이픈 무시
-python tools/nhn_diagram.py --list groups          # 그룹 박스 17종
+python tools/nhn_diagram.py --list "box type"      # 그룹 박스 + 서비스 박스 134종
 python tools/nhn_diagram.py --list arrows          # 연결선 18종
-python tools/nhn_diagram.py --list architecture    # PPT 예시 구성도 4종
+python tools/nhn_diagram.py --list templates       # PPT 예시 구성도 4종
 ```
 
 - 못 찾으면 생성기가 비슷한 이름을 알려 준다. 그래도 없으면 **임의로 다른 아이콘을 대체하지 말고**
   사용자에게 "라이브러리에 없다. 무엇으로 대체할까" 하고 묻는다.
-- 같은 이름이 여러 팔레트에 있으면 `"Container/Image"` 처럼 `팔레트/이름` 으로 적는다.
-  실제 충돌은 `Image`(Compute·Container), `Notification`(Monitoring·Notification),
-  `Container`(Container·Storage) 세 건이다. `Security Groups`·`VPC` 처럼 그룹과 아이콘에
-  같은 이름이 있는 경우는 `group:`·`icon:` 자리로 구분되니 이름만 써도 된다.
+- 같은 이름이 여러 팔레트에 있으면 `"General/Notification"` 처럼 `팔레트/이름` 으로 적는다.
+  실제 충돌은 `Notification`(General·Resources) 한 건뿐이다.
+- 서비스는 아이콘(`Services`)과 박스(`Box Type`)로 둘 다 있고 이름이 같다. `icon:` 은
+  아이콘을, `group:` 은 그룹 컨테이너를 집으므로 이름만 써도 된다. 박스 형태로 쓰고
+  싶으면 `"Box Type/Load Balancer"` 처럼 적는다.
 
 ### 3. 명세 작성 → 사용자 확인
 
@@ -105,7 +106,7 @@ python tools/drawio_open.py out.drawio
 ```
 
 `drawio_open.py` 는 `out.open.html` 리다이렉트 파일을 만들고 기본 브라우저로 draw.io 를 띄운다
-(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 30개가 붙어 있으면
+(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 9개가 붙어 있으면
 그 자리에서 아이콘을 더 끌어다 쓸 수 있다.
 
 처음 쓰는 브라우저는 왼쪽 도형 패널에 팔레트가 없다. 그때는 <https://nhn-cloud.github.io/Icons/>
@@ -154,7 +155,7 @@ title: 3-Tier Web Service on NHN Cloud   # 선택. 왼쪽 위 제목
 dir: row                                  # 최상위 배치 방향 row | col (기본·권장 row — 가로형)
 items:
   - {id: users, icon: Users, label: 사용자}
-  - group: Region                         # Groups 팔레트 이름
+  - group: Region                         # Box Type 팔레트 이름
     label: KR1 (판교)                      # 생략 시 그룹 이름이 레이블
     dir: row
     items:

@@ -90,11 +90,18 @@ def thumb(model, composition=False):
                 '<rect x="35" y="34" width="16" height="12" fill="#B0C4E8"/>'
                 '<path d="M25 22H35M25 40H35M17 28V34M43 28V34" stroke="#999"/></svg>')
     m = IMAGE.search(model)
-    if m:
-        return '<img loading="lazy" src="data:image/svg+xml;base64,%s" alt="">' % m.group(1)
     sc = STROKE.search(model)
     color = sc.group(1) if sc and sc.group(1) != 'none' else '#999999'
     dash = ' stroke-dasharray="6 3"' if 'dashed=1' in model else ''
+    if 'container=1' in model:
+        # 박스 형태는 아이콘만 보여 주면 Services 팔레트와 구분이 안 된다.
+        # 실제 모양대로 테두리를 그리고 모서리 아이콘을 작게 얹는다.
+        badge = ('<image href="data:image/svg+xml;base64,%s" x="7" y="13" width="13" height="13"/>'
+                 % m.group(1)) if m else ''
+        return ('<svg viewBox="0 0 60 60"><rect x="4" y="11" width="52" height="38" fill="none" '
+                'stroke="%s" stroke-width="2"%s/>%s</svg>' % (color, dash, badge))
+    if m:
+        return '<img loading="lazy" src="data:image/svg+xml;base64,%s" alt="">' % m.group(1)
     if 'edge="1"' in model:
         return ('<svg viewBox="0 0 60 60"><path d="M4 30H50" stroke="%s" stroke-width="2"%s/>'
                 '<path d="M50 26L57 30L50 34Z" fill="%s"/></svg>' % (color, dash, color))

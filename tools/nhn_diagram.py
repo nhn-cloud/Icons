@@ -83,7 +83,8 @@ def load_library(src):
         palette = m.group(1).replace("&amp;", "&").replace("NHN Cloud / ", "")
         for e in json.loads(m.group(2)):
             shapes.append({"palette": palette, "no": i, "title": e["title"],
-                           "w": e.get("w"), "h": e.get("h"), "xml": _decode(e["xml"])})
+                           "w": e.get("w"), "h": e.get("h"), "k": e.get("k"),
+                           "xml": _decode(e["xml"])})
     if not shapes:
         sys.exit(f"라이브러리를 찾지 못했습니다: {src}")
     return shapes
@@ -98,12 +99,18 @@ class Library:
 
     def find(self, name, kind=None):
         cands = self.by.get(_norm(name), [])
+        # 팔레트 이름은 main 브랜치 체계를 따라 Groups -> Box Type 으로 바뀌었다.
+        # 옛 이름도 받아 둔다(예전 dist 를 내려받아 쓰는 경우).
+        BOXES = ("Box Type", "Groups")
         if kind == "group":
-            cands = [c for c in cands if c["palette"] == "Groups"]
+            cands = [c for c in cands if c["palette"] in BOXES]
+            # 같은 이름의 서비스 박스가 아니라 그룹 컨테이너를 집는다.
+            cands = [c for c in cands if c.get("k") == "g"] or cands
         elif kind == "arrow":
             cands = [c for c in cands if c["palette"] == "Arrows"]
         elif kind == "icon":
-            cands = [c for c in cands if c["palette"] not in ("Groups", "Arrows")]
+            # Box Type 에는 서비스 아이콘과 같은 이름의 박스가 들어 있어 빼야 한다.
+            cands = [c for c in cands if c["palette"] not in BOXES + ("Arrows",)]
             # Retired 는 다른 후보가 있으면 뒤로
             live = [c for c in cands if c["palette"] != "Retired"]
             cands = live or cands
