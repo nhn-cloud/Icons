@@ -124,6 +124,9 @@ def build():
                 'url': EDITOR + '?title=' + urllib.parse.quote(name) + '#R'
                        + urllib.parse.quote(encode(model)),
                 'xml': model,
+                'w': e.get('w') or 64,
+                'h': e.get('h') or 64,
+                'aspect': e.get('aspect') or '',
                 'svg': srcs.get((title, name)),
             })
             total += 1
@@ -135,18 +138,24 @@ def build():
                     % (html.escape(pal['title']), len(pal['tiles'])))
         for t in pal['tiles']:
             svg_link = ('<a href="%s" download>SVG</a>' % html.escape(t['svg'])) if t['svg'] else ''
-            # XML 은 버튼 속성에 담는다. <script> 안에 넣으면 그 안의 텍스트는 원시 텍스트라
+            # XML 은 속성에 담는다. <script> 안에 넣으면 그 안의 텍스트는 원시 텍스트라
             # 파서가 실체 참조를 되돌리지 않아 복사한 값이 &lt;mxGraphModel&gt; 로 깨진다.
             body.append(
-                '<figure data-name="%s" data-palette="%s">'
-                '<a class="open" href="%s" target="_blank" rel="noopener" title="draw.io 에서 열기">'
-                '<span class="pic">%s</span></a>'
+                '<figure data-name="%s" data-palette="%s" data-title="%s"'
+                ' data-w="%s" data-h="%s" data-aspect="%s" data-xml="%s"'
+                ' role="checkbox" aria-checked="false" tabindex="0">'
+                '<span class="pic">%s</span>'
                 '<figcaption>%s</figcaption>'
-                '<div class="act"><button type="button" data-xml="%s">복사</button>%s</div>'
+                '<div class="act">'
+                '<a href="%s" target="_blank" rel="noopener">열기</a>'
+                '<button type="button" data-copy="1">복사</button>%s</div>'
                 '</figure>'
                 % (html.escape(t['name'].lower()), html.escape(pal['title'].lower()),
-                   html.escape(t['url'], quote=True), t['thumb'], html.escape(t['name']),
-                   html.escape(t['xml'], quote=True), svg_link))
+                   html.escape(t['name'], quote=True),
+                   t['w'], t['h'], html.escape(t['aspect'], quote=True),
+                   html.escape(t['xml'], quote=True),
+                   t['thumb'], html.escape(t['name']),
+                   html.escape(t['url'], quote=True), svg_link))
         body.append('</div></section>')
 
     chips = ''.join('<button type="button" data-filter="%s">%s</button>'
@@ -191,8 +200,13 @@ PAGE = """<!doctype html>
  h2 small{color:#aaa;font-weight:400;margin-left:4px}
  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
  figure{margin:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px 6px;
-        text-align:center;background:#fff}
+        text-align:center;background:#fff;cursor:pointer;position:relative;outline:none}
  figure:hover{border-color:#bbb}
+ figure:focus-visible{box-shadow:0 0 0 2px #cfe0ff}
+ figure[aria-checked=true]{border-color:var(--accent);box-shadow:inset 0 0 0 1px var(--accent)}
+ figure[aria-checked=true]::after{content:"✓";position:absolute;top:4px;right:6px;
+        font-size:11px;line-height:1;color:#fff;background:var(--accent);
+        border-radius:50%;width:15px;height:15px;display:grid;place-items:center}
  .pic{display:flex;align-items:center;justify-content:center;height:56px}
  .pic img,.pic svg{max-width:48px;max-height:48px;display:block}
  a.open{display:block;text-decoration:none}
@@ -205,11 +219,23 @@ PAGE = """<!doctype html>
  .act button.done{background:var(--accent);border-color:var(--accent);color:#fff}
  section[hidden],figure[hidden]{display:none}
  #empty{color:var(--muted);padding:40px 0;text-align:center}
+ #bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
+      box-shadow:0 -2px 10px rgba(0,0,0,.06);padding:10px 20px;display:flex;gap:8px;
+      align-items:center;flex-wrap:wrap;z-index:6}
+ #bar[hidden]{display:none}
+ #bar b{font-size:13px}
+ #bar .grow{flex:1}
+ #bar button{font:12px/1 inherit;padding:8px 12px;border:1px solid var(--line);
+             background:#fafafa;border-radius:6px;cursor:pointer;color:#333}
+ #bar button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+ #bar button:disabled{opacity:.5;cursor:default}
+ #bar small{color:var(--muted);font-size:11px}
 </style>
 <header>
  <h1>NHN Cloud 아이콘 카탈로그</h1>
  <p class="sub">팔레트 __PALETTES__개 · 도형 __TOTAL__개 &nbsp;|&nbsp;
-   아이콘을 누르면 draw.io 새 탭에서 열립니다. <b>복사</b>는 편집 중인 그림에 Ctrl+V 로 붙입니다.
+   <b>타일을 눌러 고르세요.</b> 여러 개 고르면 아래 막대에서 한꺼번에 열거나 라이브러리로 받습니다.
+   하나만 쓸 때는 타일의 <b>열기</b>·<b>복사</b>를 쓰세요.
    &nbsp;·&nbsp; <a href="./?setup">팔레트를 draw.io 에 설치</a></p>
  <div class="tools">
   <input type="search" id="q" placeholder="이름으로 찾기 (예: load, shield, rds)" autocomplete="off">
@@ -220,6 +246,15 @@ PAGE = """<!doctype html>
 __BODY__
 <p id="empty" hidden>찾는 이름이 없습니다.</p>
 </main>
+<div id="bar" hidden>
+  <b><span id="count">0</span>개 선택</b>
+  <button type="button" id="open" class="primary">draw.io 에서 열기</button>
+  <button type="button" id="lib">라이브러리(.xml) 받기</button>
+  <button type="button" id="copyAll">모두 복사</button>
+  <button type="button" id="clear">선택 해제</button>
+  <span class="grow"></span>
+  <small id="hint">라이브러리는 draw.io 의 <b>파일 &gt; 라이브러리 열기 &gt; 디바이스</b> 로 엽니다.</small>
+</div>
 <script>
 (function () {
   var q = document.getElementById('q');
@@ -254,15 +289,14 @@ __BODY__
     apply();
   });
 
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-xml]');
-    if (!b) return;
-    var text = b.getAttribute('data-xml');
-    if (!text) return;
+  // ---- 클립보드 -------------------------------------------------------
+  function copy(text, btn, label) {
     function done() {
-      b.classList.add('done');
-      b.textContent = '복사됨';
-      setTimeout(function () { b.classList.remove('done'); b.textContent = '복사'; }, 1200);
+      if (!btn) return;
+      var old = btn.textContent;
+      btn.classList.add('done');
+      btn.textContent = label || '복사됨';
+      setTimeout(function () { btn.classList.remove('done'); btn.textContent = old; }, 1200);
     }
     function fallback() {
       var ta = document.createElement('textarea');
@@ -273,6 +307,149 @@ __BODY__
     if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(text).then(done, fallback);
     } else { fallback(); }
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-copy]');
+    if (!b) return;
+    copy(b.closest('figure').dataset.xml, b);
+  });
+
+  // ---- 선택 -----------------------------------------------------------
+  var sel = [];
+  var bar = document.getElementById('bar');
+  var count = document.getElementById('count');
+
+  function paint() {
+    count.textContent = sel.length;
+    bar.hidden = sel.length === 0;
+  }
+
+  function toggle(fig) {
+    var i = sel.indexOf(fig);
+    if (i >= 0) { sel.splice(i, 1); fig.setAttribute('aria-checked', 'false'); }
+    else { sel.push(fig); fig.setAttribute('aria-checked', 'true'); }
+    paint();
+  }
+
+  document.addEventListener('click', function (e) {
+    if (e.target.closest('a, button')) return;
+    var fig = e.target.closest('figure');
+    if (fig) toggle(fig);
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key !== 'Enter' && e.key !== ' ') return;
+    var fig = e.target.closest && e.target.closest('figure');
+    if (fig) { e.preventDefault(); toggle(fig); }
+  });
+  document.getElementById('clear').addEventListener('click', function () {
+    sel.forEach(function (f) { f.setAttribute('aria-checked', 'false'); });
+    sel = []; paint();
+  });
+
+  // ---- 선택한 도형들을 한 그림으로 ------------------------------------
+  // 각 도형은 자기만의 mxGraphModel 을 들고 있다. 합칠 때 id 가 겹치므로 도형마다
+  // 접두사를 붙여 다시 매기고, parent 가 그 안의 id 를 가리키면 같이 바꾼다.
+  // parent="1"(최상위)인 셀만 자리를 옮긴다. 자식은 부모 좌표를 따라간다.
+  function merge(figs) {
+    var out = [], ser = new XMLSerializer(), x = 0, y = 0, rowH = 0;
+    figs.forEach(function (fig, idx) {
+      var w = +fig.dataset.w || 64, h = +fig.dataset.h || 64;
+      if (x > 0 && x + w > 1200) { x = 0; y += rowH + 60; rowH = 0; }
+      var doc = new DOMParser().parseFromString(fig.dataset.xml, 'text/xml');
+      var root = doc.getElementsByTagName('root')[0];
+      if (!root) return;
+      var kids = [].slice.call(root.children).filter(function (c) {
+        var id = c.getAttribute('id');
+        return id !== '0' && id !== '1';
+      });
+      var map = {};
+      kids.forEach(function (c) { map[c.getAttribute('id')] = 's' + idx + '_' + c.getAttribute('id'); });
+      kids.forEach(function (c) {
+        c.setAttribute('id', map[c.getAttribute('id')]);
+        var p = c.getAttribute('parent');
+        if (p && map[p]) { c.setAttribute('parent', map[p]); }
+        else if (p === '1') {
+          var g = c.getElementsByTagName('mxGeometry')[0];
+          if (g) {
+            if (c.getAttribute('edge') === '1') {
+              // 연결선은 x/y 가 아니라 source·target 점으로 자리가 정해진다.
+              // 여기를 안 옮기면 선만 제자리에 남아 다른 도형과 겹친다.
+              [].forEach.call(g.getElementsByTagName('mxPoint'), function (pt) {
+                pt.setAttribute('x', (parseFloat(pt.getAttribute('x') || 0) + x));
+                pt.setAttribute('y', (parseFloat(pt.getAttribute('y') || 0) + y));
+              });
+            } else {
+              g.setAttribute('x', (parseFloat(g.getAttribute('x') || 0) + x));
+              g.setAttribute('y', (parseFloat(g.getAttribute('y') || 0) + y));
+            }
+          }
+        }
+        out.push(ser.serializeToString(c));
+      });
+      x += w + 60; rowH = Math.max(rowH, h);
+    });
+    return '<mxGraphModel><root><mxCell id="0"/><mxCell id="1" parent="0"/>'
+           + out.join('') + '</root></mxGraphModel>';
+  }
+
+  // draw.io Graph.compress — base64(deflateRaw(encodeURIComponent(xml))).
+  // 라이브러리 항목은 반드시 이 형식이어야 한다. Graph.decompress 가 평문을 거부한다.
+  // (그림 쪽 #R 은 평문도 받아 주지만 URL 이 길어져 압축이 유리하다.)
+  function deflate(text) {
+    if (typeof CompressionStream === 'undefined') return Promise.resolve(null);
+    var cs = new CompressionStream('deflate-raw');
+    var w = cs.writable.getWriter();
+    w.write(new TextEncoder().encode(encodeURIComponent(text)));
+    w.close();
+    return new Response(cs.readable).arrayBuffer().then(function (ab) {
+      var buf = new Uint8Array(ab), bin = '';
+      for (var i = 0; i < buf.length; i++) { bin += String.fromCharCode(buf[i]); }
+      return btoa(bin);
+    });
+  }
+
+  document.getElementById('open').addEventListener('click', function () {
+    if (!sel.length) return;
+    var xml = merge(sel);
+    var title = encodeURIComponent('NHN Cloud 아이콘 ' + sel.length + '개');
+    deflate(xml).then(function (b64) {
+      var frag = b64 ? encodeURIComponent(b64) : encodeURIComponent(xml);
+      window.open('https://app.diagrams.net/?title=' + title + '#R' + frag, '_blank', 'noopener');
+    });
+  });
+
+  document.getElementById('copyAll').addEventListener('click', function () {
+    if (!sel.length) return;
+    copy(merge(sel), this, '복사됨');
+  });
+
+  document.getElementById('lib').addEventListener('click', function () {
+    if (!sel.length) return;
+    var btn = this;
+    if (typeof CompressionStream === 'undefined') {
+      document.getElementById('hint').textContent =
+        '이 브라우저는 라이브러리 생성을 지원하지 않습니다. 최신 Edge·Chrome 에서 열어 주세요.';
+      return;
+    }
+    Promise.all(sel.map(function (fig) {
+      return deflate(fig.dataset.xml).then(function (b64) {
+        var e = { xml: b64, w: +fig.dataset.w || 64, h: +fig.dataset.h || 64 };
+        if (fig.dataset.aspect) { e.aspect = fig.dataset.aspect; }
+        e.title = fig.dataset.title;
+        return e;
+      });
+    })).then(function (entries) {
+      var xml = '<mxlibrary title="NHN Cloud 선택">' + JSON.stringify(entries) + '</mxlibrary>';
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(new Blob([xml], { type: 'application/xml' }));
+      a.download = 'nhn-cloud-선택-' + entries.length + '개.xml';
+      document.body.appendChild(a); a.click(); document.body.removeChild(a);
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 5000);
+      var old = btn.textContent;
+      btn.textContent = '내려받음';
+      setTimeout(function () { btn.textContent = old; }, 1500);
+    });
   });
 })();
 </script>
