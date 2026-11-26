@@ -142,8 +142,9 @@ python tools/make_gallery.py                                   # gallery.html �
 SVG 가 base64 로 박혀 있어 **팔레트를 설치하지 않은 브라우저에서도 그려집니다.**
 `dist/` 를 고치면 `make_gallery.py` 를 다시 돌려야 카탈로그가 따라옵니다.
 
-머리 배너는 `images/nhn-cloud-header.png` 입니다. 파일을 바꾸면 그대로 바뀌고,
-지우면 배너 없이 생성됩니다. 원본이 3840x248(15.5:1)이라 폭에 맞추면 넓은 화면에서
+머리 배너는 `images/nhn-cloud-header.png` 이고 그 위에 `NHN Cloud Icons Catalog`
+제목을 얹습니다. 제목은 그림 위에 따로 그리므로 파일을 지워도 파란 바탕에 남습니다.
+파일을 바꾸면 그림만 그대로 바뀝니다. 원본이 3840x248(15.5:1)이라 폭에 맞추면 넓은 화면에서
 너무 두꺼워지므로 높이를 `clamp(52px, 6.5vw, 92px)` 로 묶고 로고가 있는 오른쪽을
 남기며 잘라 냅니다.
 

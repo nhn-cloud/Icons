@@ -170,9 +170,9 @@ def build():
                     % (html.escape(p['title'].lower()), html.escape(p['title']))
                     for p in palettes)
 
-    # 배너는 파일이 있을 때만 건다. 없으면 깨진 이미지가 뜨는 대신 그냥 빠진다.
-    banner = ('<img class="banner" src="%s" alt="NHN Cloud">' % BANNER
-              if (ROOT / BANNER).exists() else '')
+    # 그림은 파일이 있을 때만 건다. 없으면 깨진 이미지 대신 파란 바탕에 제목만 남는다.
+    img = '<img src="%s" alt="">' % BANNER if (ROOT / BANNER).exists() else ''
+    banner = '<div class="banner">%s<b>NHN Cloud Icons Catalog</b></div>' % img
     page = (PAGE.replace('__TOTAL__', str(total))
                 .replace('__PALETTES__', str(len(palettes)))
                 .replace('__CHIPS__', chips)
@@ -195,9 +195,13 @@ PAGE = """<!doctype html>
  body{font:14px/1.6 -apple-system,"Segoe UI",system-ui,sans-serif;color:#222;margin:0;background:#fff}
  /* 머리 배너. 원본이 3840x248(15.5:1)이라 폭에 맞추면 넓은 화면에서 너무 두꺼워진다.
     높이를 묶고 cover 로 자르되 로고가 있는 오른쪽을 남긴다. 스크롤하면 올라가고
-    아래 도구 막대만 붙어 있는다. */
- .banner{display:block;width:100%;height:clamp(52px,6.5vw,92px);
-         object-fit:cover;object-position:right center;background:#1157e8}
+    아래 도구 막대만 붙어 있는다. 제목은 그 위에 얹으므로 이미지가 없어도 남는다. */
+ .banner{position:relative;width:100%;height:clamp(52px,6.5vw,92px);background:#1157e8}
+ .banner img{display:block;width:100%;height:100%;
+             object-fit:cover;object-position:right center}
+ .banner b{position:absolute;left:20px;top:50%;transform:translateY(-50%);
+           color:#fff;font-weight:700;font-size:clamp(15px,1.7vw,24px);
+           letter-spacing:-.01em;text-shadow:0 1px 2px rgba(0,0,0,.14)}
  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);
         padding:14px 20px 10px;z-index:5}
  h1{font-size:17px;margin:0 0 2px}
