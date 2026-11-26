@@ -60,4 +60,5 @@ def main():
         print('%s (%d bytes)' % (args[1], len(out)))
 
 
-main()
+if __name__ == '__main__':
+    main()
