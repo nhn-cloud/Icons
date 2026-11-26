@@ -37,6 +37,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 DIST = ROOT / 'dist'
 EDITOR = 'https://app.diagrams.net/'
+BANNER = 'images/nhn-cloud-header.png'   # 머리 배너. 없으면 그냥 빠진다
 
 argv = sys.argv
 OUT = Path(argv[argv.index('--out') + 1]) if '--out' in argv else ROOT / 'gallery.html'
@@ -169,9 +170,13 @@ def build():
                     % (html.escape(p['title'].lower()), html.escape(p['title']))
                     for p in palettes)
 
+    # 배너는 파일이 있을 때만 건다. 없으면 깨진 이미지가 뜨는 대신 그냥 빠진다.
+    banner = ('<img class="banner" src="%s" alt="NHN Cloud">' % BANNER
+              if (ROOT / BANNER).exists() else '')
     page = (PAGE.replace('__TOTAL__', str(total))
                 .replace('__PALETTES__', str(len(palettes)))
                 .replace('__CHIPS__', chips)
+                .replace('__BANNER__', banner)
                 .replace('__BODY__', '\n'.join(body)))
     OUT.write_text(page, encoding='utf-8', newline='\n')
     print('%s 생성. 팔레트 %d개 · 도형 %d개 · %.1f KB'
@@ -188,6 +193,11 @@ PAGE = """<!doctype html>
  :root{--line:#e5e5e5;--muted:#666;--accent:#125DE6}
  *{box-sizing:border-box}
  body{font:14px/1.6 -apple-system,"Segoe UI",system-ui,sans-serif;color:#222;margin:0;background:#fff}
+ /* 머리 배너. 원본이 3840x248(15.5:1)이라 폭에 맞추면 넓은 화면에서 너무 두꺼워진다.
+    높이를 묶고 cover 로 자르되 로고가 있는 오른쪽을 남긴다. 스크롤하면 올라가고
+    아래 도구 막대만 붙어 있는다. */
+ .banner{display:block;width:100%;height:clamp(52px,6.5vw,92px);
+         object-fit:cover;object-position:right center;background:#1157e8}
  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);
         padding:14px 20px 10px;z-index:5}
  h1{font-size:17px;margin:0 0 2px}
@@ -255,6 +265,7 @@ PAGE = """<!doctype html>
  #tray .chip:hover .x{background:#e5484d;border-color:#e5484d;color:#fff}
  #tray .ph{color:var(--muted);font-size:12px;align-self:center}
 </style>
+__BANNER__
 <header>
  <h1>NHN Cloud 아이콘 카탈로그</h1>
  <p class="sub">팔레트 __PALETTES__개 · 도형 __TOTAL__개 &nbsp;|&nbsp;
