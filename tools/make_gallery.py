@@ -220,21 +220,35 @@ PAGE = """<!doctype html>
  section[hidden],figure[hidden]{display:none}
  #empty{color:var(--muted);padding:40px 0;text-align:center}
  #bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
-      box-shadow:0 -2px 10px rgba(0,0,0,.06);padding:10px 20px;display:flex;gap:8px;
-      align-items:center;flex-wrap:wrap;z-index:6}
+      box-shadow:0 -2px 10px rgba(0,0,0,.08);z-index:6}
  #bar[hidden]{display:none}
+ #bar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 20px 0}
  #bar b{font-size:13px}
  #bar .grow{flex:1}
  #bar button{font:12px/1 inherit;padding:8px 12px;border:1px solid var(--line);
              background:#fafafa;border-radius:6px;cursor:pointer;color:#333}
  #bar button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
- #bar button:disabled{opacity:.5;cursor:default}
  #bar small{color:var(--muted);font-size:11px}
+ /* 고른 것을 쌓아 두는 자리. 무엇을 담았는지 눈으로 확인하고 하나씩 뺀다. */
+ #tray{display:flex;gap:6px;overflow-x:auto;padding:10px 20px 12px;align-items:flex-end;
+       background:#fbfbfc;border-top:1px solid #f0f0f0;margin-top:10px;min-height:92px}
+ #tray .chip{position:relative;flex:0 0 auto;width:78px;border:1px solid var(--line);
+       border-radius:8px;background:#fff;padding:6px 4px 4px;text-align:center;cursor:pointer}
+ #tray .chip:hover{border-color:#f5a3a3}
+ #tray .chip .pic{height:40px}
+ #tray .chip .pic img,#tray .chip .pic svg{max-width:34px;max-height:34px}
+ #tray .chip .nm{font-size:10px;line-height:1.3;color:#444;margin-top:3px;
+       overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+ #tray .chip .x{position:absolute;top:-6px;right:-6px;width:17px;height:17px;border-radius:50%;
+       background:#fff;border:1px solid var(--line);color:#999;font-size:11px;line-height:1;
+       display:grid;place-items:center}
+ #tray .chip:hover .x{background:#e5484d;border-color:#e5484d;color:#fff}
+ #tray .ph{color:var(--muted);font-size:12px;align-self:center}
 </style>
 <header>
  <h1>NHN Cloud 아이콘 카탈로그</h1>
  <p class="sub">팔레트 __PALETTES__개 · 도형 __TOTAL__개 &nbsp;|&nbsp;
-   <b>타일을 눌러 고르세요.</b> 여러 개 고르면 아래 막대에서 한꺼번에 열거나 라이브러리로 받습니다.
+   <b>타일을 누르면 아래 담는 자리에 쌓입니다.</b> 다 고르고 나서 한꺼번에 열거나 라이브러리로 받습니다.
    하나만 쓸 때는 타일의 <b>열기</b>·<b>복사</b>를 쓰세요.
    &nbsp;·&nbsp; <a href="./?setup">팔레트를 draw.io 에 설치</a></p>
  <div class="tools">
@@ -247,13 +261,17 @@ __BODY__
 <p id="empty" hidden>찾는 이름이 없습니다.</p>
 </main>
 <div id="bar" hidden>
-  <b><span id="count">0</span>개 선택</b>
-  <button type="button" id="open" class="primary">draw.io 에서 열기</button>
-  <button type="button" id="lib">라이브러리(.xml) 받기</button>
-  <button type="button" id="copyAll">모두 복사</button>
-  <button type="button" id="clear">선택 해제</button>
-  <span class="grow"></span>
-  <small id="hint">라이브러리는 draw.io 의 <b>파일 &gt; 라이브러리 열기 &gt; 디바이스</b> 로 엽니다.</small>
+  <div class="row">
+    <b>담은 아이콘 <span id="count">0</span>개</b>
+    <button type="button" id="open" class="primary">draw.io 에서 열기</button>
+    <button type="button" id="lib">라이브러리(.xml) 받기</button>
+    <button type="button" id="copyAll">모두 복사</button>
+    <button type="button" id="clear">비우기</button>
+    <span class="grow"></span>
+    <small id="hint">담은 것을 누르면 빠집니다. 라이브러리는 draw.io 의
+      <b>파일 &gt; 라이브러리 열기 &gt; 디바이스</b> 로 엽니다.</small>
+  </div>
+  <div id="tray"></div>
 </div>
 <script>
 (function () {
@@ -319,11 +337,32 @@ __BODY__
   var sel = [];
   var bar = document.getElementById('bar');
   var count = document.getElementById('count');
+  var tray = document.getElementById('tray');
 
   function paint() {
     count.textContent = sel.length;
     bar.hidden = sel.length === 0;
+    tray.textContent = '';
+    sel.forEach(function (fig, i) {
+      var chip = document.createElement('div');
+      chip.className = 'chip';
+      chip.title = fig.dataset.title + ' — 눌러서 빼기';
+      chip.dataset.i = i;
+      chip.innerHTML = '<span class="x">\\u00d7</span>'
+        + '<span class="pic">' + fig.querySelector('.pic').innerHTML + '</span>'
+        + '<span class="nm">' + fig.querySelector('figcaption').textContent + '</span>';
+      tray.appendChild(chip);
+    });
+    // 마지막으로 담은 것이 보이게 끝으로 민다.
+    tray.scrollLeft = tray.scrollWidth;
+    // 막대가 마지막 줄을 가리지 않도록 그만큼 아래를 비운다.
+    document.body.style.paddingBottom = sel.length ? bar.offsetHeight + 'px' : '';
   }
+
+  tray.addEventListener('click', function (e) {
+    var chip = e.target.closest('.chip');
+    if (chip) { toggle(sel[+chip.dataset.i]); }
+  });
 
   function toggle(fig) {
     var i = sel.indexOf(fig);
