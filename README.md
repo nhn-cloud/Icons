@@ -27,7 +27,8 @@ NHN Cloud 아키텍처 다이어그램을 그리는 데 필요한 서비스 아�
 04-identity      계정·역할            05-groups     그룹 컨테이너 + 서비스 박스
 06-architecture  예시 구성도 4건 (PPT 10~13쪽). 아이콘이 아니라 구성도 1개가 엔트리 1개
 07-compute … 28-governance-audit      서비스 카테고리 22개 (홈페이지 메뉴 순)
-29-retired       홈페이지에서 빠지거나 개명된 아이콘
+29-presentation  제안서·구성도 보조용 flat 아이콘 (Figma `flat icon` 출처)
+30-retired       홈페이지에서 빠지거나 개명된 아이콘
 ```
 
 각 카테고리 디렉터리는 `category/`, `services/`, `resources/`로 나뉩니다. 리소스는 해당되는 8개 카테고리에만 있습니다.

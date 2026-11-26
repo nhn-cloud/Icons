@@ -19,7 +19,7 @@ Python 3.9 이상과 PyYAML 이 필요하다.
 
 | 도구 | 용도 |
 | --- | --- |
-| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (297개) |
+| `python tools/nhn_diagram.py --list [검색어]` | 라이브러리의 실제 도형 이름 조회 (309개) |
 | `python tools/nhn_diagram.py spec.yaml out.drawio` | 명세 → .drawio **최초 생성** |
 | `python tools/drawio_edit.py out.drawio ...` | 이미 있는 .drawio **제자리 수정** |
 | `python tools/drawio_open.py out.drawio` | 브라우저 draw.io 로 열기 |
@@ -105,7 +105,7 @@ python tools/drawio_open.py out.drawio
 ```
 
 `drawio_open.py` 는 `out.open.html` 리다이렉트 파일을 만들고 기본 브라우저로 draw.io 를 띄운다
-(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 29개가 붙어 있으면
+(URL 조각 방식이라 사내 프록시를 타지 않는다). 브라우저에 NHN Cloud 팔레트 30개가 붙어 있으면
 그 자리에서 아이콘을 더 끌어다 쓸 수 있다.
 
 처음 쓰는 브라우저는 왼쪽 도형 패널에 팔레트가 없다. 그때는 <https://nhn-cloud.github.io/Icons/>

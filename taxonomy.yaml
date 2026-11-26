@@ -741,7 +741,35 @@ palettes:
         name: "Cloudtrail"
       - slug: ic-governance-audit-resource-watcher
         name: "Resource Watcher"
-  - id: "29-retired"
+  - id: "29-presentation"
+    title: "NHN Cloud / Presentation"
+    kind: flat
+    icons:
+      - slug: ic-presentation-attacker
+        name: "Attacker"
+      - slug: ic-presentation-certification
+        name: "Certification"
+      - slug: ic-presentation-cloud
+        name: "Cloud"
+      - slug: ic-presentation-encryption-key
+        name: "Encryption Key"
+      - slug: ic-presentation-fingerprint
+        name: "Fingerprint"
+      - slug: ic-presentation-internet
+        name: "Web Globe"
+      - slug: ic-presentation-lock
+        name: "Lock"
+      - slug: ic-presentation-server
+        name: "Server Rack"
+      - slug: ic-presentation-shield-check
+        name: "Shield Check"
+      - slug: ic-presentation-shield-ddos
+        name: "Shield DDoS"
+      - slug: ic-presentation-shield-ids
+        name: "Shield IDS"
+      - slug: ic-presentation-shield-waf
+        name: "Shield WAF"
+  - id: "30-retired"
     title: "NHN Cloud / Retired"
     kind: flat
     icons:
