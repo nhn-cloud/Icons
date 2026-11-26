@@ -226,10 +226,12 @@ PAGE = """<!doctype html>
  .act button.done{background:var(--accent);border-color:var(--accent);color:#fff}
  section[hidden],figure[hidden]{display:none}
  #empty{color:var(--muted);padding:40px 0;text-align:center}
+ /* 담는 자리는 화면의 1/4. 한 줄로 밀면 몇 개 담았는지 한눈에 안 들어온다. */
  #bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
-      box-shadow:0 -2px 10px rgba(0,0,0,.08);z-index:6}
+      box-shadow:0 -2px 10px rgba(0,0,0,.08);z-index:6;
+      height:25vh;min-height:170px;max-height:40vh;display:flex;flex-direction:column}
  #bar[hidden]{display:none}
- #bar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 20px 0}
+ #bar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 20px 0;flex:0 0 auto}
  #bar b{font-size:13px}
  #bar .grow{flex:1}
  #bar button{font:12px/1 inherit;padding:8px 12px;border:1px solid var(--line);
@@ -237,14 +239,15 @@ PAGE = """<!doctype html>
  #bar button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
  #bar small{color:var(--muted);font-size:11px}
  /* 고른 것을 쌓아 두는 자리. 무엇을 담았는지 눈으로 확인하고 하나씩 뺀다. */
- #tray{display:flex;gap:6px;overflow-x:auto;padding:10px 20px 12px;align-items:flex-end;
-       background:#fbfbfc;border-top:1px solid #f0f0f0;margin-top:10px;min-height:92px}
- #tray .chip{position:relative;flex:0 0 auto;width:78px;border:1px solid var(--line);
-       border-radius:8px;background:#fff;padding:6px 4px 4px;text-align:center;cursor:pointer}
+ #tray{display:flex;flex-wrap:wrap;align-content:flex-start;gap:8px;overflow-y:auto;
+       padding:12px 20px 14px;background:#fbfbfc;border-top:1px solid #f0f0f0;
+       margin-top:10px;flex:1 1 auto}
+ #tray .chip{position:relative;flex:0 0 auto;width:92px;border:1px solid var(--line);
+       border-radius:8px;background:#fff;padding:8px 5px 6px;text-align:center;cursor:pointer}
  #tray .chip:hover{border-color:#f5a3a3}
- #tray .chip .pic{height:40px}
- #tray .chip .pic img,#tray .chip .pic svg{max-width:34px;max-height:34px}
- #tray .chip .nm{font-size:10px;line-height:1.3;color:#444;margin-top:3px;
+ #tray .chip .pic{height:52px}
+ #tray .chip .pic img,#tray .chip .pic svg{max-width:44px;max-height:44px}
+ #tray .chip .nm{font-size:11px;line-height:1.3;color:#444;margin-top:4px;
        overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
  #tray .chip .x{position:absolute;top:-6px;right:-6px;width:17px;height:17px;border-radius:50%;
        background:#fff;border:1px solid var(--line);color:#999;font-size:11px;line-height:1;
@@ -360,8 +363,8 @@ __BODY__
         + '<span class="nm">' + fig.querySelector('figcaption').textContent + '</span>';
       tray.appendChild(chip);
     });
-    // 마지막으로 담은 것이 보이게 끝으로 민다.
-    tray.scrollLeft = tray.scrollWidth;
+    // 마지막으로 담은 것이 보이게 끝까지 내린다(여러 줄로 쌓인다).
+    tray.scrollTop = tray.scrollHeight;
     // 막대가 마지막 줄을 가리지 않도록 그만큼 아래를 비운다.
     document.body.style.paddingBottom = sel.length ? bar.offsetHeight + 'px' : '';
   }
