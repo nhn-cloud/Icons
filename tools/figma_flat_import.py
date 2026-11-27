@@ -64,8 +64,10 @@ def is_junk(tag, attrs, vbw, vbh):
         # Subpage 배경처럼 화면만 한 사각형
         if w >= FAR or h >= FAR:
             return True
-        # 노드 칸 배경 (#F5F5F5 전면 사각형)
-        if fill in ('#f5f5f5', '#f9f9f9') and w >= vbw and h >= vbh:
+        # 노드 칸 배경 (#F5F5F5 전면 사각형). flat icon 의 108x108 타일은
+        # 흰 원(rx=54)을 깔고 그 위에 그림을 얹어 두므로 white 도 배경으로 본다.
+        # 저장소 아이콘은 배경을 두지 않는다 — 장표 바탕색 위에 그대로 올린다.
+        if fill in ('#f5f5f5', '#f9f9f9', 'white', '#ffffff') and w >= vbw and h >= vbh:
             return True
         # 조상 장식 — 캔버스 밖에서 시작하면서 캔버스보다 큰 도형
         if (x < 0 or y < 0) and (w > vbw or h > vbh):

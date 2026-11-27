@@ -1,0 +1,12 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<circle cx="54" cy="54" r="21.5" fill="#DDDDDD" stroke-width="3" stroke="#333333"/>
+<circle cx="54" cy="54" r="8" fill="white"/>
+<path d="M56 25V38H53V25H56Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M26 52L39 52L39 55L26 55L26 52Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M69 52L82 52L82 55L69 55L69 52Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M56 70V83H53V70H56Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+</g>
+</g>
+</svg>

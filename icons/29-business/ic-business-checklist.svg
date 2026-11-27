@@ -1,0 +1,15 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<rect x="34" y="33" width="11" height="11" fill="#CCCCCC"/>
+<rect x="34" y="50" width="11" height="11" fill="#CCCCCC"/>
+<rect x="34" y="67" width="11" height="11" fill="#CCCCCC"/>
+<path d="M48 31.7047L40.2197 41L36 35.6787L38.1472 34.0291L40.2771 36.7151L45.8978 30L48 31.7047Z" fill-rule="evenodd" clip-rule="evenodd" fill="#125DE6"/>
+<path d="M48 49.5498L40.2197 58L36 53.1625L38.1472 51.6629L40.2771 54.1046L45.8978 48L48 49.5498Z" fill-rule="evenodd" clip-rule="evenodd" fill="#125DE6"/>
+<path d="M48 66.5498L40.2197 75L36 70.1625L38.1472 68.6629L40.2771 71.1046L45.8978 65L48 66.5498Z" fill-rule="evenodd" clip-rule="evenodd" fill="#125DE6"/>
+<path d="M51 36.3662H75V41.3662H51V36.3662Z" fill-rule="evenodd" clip-rule="evenodd" fill="#CCCCCC"/>
+<path d="M51 53.3662H75V58.3662H51V53.3662Z" fill-rule="evenodd" clip-rule="evenodd" fill="#CCCCCC"/>
+<path d="M51 70H75V75H51V70Z" fill-rule="evenodd" clip-rule="evenodd" fill="#CCCCCC"/>
+</g>
+</g>
+</svg>

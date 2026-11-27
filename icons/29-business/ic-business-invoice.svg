@@ -1,0 +1,13 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M33 28V80L40.9459 75.2679L47.7568 80L54.5676 75.2679L61.3784 80L68.1892 75.2679L75 80V28H33Z" fill-rule="evenodd" clip-rule="evenodd" fill="#E5E5E5"/>
+<rect x="42" y="42" width="19" height="3" fill="#555555"/>
+<rect x="42" y="49" width="19" height="3" fill="#555555"/>
+<rect x="42" y="56" width="19" height="3" fill="#555555"/>
+<rect x="64" y="42" width="3" height="3" fill="#555555"/>
+<rect x="64" y="49" width="3" height="3" fill="#555555"/>
+<rect x="64" y="56" width="3" height="3" fill="#555555"/>
+</g>
+</g>
+</svg>

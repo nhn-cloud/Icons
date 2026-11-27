@@ -1,0 +1,11 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M54 26C66.1502 26 75.9999 35.2101 76 46.5713V59.4287C75.9999 70.7899 66.1502 80 54 80V76C63.9411 76 72 68.7312 72 59.7646V46.2354C72 37.2688 63.9411 30 54 30C44.0589 30 36 37.2688 36 46.2354V46.9521H32V46.5713C32.0001 35.2101 41.8498 26 54 26Z" fill="#CCCCCC"/>
+<path d="M70 43V62L80 59.625V45.375L70 43Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M29 45.375V59.625L39 62V43L29 45.375Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M28 45.375V59.625L38 62V43L28 45.375Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M50 73C47.7909 73 46 74.7909 46 77C46 79.2091 47.7909 81 50 81H58C60.2091 81 62 79.2091 62 77C62 74.7909 60.2091 73 58 73H50Z" fill-rule="evenodd" clip-rule="evenodd" fill="#125DE6"/>
+</g>
+</g>
+</svg>

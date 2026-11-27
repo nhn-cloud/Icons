@@ -1,0 +1,11 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M37 70H56V74H33V59H37V70ZM75 49H71V38H51V34H75V49Z" fill="#125DE6"/>
+<path d="M35 51L28 60L42 60L35 51Z" fill="#125DE6"/>
+<path d="M73 57L80 48H66L73 57Z" fill="#125DE6"/>
+<rect x="26" y="31" width="18" height="18" fill="#BBBBBB"/>
+<circle cx="73" cy="69" r="10" fill="#333333"/>
+</g>
+</g>
+</svg>

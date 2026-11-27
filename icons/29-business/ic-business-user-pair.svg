@@ -1,0 +1,10 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<circle cx="67" cy="45" r="8" fill="#777777"/>
+<path d="M84.9999 73C84.9999 63.6112 76.941 56 66.9999 56C57.0588 56 48.9999 63.6112 48.9999 73H84.9999Z" fill-rule="evenodd" clip-rule="evenodd" fill="#777777"/>
+<circle cx="39.9999" cy="45" r="8" fill="#125DE6"/>
+<path d="M59 73C59 63.6112 50.9411 56 41 56C31.0589 56 23 63.6112 23 73H59Z" fill-rule="evenodd" clip-rule="evenodd" fill="#125DE6"/>
+</g>
+</g>
+</svg>

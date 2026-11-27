@@ -1,0 +1,16 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M32 75H25V60H32V75ZM42 75H35V35H42V75ZM52 75H45V50H52V75Z" fill="#125DE6"/>
+<circle cx="70.5" cy="48.5" r="12.5" fill="#125DE6"/>
+<mask style="mask-type:luminance" maskUnits="userSpaceOnUse" x="58" y="36" width="25" height="25">
+<circle cx="70.5" cy="48.5" r="12.5" fill="white"/>
+</mask>
+<path d="M65.0769 62L71 48.1702L57 37V54.5532L65.0769 62Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<rect x="57" y="35" width="14" height="13" fill="#CCCCCC"/>
+<circle cx="71" cy="72" r="3" fill="#125DE6"/>
+<circle cx="62" cy="72" r="3" fill="#333333"/>
+<circle cx="80" cy="72" r="3" fill="#CCCCCC"/>
+</g>
+</g>
+</svg>

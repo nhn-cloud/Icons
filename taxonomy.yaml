@@ -3,7 +3,9 @@
 # 팔레트는 사내 배포 라이브러리(NHNCloud-*.xml)와 같은 구성·같은 순서다.
 #   Box Type · Services · Resources · General · Arrows · Annotations · Extra · Templates
 # 앞의 넷은 main 브랜치(github.com/nhn-cloud/Icons)의 아이콘 유형 체계다.
-# Presentation 과 Retired 는 이 저장소에만 있는 팔레트라 뒤에 둔다.
+# Business 와 Retired 는 이 저장소에만 있는 팔레트라 뒤에 둔다.
+# Business 는 영업·사업부서 장표용이라 구성도용 팔레트와 쓰는 사람이 다르다.
+# 항목마다 group 을 달아 갤러리에서 쓰임새별 소제목으로 묶는다.
 #
 # icons/ 는 서비스 카테고리(compute·network…)로 두고 팔레트와 1:1 로 맞추지 않는다.
 # 어느 파일을 쓰는지는 항목의 src 가 정한다(icons/ 기준 경로). 카테고리 아이콘처럼
@@ -1401,46 +1403,263 @@ palettes:
         w: 560
         h: 230
         tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도"
-  - id: "09-presentation"
-    title: "NHN Cloud / Presentation"
+  - id: "09-business"
+    title: "NHN Cloud / Business"
     kind: flat
+    # 영업·사업부서 장표용. group 은 갤러리 안에서 묶어 보여 주는 소제목이고,
+    # 여기 적은 차례가 팔레트와 갤러리에 그대로 나온다(장표 흐름: 고객->성과->비용->제안).
+    # tags 는 갤러리 검색어다. 쓰는 사람이 영문 아이콘 이름을 모르므로 한글로 적는다.
     icons:
-      - slug: ic-presentation-attacker
-        name: "Attacker"
-        src: 29-presentation/ic-presentation-attacker.svg
-      - slug: ic-presentation-certification
-        name: "Certification"
-        src: 29-presentation/ic-presentation-certification.svg
-      - slug: ic-presentation-cloud
-        name: "Cloud"
-        src: 29-presentation/ic-presentation-cloud.svg
-      - slug: ic-presentation-encryption-key
-        name: "Encryption Key"
-        src: 29-presentation/ic-presentation-encryption-key.svg
-      - slug: ic-presentation-fingerprint
-        name: "Fingerprint"
-        src: 29-presentation/ic-presentation-fingerprint.svg
-      - slug: ic-presentation-lock
+      - slug: ic-business-user
+        name: "User"
+        group: "고객·조직"
+        tags: "사용자 고객 담당자"
+        src: 29-business/ic-business-user.svg
+      - slug: ic-business-users
+        name: "Users"
+        group: "고객·조직"
+        tags: "사용자 고객 다수 그룹 조직"
+        src: 29-business/ic-business-users.svg
+      - slug: ic-business-user-pair
+        name: "User Pair"
+        group: "고객·조직"
+        tags: "사용자 2인 협업 동료"
+        src: 29-business/ic-business-user-pair.svg
+      - slug: ic-business-handshake
+        name: "Handshake"
+        group: "고객·조직"
+        tags: "악수 협력 파트너 제휴 계약"
+        src: 29-business/ic-business-handshake.svg
+      - slug: ic-business-building
+        name: "Building"
+        group: "고객·조직"
+        tags: "건물 사옥 기업 본사"
+        src: 29-business/ic-business-building.svg
+      - slug: ic-business-institution
+        name: "Institution"
+        group: "고객·조직"
+        tags: "기관 공공 관공서 금융"
+        src: 29-business/ic-business-institution.svg
+      - slug: ic-business-agent
+        name: "Agent"
+        group: "고객·조직"
+        tags: "상담사 고객지원 콜센터"
+        src: 29-business/ic-business-agent.svg
+      - slug: ic-business-growth-chart
+        name: "Growth Chart"
+        group: "성과·수치"
+        tags: "성장 상승 매출 추이 그래프"
+        src: 29-business/ic-business-growth-chart.svg
+      - slug: ic-business-bar-chart-up
+        name: "Bar Chart Up"
+        group: "성과·수치"
+        tags: "증가 상승 실적 막대그래프"
+        src: 29-business/ic-business-bar-chart-up.svg
+      - slug: ic-business-pie-chart
+        name: "Pie Chart"
+        group: "성과·수치"
+        tags: "점유율 비중 구성비 원그래프"
+        src: 29-business/ic-business-pie-chart.svg
+      - slug: ic-business-dashboard
+        name: "Dashboard"
+        group: "성과·수치"
+        tags: "대시보드 현황판 모니터링"
+        src: 29-business/ic-business-dashboard.svg
+      - slug: ic-business-report-chart
+        name: "Report Chart"
+        group: "성과·수치"
+        tags: "리포트 통계 분석 차트"
+        src: 29-business/ic-business-report-chart.svg
+      - slug: ic-business-statistics
+        name: "Statistics"
+        group: "성과·수치"
+        tags: "통계 실적 성과 보고서"
+        src: 29-business/ic-business-statistics.svg
+      - slug: ic-business-chart-analysis
+        name: "Chart Analysis"
+        group: "성과·수치"
+        tags: "분석 진단 추이 돋보기"
+        src: 29-business/ic-business-chart-analysis.svg
+      - slug: ic-business-won
+        name: "Won"
+        group: "비용·과금"
+        tags: "원화 비용 가격 금액"
+        src: 29-business/ic-business-won.svg
+      - slug: ic-business-dollar
+        name: "Dollar"
+        group: "비용·과금"
+        tags: "달러 외화 비용 해외"
+        src: 29-business/ic-business-dollar.svg
+      - slug: ic-business-discount
+        name: "Discount"
+        group: "비용·과금"
+        tags: "할인 절감 프로모션 혜택"
+        src: 29-business/ic-business-discount.svg
+      - slug: ic-business-card
+        name: "Card"
+        group: "비용·과금"
+        tags: "카드 신용카드 결제수단"
+        src: 29-business/ic-business-card.svg
+      - slug: ic-business-invoice
+        name: "Invoice"
+        group: "비용·과금"
+        tags: "계산서 청구서 영수증 명세"
+        src: 29-business/ic-business-invoice.svg
+      - slug: ic-business-payment
+        name: "Payment"
+        group: "비용·과금"
+        tags: "결제 납부 지불 완료"
+        src: 29-business/ic-business-payment.svg
+      - slug: ic-business-document
+        name: "Document"
+        group: "문서·제안"
+        tags: "문서 자료 파일"
+        src: 29-business/ic-business-document.svg
+      - slug: ic-business-application
+        name: "Application"
+        group: "문서·제안"
+        tags: "신청 접수 신청서 양식"
+        src: 29-business/ic-business-application.svg
+      - slug: ic-business-form
+        name: "Form"
+        group: "문서·제안"
+        tags: "양식 폼 서식 입력"
+        src: 29-business/ic-business-form.svg
+      - slug: ic-business-checklist-approved
+        name: "Checklist Approved"
+        group: "문서·제안"
+        tags: "승인 확인 검수 완료 체크"
+        src: 29-business/ic-business-checklist-approved.svg
+      - slug: ic-business-report
+        name: "Report"
+        group: "문서·제안"
+        tags: "보고서 리포트 결과"
+        src: 29-business/ic-business-report.svg
+      - slug: ic-business-checklist
+        name: "Checklist"
+        group: "문서·제안"
+        tags: "체크리스트 점검 항목 할일"
+        src: 29-business/ic-business-checklist.svg
+      - slug: ic-business-shield
+        name: "Shield"
+        group: "보안·인증"
+        tags: "방패 보안 보호 안전"
+        src: 29-business/ic-business-shield.svg
+      - slug: ic-business-shield-lock
+        name: "Shield Lock"
+        group: "보안·인증"
+        tags: "보안 암호화 잠금 보호"
+        src: 29-business/ic-business-shield-lock.svg
+      - slug: ic-business-lock
         name: "Lock"
-        src: 29-presentation/ic-presentation-lock.svg
-      - slug: ic-presentation-server
-        name: "Server Rack"
-        src: 29-presentation/ic-presentation-server.svg
-      - slug: ic-presentation-shield-check
-        name: "Shield Check"
-        src: 29-presentation/ic-presentation-shield-check.svg
-      - slug: ic-presentation-shield-ddos
-        name: "Shield DDoS"
-        src: 29-presentation/ic-presentation-shield-ddos.svg
-      - slug: ic-presentation-shield-ids
-        name: "Shield IDS"
-        src: 29-presentation/ic-presentation-shield-ids.svg
-      - slug: ic-presentation-shield-waf
-        name: "Shield WAF"
-        src: 29-presentation/ic-presentation-shield-waf.svg
-      - slug: ic-presentation-internet
-        name: "Web Globe"
-        src: 29-presentation/ic-presentation-internet.svg
+        group: "보안·인증"
+        tags: "잠금 자물쇠 보안 비밀"
+        src: 29-business/ic-business-lock.svg
+      - slug: ic-business-certificate
+        name: "Certificate"
+        group: "보안·인증"
+        tags: "인증서 증명서 자격"
+        src: 29-business/ic-business-certificate.svg
+      - slug: ic-business-certification
+        name: "Certification"
+        group: "보안·인증"
+        tags: "인증 승인 검증 마크"
+        src: 29-business/ic-business-certification.svg
+      - slug: ic-business-award-certified
+        name: "Award Certified"
+        group: "보안·인증"
+        tags: "수상 표창 상장 인증"
+        src: 29-business/ic-business-award-certified.svg
+      - slug: ic-business-chat
+        name: "Chat"
+        group: "소통·지원"
+        tags: "대화 채팅 상담 문의"
+        src: 29-business/ic-business-chat.svg
+      - slug: ic-business-mail
+        name: "Mail"
+        group: "소통·지원"
+        tags: "메일 이메일 연락 문의"
+        src: 29-business/ic-business-mail.svg
+      - slug: ic-business-bell
+        name: "Bell"
+        group: "소통·지원"
+        tags: "알림 공지 벨"
+        src: 29-business/ic-business-bell.svg
+      - slug: ic-business-faq
+        name: "FAQ"
+        group: "소통·지원"
+        tags: "문의 질문 도움말 자주묻는질문"
+        src: 29-business/ic-business-faq.svg
+      - slug: ic-business-consulting
+        name: "Consulting"
+        group: "소통·지원"
+        tags: "상담 지원 컨설팅"
+        src: 29-business/ic-business-consulting.svg
+      - slug: ic-business-flow
+        name: "Flow"
+        group: "프로세스·방향"
+        tags: "흐름 플로우 순환 연계"
+        src: 29-business/ic-business-flow.svg
+      - slug: ic-business-convert
+        name: "Convert"
+        group: "프로세스·방향"
+        tags: "전환 변환 마이그레이션"
+        src: 29-business/ic-business-convert.svg
+      - slug: ic-business-connect
+        name: "Connect"
+        group: "프로세스·방향"
+        tags: "연결 연계 네트워크 통합"
+        src: 29-business/ic-business-connect.svg
+      - slug: ic-business-target
+        name: "Target"
+        group: "프로세스·방향"
+        tags: "목표 타겟 과녁 지향"
+        src: 29-business/ic-business-target.svg
+      - slug: ic-business-move
+        name: "Move"
+        group: "프로세스·방향"
+        tags: "이동 전환 교체 양방향"
+        src: 29-business/ic-business-move.svg
+      - slug: ic-business-schedule
+        name: "Schedule"
+        group: "일정·효율"
+        tags: "일정 달력 스케줄 캘린더"
+        src: 29-business/ic-business-schedule.svg
+      - slug: ic-business-time
+        name: "Time"
+        group: "일정·효율"
+        tags: "시간 기간 시계 소요시간"
+        src: 29-business/ic-business-time.svg
+      - slug: ic-business-efficiency
+        name: "Efficiency"
+        group: "일정·효율"
+        tags: "효율 성능 속도 계기판"
+        src: 29-business/ic-business-efficiency.svg
+      - slug: ic-business-process
+        name: "Process"
+        group: "일정·효율"
+        tags: "프로세스 공정 설정 운영"
+        src: 29-business/ic-business-process.svg
+      - slug: ic-business-cloud
+        name: "Cloud"
+        group: "클라우드·인프라"
+        tags: "클라우드 전환 인프라"
+        src: 29-business/ic-business-cloud.svg
+      - slug: ic-business-server
+        name: "Server"
+        group: "클라우드·인프라"
+        tags: "서버 장비 인프라 랙"
+        src: 29-business/ic-business-server.svg
+      - slug: ic-business-database
+        name: "Database"
+        group: "클라우드·인프라"
+        tags: "데이터베이스 DB 저장소 데이터"
+        src: 29-business/ic-business-database.svg
+      - slug: ic-business-scalability
+        name: "Scalability"
+        group: "클라우드·인프라"
+        tags: "확장 확장성 증설 스케일"
+        src: 29-business/ic-business-scalability.svg
   - id: "10-retired"
     title: "NHN Cloud / Retired"
     kind: flat

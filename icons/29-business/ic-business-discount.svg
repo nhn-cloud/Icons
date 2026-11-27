@@ -1,0 +1,12 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<rect x="26" y="36" width="16" height="16" fill="#333333"/>
+<rect x="26" y="56" width="16" height="16" fill="#BBBBBB"/>
+<rect x="46" y="36" width="16" height="16" fill="#DDDDDD"/>
+<rect x="46" y="56" width="16" height="16" fill="#125DE6"/>
+<path d="M76.5911 65.4636L79.5393 62.5154L80.5999 71.3542L71.761 70.2937L74.4915 67.5632L65.0237 58.0955L67.1252 55.9978L76.5911 65.4636Z" fill="#BBBBBB"/>
+<rect x="66" y="36" width="16" height="16" fill="#BBBBBB"/>
+</g>
+</g>
+</svg>

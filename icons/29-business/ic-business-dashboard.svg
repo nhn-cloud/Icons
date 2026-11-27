@@ -1,0 +1,22 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M26 71H82V74H26V71Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M26 35H82V38H26V35Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
+<path d="M29 38H79V71H29V38Z" fill-rule="evenodd" clip-rule="evenodd" fill="#DDDDDD"/>
+<rect x="36" y="61" width="6" height="7" fill="#999999"/>
+<rect x="55" y="57" width="6" height="11" fill="#999999"/>
+<rect x="45" y="55" width="6" height="13" fill="#125DE6"/>
+<rect x="65" y="49" width="6" height="19" fill="#125DE6"/>
+<rect x="36" y="47" width="2" height="3" fill="#333333"/>
+<rect x="40" y="49" width="2" height="3" fill="#333333"/>
+<rect x="44" y="47" width="2" height="3" fill="#333333"/>
+<rect x="48" y="47" width="2" height="3" fill="#333333"/>
+<rect x="52" y="46" width="2" height="3" fill="#333333"/>
+<rect x="56" y="45" width="2" height="3" fill="#333333"/>
+<rect x="60" y="43" width="2" height="3" fill="#333333"/>
+<rect x="64" y="41" width="2" height="3" fill="#333333"/>
+<rect x="68" y="43" width="2" height="3" fill="#333333"/>
+</g>
+</g>
+</svg>

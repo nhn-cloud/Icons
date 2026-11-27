@@ -1,0 +1,21 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<rect x="24" y="36" width="60" height="36" fill="#333333"/>
+<rect x="23" y="34" width="62" height="40" fill="#333333"/>
+<rect x="26" y="37" width="56" height="34" fill="#E5E5E5"/>
+<rect x="57.9999" y="62" width="2" height="5" fill="#555555"/>
+<rect x="73.9999" y="57" width="2" height="10" fill="#555555"/>
+<rect x="60.9999" y="40" width="4" height="2" fill="#555555"/>
+<rect x="60.9999" y="44" width="11" height="2" fill="#555555"/>
+<rect x="66.9999" y="40" width="2" height="2" fill="#555555"/>
+<rect x="73.9999" y="44" width="2" height="2" fill="#555555"/>
+<rect x="70.9999" y="40" width="5" height="2" fill="#555555"/>
+<rect x="61.9999" y="58" width="2" height="9" fill="#555555"/>
+<rect x="69.9999" y="53" width="2" height="14" fill="#555555"/>
+<rect x="65.9999" y="60" width="2" height="6.9" fill="#555555"/>
+<path d="M51 53C51 58.5228 46.5229 63 41 63C35.4771 63 31 58.5229 31 53C31 47.4771 35.4771 43 41 43C46.5229 43 51 47.4772 51 53Z" fill="#125DE6"/>
+<path d="M41.0128 43.01C41.0082 43.0145 41.0055 43.0181 41 43.0228V52.9663C41 52.9854 41.0154 53 41.0337 53H50.9772C50.9818 52.9955 50.9854 52.9927 50.99 52.9872C51.2437 47.3663 46.6337 42.7563 41.0128 43.01Z" fill="#BBBBBB"/>
+</g>
+</g>
+</svg>

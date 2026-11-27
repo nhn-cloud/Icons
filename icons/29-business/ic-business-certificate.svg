@@ -1,0 +1,9 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M73 29H31V83H73V44.1516V29Z" fill-rule="evenodd" clip-rule="evenodd" fill="#E5E5E5"/>
+<path d="M64 68H40V66H64V68ZM64 61H40V59H64V61ZM64 54H40V52H64V54ZM49 47H40V45H49V47Z" fill="#AAAAAA"/>
+<path d="M71 25C74.866 25 78 28.134 78 32C78 33.9069 77.2367 35.635 76 36.8975V49L71 44.0771L66 49V36.8975C64.7633 35.635 64 33.9069 64 32C64 28.134 67.134 25 71 25Z" fill="#125DE6"/>
+</g>
+</g>
+</svg>

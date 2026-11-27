@@ -1,0 +1,9 @@
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g transform="translate(6 6) scale(0.75)">
+<g transform="translate(-22 -22)">
+<path d="M64 27H33V81H75V38L64 27Z" fill-rule="evenodd" clip-rule="evenodd" fill="#E5E5E5"/>
+<path d="M64 27V38H75" fill-rule="evenodd" clip-rule="evenodd" fill="#CCCCCC"/>
+<path d="M65 60.0801H43V58H65V60.0801ZM65 54H43V52H65V54ZM51 48H43V46H51V48Z" fill="#CCCCCC"/>
+</g>
+</g>
+</svg>

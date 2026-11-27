@@ -58,9 +58,15 @@ def encode(xml):
 
 
 def source_map():
-    """(팔레트 제목, 표시명) -> icons/ 원본 SVG 경로. SVG 내려받기 링크에 쓴다."""
+    """(팔레트 제목, 표시명) -> icons/ 원본 SVG 경로 · 쓰임새 그룹 · 검색 태그.
+
+    경로는 SVG 내려받기 링크에 쓰고, 그룹은 팔레트 안을 소제목으로 묶는 데 쓴다.
+    그룹과 태그는 taxonomy.yaml 에 `group`·`tags` 가 있는 항목만 가진다(지금은 Business 뿐).
+    """
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     out = {}
+    groups = {}
+    tags = {}
     for pal in tax['palettes']:
         pid = pal['id']
         buckets = [(None, pal.get('icons')), ('services', pal.get('services')),
@@ -73,11 +79,18 @@ def source_map():
             buckets.append(('category', [item]))
         for sub, items in buckets:
             for it in items or []:
-                p = ROOT / 'icons' / pid / (sub or '') / (it['slug'] + '.svg')
-                if p.exists():
-                    out[(pal['title'], it.get('name') or it['slug'])] = \
-                        p.relative_to(ROOT).as_posix()
-    return out
+                key = (pal['title'], it.get('name') or it['slug'])
+                # 어느 파일을 쓰는지는 항목의 src 가 정한다. 팔레트 id 로 경로를 만들면
+                # icons/ 디렉터리 이름과 달라 하나도 찾지 못한다(내려받기 링크가 전부 빠졌었다).
+                p = (ROOT / 'icons' / it['src']) if it.get('src') else \
+                    (ROOT / 'icons' / pid / (sub or '') / (it['slug'] + '.svg'))
+                if p.suffix == '.svg' and p.exists():
+                    out[key] = p.relative_to(ROOT).as_posix()
+                if it.get('group'):
+                    groups[key] = it['group']
+                if it.get('tags'):
+                    tags[key] = it['tags']
+    return out, groups, tags
 
 
 def thumb(model, composition=False):
@@ -111,7 +124,7 @@ def thumb(model, composition=False):
 
 
 def build():
-    srcs = source_map()
+    srcs, groups, tags = source_map()
     palettes = []
     total = 0
     for p in sorted(DIST.glob('*.xml')):
@@ -136,35 +149,59 @@ def build():
                 'h': e.get('h') or 64,
                 'aspect': e.get('aspect') or '',
                 'svg': srcs.get((title, name)),
+                'group': groups.get((title, name)),
+                'tags': tags.get((title, name), ''),
             })
             total += 1
         palettes.append({'no': p.stem, 'title': short, 'tiles': tiles})
 
+    def figure(t, pal):
+        svg_link = ('<a href="%s" download>SVG</a>' % html.escape(t['svg'])) if t['svg'] else ''
+        # XML 은 속성에 담는다. <script> 안에 넣으면 그 안의 텍스트는 원시 텍스트라
+        # 파서가 실체 참조를 되돌리지 않아 복사한 값이 &lt;mxGraphModel&gt; 로 깨진다.
+        return (
+            '<figure data-name="%s" data-palette="%s" data-title="%s"'
+            ' data-w="%s" data-h="%s" data-aspect="%s" data-xml="%s"'
+            ' role="checkbox" aria-checked="false" tabindex="0">'
+            '<span class="pic">%s</span>'
+            '<figcaption>%s</figcaption>'
+            '<div class="act">'
+            '<a href="%s" target="_blank" rel="noopener">열기</a>'
+            '<button type="button" data-copy="1">복사</button>%s</div>'
+            '</figure>'
+            # data-name 은 검색용이다. 표시명(영문) 뒤에 한글 태그를 붙여
+            # "매출"·"계약" 처럼 쓰는 사람이 실제로 치는 말로도 걸리게 한다.
+            % (html.escape((t['name'] + ' ' + t['tags']).strip().lower()),
+               html.escape(pal['title'].lower()),
+               html.escape(t['name'], quote=True),
+               t['w'], t['h'], html.escape(t['aspect'], quote=True),
+               html.escape(t['xml'], quote=True),
+               t['thumb'], html.escape(t['name']),
+               html.escape(t['url'], quote=True), svg_link))
+
+    def runs(tiles):
+        """taxonomy 차례 그대로 그룹이 바뀌는 자리에서 끊는다. 그룹이 없으면 한 덩어리."""
+        out = []
+        for t in tiles:
+            if not out or out[-1][0] != t['group']:
+                out.append((t['group'], []))
+            out[-1][1].append(t)
+        return out
+
     body = []
     for pal in palettes:
-        body.append('<section><h2>%s <small>%d</small></h2><div class="grid">'
+        body.append('<section><h2>%s <small>%d</small></h2>'
                     % (html.escape(pal['title']), len(pal['tiles'])))
-        for t in pal['tiles']:
-            svg_link = ('<a href="%s" download>SVG</a>' % html.escape(t['svg'])) if t['svg'] else ''
-            # XML 은 속성에 담는다. <script> 안에 넣으면 그 안의 텍스트는 원시 텍스트라
-            # 파서가 실체 참조를 되돌리지 않아 복사한 값이 &lt;mxGraphModel&gt; 로 깨진다.
-            body.append(
-                '<figure data-name="%s" data-palette="%s" data-title="%s"'
-                ' data-w="%s" data-h="%s" data-aspect="%s" data-xml="%s"'
-                ' role="checkbox" aria-checked="false" tabindex="0">'
-                '<span class="pic">%s</span>'
-                '<figcaption>%s</figcaption>'
-                '<div class="act">'
-                '<a href="%s" target="_blank" rel="noopener">열기</a>'
-                '<button type="button" data-copy="1">복사</button>%s</div>'
-                '</figure>'
-                % (html.escape(t['name'].lower()), html.escape(pal['title'].lower()),
-                   html.escape(t['name'], quote=True),
-                   t['w'], t['h'], html.escape(t['aspect'], quote=True),
-                   html.escape(t['xml'], quote=True),
-                   t['thumb'], html.escape(t['name']),
-                   html.escape(t['url'], quote=True), svg_link))
-        body.append('</div></section>')
+        for group, tiles in runs(pal['tiles']):
+            if group:
+                body.append('<div class="gblock"><h3>%s <small>%d</small></h3>'
+                            % (html.escape(group), len(tiles)))
+            body.append('<div class="grid">')
+            body.extend(figure(t, pal) for t in tiles)
+            body.append('</div>')
+            if group:
+                body.append('</div>')
+        body.append('</section>')
 
     chips = ''.join('<button type="button" data-filter="%s">%s</button>'
                     % (html.escape(p['title'].lower()), html.escape(p['title']))
@@ -211,7 +248,7 @@ PAGE = """<!doctype html>
  input[type=search]{flex:0 0 260px;padding:7px 10px;border:1px solid var(--line);
                     border-radius:6px;font:inherit}
  .chips{display:flex;gap:4px;flex-wrap:wrap}
- .chips button{font:11px/1 inherit;padding:6px 9px;border:1px solid var(--line);
+ .chips button{font-size:11px;line-height:1;padding:6px 9px;border:1px solid var(--line);
                background:#fafafa;border-radius:999px;cursor:pointer;color:#444}
  .chips button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
  main{padding:16px 20px 60px}
@@ -219,7 +256,12 @@ PAGE = """<!doctype html>
  h2{font-size:13px;color:#444;margin:0 0 8px;font-weight:600;
     border-bottom:1px solid var(--line);padding-bottom:6px}
  h2 small{color:#aaa;font-weight:400;margin-left:4px}
- .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
+ /* 팔레트 안의 쓰임새 묶음. Business 50개가 한 덩어리로 쏟아지면 눈이 짚을 자리가 없다. */
+ .gblock{margin:0 0 14px}
+ h3{font-size:12px;color:#666;margin:0 0 6px;font-weight:600}
+ h3 small{color:#bbb;font-weight:400;margin-left:3px}
+ /* 타일 폭은 아래 단추 세 개(열기·복사·SVG)가 한 줄에 들어가는 최소값이다. */
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:6px}
  figure{margin:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px 6px;
         text-align:center;background:#fff;cursor:pointer;position:relative;outline:none}
  figure:hover{border-color:#bbb}
@@ -234,11 +276,12 @@ PAGE = """<!doctype html>
  figcaption{font-size:11px;color:#333;margin-top:4px;line-height:1.35;
             word-break:break-word;min-height:30px}
  .act{display:flex;gap:4px;justify-content:center;margin-top:4px}
- .act button,.act a{font:10px/1 inherit;padding:4px 6px;border:1px solid var(--line);
-        background:#fafafa;border-radius:4px;cursor:pointer;color:#555;text-decoration:none}
+ .act button,.act a{font-size:10px;line-height:1;padding:4px 5px;border:1px solid var(--line);
+        background:#fafafa;border-radius:4px;cursor:pointer;color:#555;text-decoration:none;
+        white-space:nowrap}
  .act button:hover,.act a:hover{background:#f0f0f0}
  .act button.done{background:var(--accent);border-color:var(--accent);color:#fff}
- section[hidden],figure[hidden]{display:none}
+ section[hidden],figure[hidden],.gblock[hidden]{display:none}
  #empty{color:var(--muted);padding:40px 0;text-align:center}
  /* 담는 자리는 화면의 1/4. 한 줄로 밀면 몇 개 담았는지 한눈에 안 들어온다. */
  #bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid var(--line);
@@ -248,7 +291,7 @@ PAGE = """<!doctype html>
  #bar .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:10px 20px 0;flex:0 0 auto}
  #bar b{font-size:13px}
  #bar .grow{flex:1}
- #bar button{font:12px/1 inherit;padding:8px 12px;border:1px solid var(--line);
+ #bar button{font-size:12px;line-height:1;padding:8px 12px;border:1px solid var(--line);
              background:#fafafa;border-radius:6px;cursor:pointer;color:#333}
  #bar button.primary{background:var(--accent);border-color:var(--accent);color:#fff}
  #bar small{color:var(--muted);font-size:11px}
@@ -277,7 +320,7 @@ __BANNER__
    하나만 쓸 때는 타일의 <b>열기</b>·<b>복사</b>를 쓰세요.
    &nbsp;·&nbsp; <a href="./?setup">팔레트를 draw.io 에 설치</a></p>
  <div class="tools">
-  <input type="search" id="q" placeholder="이름으로 찾기 (예: load, shield, rds)" autocomplete="off">
+  <input type="search" id="q" placeholder="이름·한글로 찾기 (예: load, shield, 매출, 계약)" autocomplete="off">
   <div class="chips" id="chips"><button type="button" data-filter="" aria-pressed="true">전체</button>__CHIPS__</div>
  </div>
 </header>
@@ -304,6 +347,7 @@ __BODY__
   var chips = document.getElementById('chips');
   var figs = [].slice.call(document.querySelectorAll('figure'));
   var secs = [].slice.call(document.querySelectorAll('section'));
+  var blocks = [].slice.call(document.querySelectorAll('.gblock'));
   var pal = '';
 
   function apply() {
@@ -311,6 +355,10 @@ __BODY__
     figs.forEach(function (f) {
       f.hidden = !((!t || f.dataset.name.indexOf(t) >= 0)
                 && (!pal || f.dataset.palette === pal));
+    });
+    // 소제목은 그 아래가 다 걸러지면 같이 숨긴다. 빈 제목만 남으면 더 헷갈린다.
+    blocks.forEach(function (b) {
+      b.hidden = !b.querySelector('figure:not([hidden])');
     });
     var any = false;
     secs.forEach(function (s) {
