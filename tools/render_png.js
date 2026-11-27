@@ -1,7 +1,7 @@
 // icons/**/*.svg 를 같은 자리에 *.png 로 만든다.
 //
 //     npm install                          # 한 번만 (package.json 의 @resvg/resvg-js)
-//     npm run png                          # icons/ 전체, 240px
+//     npm run png                          # icons/ 전체, 60px
 //     node tools/render_png.js icons 480   # 폴더·크기를 다르게 줄 때
 //
 // 저장소에서 Node 를 쓰는 곳은 여기뿐이다. 나머지 도구는 전부 Python 이라
@@ -15,14 +15,15 @@
 // 둔 같은 벡터라, 그것을 래스터로 굽는 편이 빠르고 카탈로그에 보이는 그림과
 // 정확히 같다. Business 팔레트처럼 다른 Figma 파일에서 온 아이콘도 함께 덮는다.
 //
-// 크기 240px 은 60px 캔버스의 4 배다. PPT 에 2~3cm 로 놓을 때 또렷하고,
-// 327 개를 합쳐도 1.3MB 남짓이라 저장소에 함께 두기에 부담이 없다.
+// 크기 60px 은 SVG 캔버스와 1:1 이다. PPT 에 붙이면 약 1.6cm 로 들어와
+// 장표에 바로 쓰기 좋은 크기다. 더 크게 쓸 일이 있으면 인자로 올리면 된다
+// (벡터에서 굽는 것이라 어느 크기든 깨지지 않는다).
 const { Resvg } = require('@resvg/resvg-js');
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = process.argv[2] || path.join(__dirname, '..', 'icons');
-const SIZE = Number(process.argv[3] || 240);
+const SIZE = Number(process.argv[3] || 60);
 
 const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) =>
   e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]);

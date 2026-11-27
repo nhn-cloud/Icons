@@ -794,8 +794,8 @@
         var im = new Image();
         im.onload = function () {
           var c = document.createElement('canvas');
-          c.width = c.height = 240;
-          c.getContext('2d').drawImage(im, 0, 0, 240, 240);
+          c.width = c.height = 60;
+          c.getContext('2d').drawImage(im, 0, 0, 60, 60);
           c.toBlob(function (b) { if (b) { ok(b); } else { no(); } }, 'image/png');
         };
         im.onerror = no;
