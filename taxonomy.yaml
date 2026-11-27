@@ -1,7 +1,7 @@
 # NHN Cloud 아이콘 분류 단일 원천
 #
 # 팔레트는 사내 배포 라이브러리(NHNCloud-*.xml)와 같은 구성·같은 순서다.
-#   Box Type · Services · Resources · General · Arrows · Annotations · Extra · Templates
+#   Box Type · Services · Resources · General · Arrows · Annotations · Extra
 # 앞의 넷은 main 브랜치(github.com/nhn-cloud/Icons)의 아이콘 유형 체계다.
 # Business 와 Retired 는 이 저장소에만 있는 팔레트라 뒤에 둔다.
 # Business 는 영업·사업부서 장표용이라 구성도용 팔레트와 쓰는 사람이 다르다.
@@ -11,9 +11,9 @@
 # 어느 파일을 쓰는지는 항목의 src 가 정한다(icons/ 기준 경로). 카테고리 아이콘처럼
 # 한 파일이 두 팔레트에 들어가는 경우가 있어 디렉터리로는 표현할 수 없다.
 #
-# Annotations 와 Templates 는 아이콘이 아니라 draw.io 도형·그림이라 SVG 에서 만들 수
-# 없다. 배포 라이브러리에서 풀어 icons/annotations · icons/templates 에 XML 로 두고
-# kind: raw 로 다시 압축한다.
+# Annotations 는 아이콘이 아니라 draw.io 도형이라 SVG 에서 만들 수 없다. 배포
+# 라이브러리에서 풀어 icons/annotations 에 XML 로 두고 kind: raw 로 다시 압축한다.
+# Templates 팔레트(빈 틀·예시 구성도 10종)는 쓰이지 않아 걷어냈다.
 version: 3
 palettes:
   - id: "01-box-type"
@@ -900,97 +900,366 @@ palettes:
   - id: "04-general"
     title: "NHN Cloud / General"
     kind: flat
+    # 예전에는 General(배포본 30종)과 Extra(저장소 전용)로 갈려 있었다. 쓰는 사람이
+    # 볼 수 없는 기준이라 어느 쪽을 열지 알 수 없고, 같은 파일이 "Database" 와
+    # "Category · Database" 로 양쪽에 들어가 있었다. 합치고 group 으로 묶는다.
     icons:
       - slug: ic-general-administrator
         name: "Administrator"
+        group: "사람"
         src: 02-general/ic-general-administrator.svg
-      - slug: ic-ai-service
-        name: "AI Service"
-        src: 18-ai-service/category/ic-ai-service.svg
-      - slug: ic-general-application-instance
-        name: "Application Instance"
-        src: 02-general/ic-general-application-instance.svg
-      - slug: ic-application-service
-        name: "Application Service"
-        src: 20-application-service/category/ic-application-service.svg
-      - slug: ic-content-delivery
-        name: "Content Delivery"
-        src: 16-content-delivery/category/ic-content-delivery.svg
-      - slug: ic-data-analytics
-        name: "Data & Analytics"
-        src: 22-data-analytics/category/ic-data-analytics.svg
-      - slug: ic-database
-        name: "Database"
-        src: 11-database/category/ic-database.svg
+      - slug: ic-general-external-user
+        name: "External User"
+        group: "사람"
+        src: 02-general/ic-general-external-user.svg
+      - slug: ic-general-internal-user
+        name: "Internal User"
+        group: "사람"
+        src: 02-general/ic-general-internal-user.svg
+      - slug: ic-general-authenticated-user
+        name: "Authenticated User"
+        group: "사람"
+        src: 02-general/ic-general-authenticated-user.svg
+      - slug: ic-general-client
+        name: "Client"
+        group: "사람"
+        src: 02-general/ic-general-client.svg
+      - slug: ic-general-manager
+        name: "Manager"
+        group: "사람"
+        src: 02-general/ic-general-manager.svg
+      - slug: ic-general-mobile-client
+        name: "Mobile Client"
+        group: "사람"
+        src: 02-general/ic-general-mobile-client.svg
+      - slug: ic-general-users
+        name: "Users"
+        group: "사람"
+        src: 02-general/ic-general-users.svg
+      - slug: ic-identity-iam
+        name: "IAM 계정"
+        group: "계정"
+        src: 04-identity/ic-identity-iam.svg
+      - slug: ic-identity-iam-admin
+        name: "IAM 계정 Admin"
+        group: "계정"
+        src: 04-identity/ic-identity-iam-admin.svg
+      - slug: ic-identity-iam-member
+        name: "IAM 계정 Member"
+        group: "계정"
+        src: 04-identity/ic-identity-iam-member.svg
+      - slug: ic-identity-iam-viewer
+        name: "IAM 계정 Viewer"
+        group: "계정"
+        src: 04-identity/ic-identity-iam-viewer.svg
+      - slug: ic-identity-nhn-cloud
+        name: "NHN Cloud 계정"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud.svg
+      - slug: ic-identity-nhn-cloud-admin
+        name: "NHN Cloud 계정 Admin"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud-admin.svg
+      - slug: ic-identity-nhn-cloud-billing
+        name: "NHN Cloud 계정 Billing"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud-billing.svg
+      - slug: ic-identity-nhn-cloud-member
+        name: "NHN Cloud 계정 Member"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud-member.svg
+      - slug: ic-identity-nhn-cloud-owner
+        name: "NHN Cloud 계정 Owner"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud-owner.svg
+      - slug: ic-identity-nhn-cloud-viewer
+        name: "NHN Cloud 계정 Viewer"
+        group: "계정"
+        src: 04-identity/ic-identity-nhn-cloud-viewer.svg
       - slug: ic-general-desktop
         name: "Desktop"
+        group: "기기"
         src: 02-general/ic-general-desktop.svg
       - slug: ic-general-desktop-phone
         name: "Desktop + Phone"
+        group: "기기"
         src: 02-general/ic-general-desktop-phone.svg
-      - slug: ic-dev-tools
-        name: "Dev Tools"
-        src: 23-dev-tools/category/ic-dev-tools.svg
-      - slug: ic-general-external-user
-        name: "External User"
-        src: 02-general/ic-general-external-user.svg
-      - slug: ic-industry-finance
-        name: "Finance"
-        src: 03-industry/ic-industry-finance.svg
-      - slug: ic-general-gateway
-        name: "Gateway"
-        src: 02-general/ic-general-gateway.svg
       - slug: ic-general-interface
         name: "Interface"
+        group: "기기"
         src: 02-general/ic-general-interface.svg
-      - slug: ic-general-internal-user
-        name: "Internal User"
-        src: 02-general/ic-general-internal-user.svg
-      - slug: ic-industry-iot
-        name: "IoT"
-        src: 03-industry/ic-industry-iot.svg
-      - slug: ic-general-ip-acl
-        name: "IP ACL"
-        src: 02-general/ic-general-ip-acl.svg
       - slug: ic-general-laptop
         name: "Laptop"
+        group: "기기"
         src: 02-general/ic-general-laptop.svg
+      - slug: ic-general-mobile-devices
+        name: "Mobile Devices"
+        group: "기기"
+        src: 02-general/ic-general-mobile-devices.svg
+      - slug: ic-general-phone
+        name: "Phone"
+        group: "기기"
+        src: 02-general/ic-general-phone.svg
+      - slug: ic-general-cold-storage
+        name: "Cold Storage"
+        group: "서버·저장장치"
+        src: 02-general/ic-general-cold-storage.svg
+      - slug: ic-general-disk
+        name: "Disk"
+        group: "서버·저장장치"
+        src: 02-general/ic-general-disk.svg
+      - slug: ic-general-server
+        name: "Server"
+        group: "서버·저장장치"
+        src: 02-general/ic-general-server.svg
+      - slug: ic-general-servers
+        name: "Servers"
+        group: "서버·저장장치"
+        src: 02-general/ic-general-servers.svg
+      - slug: ic-general-tape-storage
+        name: "Tape Storage"
+        group: "서버·저장장치"
+        src: 02-general/ic-general-tape-storage.svg
+      - slug: ic-general-gateway
+        name: "Gateway"
+        group: "네트워크"
+        src: 02-general/ic-general-gateway.svg
+      - slug: ic-general-ip-acl
+        name: "IP ACL"
+        group: "네트워크"
+        src: 02-general/ic-general-ip-acl.svg
+      - slug: ic-general-peering
+        name: "Peering"
+        group: "네트워크"
+        src: 02-general/ic-general-peering.svg
+      - slug: ic-general-private-network
+        name: "Private Network"
+        group: "네트워크"
+        src: 02-general/ic-general-private-network.svg
+      - slug: ic-general-subnet
+        name: "Subnet"
+        group: "네트워크"
+        src: 02-general/ic-general-subnet.svg
+      - slug: ic-general-globe
+        name: "Globe"
+        group: "네트워크"
+        src: 02-general/ic-general-globe.svg
+      - slug: ic-general-internet
+        name: "Internet"
+        group: "네트워크"
+        src: 02-general/ic-general-internet.svg
+      - slug: ic-general-data-stream
+        name: "Data Stream"
+        group: "문서·데이터"
+        src: 02-general/ic-general-data-stream.svg
+      - slug: ic-general-data-table
+        name: "Data Table"
+        group: "문서·데이터"
+        src: 02-general/ic-general-data-table.svg
+      - slug: ic-general-document
+        name: "Document"
+        group: "문서·데이터"
+        src: 02-general/ic-general-document.svg
+      - slug: ic-general-documents
+        name: "Documents"
+        group: "문서·데이터"
+        src: 02-general/ic-general-documents.svg
+      - slug: ic-general-folder
+        name: "Folder"
+        group: "문서·데이터"
+        src: 02-general/ic-general-folder.svg
+      - slug: ic-general-folders
+        name: "Folders"
+        group: "문서·데이터"
+        src: 02-general/ic-general-folders.svg
+      - slug: ic-general-json-script
+        name: "Json Script"
+        group: "문서·데이터"
+        src: 02-general/ic-general-json-script.svg
+      - slug: ic-general-logs
+        name: "Logs"
+        group: "문서·데이터"
+        src: 02-general/ic-general-logs.svg
+      - slug: ic-general-metrics
+        name: "Metrics"
+        group: "문서·데이터"
+        src: 02-general/ic-general-metrics.svg
+      - slug: ic-general-application-instance
+        name: "Application Instance"
+        group: "개발"
+        src: 02-general/ic-general-application-instance.svg
+      - slug: ic-general-generic-application
+        name: "Generic Application"
+        group: "개발"
+        src: 02-general/ic-general-generic-application.svg
+      - slug: ic-general-git-repository
+        name: "Git Repository"
+        group: "개발"
+        src: 02-general/ic-general-git-repository.svg
+      - slug: ic-general-nhn-cloud-console
+        name: "NHN Cloud Console"
+        group: "개발"
+        src: 02-general/ic-general-nhn-cloud-console.svg
+      - slug: ic-general-programming-language
+        name: "Programming Language"
+        group: "개발"
+        src: 02-general/ic-general-programming-language.svg
+      - slug: ic-general-sdk
+        name: "Sdk"
+        group: "개발"
+        src: 02-general/ic-general-sdk.svg
+      - slug: ic-general-source-code
+        name: "Source Code"
+        group: "개발"
+        src: 02-general/ic-general-source-code.svg
+      - slug: ic-general-toolkit
+        name: "Toolkit"
+        group: "개발"
+        src: 02-general/ic-general-toolkit.svg
       - slug: ic-general-login-security-settings
         name: "Login Security Settings"
+        group: "보안"
         src: 02-general/ic-general-login-security-settings.svg
+      - slug: ic-general-credentials
+        name: "Credentials"
+        group: "보안"
+        src: 02-general/ic-general-credentials.svg
+      - slug: ic-general-saml-token
+        name: "Saml Token"
+        group: "보안"
+        src: 02-general/ic-general-saml-token.svg
+      - slug: ic-general-ssl-padlock
+        name: "Ssl Padlock"
+        group: "보안"
+        src: 02-general/ic-general-ssl-padlock.svg
+      - slug: ic-general-alert
+        name: "Alert"
+        group: "소통·알림"
+        src: 02-general/ic-general-alert.svg
+      - slug: ic-general-chat
+        name: "Chat"
+        group: "소통·알림"
+        src: 02-general/ic-general-chat.svg
+      - slug: ic-general-email
+        name: "Email"
+        group: "소통·알림"
+        src: 02-general/ic-general-email.svg
+      - slug: ic-general-multimedia
+        name: "Multimedia"
+        group: "소통·알림"
+        src: 02-general/ic-general-multimedia.svg
+      - slug: ic-industry-finance
+        name: "Finance"
+        group: "산업·장소"
+        src: 03-industry/ic-industry-finance.svg
+      - slug: ic-industry-iot
+        name: "IoT"
+        group: "산업·장소"
+        src: 03-industry/ic-industry-iot.svg
       - slug: ic-industry-machine-learning
         name: "Machine Learning"
+        group: "산업·장소"
         src: 03-industry/ic-industry-machine-learning.svg
       - slug: ic-industry-manufacturing
         name: "Manufacturing"
+        group: "산업·장소"
         src: 03-industry/ic-industry-manufacturing.svg
       - slug: ic-industry-medical-healthcare
         name: "Medical & Healthcare"
+        group: "산업·장소"
         src: 03-industry/ic-industry-medical-healthcare.svg
-      - slug: ic-general-mobile-devices
-        name: "Mobile Devices"
-        src: 02-general/ic-general-mobile-devices.svg
+      - slug: ic-general-office-building
+        name: "Office Building"
+        group: "산업·장소"
+        src: 02-general/ic-general-office-building.svg
+      - slug: ic-ai-service
+        name: "Category · AI Service"
+        group: "서비스 카테고리"
+        src: 18-ai-service/category/ic-ai-service.svg
+      - slug: ic-application-service
+        name: "Category · Application Service"
+        group: "서비스 카테고리"
+        src: 20-application-service/category/ic-application-service.svg
+      - slug: ic-content-delivery
+        name: "Category · Content Delivery"
+        group: "서비스 카테고리"
+        src: 16-content-delivery/category/ic-content-delivery.svg
+      - slug: ic-data-analytics
+        name: "Category · Data Analytics"
+        group: "서비스 카테고리"
+        src: 22-data-analytics/category/ic-data-analytics.svg
+      - slug: ic-database
+        name: "Category · Database"
+        group: "서비스 카테고리"
+        src: 11-database/category/ic-database.svg
+      - slug: ic-dev-tools
+        name: "Category · Dev Tools"
+        group: "서비스 카테고리"
+        src: 23-dev-tools/category/ic-dev-tools.svg
       - slug: ic-notification
-        name: "Notification"
+        name: "Category · Notification"
+        group: "서비스 카테고리"
         src: 17-notification/category/ic-notification.svg
-      - slug: ic-general-peering
-        name: "Peering"
-        src: 02-general/ic-general-peering.svg
-      - slug: ic-general-phone
-        name: "Phone"
-        src: 02-general/ic-general-phone.svg
-      - slug: ic-general-private-network
-        name: "Private Network"
-        src: 02-general/ic-general-private-network.svg
       - slug: ic-security
-        name: "Security"
+        name: "Category · Security"
+        group: "서비스 카테고리"
         src: 15-security/category/ic-security.svg
       - slug: ic-storage
-        name: "Storage"
+        name: "Category · Storage"
+        group: "서비스 카테고리"
         src: 10-storage/category/ic-storage.svg
-      - slug: ic-general-subnet
-        name: "Subnet"
-        src: 02-general/ic-general-subnet.svg
+      - slug: ic-bill
+        name: "Category · Bill"
+        group: "서비스 카테고리"
+        src: 25-bill/category/ic-bill.svg
+      - slug: ic-collaboration
+        name: "Category · Collaboration"
+        group: "서비스 카테고리"
+        src: 26-collaboration/category/ic-collaboration.svg
+      - slug: ic-compute
+        name: "Category · Compute"
+        group: "서비스 카테고리"
+        src: 07-compute/category/ic-compute.svg
+      - slug: ic-contact-center
+        name: "Category · Contact Center"
+        group: "서비스 카테고리"
+        src: 27-contact-center/category/ic-contact-center.svg
+      - slug: ic-container
+        name: "Category · Container"
+        group: "서비스 카테고리"
+        src: 08-container/category/ic-container.svg
+      - slug: ic-game
+        name: "Category · Game"
+        group: "서비스 카테고리"
+        src: 14-game/category/ic-game.svg
+      - slug: ic-governance-audit
+        name: "Category · Governance Audit"
+        group: "서비스 카테고리"
+        src: 28-governance-audit/category/ic-governance-audit.svg
+      - slug: ic-hybrid-private-cloud
+        name: "Category · Hybrid Private Cloud"
+        group: "서비스 카테고리"
+        src: 13-hybrid-private-cloud/category/ic-hybrid-private-cloud.svg
+      - slug: ic-machine-learning
+        name: "Category · Machine Learning"
+        group: "서비스 카테고리"
+        src: 19-machine-learning/category/ic-machine-learning.svg
+      - slug: ic-management
+        name: "Category · Management"
+        group: "서비스 카테고리"
+        src: 24-management/category/ic-management.svg
+      - slug: ic-monitoring
+        name: "Category · Monitoring"
+        group: "서비스 카테고리"
+        src: 12-monitoring/category/ic-monitoring.svg
+      - slug: ic-network
+        name: "Category · Network"
+        group: "서비스 카테고리"
+        src: 09-network/category/ic-network.svg
+      - slug: ic-search
+        name: "Category · Search"
+        group: "서비스 카테고리"
+        src: 21-search/category/ic-search.svg
   - id: "05-arrows"
     title: "NHN Cloud / Arrows"
     kind: styles
@@ -1131,278 +1400,6 @@ palettes:
         w: 220
         h: 208
         tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 주석 annotation 표시 범례"
-  - id: "07-extra"
-    title: "NHN Cloud / Extra"
-    kind: flat
-    icons:
-      - slug: ic-general-alert
-        name: "Alert"
-        src: 02-general/ic-general-alert.svg
-      - slug: ic-general-authenticated-user
-        name: "Authenticated User"
-        src: 02-general/ic-general-authenticated-user.svg
-      - slug: ic-ai-service
-        name: "Category · AI Service"
-        src: 18-ai-service/category/ic-ai-service.svg
-      - slug: ic-application-service
-        name: "Category · Application Service"
-        src: 20-application-service/category/ic-application-service.svg
-      - slug: ic-bill
-        name: "Category · Bill"
-        src: 25-bill/category/ic-bill.svg
-      - slug: ic-collaboration
-        name: "Category · Collaboration"
-        src: 26-collaboration/category/ic-collaboration.svg
-      - slug: ic-compute
-        name: "Category · Compute"
-        src: 07-compute/category/ic-compute.svg
-      - slug: ic-contact-center
-        name: "Category · Contact Center"
-        src: 27-contact-center/category/ic-contact-center.svg
-      - slug: ic-container
-        name: "Category · Container"
-        src: 08-container/category/ic-container.svg
-      - slug: ic-content-delivery
-        name: "Category · Content Delivery"
-        src: 16-content-delivery/category/ic-content-delivery.svg
-      - slug: ic-data-analytics
-        name: "Category · Data Analytics"
-        src: 22-data-analytics/category/ic-data-analytics.svg
-      - slug: ic-database
-        name: "Category · Database"
-        src: 11-database/category/ic-database.svg
-      - slug: ic-dev-tools
-        name: "Category · Dev Tools"
-        src: 23-dev-tools/category/ic-dev-tools.svg
-      - slug: ic-game
-        name: "Category · Game"
-        src: 14-game/category/ic-game.svg
-      - slug: ic-governance-audit
-        name: "Category · Governance Audit"
-        src: 28-governance-audit/category/ic-governance-audit.svg
-      - slug: ic-hybrid-private-cloud
-        name: "Category · Hybrid Private Cloud"
-        src: 13-hybrid-private-cloud/category/ic-hybrid-private-cloud.svg
-      - slug: ic-machine-learning
-        name: "Category · Machine Learning"
-        src: 19-machine-learning/category/ic-machine-learning.svg
-      - slug: ic-management
-        name: "Category · Management"
-        src: 24-management/category/ic-management.svg
-      - slug: ic-monitoring
-        name: "Category · Monitoring"
-        src: 12-monitoring/category/ic-monitoring.svg
-      - slug: ic-network
-        name: "Category · Network"
-        src: 09-network/category/ic-network.svg
-      - slug: ic-notification
-        name: "Category · Notification"
-        src: 17-notification/category/ic-notification.svg
-      - slug: ic-search
-        name: "Category · Search"
-        src: 21-search/category/ic-search.svg
-      - slug: ic-security
-        name: "Category · Security"
-        src: 15-security/category/ic-security.svg
-      - slug: ic-storage
-        name: "Category · Storage"
-        src: 10-storage/category/ic-storage.svg
-      - slug: ic-general-chat
-        name: "Chat"
-        src: 02-general/ic-general-chat.svg
-      - slug: ic-general-client
-        name: "Client"
-        src: 02-general/ic-general-client.svg
-      - slug: ic-general-cold-storage
-        name: "Cold Storage"
-        src: 02-general/ic-general-cold-storage.svg
-      - slug: ic-general-credentials
-        name: "Credentials"
-        src: 02-general/ic-general-credentials.svg
-      - slug: ic-general-data-stream
-        name: "Data Stream"
-        src: 02-general/ic-general-data-stream.svg
-      - slug: ic-general-data-table
-        name: "Data Table"
-        src: 02-general/ic-general-data-table.svg
-      - slug: ic-general-disk
-        name: "Disk"
-        src: 02-general/ic-general-disk.svg
-      - slug: ic-general-document
-        name: "Document"
-        src: 02-general/ic-general-document.svg
-      - slug: ic-general-documents
-        name: "Documents"
-        src: 02-general/ic-general-documents.svg
-      - slug: ic-general-email
-        name: "Email"
-        src: 02-general/ic-general-email.svg
-      - slug: ic-general-folder
-        name: "Folder"
-        src: 02-general/ic-general-folder.svg
-      - slug: ic-general-folders
-        name: "Folders"
-        src: 02-general/ic-general-folders.svg
-      - slug: ic-general-generic-application
-        name: "Generic Application"
-        src: 02-general/ic-general-generic-application.svg
-      - slug: ic-general-git-repository
-        name: "Git Repository"
-        src: 02-general/ic-general-git-repository.svg
-      - slug: ic-general-globe
-        name: "Globe"
-        src: 02-general/ic-general-globe.svg
-      - slug: ic-identity-iam
-        name: "IAM 계정"
-        src: 04-identity/ic-identity-iam.svg
-      - slug: ic-identity-iam-admin
-        name: "IAM 계정 Admin"
-        src: 04-identity/ic-identity-iam-admin.svg
-      - slug: ic-identity-iam-member
-        name: "IAM 계정 Member"
-        src: 04-identity/ic-identity-iam-member.svg
-      - slug: ic-identity-iam-viewer
-        name: "IAM 계정 Viewer"
-        src: 04-identity/ic-identity-iam-viewer.svg
-      - slug: ic-general-internet
-        name: "Internet"
-        src: 02-general/ic-general-internet.svg
-      - slug: ic-general-json-script
-        name: "Json Script"
-        src: 02-general/ic-general-json-script.svg
-      - slug: ic-general-logs
-        name: "Logs"
-        src: 02-general/ic-general-logs.svg
-      - slug: ic-general-manager
-        name: "Manager"
-        src: 02-general/ic-general-manager.svg
-      - slug: ic-general-metrics
-        name: "Metrics"
-        src: 02-general/ic-general-metrics.svg
-      - slug: ic-general-mobile-client
-        name: "Mobile Client"
-        src: 02-general/ic-general-mobile-client.svg
-      - slug: ic-general-multimedia
-        name: "Multimedia"
-        src: 02-general/ic-general-multimedia.svg
-      - slug: ic-general-nhn-cloud-console
-        name: "NHN Cloud Console"
-        src: 02-general/ic-general-nhn-cloud-console.svg
-      - slug: ic-identity-nhn-cloud
-        name: "NHN Cloud 계정"
-        src: 04-identity/ic-identity-nhn-cloud.svg
-      - slug: ic-identity-nhn-cloud-admin
-        name: "NHN Cloud 계정 Admin"
-        src: 04-identity/ic-identity-nhn-cloud-admin.svg
-      - slug: ic-identity-nhn-cloud-billing
-        name: "NHN Cloud 계정 Billing"
-        src: 04-identity/ic-identity-nhn-cloud-billing.svg
-      - slug: ic-identity-nhn-cloud-member
-        name: "NHN Cloud 계정 Member"
-        src: 04-identity/ic-identity-nhn-cloud-member.svg
-      - slug: ic-identity-nhn-cloud-owner
-        name: "NHN Cloud 계정 Owner"
-        src: 04-identity/ic-identity-nhn-cloud-owner.svg
-      - slug: ic-identity-nhn-cloud-viewer
-        name: "NHN Cloud 계정 Viewer"
-        src: 04-identity/ic-identity-nhn-cloud-viewer.svg
-      - slug: ic-general-office-building
-        name: "Office Building"
-        src: 02-general/ic-general-office-building.svg
-      - slug: ic-general-programming-language
-        name: "Programming Language"
-        src: 02-general/ic-general-programming-language.svg
-      - slug: ic-general-saml-token
-        name: "Saml Token"
-        src: 02-general/ic-general-saml-token.svg
-      - slug: ic-general-sdk
-        name: "Sdk"
-        src: 02-general/ic-general-sdk.svg
-      - slug: ic-general-server
-        name: "Server"
-        src: 02-general/ic-general-server.svg
-      - slug: ic-general-servers
-        name: "Servers"
-        src: 02-general/ic-general-servers.svg
-      - slug: ic-general-source-code
-        name: "Source Code"
-        src: 02-general/ic-general-source-code.svg
-      - slug: ic-general-ssl-padlock
-        name: "Ssl Padlock"
-        src: 02-general/ic-general-ssl-padlock.svg
-      - slug: ic-general-tape-storage
-        name: "Tape Storage"
-        src: 02-general/ic-general-tape-storage.svg
-      - slug: ic-general-toolkit
-        name: "Toolkit"
-        src: 02-general/ic-general-toolkit.svg
-      - slug: ic-general-users
-        name: "Users"
-        src: 02-general/ic-general-users.svg
-  - id: "08-templates"
-    title: "NHN Cloud / Templates"
-    kind: raw
-    items:
-      - slug: groups-blank
-        name: "Groups Blank"
-        src: templates/groups-blank.xml
-        w: 842
-        h: 455
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 빈 틀"
-      - slug: external-links-blank
-        name: "External Links Blank"
-        src: templates/external-links-blank.xml
-        w: 940
-        h: 455
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 빈 틀"
-      - slug: rds-for-mysql-multi-region-ha
-        name: "RDS for MySQL Multi-Region HA"
-        src: templates/rds-for-mysql-multi-region-ha.xml
-        w: 940
-        h: 455
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 리전 지역 mysql 마이에스큐엘 데이터베이스 db 디비 관계형 멀티리전 다중 이중화 고가용성"
-      - slug: webapp-multi-region-ha
-        name: "Webapp Multi-Region HA"
-        src: templates/webapp-multi-region-ha.xml
-        w: 940
-        h: 455
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 리전 지역 멀티리전 다중 이중화 고가용성"
-      - slug: three-tier-web-service
-        name: "3-Tier 웹 서비스"
-        src: templates/three-tier-web-service.xml
-        w: 900
-        h: 620
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 3티어 쓰리티어 웹서비스"
-      - slug: bundle-lb-auto-scaling
-        name: "묶음 · LB + Auto Scaling"
-        src: templates/bundle-lb-auto-scaling.xml
-        w: 310
-        h: 290
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 로드밸런서 오토스케일"
-      - slug: bundle-rds-ha
-        name: "묶음 · RDS 이중화"
-        src: templates/bundle-rds-ha.xml
-        w: 280
-        h: 200
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 데이터베이스 db 디비 관계형"
-      - slug: bundle-easycache-replication
-        name: "묶음 · EasyCache 복제"
-        src: templates/bundle-easycache-replication.xml
-        w: 280
-        h: 200
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 이지캐시 캐시 redis 레디스"
-      - slug: bundle-public-private-subnet
-        name: "묶음 · Public/Private subnet"
-        src: templates/bundle-public-private-subnet.xml
-        w: 560
-        h: 290
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도 프라이빗 서브넷 사설"
-      - slug: bundle-hybrid-vpn
-        name: "묶음 · 하이브리드 VPN"
-        src: templates/bundle-hybrid-vpn.xml
-        w: 560
-        h: 230
-        tags: "nhncloud nhn cloud 엔에이치엔 엔에이치엔클라우드 클라우드 템플릿 template 예시 example 구성도"
   - id: "09-business"
     title: "NHN Cloud / Business"
     kind: flat

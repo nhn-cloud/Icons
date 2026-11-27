@@ -93,16 +93,75 @@ def source_map():
     return out, groups, tags
 
 
-def thumb(model, composition=False):
+CELL = re.compile(r'<mxCell[^>]*\bvalue="([^"]*)"[^>]*\bstyle="([^"]*)"[^>]*>\s*'
+                  r'<mxGeometry[^>]*\bwidth="([\d.]+)"\s+height="([\d.]+)"')
+
+
+def annotation_thumb(model):
+    """주석 도형은 SVG 자산이 없는 draw.io 스타일이라 스타일을 읽어 그대로 그린다.
+
+    번호 배지(원·둥근 사각)·영역 상자·메모·말풍선·글자뿐인 것까지 모양과 색이
+    draw.io 에 떨어지는 것과 같아야 한다. 모르는 모양이면 None 을 돌려 기본 그림에 맡긴다.
+    """
+    m = CELL.search(model)
+    if not m:
+        return None
+    value, style, w, h = m.group(1), m.group(2), float(m.group(3)), float(m.group(4))
+    s = dict(kv.split('=', 1) for kv in style.split(';') if '=' in kv)
+    keys = {kv.split('=', 1)[0] for kv in style.split(';') if kv}
+
+    def color(name, default='none'):
+        v = s.get(name, default)
+        return 'none' if v in ('none', '') else v
+
+    fill, stroke = color('fillColor'), color('strokeColor')
+    font = color('fontColor', '#333333')
+    dash = ' stroke-dasharray="4 3"' if s.get('dashed') == '1' else ''
+    sw = s.get('strokeWidth', '1')
+    # 값에 들어 있는 html 태그(<b> 등)와 실체 참조를 벗긴다.
+    # <br> 는 지우기 전에 공백으로 바꾼다 — 그냥 지우면 "제목"+"팀명" 이 붙는다.
+    plain = re.sub(r'<br\s*/?>', ' ', html.unescape(value), flags=re.I)
+    text = html.escape(' '.join(re.sub(r'<[^>]+>', '', plain).split()))
+
+    body = []
+    badge = w <= 32 and h <= 32           # 24x24 번호 배지
+    if badge:
+        if 'ellipse' in keys:
+            body.append('<circle cx="30" cy="30" r="18" fill="%s"/>' % fill)
+        else:
+            body.append('<rect x="12" y="12" width="36" height="36" rx="9" fill="%s"/>' % fill)
+        body.append('<text x="30" y="30" text-anchor="middle" dominant-baseline="central"'
+                    ' font-family="Helvetica,Arial,sans-serif" font-size="18" font-weight="700"'
+                    ' fill="%s">%s</text>' % (font, text))
+    elif s.get('shape') == 'note':
+        body.append('<path d="M6 14H42L54 26V46H6Z" fill="%s" stroke="%s" stroke-width="%s"/>'
+                    '<path d="M42 14V26H54" fill="none" stroke="%s" stroke-width="%s"/>'
+                    % (fill, stroke, sw, stroke, sw))
+    elif s.get('shape') == 'callout':
+        body.append('<path d="M5 14H55V40H24L16 50V40H5Z" fill="%s" stroke="%s" stroke-width="%s"/>'
+                    % (fill, stroke, sw))
+    elif fill == 'none' and stroke == 'none':
+        body.append('<text x="30" y="32" text-anchor="middle" dominant-baseline="central"'
+                    ' font-family="Helvetica,Arial,sans-serif" font-size="%s" font-weight="%s"'
+                    ' fill="%s">%s</text>'
+                    % (14 if float(s.get('fontSize', 12)) >= 16 else 11,
+                       700 if float(s.get('fontSize', 12)) >= 16 else 400, font, text))
+    else:
+        rx = ' rx="%s"' % (4 if s.get('rounded') == '1' else 0)
+        body.append('<rect x="5" y="14" width="50" height="32"%s fill="%s" stroke="%s"'
+                    ' stroke-width="%s"%s/>' % (rx, fill, stroke, sw, dash))
+    if not badge and text and fill != 'none' or (not badge and text and stroke != 'none'):
+        body.append('<text x="10" y="24" font-family="Helvetica,Arial,sans-serif" font-size="9"'
+                    ' fill="%s">%s</text>' % (font, text[:7]))
+    return '<svg viewBox="0 0 60 60">%s</svg>' % ''.join(body)
+
+
+def thumb(model, annotation=False):
     """타일 미리보기. 이미지가 없는 항목(연결선·테두리만 있는 그룹 박스)은 직접 그린다."""
-    if composition:
-        # 구성도는 도형이 수십 개라 첫 아이콘을 썸네일로 쓰면 무엇인지 오해를 부른다.
-        return ('<svg viewBox="0 0 60 60"><rect x="3" y="8" width="54" height="44" fill="none" '
-                'stroke="#999" stroke-width="2"/><rect x="9" y="16" width="16" height="12" '
-                'fill="#125DE6"/><rect x="35" y="16" width="16" height="12" fill="#125DE6"/>'
-                '<rect x="9" y="34" width="16" height="12" fill="#B0C4E8"/>'
-                '<rect x="35" y="34" width="16" height="12" fill="#B0C4E8"/>'
-                '<path d="M25 22H35M25 40H35M17 28V34M43 28V34" stroke="#999"/></svg>')
+    if annotation:
+        drawn = annotation_thumb(model)
+        if drawn:
+            return drawn
     m = IMAGE.search(model)
     sc = STROKE.search(model)
     color = sc.group(1) if sc and sc.group(1) != 'none' else '#999999'
@@ -134,14 +193,14 @@ def build():
             continue
         title = html.unescape(m.group(1))
         short = title.replace('NHN Cloud / ', '')
-        composition = p.stem == '06'
+        annotation = p.stem == '06'
         tiles = []
         for e in json.loads(m.group(2)):
             model = decode(e['xml'])
             name = e.get('title') or ''
             tiles.append({
                 'name': name,
-                'thumb': thumb(model, composition),
+                'thumb': thumb(model, annotation),
                 'url': EDITOR + '?title=' + urllib.parse.quote(name) + '#R'
                        + urllib.parse.quote(encode(model)),
                 'xml': model,

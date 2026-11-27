@@ -223,7 +223,7 @@ def style_entries(path):
 def raw_entries(pal):
     """저장해 둔 mxGraphModel 을 그대로 엔트리로.
 
-    Annotations·Templates 는 아이콘이 아니라 draw.io 도형·그림이라 SVG 에서 만들 수
+    Annotations 는 아이콘이 아니라 draw.io 도형이라 SVG 에서 만들 수
     없다. 사내 배포 라이브러리에서 풀어 icons/ 에 XML 로 두고 여기서 다시 압축한다.
     """
     out = []
@@ -353,6 +353,7 @@ def build(pal, built):
 def main():
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     rows = []
+    dropped = []        # taxonomy 에서 빠져 지운 XML
     built = []          # (팔레트 id, title, 엔트리) — compositions 가 도형을 꺼내 쓴다
     made = {}           # 팔레트 id -> 엔트리
 
@@ -385,8 +386,19 @@ def main():
             out.write_text(blob, encoding='utf-8')
         rows.append((out.relative_to(ROOT).as_posix(), len(entries), len(blob)))
 
+    # taxonomy 에서 빠진 팔레트의 XML 은 지운다. 남겨 두면 카탈로그가 dist/*.xml 을
+    # 훑어 만들기 때문에 없앤 팔레트가 계속 보인다.
+    keep = {r.rsplit('/', 1)[-1] for r, _, _ in rows}
+    for stale in sorted(OUT.glob('[0-9][0-9].xml')):
+        if stale.name not in keep:
+            if not DRY:
+                stale.unlink()
+            dropped.append(stale.relative_to(ROOT).as_posix())
+
     for rel, n, b in rows:
         print('%-38s %4d개  %8.1f KB' % (rel, n, b / 1024))
+    for rel in dropped:
+        print('%-38s  지움 (taxonomy 에 없음)' % rel)
     print('\n라이브러리 %d개 · 엔트리 %d개%s'
           % (len(rows), sum(n for _, n, _ in rows), ' (dry-run, 쓰지 않음)' if DRY else ''))
 
