@@ -2,11 +2,13 @@
 <g transform="translate(6 6) scale(0.75)">
 <g transform="translate(-22 -22)">
 <circle cx="54" cy="54" r="26" fill="#125DE6"/>
-<mask style="mask-type:luminance" maskUnits="userSpaceOnUse" x="28" y="28" width="52" height="52">
+<mask id="mask0_2_5153" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="28" y="28" width="52" height="52">
 <circle cx="54" cy="54" r="26" fill="white"/>
 </mask>
+<g mask="url(#mask0_2_5153)">
 <path d="M42.0833 81L54 53.8261L28 31V66.8696L42.0833 81Z" fill-rule="evenodd" clip-rule="evenodd" fill="#333333"/>
 <rect x="28" y="28" width="26" height="26" fill="#CCCCCC"/>
+</g>
 </g>
 </g>
 </svg>

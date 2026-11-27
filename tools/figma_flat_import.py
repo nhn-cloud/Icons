@@ -88,6 +88,7 @@ def clean(svg):
 
     body = svg[head.end():svg.rfind('</svg>')]
 
+    refs = set(re.findall(r'url\(#([^)]*)\)', body))   # 살려 두어야 하는 id
     out = []
     skip_depth = 0      # 버리는 요소 안쪽 깊이
     drop_close = []     # 열림을 지운 <g> 자리 표시
@@ -102,12 +103,17 @@ def clean(svg):
                 if not selfclose:
                     skip_depth += 1
                 continue
-            if tag == 'g' and 'transform=' not in attrs:
-                drop_close.append(True)      # 좌표를 바꾸지 않는 래퍼는 벗긴다
-                continue
             if tag == 'g':
-                drop_close.append(False)
-            out.append(ID_ATTR.sub('', raw))
+                # 아무것도 하지 않는 래퍼만 벗긴다. mask·clip-path·opacity 가 붙은
+                # <g> 를 벗기면 그 안의 도형이 잘리지 않고 그대로 번진다.
+                bare = not ID_ATTR.sub('', attrs).strip()
+                drop_close.append(bare)
+                if bare:
+                    continue
+            # id 는 지우되 url(#...) 로 가리키는 것은 남긴다. mask 의 id 를 지우면
+            # 참조가 끊겨 마스크가 통째로 무시된다.
+            out.append(re.sub(r'\s+id="([^"]*)"',
+                              lambda m: m.group(0) if m.group(1) in refs else '', raw))
             continue
         # close
         if skip_depth:

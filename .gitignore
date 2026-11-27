@@ -1,2 +1,3 @@
 __pycache__/
 *.open.html
+node_modules/

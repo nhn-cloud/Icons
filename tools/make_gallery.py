@@ -15,9 +15,10 @@ draw.io 는 URL 조각 `#R<데이터>` 에 담긴 mxGraphModel 을 그대로 읽
 (`drawio_open.py` 와 같은 방식). 조각은 서버로 가지 않으므로 사내 프록시를 타지 않고,
 도형 SVG 가 base64 로 박혀 있어 라이브러리를 설치하지 않은 브라우저에서도 그려진다.
 
-타일마다 둘을 준다.
+타일마다 셋을 준다.
   열기    draw.io 새 탭에서 그 도형 하나를 올린 새 그림으로 연다. 거기서 저장한다.
-  SVG     원본 SVG 를 내려받는다 (PPT·문서에 넣을 때).
+  PNG     그림을 클립보드에 넣는다. PPT 에 Ctrl+V 로 바로 붙는다.
+  SVG     원본 SVG 를 내려받는다 (크기를 키워도 안 깨져야 할 때).
 
 타일의 `복사`(mxGraphModel XML 을 클립보드에) 는 뺐다. 쓰는 사람 대부분이
 draw.io 가 아니라 장표를 만들기 때문에 파일로 받는 쪽이 먼저다. 여러 개를
@@ -58,13 +59,15 @@ def encode(xml):
 
 
 def source_map():
-    """(팔레트 제목, 표시명) -> icons/ 원본 SVG 경로 · 쓰임새 그룹 · 검색 태그.
+    """(팔레트 제목, 표시명) -> icons/ 원본 SVG·PNG 경로 · 쓰임새 그룹 · 검색 태그.
 
-    경로는 SVG 내려받기 링크에 쓰고, 그룹은 팔레트 안을 소제목으로 묶는 데 쓴다.
+    경로는 SVG 내려받기와 PNG 복사에 쓰고, 그룹은 팔레트 안을 소제목으로 묶는 데 쓴다.
+    PNG 는 tools/render_png.js 가 같은 자리에 만들어 둔 것이다.
     그룹과 태그는 taxonomy.yaml 에 `group`·`tags` 가 있는 항목만 가진다(지금은 Business 뿐).
     """
     tax = yaml.safe_load((ROOT / 'taxonomy.yaml').read_text(encoding='utf-8'))
     out = {}
+    pngs = {}
     groups = {}
     tags = {}
     for pal in tax['palettes']:
@@ -86,11 +89,14 @@ def source_map():
                     (ROOT / 'icons' / pid / (sub or '') / (it['slug'] + '.svg'))
                 if p.suffix == '.svg' and p.exists():
                     out[key] = p.relative_to(ROOT).as_posix()
+                    png = p.with_suffix('.png')
+                    if png.exists():
+                        pngs[key] = png.relative_to(ROOT).as_posix()
                 if it.get('group'):
                     groups[key] = it['group']
                 if it.get('tags'):
                     tags[key] = it['tags']
-    return out, groups, tags
+    return out, pngs, groups, tags
 
 
 CELL = re.compile(r'<mxCell[^>]*\bvalue="([^"]*)"[^>]*\bstyle="([^"]*)"[^>]*>\s*'
@@ -183,7 +189,7 @@ def thumb(model, annotation=False):
 
 
 def build():
-    srcs, groups, tags = source_map()
+    srcs, pngs, groups, tags = source_map()
     palettes = []
     total = 0
     for p in sorted(DIST.glob('*.xml')):
@@ -208,6 +214,7 @@ def build():
                 'h': e.get('h') or 64,
                 'aspect': e.get('aspect') or '',
                 'svg': srcs.get((title, name)),
+                'png': pngs.get((title, name)),
                 'group': groups.get((title, name)),
                 'tags': tags.get((title, name), ''),
             })
@@ -215,18 +222,21 @@ def build():
         palettes.append({'no': p.stem, 'title': short, 'tiles': tiles})
 
     def figure(t, pal):
-        svg_link = ('<a href="%s" download>SVG</a>' % html.escape(t['svg'])) if t['svg'] else ''
+        svg_link = ('<a href="%s" download title="원본 SVG 파일을 내려받습니다">SVG</a>'
+                    % html.escape(t['svg'])) if t['svg'] else ''
+        png_btn = ('<button type="button" data-png="1"'
+                   ' title="PPT 에 바로 붙여넣도록 그림을 복사합니다">PNG</button>') if t['png'] else ''
         # XML 은 속성에 담는다. <script> 안에 넣으면 그 안의 텍스트는 원시 텍스트라
         # 파서가 실체 참조를 되돌리지 않아 복사한 값이 &lt;mxGraphModel&gt; 로 깨진다.
         return (
             '<figure data-name="%s" data-palette="%s" data-title="%s"'
-            ' data-w="%s" data-h="%s" data-aspect="%s" data-xml="%s"'
+            ' data-w="%s" data-h="%s" data-aspect="%s" data-pngsrc="%s" data-xml="%s"'
             ' role="checkbox" aria-checked="false" tabindex="0">'
             '<span class="pic">%s</span>'
             '<figcaption>%s</figcaption>'
             '<div class="act">'
             '<a href="%s" target="_blank" rel="noopener">열기</a>'
-            '%s</div>'
+            '%s%s</div>'
             '</figure>'
             # data-name 은 검색용이다. 표시명(영문) 뒤에 한글 태그를 붙여
             # "매출"·"계약" 처럼 쓰는 사람이 실제로 치는 말로도 걸리게 한다.
@@ -234,9 +244,10 @@ def build():
                html.escape(pal['title'].lower()),
                html.escape(t['name'], quote=True),
                t['w'], t['h'], html.escape(t['aspect'], quote=True),
+               html.escape(t['png'] or '', quote=True),
                html.escape(t['xml'], quote=True),
                t['thumb'], html.escape(t['name']),
-               html.escape(t['url'], quote=True), svg_link))
+               html.escape(t['url'], quote=True), png_btn, svg_link))
 
     def runs(tiles):
         """taxonomy 차례 그대로 그룹이 바뀌는 자리에서 끊는다. 그룹이 없으면 한 덩어리."""
@@ -321,8 +332,9 @@ PAGE = """<!doctype html>
  .gblock{margin:0 0 14px}
  h3{font-size:12px;color:#666;margin:0 0 6px;font-weight:600}
  h3 small{color:#bbb;font-weight:400;margin-left:3px}
- /* 타일 폭은 아래 단추 두 개(열기·SVG)가 한 줄에 들어가는 최소값이다. */
- .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
+ /* 타일 폭은 아래 단추 세 개(열기·PNG·SVG)가, 눌렀을 때 바뀌는 '복사됨' 까지
+    한 줄에 들어가는 최소값이다. */
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:6px}
  figure{margin:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px 6px;
         text-align:center;background:#fff;cursor:pointer;position:relative;outline:none}
  figure:hover{border-color:#bbb}
@@ -442,14 +454,16 @@ __BODY__
   });
 
   // ---- 클립보드 -------------------------------------------------------
+  function flash(btn, label) {
+    if (!btn) return;
+    var old = btn.textContent;
+    btn.classList.add('done');
+    btn.textContent = label;
+    setTimeout(function () { btn.classList.remove('done'); btn.textContent = old; }, 1200);
+  }
+
   function copy(text, btn, label) {
-    function done() {
-      if (!btn) return;
-      var old = btn.textContent;
-      btn.classList.add('done');
-      btn.textContent = label || '복사됨';
-      setTimeout(function () { btn.classList.remove('done'); btn.textContent = old; }, 1200);
-    }
+    function done() { flash(btn, label || '복사됨'); }
     function fallback() {
       var ta = document.createElement('textarea');
       ta.value = text; document.body.appendChild(ta); ta.select();
@@ -460,6 +474,56 @@ __BODY__
       navigator.clipboard.writeText(text).then(done, fallback);
     } else { fallback(); }
   }
+
+  // ---- PNG 복사 -------------------------------------------------------
+  // PPT 는 클립보드의 그림을 그대로 받는다. 파일로 받아 다시 끌어다 놓는 수고를
+  // 덜려고 내려받기가 아니라 그림 자체를 클립보드에 넣는다.
+  function pngBlob(fig) {
+    var url = fig.dataset.pngsrc;
+    var viaFile = url
+      ? fetch(url).then(function (r) { if (!r.ok) { throw 0; } return r.blob(); })
+      : Promise.reject();
+    return viaFile.catch(function () {
+      // file:// 로 열면 파일을 읽지 못한다. 타일에 박아 둔 SVG 를 그 자리에서 그린다.
+      return new Promise(function (ok, no) {
+        var src = fig.querySelector('.pic img');
+        if (!src) { no(); return; }
+        var im = new Image();
+        im.onload = function () {
+          var c = document.createElement('canvas');
+          c.width = c.height = 240;
+          c.getContext('2d').drawImage(im, 0, 0, 240, 240);
+          c.toBlob(function (b) { if (b) { ok(b); } else { no(); } }, 'image/png');
+        };
+        im.onerror = no;
+        im.src = src.src;
+      });
+    });
+  }
+
+  function savePng(fig, btn) {      // 클립보드를 못 쓰면 파일로 내려 준다
+    pngBlob(fig).then(function (blob) {
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = (fig.dataset.title || 'icon') + '.png';
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+      flash(btn, '내려받음');
+    }, function () { flash(btn, '실패'); });
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-png]');
+    if (!b) return;
+    var fig = b.closest('figure');
+    // ClipboardItem 에 Blob 이 아니라 Promise 를 넘긴다. 그래야 파일을 읽어 오는
+    // 동안에도 '사용자가 누른 그 클릭' 으로 인정돼 크롬이 쓰기를 막지 않는다.
+    if (window.ClipboardItem && navigator.clipboard && navigator.clipboard.write) {
+      navigator.clipboard.write([new ClipboardItem({ 'image/png': pngBlob(fig) })])
+        .then(function () { flash(b, '복사됨'); },
+              function () { savePng(fig, b); });
+    } else { savePng(fig, b); }
+  });
 
 
   // ---- 선택 -----------------------------------------------------------

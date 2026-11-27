@@ -1,0 +1,12 @@
+{
+  "name": "nhn-cloud-icons-tools",
+  "version": "1.0.0",
+  "private": true,
+  "description": "icons/ 의 SVG 를 PNG 로 굽는 도구. 저장소 본체는 Python 이고 Node 는 이 하나뿐이다.",
+  "scripts": {
+    "png": "node tools/render_png.js"
+  },
+  "dependencies": {
+    "@resvg/resvg-js": "^2.6.2"
+  }
+}
