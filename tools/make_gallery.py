@@ -15,13 +15,13 @@ draw.io 는 URL 조각 `#R<데이터>` 에 담긴 mxGraphModel 을 그대로 읽
 (`drawio_open.py` 와 같은 방식). 조각은 서버로 가지 않으므로 사내 프록시를 타지 않고,
 도형 SVG 가 base64 로 박혀 있어 라이브러리를 설치하지 않은 브라우저에서도 그려진다.
 
-타일마다 셋을 준다.
+타일마다 둘을 준다.
   열기    draw.io 새 탭에서 그 도형 하나를 올린 새 그림으로 연다. 거기서 저장한다.
-  복사    mxGraphModel XML 을 클립보드에 넣는다. 편집 중인 그림에 Ctrl+V 로 붙인다.
   SVG     원본 SVG 를 내려받는다 (PPT·문서에 넣을 때).
 
-`복사` 가 실제로는 가장 많이 쓰인다. 이미 그리던 구성도에 아이콘 하나를 더할 때
-새 탭을 여는 것보다 붙여넣는 쪽이 빠르다.
+타일의 `복사`(mxGraphModel XML 을 클립보드에) 는 뺐다. 쓰는 사람 대부분이
+draw.io 가 아니라 장표를 만들기 때문에 파일로 받는 쪽이 먼저다. 여러 개를
+골라 한꺼번에 가져가는 길은 아래 담는 자리의 `모두 복사` 로 남아 있다.
 """
 import base64
 import html
@@ -226,7 +226,7 @@ def build():
             '<figcaption>%s</figcaption>'
             '<div class="act">'
             '<a href="%s" target="_blank" rel="noopener">열기</a>'
-            '<button type="button" data-copy="1">복사</button>%s</div>'
+            '%s</div>'
             '</figure>'
             # data-name 은 검색용이다. 표시명(영문) 뒤에 한글 태그를 붙여
             # "매출"·"계약" 처럼 쓰는 사람이 실제로 치는 말로도 걸리게 한다.
@@ -300,9 +300,11 @@ PAGE = """<!doctype html>
            letter-spacing:-.01em;text-shadow:0 1px 2px rgba(0,0,0,.14)}
  header{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line);
         padding:14px 20px 10px;z-index:5}
- h1{font-size:17px;margin:0 0 2px}
+ /* 제목은 배너가 이미 달고 있어 머리에서는 뺐다. 남은 줄은 쓰는 법 안내다. */
  p.sub{margin:0 0 10px;color:var(--muted);font-size:12px}
  p.sub a{color:var(--accent)}
+ /* 한글은 글자 아무 데서나 끊긴다. 숫자·링크는 통째로 넘기게 묶는다. */
+ p.sub .nw{white-space:nowrap}
  .tools{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
  input[type=search]{flex:0 0 260px;padding:7px 10px;border:1px solid var(--line);
                     border-radius:6px;font:inherit}
@@ -319,8 +321,8 @@ PAGE = """<!doctype html>
  .gblock{margin:0 0 14px}
  h3{font-size:12px;color:#666;margin:0 0 6px;font-weight:600}
  h3 small{color:#bbb;font-weight:400;margin-left:3px}
- /* 타일 폭은 아래 단추 세 개(열기·복사·SVG)가 한 줄에 들어가는 최소값이다. */
- .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(116px,1fr));gap:6px}
+ /* 타일 폭은 아래 단추 두 개(열기·SVG)가 한 줄에 들어가는 최소값이다. */
+ .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(104px,1fr));gap:6px}
  figure{margin:0;border:1px solid var(--line);border-radius:8px;padding:8px 6px 6px;
         text-align:center;background:#fff;cursor:pointer;position:relative;outline:none}
  figure:hover{border-color:#bbb}
@@ -373,11 +375,11 @@ PAGE = """<!doctype html>
 </style>
 __BANNER__
 <header>
- <h1>NHN Cloud 아이콘 카탈로그</h1>
- <p class="sub">팔레트 __PALETTES__개 · 도형 __TOTAL__개 &nbsp;|&nbsp;
-   <b>타일을 누르면 아래 담는 자리에 쌓입니다.</b> 다 고르고 나서 한꺼번에 열거나 라이브러리로 받습니다.
-   하나만 쓸 때는 타일의 <b>열기</b>·<b>복사</b>를 쓰세요.
-   &nbsp;·&nbsp; <a href="./?setup">팔레트를 draw.io 에 설치</a></p>
+ <p class="sub">원하는 아이콘을 바로 사용할 수 있습니다.
+   여러 개의 아이콘을 클릭 후 <b>draw.io 에서 열기</b>로 구성도를 그릴 수 있습니다.
+   아이콘 하나만 사용하려면 원하는 파일 형식의 버튼을 클릭 해 PPT에 붙여넣기 할 수 있습니다.
+   &nbsp;|&nbsp; <span class="nw">팔레트 __PALETTES__개 · 도형 __TOTAL__개</span>
+   &nbsp;·&nbsp; <span class="nw"><a href="./?setup">팔레트를 draw.io 에 설치</a></span></p>
  <div class="tools">
   <input type="search" id="q" placeholder="이름·한글로 찾기 (예: load, shield, 매출, 계약)" autocomplete="off">
   <div class="chips" id="chips"><button type="button" data-filter="" aria-pressed="true">전체</button>__CHIPS__</div>
@@ -459,11 +461,6 @@ __BODY__
     } else { fallback(); }
   }
 
-  document.addEventListener('click', function (e) {
-    var b = e.target.closest('button[data-copy]');
-    if (!b) return;
-    copy(b.closest('figure').dataset.xml, b);
-  });
 
   // ---- 선택 -----------------------------------------------------------
   var sel = [];
